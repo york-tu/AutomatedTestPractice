@@ -1,28 +1,35 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="27.0.2" />
     <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
+    <PackageReference Include="ExtentReports" Version="4.1.0" />
+    <PackageReference Include="IKVM" Version="8.1.5717" />
+    <PackageReference Include="Microsoft.ApplicationInsights.JavaScript" Version="1.0.20-build00666" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
     <PackageReference Include="Microsoft.WinAppDriver.Appium.WebDriver" Version="1.0.1-Preview" />
+    <PackageReference Include="NUnitOrange" Version="2.1.0" />
     <PackageReference Include="Selenium.Support" Version="4.0.0-beta2" />
     <PackageReference Include="Selenium.WebDriver" Version="4.0.0-beta2" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="90.0.4430.2400-beta" />
     <PackageReference Include="Selenium.WebDriver.GeckoDriver" Version="0.29.1" />
+    <PackageReference Include="Simplify.Windows.Forms" Version="1.1.0" />
+    <PackageReference Include="System.Windows.Forms.DataVisualization" Version="1.0.0-prerelease.19212.2" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="coverlet.collector" Version="1.3.0">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UserData\" />
   </ItemGroup>
 
 </Project>
