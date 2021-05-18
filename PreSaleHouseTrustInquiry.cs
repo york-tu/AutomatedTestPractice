@@ -1,13 +1,9 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Support.UI;
-
 using Xunit;
 using System;
-using System.Linq;
 using System.IO;
-using System.Globalization;
 using IronXL;
 using System.Text.RegularExpressions;
 
@@ -16,7 +12,7 @@ namespace 預售屋信託查詢
     public class 預售屋信託查詢
     {
         readonly string test_url = "https://www.esunbank.com.tw/bank/personal/trust/announcement-and-inquiry/pre-construction-real-estate-trust-inquiry";
-
+        readonly string excel_path = @"D:\PreSaleHouseTrustInquiry_TestReport.xls";
 
         [Theory]
         [InlineData(BrowserType.Chrome)]
@@ -27,13 +23,22 @@ namespace 預售屋信託查詢
         {
             System.Threading.Thread.Sleep(100);
 
-
             using var driver = WebDriverInfra.Create_Browser(browserType);
             {
-                string timesavepath = System.DateTime.Now.ToString("yyyyMMddHHmmss");
-                WorkBook xlsWorkbook = WorkBook.Create(ExcelFileFormat.XLS); //定義 excel格式
-                WorkSheet xlsSheet = xlsWorkbook.CreateWorkSheet("預售屋查詢" + timesavepath); // Create excel檔 "sheet"分頁
+                string timesavepath = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm");
 
+                WorkBook xlsWorkbook;
+                WorkSheet xlsSheet;
+                if (File.Exists(excel_path) != true)
+                {
+                    xlsWorkbook = WorkBook.Create(ExcelFileFormat.XLS); //定義 excel格式為 XLS
+                    xlsSheet = xlsWorkbook.CreateWorkSheet("預售屋查詢" + timesavepath); // Create excel檔 "sheet"分頁
+                }
+                else
+                {
+                    xlsWorkbook = WorkBook.Load(excel_path); //讀取 excel 檔
+                    xlsSheet = xlsWorkbook.CreateWorkSheet("預售屋查詢" + timesavepath); // Create excel檔 "sheet"分頁
+                }
 
                 driver.Navigate().GoToUrl(test_url);
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000); //100秒內載完網頁內容, 否則報錯, 載完提早進下一步.
@@ -155,8 +160,15 @@ namespace 預售屋信託查詢
                     }
                     i++;
                 }
-                xlsWorkbook.SaveAs(@"D:\PreSaleHouseTrustInquiry_TestReport.xls");
-                
+
+                if (File.Exists(excel_path) != true)
+                {
+                    xlsWorkbook.SaveAs(excel_path);
+                }
+                else
+                {
+                    xlsWorkbook.Save();
+                }
             }
             driver.Quit();
         }
