@@ -1,13 +1,8 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Support.UI;
-
 using Xunit;
 using System;
-using System.Linq;
-using System.IO;
-using System.Globalization;
 using IronXL;
 using System.Text.RegularExpressions;
 
