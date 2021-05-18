@@ -93,7 +93,7 @@ namespace 預售屋信託查詢
 
                     string payment_account_error = driver.FindElement(By.Id("layout_0_rightcontent_1_TxtVacno-error")).Text;
 
-                    if (keyin == "" && payment_account_error == "必須填寫")
+                    if (keyin == "" && payment_account_error == "必須填寫")// 判斷當輸入為"空值" >>> 預期顯示 "必須填寫" warning
                     {
                         xlsSheet[check_position].Value = keyin;
                         xlsSheet[actual_value].Value = actualPaymentAccount;
@@ -102,7 +102,7 @@ namespace 預售屋信託查詢
                         xlsSheet[test_result].Value = "PASS_Case_1";
                         System.Diagnostics.Debug.WriteLine("PASS_Case_1: " + keyin);
                     }
-                    else if (keyin.Length < 6 && payment_account_error == "最少 6 個字")
+                    else if (keyin.Length < 6 && payment_account_error == "最少 6 個字") // 判斷當輸入字元"小於六位數" >>> 預期顯示 "最少 6 個字" warning
                     {
                         xlsSheet[check_position].Value = keyin;
                         xlsSheet[actual_value].Value = actualPaymentAccount;
@@ -111,7 +111,7 @@ namespace 預售屋信託查詢
                         xlsSheet[test_result].Value = "PASS_Case_2";
                         System.Diagnostics.Debug.WriteLine("PASS_Case_2: " + keyin);
                     }
-                    else if (result != true && payment_account_error == "只可輸入數字")
+                    else if (result != true && payment_account_error == "只可輸入數字") // 判斷當輸入"不是全數字" >>> 預期顯示 "只可輸入數字" warning
                     {
                         xlsSheet[check_position].Value = keyin;
                         xlsSheet[actual_value].Value = actualPaymentAccount;
@@ -120,31 +120,34 @@ namespace 預售屋信託查詢
                         xlsSheet[test_result].Value = "PASS_Case_3";
                         System.Diagnostics.Debug.WriteLine("PASS_Case_3: " + keyin);
                     }
-                    else if (result == true && keyin.Length >=6 && keyin.Length <16 && driver.FindElement(By.Id("layout_0_rightcontent_1_LblMessage")).Text == "企業代碼不存在")
-                    {
+
+                    // 判斷當輸入 "全部都數字" 且 "字數介於 6~16 位數間 >>> 預期查詢結果顯示 "企業代碼不存在"
+                    else if (result == true && keyin.Length >=6 && keyin.Length <=16 && driver.FindElement(By.Id("layout_0_rightcontent_1_LblMessage")).Text == "企業代碼不存在")
+                    {   
                         string searchresult = driver.FindElement(By.Id("layout_0_rightcontent_1_LblMessage")).Text;
                         xlsSheet[check_position].Value = keyin;
                         xlsSheet[actual_value].Value = actualPaymentAccount;
-                        xlsSheet[show_msg].Value = driver.FindElement(By.Id("layout_0_rightcontent_1_LblMessage")).Text;
+                        xlsSheet[show_msg].Value = searchresult;
                         xlsSheet[expect_result].Value = "顯示 '企業代碼不存在'";
                         xlsSheet[test_result].Value = "PASS_Case_4";
                         System.Diagnostics.Debug.WriteLine("PASS_Case_4: " + keyin);
                     }
-                    else if (keyin.Length >= 16 && result == true)
+                    else if (keyin.Length > 16 && result == true) // 判斷當輸入位元 "大於16位數" 且 "全部都數字" >> 預期查詢結果顯示 "企業代碼不存在 (need to confirm)"
                     {
-                        string searchresult = driver.FindElement(By.Id("layout_0_rightcontent_1_LblMessage")).Text;
+                        string searchresult = driver.FindElement(By.Id("layout_0_rightcontent_1_LblMessage")).Text; // 擷取"查詢結果" 欄位字串
                         xlsSheet[check_position].Value = keyin;
                         xlsSheet[actual_value].Value = actualPaymentAccount;
-                        xlsSheet[show_msg].Value = driver.FindElement(By.Id("layout_0_rightcontent_1_LblMessage")).Text;
-                        xlsSheet[expect_result].Value = "顯示 '企業代碼不存在'";
+                        xlsSheet[show_msg].Value = searchresult;
+                        xlsSheet[expect_result].Value = "顯示 '[TBD]企業代碼不存在'";
                         xlsSheet[test_result].Value = "Need Manaul Check";
                         System.Diagnostics.Debug.WriteLine("PASS_Case_5: " + keyin);
                     }
-                    else 
+                    else //非以上情況測試結果fail
                     {
+                        string searchresult = driver.FindElement(By.Id("layout_0_rightcontent_1_LblMessage")).Text; // 擷取"查詢結果" 欄位字串
                         xlsSheet[check_position].Value = keyin;
                         xlsSheet[actual_value].Value = actualPaymentAccount;
-                        xlsSheet[show_msg].Value = payment_account_error;
+                        xlsSheet[show_msg].Value = "Message 1: " + payment_account_error + "or Message 2: " + searchresult;
                         xlsSheet[test_result].Value = "FAIL";
                     }
                     i++;
