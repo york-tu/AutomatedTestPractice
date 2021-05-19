@@ -8,24 +8,24 @@ using System.IO;
 using IronXL;
 using System.Text.RegularExpressions;
 
-namespace 預售屋信託查詢
+namespace PreSaleHouseTrustInquiryTest
 {
-    public class 預售屋信託查詢
+    public class PreSaleHouseTrustInquiry // 預售屋查詢
     {
-        readonly string test_url = "https://www.esunbank.com.tw/bank/personal/trust/announcement-and-inquiry/pre-construction-real-estate-trust-inquiry";
-        readonly string excel_path = @"D:\PreSaleHouseTrustInquiry_TestReport.xlsx";
-        readonly string testcase_name = "預售屋查詢";
+        private readonly string test_url = "https://www.esunbank.com.tw/bank/personal/trust/announcement-and-inquiry/pre-construction-real-estate-trust-inquiry";
+        private readonly string excel_path = @"D:\PreSaleHouseTrustInquiry_TestReport.xlsx";
+        private readonly string testcase_name = "預售屋查詢";
 
         [Theory]
         [InlineData(BrowserType.Chrome)]
         //[InlineData(BrowserType.Firefox)]
 
 
-        public void PreSaleHouseTrustInquiry(BrowserType browserType)
+        public void PSHTI_PC(BrowserType browserType)
         {
             System.Threading.Thread.Sleep(100);
 
-            using var driver = WebDriverInfra.Create_Browser(browserType);
+            using IWebDriver driver = WebDriverInfra.Create_Browser(browserType);
             {
                 string timesavepath = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm");
 
@@ -78,7 +78,7 @@ namespace 預售屋信託查詢
 
 
                 int i = 3;
-                foreach (var keyin in array_payment_account) // 跑迴圈以逐筆輸入欄位
+                foreach (string keyin in array_payment_account) // 跑迴圈以逐筆輸入欄位
                 {
                     string check_position = "B" + i;
                     string actual_value = "C" + i;

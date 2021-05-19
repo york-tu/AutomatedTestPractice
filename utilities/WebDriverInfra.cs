@@ -14,7 +14,7 @@ namespace OpenQA.Selenium
             {
                 BrowserType.Chrome => new ChromeDriver(),
                 BrowserType.Firefox => new FirefoxDriver(),
-                BrowserType.Edge => new EdgeDriver(),
+                BrowserType.IE => new EdgeDriver(),
                 _ => throw new ArgumentOutOfRangeException(nameof(browserType), browserType, null),
             };
         }
