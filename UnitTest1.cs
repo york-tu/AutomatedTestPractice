@@ -41,44 +41,6 @@ namespace UnitTest1
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000); //100秒內載完網頁內容, 否則報錯, 載完提早進下一步.
                 driver.Manage().Window.Maximize();
 
-                string pathFile = @"D:\test12345";
-
-                Excel.Application excelApp;
-                Excel._Workbook wBook;
-                Excel._Worksheet wSheet;
-
-                // 開啟一個新的應用程式
-                excelApp = new Excel.Application();
-
-                // 讓Excel文件可見
-                excelApp.Visible = true;
-
-                // 停用警告訊息
-                excelApp.DisplayAlerts = false;
-
-                // 加入新的活頁簿
-                excelApp.Workbooks.Add(Type.Missing);
-
-                // 引用第一個活頁簿
-                wBook = excelApp.Workbooks[1];
-
-                // 設定活頁簿焦點
-                wBook.Activate();
-
-                // 引用第一個工作表
-                wSheet = (Excel._Worksheet)wBook.Worksheets[1];
-
-                // 命名工作表的名稱
-                wSheet.Name = "航空里程兌換";
-
-                // 設定工作表焦點
-                wSheet.Activate();
-
-                // 設定第1列資料
-                excelApp.Cells[1, 1] = "中華航空";
-                excelApp.Cells[2, 1] = "編號";
-                excelApp.Cells[17, 1] = "EMAIL";
-                excelApp.Cells[27, 1] = "欄位";
 
                 for (int i = 2; i <= 22; i++) // initial i =2
                 {
