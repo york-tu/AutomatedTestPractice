@@ -16,7 +16,7 @@ namespace System
 {
     public class TOOL
     {
-        
+
         public static void Find_Element(IWebDriver driver, IWebElement element) // 畫面定位
         {
             Actions action = new Actions(driver);
@@ -29,16 +29,11 @@ namespace System
             ss.SaveAsFile(savepath, ScreenshotImageFormat.Png);
         }
 
-        /*public static void ElementTakeScreenShot(IWebDriver driver, IWebElement element, string savepath)
+        public static void ElementTakeScreenShot(IWebElement webElement, string savepath)
         {
-
-            Byte[] byteArray = ((ITakesScreenshot)driver).GetScreenshot().AsByteArray;
-            Bitmap screenshot = new Bitmap(new System.IO.MemoryStream(byteArray));
-            Rectangle croppedImage = new Rectangle(element.Location.X, element.Location.Y, element.Size.Width, element.Size.Height);
-            screenshot = screenshot.Clone(croppedImage, screenshot.PixelFormat);
-            screenshot.Save(string.Format(savepath, ScreenshotImageFormat.Png));
-
-        }*/
+            var elementScreenshot = (webElement as ITakesScreenshot).GetScreenshot();
+            elementScreenshot.SaveAsFile(savepath);
+        }
 
         public static void SCrollToElement(IWebDriver driver, IWebElement element)
         {
