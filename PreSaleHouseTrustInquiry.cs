@@ -1,6 +1,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Support.UI;
 using Xunit;
 using System;
 using System.IO;
@@ -12,7 +13,8 @@ namespace 預售屋信託查詢
     public class 預售屋信託查詢
     {
         readonly string test_url = "https://www.esunbank.com.tw/bank/personal/trust/announcement-and-inquiry/pre-construction-real-estate-trust-inquiry";
-        readonly string excel_path = @"D:\PreSaleHouseTrustInquiry_TestReport.xls";
+        readonly string excel_path = @"D:\PreSaleHouseTrustInquiry_TestReport.xlsx";
+        readonly string testcase_name = "預售屋查詢";
 
         [Theory]
         [InlineData(BrowserType.Chrome)]
@@ -29,17 +31,24 @@ namespace 預售屋信託查詢
 
                 WorkBook xlsWorkbook;
                 WorkSheet xlsSheet;
-                if (File.Exists(excel_path) != true)
-                {
-                    xlsWorkbook = WorkBook.Create(ExcelFileFormat.XLS); //定義 excel格式為 XLS
-                    xlsSheet = xlsWorkbook.CreateWorkSheet("預售屋查詢" + timesavepath); // Create excel檔 "sheet"分頁
+
+                if (File.Exists(excel_path) == true && WorkBook.Load(excel_path).GetWorkSheet(testcase_name) == null)
+                { // 判斷當excel檔存在 但 沒有"預售屋查詢"工作表 >>> 讀取該excel檔, new create "預售屋查詢" 工作表 
+                    xlsWorkbook = WorkBook.Load(excel_path); 
+                    xlsSheet = xlsWorkbook.CreateWorkSheet(testcase_name); 
+                }
+                else if (File.Exists(excel_path) == true && WorkBook.Load(excel_path).GetWorkSheet(testcase_name) != null)
+                { // 判斷當excel檔存在 且 有"預售屋查詢"工作表 >>> 讀取該excel檔, 讀取"預售屋查詢" 工作表
+                    xlsWorkbook = WorkBook.Load(excel_path);
+                    xlsSheet = xlsWorkbook.GetWorkSheet(testcase_name); 
                 }
                 else
-                {
-                    xlsWorkbook = WorkBook.Load(excel_path); //讀取 excel 檔
-                    xlsSheet = xlsWorkbook.CreateWorkSheet("預售屋查詢" + timesavepath); // Create excel檔 "sheet"分頁
+                { // 判斷當excel檔不存在 >>> new create excel檔 & new create "預售屋查詢" 工作表
+                    xlsWorkbook = WorkBook.Create(ExcelFileFormat.XLSX); //定義 excel格式為 XLSX
+                    xlsSheet = xlsWorkbook.CreateWorkSheet(testcase_name);
                 }
 
+                
                 driver.Navigate().GoToUrl(test_url);
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000); //100秒內載完網頁內容, 否則報錯, 載完提早進下一步.
                 //driver.Manage().Window.Maximize();
@@ -53,7 +62,7 @@ namespace 預售屋信託查詢
 
 
                 //Array存取預測試的字串
-                string[] array_payment_account = new string[] {"", "1234567890123456789","12345","１２３４５６", "中文字", "ＡＢＣＤＥＦ", "ａｂｃｄｅｆ", "abcdef", "ABCDEF", "@#$%^&*", "！＠＃＄％︿", "123abc456DEF", "987654321"};
+                string[] array_payment_account = new string[] {"", "1234567890123456789","12345","１２３４５６", "中文字", "ＡＢＣＤＥＦ", "ａｂｃｄｅｆ", "abcdef", "ABCDEF", "@#$%^&*", "！＠＃＄％︿", "123abc456DEF", "987654321", ""};
                 
                 //定義excel欄位
                 xlsSheet["A1"].Value = "檢查 繳款帳號欄位";
