@@ -51,4 +51,10 @@
     <Folder Include="testdata\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="testdata\UserInfo.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
