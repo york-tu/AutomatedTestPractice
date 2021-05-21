@@ -25,7 +25,7 @@ namespace PreSaleHouseTrustInquiry_PaymentAccount
         [InlineData("@#$%^&*", "只可輸入數字")]
         [InlineData("！＠＃＄％︿", "只可輸入數字")]
         [InlineData("123abc456DEF", "只可輸入數字")]
-        [InlineData("1234567890123456789", "企業代碼不存在")]
+        [InlineData("1234567890123456789", "繳款帳號不存在")]
         [InlineData("987654321", "企業代碼不存在")]
 
        
@@ -35,8 +35,6 @@ namespace PreSaleHouseTrustInquiry_PaymentAccount
             driver.Navigate().GoToUrl(test_url);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000); //100秒內載完網頁內容, 否則報錯, 載完提早進下一步.
 
-            bool result = Regex.IsMatch(input, @"^[0-9]*$"); // 判斷輸入字串是否為"全數字"
-
             IWebElement PaymentAccount = driver.FindElement(By.XPath("//*[@id='layout_0_rightcontent_1_TxtVacno']"));
             PaymentAccount.Clear(); // 清除繳款欄位
             PaymentAccount.SendKeys(input); // 輸入值
@@ -45,7 +43,12 @@ namespace PreSaleHouseTrustInquiry_PaymentAccount
 
             IWebElement submit_button = driver.FindElement(By.XPath("//*[@id='layout_0_rightcontent_1_LbtnQuery']"));
 
-            if (input.Length >= 6 && result == true) // 判斷當輸入字元為全數字且大於六位數時, 送出data後延遲等待5秒, 等網頁load完
+
+            bool digital_check_result = Regex.IsMatch(actualPaymentAccount, @"^[0-9]*$"); // 判斷輸入字串是否為"全數字"
+            bool expect_check_result = Regex.IsMatch(actualPaymentAccount, @"^\d{6,16}$"); // 判斷輸入字串是否為"6~16位全數字"
+
+          
+            if (expect_check_result == true) // 判斷當"輸入欄位為6~16位全數字" >>> 送出data後延遲等待5秒, 等網頁load完
             {
                 submit_button.Click(); // 點 送出
                 System.Threading.Thread.Sleep(6000);
@@ -56,41 +59,24 @@ namespace PreSaleHouseTrustInquiry_PaymentAccount
                 System.Threading.Thread.Sleep(100);
             }
 
-            if (input == "")
+            if (expect_check_result != true)
             {
                 string payment_account_error = driver.FindElement(By.Id("layout_0_rightcontent_1_TxtVacno-error")).Text;
                 Assert.Equal(expect_result, payment_account_error);
-                System.Diagnostics.Debug.WriteLine("PASS_Case_1: " + input + payment_account_error);
+                System.Diagnostics.Debug.WriteLine($"輸入: {input}, 實際: {actualPaymentAccount}, 顯示訊息: {payment_account_error}");
             }
-            else if (result != true)
-            {
-                string payment_account_error = driver.FindElement(By.Id("layout_0_rightcontent_1_TxtVacno-error")).Text;
-                Assert.Equal(expect_result, payment_account_error);
-                System.Diagnostics.Debug.WriteLine("PASS_Case_3: " + input + "_" + payment_account_error);
-            }
-            else if (result == true && input.Length < 6) 
-            {
-                string payment_account_error = driver.FindElement(By.Id("layout_0_rightcontent_1_TxtVacno-error")).Text;
-                Assert.Equal(expect_result, payment_account_error);
-                System.Diagnostics.Debug.WriteLine("PASS_Case_2: " + input + payment_account_error);
-            }
-            
-            else if (result == true && input.Length >= 6 && input.Length <= 16)
+
+            else if (expect_check_result == true)
             {
                 string searchresult = driver.FindElement(By.Id("layout_0_rightcontent_1_LblMessage")).Text;
                 Assert.Equal(expect_result, searchresult);
-                System.Diagnostics.Debug.WriteLine("Case_4: " + input + "_" + searchresult);
-            }
-            else if (result == true && input.Length > 16) 
-            {
-                string searchresult = driver.FindElement(By.Id("layout_0_rightcontent_1_LblMessage")).Text; // 擷取"查詢結果" 欄位字串
-                Assert.Equal(expect_result, searchresult);
-                System.Diagnostics.Debug.WriteLine("Case_5: " + input + "_" + searchresult);
+                System.Diagnostics.Debug.WriteLine($"輸入: {input}, 實際: {actualPaymentAccount}, 顯示訊息: {searchresult}");
             }
             else 
             {
+                expect_result = "FAIL";
                 string searchresult = driver.FindElement(By.Id("layout_0_rightcontent_1_LblMessage")).Text; // 擷取"查詢結果" 欄位字串
-                System.Diagnostics.Debug.WriteLine("Case_6: " + input + "_" +searchresult);
+                System.Diagnostics.Debug.WriteLine($"輸入: {input}, 實際: {actualPaymentAccount}, 顯示訊息: {searchresult}");
             }
             driver.Quit();
         }

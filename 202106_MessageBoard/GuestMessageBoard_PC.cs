@@ -18,11 +18,11 @@ namespace GuestMessageBoardTest
     public class GuestMessageBoard // 訪客留言版
     {
         private readonly string test_url = "https://www.esunbank.com.tw/bank/about/services/customer/message-board";
-        public string Version = "PC";
+        private readonly string Version = "PC";
 
         [Theory]
         [InlineData(BrowserType.Chrome)]
-        //[InlineData(BrowserType.Firefox)]
+        [InlineData(BrowserType.Firefox)]
 
 
         public void GMB_PC(BrowserType browserType)
@@ -112,7 +112,7 @@ namespace GuestMessageBoardTest
                             driver.FindElement(By.XPath(BranchName_Xpath)).Click(); // 點選一個 "分行"
                             System.Threading.Thread.Sleep(300);
 
-                            Tools.ElementTakeScreenShot(driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[5]")), "d:\\第 " + n + " 個縣市第 " + j + " 個分行欄位snapshot_" + timepath + ".png");
+                            Tools.ElementTakeScreenShot(driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[5]")), $@"d:\第 {n} 個縣市第 {j} 個分行_欄位 snapshot_{timepath}.png"); //元素截圖
                             System.Threading.Thread.Sleep(100);
               
                             System.Threading.Thread.Sleep(100);
@@ -135,7 +135,7 @@ namespace GuestMessageBoardTest
                                 ); // 填 "留言內容"
 
                             Tools.SCrollToElement(driver, TelephoneColumn);
-                            Tools.TakeScreenShot("d:\\第 " + n + " 個縣市第 " + j + " 個分行 snapshot_" + browserType + "_" + timepath + ".png", driver); // snapshot當下畫面
+                            Tools.TakeScreenShot($@"d:\第 {n} 個縣市第 {j} 個分行 snapshot_{browserType}_ {timepath}.png", driver); // snapshot當下畫面
                             System.Threading.Thread.Sleep(500);
 
 
