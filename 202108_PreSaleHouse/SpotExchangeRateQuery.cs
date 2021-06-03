@@ -36,7 +36,7 @@ namespace SpotExchangeRateQueryTest
                 driver.Manage().Window.Position = new Point(400, 0); //設定網頁開啟在畫面什麼位置
                 driver.Manage().Window.Size = new Size(640,800); // 設定開啟的網頁大小
                 string browserdriver = driver.GetType().Name.ToString(); // 偵測瀏覽器type
-                string browsername = browserdriver.Remove(browserdriver.Length-6, 6);
+                string browsername = browserdriver.Remove(browserdriver.Length-6, 6); //只取browserdriver瀏覽器版本字串, 移掉字尾"Driver"字串
 
                 int[] currencylist = new int[] { 1, 4, 7, 10, 13, 16, 19, 22, 25, 27, 29, 31, 33, 35, 37 }; // 定義有"V"的幣別XPath編號
                 string[] currencynamelist = new string[] { "USD", "CNY", "HKD", "JPY", "EUR", "AUD", "CAD", "GBP", "ZAR", "NZD", "CHF", "SEK", "SGD", "MXN", "THB" }; // 幣別字串 for 截圖檔名用
