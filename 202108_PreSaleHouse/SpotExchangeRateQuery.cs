@@ -29,7 +29,7 @@ namespace SpotExchangeRateQueryTest
 
             using IWebDriver driver = WebDriverInfra.Create_Browser(browserType);
             {
-                string timesavepath = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
+                
 
                 driver.Navigate().GoToUrl(test_url);
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000); //100秒內載完網頁內容, 否則報錯, 載完提早進下一步.
@@ -72,13 +72,15 @@ namespace SpotExchangeRateQueryTest
                         V_button.Click(); // 點擊 "V" >>>展開"優惠匯率"選單
                         System.Threading.Thread.Sleep(500);
 
-                        if (browsername == "FirefoxDriver") //全螢幕截圖
+                        if (browsername == "Firefox") //全螢幕截圖
                         {
+                            string timesavepath = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
                             Tools.SnapshotFullScreen($@"D:\Snapshot_Folder\SpotExchangeRateQueryTest_BuyAndSellForeignButtonCheck\{currencynamelist[k]} 展開 fullsnapshot {browserType}_{timesavepath}.png");
                             System.Threading.Thread.Sleep(100);
                         }
                         else // 網頁截圖
                         {
+                            string timesavepath = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
                             Tools.TakeScreenShot($@"D:\Snapshot_Folder\SpotExchangeRateQueryTest_BuyAndSellForeignButtonCheck\{currencynamelist[k]} 展開 snapshot {browserType}_{timesavepath}.png", driver); 
                             System.Threading.Thread.Sleep(100);
                         }
@@ -97,11 +99,13 @@ namespace SpotExchangeRateQueryTest
                         
                         if (browsername == "FirefoxDriver") //全螢幕截圖
                         {
+                            string timesavepath = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
                             Tools.SnapshotFullScreen($@"D:\Snapshot_Folder\SpotExchangeRateQueryTest_BuyAndSellForeignButtonCheck\{currencynamelist[k]} 收合 fullsnapshot {browserType}_{timesavepath}.png");
                             System.Threading.Thread.Sleep(100); 
                         }
                         else // 網頁截圖
                         {
+                            string timesavepath = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
                             Tools.TakeScreenShot($@"D:\Snapshot_Folder\SpotExchangeRateQueryTest_BuyAndSellForeignButtonCheck\{currencynamelist[k]} 收合snapshot {browserType}_{timesavepath}.png", driver);
                             System.Threading.Thread.Sleep(100);
                         }
