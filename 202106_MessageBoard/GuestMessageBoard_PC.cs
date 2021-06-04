@@ -15,7 +15,7 @@ using System.Globalization;
 
 namespace GuestMessageBoardTest
 {
-    public class GuestMessageBoard // 訪客留言版
+    public class 訪客留言版縣市資料源調整_PC
     {
         private readonly string test_url = "https://www.esunbank.com.tw/bank/about/services/customer/message-board";
         private readonly string Version = "PC";
@@ -25,7 +25,7 @@ namespace GuestMessageBoardTest
         [InlineData(BrowserType.Firefox)]
 
 
-        public void GMB_PC(BrowserType browserType)
+        public void TestCase(BrowserType browserType)
         {
             using IWebDriver driver = WebDriverInfra.Create_Browser(browserType);
             {

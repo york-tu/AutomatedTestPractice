@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 
 namespace PreSaleHouseTrustInquiryTest
 {
-    public class PreSaleHouseTrustInquiry // 預售屋查詢
+    public class 預售屋信託查詢精進_PC
     {
         private readonly string test_url = "https://www.esunbank.com.tw/bank/personal/trust/announcement-and-inquiry/pre-construction-real-estate-trust-inquiry";
         private readonly string excel_path = @"D:\PreSaleHouseTrustInquiry_TestReport.xlsx";
@@ -21,7 +21,7 @@ namespace PreSaleHouseTrustInquiryTest
         //[InlineData(BrowserType.Firefox)]
 
 
-        public void PSHTI_PC(BrowserType browserType)
+        public void TestCase(BrowserType browserType)
         {
             System.Threading.Thread.Sleep(100);
 

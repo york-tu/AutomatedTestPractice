@@ -15,7 +15,7 @@ using System.Globalization;
 
 namespace HouseLoanMessageBoardTest
 {
-    public class HouseLoanMessageBoard // 房屋貸款留言測試
+    public class 房貸留言版提示視窗文字調整_PC // 房屋貸款留言測試
     {
         private readonly string test_url = "https://www.esunbank.com.tw/bank/personal/loan/tools/apply/house-loan?dev=mobile";
         private readonly string Version = "Mobile";
@@ -26,7 +26,7 @@ namespace HouseLoanMessageBoardTest
         //[InlineData(BrowserType.Firefox)]
 
 
-        public void HLMB_M(BrowserType browserType)
+        public void TestCase(BrowserType browserType)
         {
             using IWebDriver driver = WebDriverInfra.Create_Browser(browserType);
             {

@@ -18,7 +18,7 @@ using CSVHeader;
 
 namespace AirlineMilesRedemptionTest
 {
-    public class AirlineMilesRedemption // 航空里程兌換測試
+    public class 航空里程兌換精進_M
     {
         private readonly string test_url = "https://www.esunbank.com.tw/bank/personal/credit-card/reward/transit/asiamiles?dev=mobile";
         private readonly string Version = "Mobile";
@@ -30,7 +30,7 @@ namespace AirlineMilesRedemptionTest
         //[InlineData(BrowserType.Firefox)]
 
 
-        public void AMR_AISA_M(BrowserType browserType)
+        public void TestCase_ASIA(BrowserType browserType)
         {
             using IWebDriver driver = WebDriverInfra.Create_Browser(browserType);
             {

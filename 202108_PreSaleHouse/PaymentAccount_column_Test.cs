@@ -8,9 +8,9 @@ using System.IO;
 using IronXL;
 using System.Text.RegularExpressions;
 
-namespace PreSaleHouseTrustInquiry_PaymentAccount
+namespace PreSaleHouseTrustInquiryTest
 {
-    public class PaymentAccount// 檢款帳號欄位檢查
+    public class 預售屋信託查詢精進_SeparateCases_PC
     {
         private readonly string test_url = "https://www.esunbank.com.tw/bank/personal/trust/announcement-and-inquiry/pre-construction-real-estate-trust-inquiry";
 
@@ -29,7 +29,7 @@ namespace PreSaleHouseTrustInquiry_PaymentAccount
         [InlineData("987654321", "企業代碼不存在")]
 
        
-        public void 繳款帳號欄位(string input, string expect_result)
+        public void TestCase(string input, string expect_result)
         {
             IWebDriver driver = new ChromeDriver();
             driver.Navigate().GoToUrl(test_url);
