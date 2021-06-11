@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using System.Windows.Forms;
 using System.Drawing;
-
+using System.IO;
 namespace References
 {
     public class Tools
@@ -33,6 +33,25 @@ namespace References
             Graphics g = Graphics.FromImage(myimage);
             g.CopyFromScreen(new Point(0, 0), new Point(0, 0),new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height));
             myimage.Save(savepath);
+        }
+        public static void CreateSnapshotFolder (string snapshotpath) // 產生snapshot folder
+        {
+            try
+            {
+                if (Directory.Exists(snapshotpath))
+                {
+                    return;
+                }
+                else
+                {
+                    DirectoryInfo directiry = Directory.CreateDirectory(snapshotpath);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
         public static void SCrollToElement(IWebDriver driver, IWebElement element) // 畫面滾到target位置
         {
@@ -89,4 +108,23 @@ namespace References
             return cellphonenumber;
         }
     }
+
+    public class LaborReliefLoan_XPath
+    {
+        public static string name_column_Xpath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[1]/td[2]/input"; }
+        public static string ID_column_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[2]/td[2]/input"; }
+        public static string cellphone_column_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[3]/td[2]/input"; }
+        public static string birthday_column_XPath() { return "//*[@id='birth']"; }
+        public static string country_dropdownlist_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[5]/td[2]/div/ul[1]/li/span"; }
+        public static string branch_dropdownlist_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[5]/td[2]/div/ul[2]/li/span"; }
+        public static string date_dropdownlist_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[1]/li"; }
+        public static string time_dropdownlist_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[2]/li"; }
+        public static string i_have_read_button_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[8]/td[2]/div/a"; }
+        public static string submit_button_XPath() { return "//*[@id='submit']"; }
+        public static string image_verify_code_column_XPath() { return "//*[@id='captchaValue']"; }
+
+
+    }
 }
+
+
