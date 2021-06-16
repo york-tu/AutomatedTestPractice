@@ -107,7 +107,11 @@ namespace HouseLoanMessageBoardTest
 
                     string notification_wordings = driver.SwitchTo().Alert().Text;
                     System.Diagnostics.Debug.WriteLine(notification_wordings);
-                    Tools.SnapshotFullScreen(@"D:\" + testcase_name+ "_" + browserType + "_" + Version + "_" + timesavepath + ".png"); // 截圖當下畫面
+
+                    string snapshotpath = System.AppDomain.CurrentDomain.BaseDirectory + "SnapshotFolder\\HouseLoanMessageBoard";
+                    Tools.CreateSnapshotFolder(snapshotpath);
+                    System.Threading.Thread.Sleep(100);
+                    Tools.SnapshotFullScreen($@"{snapshotpath}\{testcase_name}_{browserType}_{Version}_{timesavepath}.png"); // 截圖當下畫面
 
                     driver.SwitchTo().Alert().Accept();
                 }

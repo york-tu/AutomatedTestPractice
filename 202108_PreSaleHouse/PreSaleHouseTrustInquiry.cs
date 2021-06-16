@@ -7,13 +7,14 @@ using System;
 using System.IO;
 using IronXL;
 using System.Text.RegularExpressions;
+using References;
 
 namespace PreSaleHouseTrustInquiryTest
 {
     public class 預售屋信託查詢精進_PC
     {
         private readonly string test_url = "https://www.esunbank.com.tw/bank/personal/trust/announcement-and-inquiry/pre-construction-real-estate-trust-inquiry";
-        private readonly string excel_path = @"D:\PreSaleHouseTrustInquiry_TestReport.xlsx";
+        
         private readonly string testcase_name = "預售屋查詢";
 
         [Theory]
@@ -28,6 +29,12 @@ namespace PreSaleHouseTrustInquiryTest
             using IWebDriver driver = WebDriverInfra.Create_Browser(browserType);
             {
                 string timesavepath = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm");
+                string snapshotpath = System.AppDomain.CurrentDomain.BaseDirectory + "SnapshotFolder\\PreSaleHouseTrustInquiry";
+                string excel_path = snapshotpath + "\\TestReport.xlsx";
+
+                Tools.CreateSnapshotFolder(snapshotpath);
+                System.Threading.Thread.Sleep(100);
+
 
                 WorkBook xlsWorkbook;
                 WorkSheet xlsSheet;

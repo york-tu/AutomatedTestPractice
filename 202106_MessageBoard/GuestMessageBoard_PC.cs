@@ -112,8 +112,12 @@ namespace GuestMessageBoardTest
                             driver.FindElement(By.XPath(BranchName_Xpath)).Click(); // 點選一個 "分行"
                             System.Threading.Thread.Sleep(300);
 
-                            Tools.ElementTakeScreenShot(driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[5]")), $@"d:\第 {n} 個縣市第 {j} 個分行_欄位 snapshot_{timepath}.png"); //元素截圖
+                            string snapshotpath = System.AppDomain.CurrentDomain.BaseDirectory + "SnapshotFolder\\GuestMessageBoard";
+                            Tools.CreateSnapshotFolder(snapshotpath);
                             System.Threading.Thread.Sleep(100);
+
+                            Tools.ElementTakeScreenShot(driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[5]")), $@"{snapshotpath}\第 {n} 個縣市第 {j} 個分行_欄位 snapshot_{timepath}.png"); //元素截圖
+
               
                             System.Threading.Thread.Sleep(100);
                             BusinessItem_DropDownList.Click(); //點留言業務下拉選單

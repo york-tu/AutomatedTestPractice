@@ -22,7 +22,6 @@ namespace AirlineMilesRedemptionTest
     {
         private readonly string test_url = "https://www.esunbank.com.tw/bank/personal/credit-card/reward/transit/asiamiles?dev=mobile";
         private readonly string Version = "Mobile";
-        private readonly string excel_savepath = @"D:\航空點數兌換TestReport.xlsx";
         private readonly string testcase_name = "亞洲萬里通";
 
         [Theory]
@@ -35,6 +34,8 @@ namespace AirlineMilesRedemptionTest
             using IWebDriver driver = WebDriverInfra.Create_Browser(browserType);
             {
                 string timesavepath = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm");
+                string snapshotpath = System.AppDomain.CurrentDomain.BaseDirectory + "SnapshotFolder\\AirlineMilesRedemption";
+                string excel_savepath = snapshotpath + "\\TestReport.xlsx";
 
                 WorkBook xlsWorkbook;
                 WorkSheet xlsSheet;
@@ -122,7 +123,7 @@ namespace AirlineMilesRedemptionTest
                 IWebElement submit_redeem_setting = driver.FindElement(By.XPath(""));
                 submit_redeem_setting.Click(); //點送出
 
-                Tools.TakeScreenShot(@"d:\航空里程兌換_" + testcase_name + "_" + browserType + "_" + Version + "_" + timesavepath + ".png", driver);
+                Tools.TakeScreenShot($@"{snapshotpath}\{testcase_name}_{browserType}_{Version}_{timesavepath}.png", driver);
                 System.Threading.Thread.Sleep(500);
 
 
