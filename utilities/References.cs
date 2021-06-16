@@ -5,12 +5,12 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace References
 {
     public class Tools
     {
-
         public static void Find_Element(IWebDriver driver, IWebElement element) // 畫面定位 (selenium)
         {
             Actions action = new Actions(driver);
@@ -23,11 +23,13 @@ namespace References
             Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
             ss.SaveAsFile(savepath, ScreenshotImageFormat.Png);
         }
+
         public static void ElementTakeScreenShot(IWebElement webElement, string savepath) // Only截元件圖 (selenium)
         {
             var elementScreenshot = (webElement as ITakesScreenshot).GetScreenshot();
             elementScreenshot.SaveAsFile(savepath);
         }
+
         public static void SnapshotFullScreen(string savepath) //全螢幕截圖 (C#)
         {
             Bitmap myimage = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
@@ -35,6 +37,7 @@ namespace References
             g.CopyFromScreen(new Point(0, 0), new Point(0, 0), new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height));
             myimage.Save(savepath);
         }
+
         public static void CreateSnapshotFolder(string snapshotpath) // 產生snapshot folder
         {
             try
@@ -102,16 +105,16 @@ namespace References
             id += s + rand_i.ToString().PadLeft(7, '0') + check.ToString();
             return id;
 
-        } // 亂數產生有效身分證字號
+        } // 亂數產生新式身分證字號
 
-        public static string CreateCellPhoneNumber() // 亂數產生有效行動電話號碼
+        public static string CreateCellPhoneNumber() // 亂數產生行動電話號碼
         {
             Random phone = new Random();
             string cellphonenumber = $"09{(phone.Next(100000000) + 100000000).ToString().Substring(1)}";
             return cellphonenumber;
         }
 
-        public static string IDNumberCheck(string id) // 檢查輸入的身分證字號是否符合標準
+        public static bool CheckResidentID(string id) // 檢核是否為現行本國人身分證字號
         {
             //除了檢查碼外每個數字的存放空間 
             int[] seed = new int[10];
@@ -143,10 +146,88 @@ namespace References
             //(10 - ((seed[0] + .... + seed[9]) % 10)) % 10 == 身分證字號的最後一碼   
             if ((10 - (seed.Sum() % 10)) % 10 != Convert.ToInt32(id.Substring(9, 1)))
             {
-                return "FAIL";
+                return false;
             }
-            return "PASS";
+            return true;
         }
+
+        public static bool CheckForeignerID(string id) // 檢核是否為中華民國外僑及大陸人士在台居留證證號(舊式+新式)
+        {
+            id = id.ToUpper();
+            Regex regex = new Regex(@"^([A-Z])(A|B|C|D|8|9)(\d{8})$");
+            Match match = regex.Match(id);
+
+
+            if ("ABCD".IndexOf(match.Groups[2].Value) >= 0)
+            {
+                //舊式統號檢查
+                return CheckOldResidentID(match.Groups[1].Value, match.Groups[2].Value, match.Groups[3].Value);
+            }
+            else
+            {
+                //新式統號檢查 (2021/01/02 正式生效)
+                return CheckNewResidentID(match.Groups[1].Value, match.Groups[2].Value + match.Groups[3].Value);
+            }
+
+            /// <summary>
+            /// 舊式統號檢核
+            /// </summary>
+            /// <param name="firstLetter">第1碼英文字母(區域碼)</param>
+            /// <param name="secondLetter">第2碼英文字母(性別碼)</param>
+            /// <param name="num">第3~9流水號 + 第10碼檢查碼</param>
+            /// <returns></returns>
+            bool CheckOldResidentID(string firstLetter, string secondLetter, string num)
+            {
+                ///建立字母對應表(A~Z)
+                ///A=10 B=11 C=12 D=13 E=14 F=15 G=16 H=17 J=18 K=19 L=20 M=21 N=22
+                ///P=23 Q=24 R=25 S=26 T=27 U=28 V=29 X=30 Y=31 W=32  Z=33 I=34 O=35 
+                string alphabet = "ABCDEFGHJKLMNPQRSTUVXYWZIO";
+                string transferIdNo =
+                    $"{alphabet.IndexOf(firstLetter) + 10}" +
+                    $"{(alphabet.IndexOf(secondLetter) + 10) % 10}" +
+                    $"{num}";
+                int[] idNoArray = transferIdNo.ToCharArray()
+                                              .Select(c => Convert.ToInt32(c.ToString()))
+                                              .ToArray();
+
+                int sum = idNoArray[0];
+                int[] weight = new int[] { 9, 8, 7, 6, 5, 4, 3, 2, 1, 1 };
+                for (int i = 0; i < weight.Length; i++)
+                {
+                    sum += weight[i] * idNoArray[i + 1];
+                }
+                return (sum % 10 == 0);
+            }
+
+            /// <summary>
+            /// 新式統號檢核
+            /// </summary>
+            /// <param name="firstLetter">第1碼英文字母(區域碼)</param>
+            /// <param name="num">第2碼(性別碼) + 第3~9流水號 + 第10碼檢查碼</param>
+            /// <returns></returns>
+            bool CheckNewResidentID(string firstLetter, string num)
+            {
+                ///建立字母對應表(A~Z)
+                ///A=10 B=11 C=12 D=13 E=14 F=15 G=16 H=17 J=18 K=19 L=20 M=21 N=22
+                ///P=23 Q=24 R=25 S=26 T=27 U=28 V=29 X=30 Y=31 W=32  Z=33 I=34 O=35 
+                string alphabet = "ABCDEFGHJKLMNPQRSTUVXYWZIO";
+                string transferIdNo = $"{(alphabet.IndexOf(firstLetter) + 10)}" +
+                                      $"{num}";
+                int[] idNoArray = transferIdNo.ToCharArray()
+                                              .Select(c => Convert.ToInt32(c.ToString()))
+                                              .ToArray();
+
+                int sum = idNoArray[0];
+                int[] weight = new int[] { 9, 8, 7, 6, 5, 4, 3, 2, 1, 1 };
+                for (int i = 0; i < weight.Length; i++)
+                {
+                    sum += (weight[i] * idNoArray[i + 1]) % 10;
+                }
+                return (sum % 10 == 0);
+            }
+
+
+        } 
 
         public static string CreateRandomString(int length) // 產生指定長度 " 頭(1位大or小寫英文) + 大or小寫英文&數字 " 隨機組合字串
         {
@@ -155,8 +236,8 @@ namespace References
             string code = "";
             switch (r.Next(0, 2))
             {
-                case 0: code += (char)r.Next(65, 91); break;
-                case 1: code += (char)r.Next(97, 123); break;
+                case 0: code += (char)r.Next(65, 91); break; 
+                case 1: code += (char)r.Next(97, 123); break; //char代碼表:  https://www.cnblogs.com/tian_z/archive/2010/08/06/1793736.html
             }
 
             for (int i = 0; i < length; ++i)

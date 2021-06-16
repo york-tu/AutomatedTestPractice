@@ -49,6 +49,21 @@ namespace LaborReliefLoanAppointmentServiceTest
                         IWebElement SubmitButton = driver.FindElement(By.XPath(LaborReliefLoan_XPath.submit_button_XPath()));
                         SubmitButton.Click(); // 點"確認"button
 
+
+
+
+                        ///<summary>
+                        /// 檢查網頁上hyperlink是否正確
+                        ///</summary>
+                        string LaborReliefOnlineApplication_hyperlink = driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[2]/a")).GetAttribute("href");
+                        Assert.Equal("https://www.esunbank.com.tw/s/PersonalLoanApply/Landing/IDConfirm?MKP=eyJNS0RQVCI6bnVsbCwiTUtFSUQiOm51bGwsIk1LUFJOIjoiUDAwMDAwMjEiLCJNS1BKTiI6IkowMDAwMDM0IiwiTUtQSUQiOm51bGx9", LaborReliefOnlineApplication_hyperlink);
+                        
+                        string PersonalInformation_hyperlink = driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[8]/td[2]/a")).GetAttribute("href");
+                        Assert.Equal("https://www.esunbank.com.tw/bank/about/announcement/privacy/privacy-statement", PersonalInformation_hyperlink);
+
+
+
+
                         ///<summary>
                         /// 姓名欄位 (目前無檢核)
                         ///</summary>
@@ -70,14 +85,15 @@ namespace LaborReliefLoanAppointmentServiceTest
                         if (random_number % 2 == 0)
                             sex = true; // for 身分證字號tools 使用(男/女)
 
-                        string[] IDNumbers = new string[] { "", "!@#%^", "許功蓋", "ABCDEF", "0897654321", "A987654321", "ａ１２３４５６７８９", "ａ123456789", "a12345678９", "a123456788", "A123456788", $"{Tools.CreateRandomString(10)}", $"{Tools.CreateIDNumber(sex, random_number)}" };
+                        string[] IDNumbers = new string[] { "", "!@#%^", "許功蓋", "ABCDEF", "0897654321", "A987654321", "ａ１２３４５６７８９", "ａ123456789", "a12345678９", "A800000014", "AD12544441", "a123456788", "A123456788", "A970000026", "AD30341957", "A941062183", $"{Tools.CreateRandomString(10)}", $"{Tools.CreateIDNumber(sex, random_number)}" };
                         // 倒數第二組為隨機長度10大小寫英文+數字組合
                         // 最後一組透過身分證字號產生器產生符合規格字號
 
                         foreach (var input in IDNumbers)
                         {
                             IdentityCardColumn.Clear();
-                            bool IDNumberCheck = Regex.IsMatch(input, @"^[A-Za-z]{1}[0-9]{9}$"); // 使用正則表示式: 檢驗格式 [A~Z] {1}個數字 +  [0~9] {9}個數字
+                            bool ResidentIDNumberCheck = Regex.IsMatch(input, @"^[A-Za-z]{1}[0-9]{9}$"); // 使用正則表示式: 檢驗格式 [A~Z] {1}個數字 +  [0~9] {9}個數字
+                            bool ForeignerIDNumberCheck = Regex.IsMatch(input, @"^[A-Z]{1}[A-D8-9]{1}[0-9]{8}$");
 
                             IdentityCardColumn.SendKeys(input);
                             string id_error = driver.FindElement(By.Id("citizenId-error")).Text;
@@ -85,18 +101,24 @@ namespace LaborReliefLoanAppointmentServiceTest
                             {
                                 Assert.Equal("必須填寫", id_error);
                             }
-                            else if (IDNumberCheck != true)
+                            else if (ResidentIDNumberCheck != true && ForeignerIDNumberCheck != true)
                             {
                                 Assert.Equal("請輸入有效的身分證字號", id_error);
                             }
-                            else if (IDNumberCheck == true && Tools.IDNumberCheck(input) == "FAIL")
+                            else if (ResidentIDNumberCheck == true && Tools.CheckResidentID(input) != true)
                             {
                                 Assert.Equal("請輸入有效的身分證字號", id_error);
+                            }
+                            else if (ForeignerIDNumberCheck == true && Tools.CheckForeignerID(input) != true)
+                            {
+                                Assert.Equal("請輸入有效的身分證字號", id_error);
+                            }
+                            else if (ForeignerIDNumberCheck == true && Tools.CheckForeignerID(input) == true)
+                            {
+                                Assert.Equal("本服務目前僅限本國人申請", id_error);
                             }
                             else
-                            {
                                 Assert.Equal("", id_error);
-                            }
                         }
 
 
@@ -203,11 +225,15 @@ namespace LaborReliefLoanAppointmentServiceTest
                         IWebElement SelectBranch = driver.FindElement(By.XPath(Branch_Xpath));
                         SelectBranch.Click(); //點選一個"分行"
 
-                        for (int m = 2; m <= 11; m++)
+                        IWebElement Date_DropDownList = driver.FindElement(By.XPath(LaborReliefLoan_XPath.date_dropdownlist_XPath()));
+                        int date_amount = driver.FindElements(By.XPath("//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[1]/li/ul/li")).Count; // 獲取蒞行日期下拉選單選項數量
+                        int time_amount = driver.FindElements(By.XPath("//*[@id='mainform'']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[2]/li/ul/li")).Count; // 獲取蒞行時間下拉選單選項數量
+
+                        for (int m = 2; m <= date_amount; m++)
                         {
-                            for (int n = 2; n <= 6; n++)
+                            for (int n = 2; n <= time_amount; n++)
                             {
-                                IWebElement Date_DropDownList = driver.FindElement(By.XPath(LaborReliefLoan_XPath.date_dropdownlist_XPath()));
+                                
                                 Date_DropDownList.Click(); //展開"蒞行日期"下拉選單
                                 IWebElement SelectDate = driver.FindElement(By.XPath($"//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[1]/li/ul/li[{m}]/span"));
                                 SelectDate.Click(); // 點選一個"日期"
