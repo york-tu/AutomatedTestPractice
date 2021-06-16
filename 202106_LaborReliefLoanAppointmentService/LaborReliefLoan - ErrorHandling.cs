@@ -111,6 +111,8 @@ namespace LaborReliefLoanAppointmentServiceTest
                         // 最後一組: 透過行動電話號碼產生器產生符合規格號碼
                         foreach (var input in phones)
                         {
+                            int string_length = System.Text.Encoding.Default.GetBytes(input).Length; //  擷取字串長度bytes (UTF-8標準, 半形英數字 = 1 byte, 中文&全形英數字 = 3 bytes)
+
                             CellPhoneColumn.Clear();
                             bool CellPhoneNumberCheck = Regex.IsMatch(input, @"^09\d{8}$"); // 正則表示式: 09開頭後面8碼數字
                             CellPhoneColumn.SendKeys(input);
@@ -120,6 +122,10 @@ namespace LaborReliefLoanAppointmentServiceTest
                                 Assert.Equal("必須填寫", cellphone_error);
                             }
                             else if (CellPhoneNumberCheck != true)
+                            {
+                                Assert.Equal("行動電話格式錯誤", cellphone_error);
+                            }
+                            else if (CellPhoneNumberCheck == true && string_length != 10) // 10位全半形數字 = 10 bytes長度
                             {
                                 Assert.Equal("行動電話格式錯誤", cellphone_error);
                             }
