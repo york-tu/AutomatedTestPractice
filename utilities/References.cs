@@ -265,6 +265,21 @@ namespace References
             return number;
         }
 
+        public static string BaiduOCR (string imagepath)
+        {
+            var API_KEY = "cohIahxAt7HveHLYSHYK6G5N"; // "FGPi0QpCbZxZxBaN6dvqt87X";
+            var SECRET_KEY = "e8SAsDIWSK9NPUKviYiPQNlfaVDXQSY5"; // "HunNq6XsLjF3a7aCAuirVaVQO7CKBuwW";
+
+            var client = new Baidu.Aip.Ocr.Ocr(API_KEY, SECRET_KEY);
+            client.Timeout = 60000;  // 修改超時時間
+            var image = File.ReadAllBytes(imagepath);
+
+            string JsonString = client.Accurate(image).ToString();          //本地圖片：相對於通用文字識別該產品精度更高，但是識別耗時會稍長。
+            string cut = JsonString.Substring(45, 10); // 擷取jason 文字串中 解析出的圖片文字 這段
+            string CutResult = Regex.Replace(cut, "[^0-9A-Za-z]", ""); //去除掉符號空白...只留下字母&数字
+            return CutResult;
+        }
+
     }
 
     public class LaborReliefLoan_XPath
