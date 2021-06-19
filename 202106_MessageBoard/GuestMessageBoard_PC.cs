@@ -22,7 +22,7 @@ namespace GuestMessageBoardTest
 
         [Theory]
         [InlineData(BrowserType.Chrome)]
-        [InlineData(BrowserType.Firefox)]
+        //[InlineData(BrowserType.Firefox)]
 
 
         public void TestCase(BrowserType browserType)

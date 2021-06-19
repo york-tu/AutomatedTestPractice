@@ -6,10 +6,14 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using IronOcr;
 
 namespace References
 {
-    public class Tools
+    /// <summary>
+    ///  工具區
+    /// </summary>
+    public class Tools 
     {
         public static void Find_Element(IWebDriver driver, IWebElement element) // 畫面定位 (selenium)
         {
@@ -265,7 +269,7 @@ namespace References
             return number;
         }
 
-        public static string BaiduOCR (string imagepath)
+        public static string BaiduOCR (string imagepath) //  百度_圖片辨識
         {
             var API_KEY = "cohIahxAt7HveHLYSHYK6G5N"; // "FGPi0QpCbZxZxBaN6dvqt87X";
             var SECRET_KEY = "e8SAsDIWSK9NPUKviYiPQNlfaVDXQSY5"; // "HunNq6XsLjF3a7aCAuirVaVQO7CKBuwW";
@@ -274,14 +278,42 @@ namespace References
             client.Timeout = 60000;  // 修改超時時間
             var image = File.ReadAllBytes(imagepath);
 
+            // 呼叫通用文字識別, 圖片引數為本地圖片，可能會丟擲網路等異常，請使用try/catch捕獲
+            //使用者向服務請求識別某張圖中的所有文字
+            //var result = client.GeneralBasic(image);        //本地圖圖片
+            //var result = client.GeneralBasicUrl(url);     //網路圖片
+
+            //var result = client.General(image);           //本地圖片：通用文字識別（含位置資訊版）
+            //var result = client.GeneralUrl(url);          //網路圖片：通用文字識別（含位置資訊版）
+
+            //var result = client.GeneralEnhanced(image);   //本地圖片：呼叫通用文字識別（含生僻字版）
+            //var result = client.GeneralEnhancedUrl(url);  //網路圖片：呼叫通用文字識別（含生僻字版）
+
+            //var result = client.WebImage(image);          //本地圖片:使用者向服務請求識別一些背景複雜，特殊字型的文字。
+            //var result = client.WebImageUrl(url);         //網路圖片:使用者向服務請求識別一些背景複雜，特殊字型的文字。
+
             string JsonString = client.Accurate(image).ToString();          //本地圖片：相對於通用文字識別該產品精度更高，但是識別耗時會稍長。
             string cut = JsonString.Substring(45, 10); // 擷取jason 文字串中 解析出的圖片文字 這段
             string CutResult = Regex.Replace(cut, "[^0-9A-Za-z]", ""); //去除掉符號空白...只留下字母&数字
             return CutResult;
         }
 
+        public static string IronOCR (string imagepath) // Iron_圖片辨識
+        {
+            var Ocr = new IronTesseract();
+            using (var Input = new OcrInput(imagepath))
+            {
+                 Input.Deskew();  // use if image not straight
+                Input.DeNoise(); // use if image contains digital noise
+                var Result = Ocr.Read(Input);
+                return Result.Text;
+            }
+        }
     }
 
+    /// <summary>
+    ///  定義欄位的XPath
+    /// </summary>
     public class LaborReliefLoan_XPath
     {
         public static string name_column_Xpath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[1]/td[2]/input"; }
