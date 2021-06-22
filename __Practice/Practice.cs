@@ -15,7 +15,7 @@ using PictureRecognize;
 
 namespace Practice
 {
-    public class 練習_自動輸入圖片驗證碼_玉山e指信貸: Tesseract_OCR
+    public class 練習_自動輸入圖片驗證碼_玉山e指信貸:Tesseract_OCR
     {
         private readonly string test_url = "https://www.esunbank.com.tw/s/PersonalLoanApply/Landing/IDConfirmDiversion?DG_landing";
 
@@ -30,9 +30,9 @@ namespace Practice
             {
                 driver.Navigate().GoToUrl(test_url);
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000); //100秒內載完網頁內容, 否則報錯, 載完提早進下一步.
-                //driver.Manage().Window.Maximize();
+                                                                                      //driver.Manage().Window.Maximize();
 
-                
+
                 IWebElement IdentityCardColumn = driver.FindElement(By.XPath("//*[@id='ApplicantID']")); // 身分證字號輸入欄位
                 IWebElement BirthdayColumn = driver.FindElement(By.XPath("//*[@id='ApplicantBirthDate']")); // 出生年月日欄位
                 IWebElement ImageVerificationCodeColumn = driver.FindElement(By.XPath("//*[@id='Captcha']")); // 驗證碼輸入欄位
@@ -56,52 +56,55 @@ namespace Practice
                 ///<summary>
                 /// 驗證碼欄位
                 ///</summary>
-                
+
                 IWebElement CaptchaPicture = driver.FindElement(By.XPath("//*[@id='esunOTPCaptchaHint']")); // 驗證碼圖片
-                IWebElement NextButton = driver.FindElement(By.XPath("//*[@id='btnSubmitFormEsunOTP']"));
-                IWebElement RetryButton = driver.FindElement(By.XPath("//*[@id='browserIE']/div/ul/li[3]/div/div[1]/div"));
+                IWebElement NextButton = driver.FindElement(By.XPath("//*[@id='btnSubmitFormEsunOTP']")); // 下一步按鈕
+                IWebElement RetryButton = driver.FindElement(By.XPath("//*[@id='browserIE']/div/ul/li[3]/div/div[1]/div")); // Refresh 驗證碼圖片按鈕
 
                 string snapshotpath = System.AppDomain.CurrentDomain.BaseDirectory + "SnapshotFolder\\Practice";
-                Tools.CreateSnapshotFolder(snapshotpath); 
+                Tools.CreateSnapshotFolder(snapshotpath);
                 System.Threading.Thread.Sleep(100);
 
             retryagain:
+                System.Threading.Thread.Sleep(1000);
                 string time = System.DateTime.Now.ToString("MMddhhmmssffff");
                 string fullnamepath = $@"{snapshotpath}\ImageVerifyCode_{time}.png";
 
+                string current_URL = driver.Url; //抓當下網頁URL
+
+                if (current_URL != test_url) // 當下網頁不是初始網頁 >>> 代表驗證碼過, 已經PASS到下一頁
+                {
+                    System.Threading.Thread.Sleep(5000);
+                    goto gotoNextStep; // 直接跳到程式結尾
+                }
+
                 Tools.ElementTakeScreenShot(CaptchaPicture, fullnamepath); // snapshot"圖片驗證碼"
 
-                string verify_code_result = TesseractOCRIdentify(fullnamepath); //解析出驗證碼 (Tesseract)
+                string verify_code_result = TesseractOCRIdentify(fullnamepath); //解析出驗證碼 (方法: Tesseract)
                 // string verify_code_result = Tools.IronOCR($@"{snapshotpath}\ImageVerifyCode.png"); //解析出驗證碼 (Iron)
-                //string verify_code_result = Tools.BaiduOCR($@"{snapshotpath}\ImageVerifyCode.png"); //解析出驗證碼 (百度)
-
+                // string verify_code_result = Tools.BaiduOCR($@"{snapshotpath}\ImageVerifyCode.png"); //解析出驗證碼 (百度)
+                
+                ImageVerificationCodeColumn.Clear();
                 ImageVerificationCodeColumn.SendKeys(verify_code_result); // 輸入驗證碼
-                string image_verification_error = driver.FindElement(By.XPath("//*[@id='browserIE']/div/ul/li[3]/div/div[2]")).Text; // 驗證碼錯誤訊息欄位
+                System.Threading.Thread.Sleep(100);
 
-                if (driver.FindElement(By.XPath("//*[@id='browserIE']/div/ul/li[3]/div/div[2]")).Text == "")
-                {
-                    NextButton.Click();
-
-                    if (driver.FindElement(By.XPath("//*[@id='browserIE']/div/ul/li[3]/div/div[2]")).Text == "")
-                    {
-                        goto gotoNextStep;
-                    }
-                    else
-                    {
-                        RetryButton.Click();
-                        goto retryagain;
-                    }
-                }
-                else
+                string NextButtonStatus = NextButton.GetAttribute("disabled"); // 獲取"下一步"button的狀態 "disabled" or not
+                if (NextButtonStatus == "true")
                 {
                     RetryButton.Click();
                     goto retryagain;
-
                 }
-               gotoNextStep:
-                System.Threading.Thread.Sleep(100000);
+                else
+                {
+                    NextButton.Click();
+                    goto retryagain;
+                }
+
+            gotoNextStep:
+                System.Threading.Thread.Sleep(5000);
             }
-             driver.Quit();
+
+            driver.Quit();
         }
     }
 }
