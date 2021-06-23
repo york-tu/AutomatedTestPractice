@@ -22,10 +22,11 @@ namespace Practice
         [Theory]
         [InlineData(BrowserType.Chrome)]
 
-
-
         public void TestCase(BrowserType browserType)
         {
+            Tools.KillProcess("chromedriver.exe");
+            Tools.KillProcess("conhostexe");
+
             using IWebDriver driver = WebDriverInfra.Create_Browser(browserType);
             {
                 driver.Navigate().GoToUrl(test_url);

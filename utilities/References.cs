@@ -309,6 +309,18 @@ namespace References
                 return Result.Text;
             }
         }
+
+        public static void KillProcess(string processname) // Kill Process (e.g., chromedriver.exe. geckodriver.exe)
+        {
+            System.Diagnostics.ProcessStartInfo p;
+            p = new System.Diagnostics.ProcessStartInfo("cmd.exe", "/C " + "taskkill /f /im " + processname);
+            System.Diagnostics.Process proc = new System.Diagnostics.Process();
+            proc.StartInfo = p;
+            proc.Start();
+            proc.WaitForExit();
+            proc.Close();
+        }
+
     }
 
     /// <summary>
