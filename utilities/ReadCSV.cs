@@ -1,6 +1,7 @@
-﻿using CsvHelper.Configuration;
+﻿using System.IO;
+using CsvHelper.Configuration;
 
-namespace CSVHeader
+namespace Utilities
 {
     public class UserDataList
     {
@@ -20,7 +21,7 @@ namespace CSVHeader
         public string PASSWORD { get; set; }
         public string CARDID_FULL { get; set; }
 
-        public static string csvpath = @"C:\Users\axn01\source\repos\XUnitAutoTest\testdata\UserInfo.csv";
+        public static string folderpath = Path.GetFullPath(Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\"));
     }
     public class UserDataMap : ClassMap<UserDataList> //当字段名为中文时，那么可以定义一个映射匹配类，CSVHelper是自动根据你的类来自动映射匹配的
     {

@@ -2,13 +2,10 @@ using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium.Interactions;
 using Xunit;
-using References;
+using Utilities;
 using System.IO;
 using System.Linq;
-using CSVHeader;
 using CsvHelper;
 using System.Globalization;
 
@@ -54,7 +51,8 @@ namespace GuestMessageBoardTest
                         string BranchName_DropDownList = "//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[5]/td[2]/div/ul[2]/li/span"; // 分行下拉選單XPath
                         string Cuntry_Xpath = "//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[5]/td[2]/div/ul[1]/li/ul/li[" + i + "]/span";
                         string BranchName_Xpath = "//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[5]/td[2]/div/ul[2]/li/ul/li[" + j + "]/span";
-                        string timepath = System.DateTime.Now.ToString("yyyyMMddhhmmss");
+
+                        string time = System.DateTime.Now.ToString("yyyyMMddHHmmss");
 
                         // 所有欄位定位
                         IWebElement FullNameColumn = driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[1]/td[2]/input"));
@@ -67,11 +65,10 @@ namespace GuestMessageBoardTest
                         IWebElement IHaveReadRadioButtin = driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[4]/div[4]/table/tbody/tr[2]/td[2]/div[1]/a"));
                         IWebElement SubmitButton = driver.FindElement(By.XPath("//*[@id='submit']"));
 
-
-                        using (var reader = new StreamReader(@"C:\Users\axn01\source\repos\XUnitAutoTest\testdata\UserInfo.csv"))
+                        string csvpath = $@"{UserDataList.folderpath}\testdata\UserInfo.csv";
+                        using (var reader = new StreamReader(csvpath))
                         using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                         {
-
                             var records = csv.GetRecords<UserDataList>().ToList();
                             int k = 1;
                             foreach (var user in records)
@@ -112,11 +109,12 @@ namespace GuestMessageBoardTest
                             driver.FindElement(By.XPath(BranchName_Xpath)).Click(); // 點選一個 "分行"
                             System.Threading.Thread.Sleep(300);
 
-                            string snapshotpath = System.AppDomain.CurrentDomain.BaseDirectory + "SnapshotFolder\\GuestMessageBoard";
+                            string snapshotpath = $@"{UserDataList.folderpath}\SnapshotFolder\GuestMessageBoard";
                             Tools.CreateSnapshotFolder(snapshotpath);
                             System.Threading.Thread.Sleep(100);
 
-                            Tools.ElementTakeScreenShot(driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[5]")), $@"{snapshotpath}\第 {n} 個縣市第 {j} 個分行_欄位 snapshot_{timepath}.png"); //元素截圖
+                            Tools.ElementTakeScreenShot(driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[5]")),
+                                $@"{snapshotpath}\第 {n} 個縣市第 {j} 個分行_欄位 snapshot_{time}.png"); //元素截圖
 
               
                             System.Threading.Thread.Sleep(100);
@@ -139,7 +137,7 @@ namespace GuestMessageBoardTest
                                 ); // 填 "留言內容"
 
                             Tools.SCrollToElement(driver, TelephoneColumn);
-                            Tools.TakeScreenShot($@"d:\第 {n} 個縣市第 {j} 個分行 snapshot_{browserType}_ {timepath}.png", driver); // snapshot當下畫面
+                            Tools.TakeScreenShot($@"d:\第 {n} 個縣市第 {j} 個分行 snapshot_{browserType}_ {time}.png", driver); // snapshot當下畫面
                             System.Threading.Thread.Sleep(500);
 
 

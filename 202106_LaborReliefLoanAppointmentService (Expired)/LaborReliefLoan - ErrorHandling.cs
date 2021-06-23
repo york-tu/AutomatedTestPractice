@@ -1,11 +1,12 @@
 using System;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
 using Xunit;
-using References;
+using Utilities;
 using System.IO;
 using System.Linq;
 using System.Globalization;
@@ -28,10 +29,10 @@ namespace LaborReliefLoanAppointmentServiceTest
         {
             using IWebDriver driver = WebDriverInfra.Create_Browser(browserType);
             {
+                string browsername = ((RemoteWebDriver)driver).Capabilities.GetCapability("browserName").ToString();
                 driver.Navigate().GoToUrl(test_url);
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000); //100秒內載完網頁內容, 否則報錯, 載完提早進下一步.
                 driver.Manage().Window.Maximize();
-
 
                 for (int i = 2; i <= 21; i++) // initial i =2
                 {
@@ -250,7 +251,8 @@ namespace LaborReliefLoanAppointmentServiceTest
                                 string ErrorMessage = driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/div[1]")).Text;
                                 if (ErrorMessage == "") // 當欄位message為空, 即"該分行此時段名額已滿，請選擇其他時段。"
                                 {
-                                    string snapshotpath = System.AppDomain.CurrentDomain.BaseDirectory + "SnapshotFolder\\LaborReliefLoan";
+
+                                    string snapshotpath = $@"{UserDataList.folderpath}\SnapshotFolder\LaborReliefLoan";
                                     Tools.CreateSnapshotFolder(snapshotpath);
                                     System.Threading.Thread.Sleep(100);
                                     Tools.TakeScreenShot($@"{snapshotpath}\第{i - 1}縣市第{j}分行_第{m-1}日第{n-1}時段.png", driver); //實作截圖

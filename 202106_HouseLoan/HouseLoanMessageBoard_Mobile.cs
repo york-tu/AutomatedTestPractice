@@ -6,10 +6,9 @@ using Xunit;
 using System;
 using System.IO;
 using System.Linq;
-using References;
+using Utilities;
 using IronXL;
 using System.Text.RegularExpressions;
-using CSVHeader;
 using CsvHelper;
 using System.Globalization;
 
@@ -52,7 +51,8 @@ namespace HouseLoanMessageBoardTest
                     buy_house.Click(); //¿ï"ÁÊ¶R©Ð«Î"
                     System.Threading.Thread.Sleep(300);
 
-                    using (var reader = new StreamReader(UserDataList.csvpath)) //ÅªCSVÀÉ
+                    string csvpath = $@"{UserDataList.folderpath}\testdata\UserInfo.csv";
+                    using (var reader = new StreamReader(csvpath)) //ÅªCSVÀÉ
                     using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                     {
                         var records = csv.GetRecords<UserDataList>().ToList();

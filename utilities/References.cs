@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using IronOcr;
 
-namespace References
+namespace Utilities
 {
     /// <summary>
     ///  工具區

@@ -2,18 +2,15 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium.Interactions;
 using Xunit;
-using References;
 using System;
 using System.IO;
 using System.Globalization;
 using System.Linq;
 using IronXL;
 using System.Drawing;
-using System.Windows.Forms;
 using CsvHelper;
-using CSVHeader;
+using Utilities;
 
 
 namespace AirlineMilesRedemptionTest
@@ -72,7 +69,8 @@ namespace AirlineMilesRedemptionTest
                 creditcard_friend_login.Click();// 點"信用卡友登入"
                 System.Threading.Thread.Sleep(100);
 
-                using (var reader = new StreamReader(UserDataList.csvpath)) //讀CSV檔
+                string csvpath = $@"{UserDataList.folderpath}\testdata\UserInfo.csv";
+                using (var reader = new StreamReader(csvpath)) //讀CSV檔
                 using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                 {
                     var records = csv.GetRecords<UserDataList>().ToList();

@@ -2,15 +2,8 @@ using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium.Interactions;
 using Xunit;
-using References;
-using System.IO;
-using System.Linq;
-using System.Globalization;
-using System.Text.RegularExpressions;
-using PictureRecognize;
+using Utilities;
 
 
 namespace Practice
@@ -31,7 +24,7 @@ namespace Practice
             {
                 driver.Navigate().GoToUrl(test_url);
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000); //100秒內載完網頁內容, 否則報錯, 載完提早進下一步.
-                                                                                      //driver.Manage().Window.Maximize();
+                 //driver.Manage().Window.Maximize();
 
 
                 IWebElement IdentityCardColumn = driver.FindElement(By.XPath("//*[@id='ApplicantID']")); // 身分證字號輸入欄位
@@ -62,14 +55,14 @@ namespace Practice
                 IWebElement NextButton = driver.FindElement(By.XPath("//*[@id='btnSubmitFormEsunOTP']")); // 下一步按鈕
                 IWebElement RetryButton = driver.FindElement(By.XPath("//*[@id='browserIE']/div/ul/li[3]/div/div[1]/div")); // Refresh 驗證碼圖片按鈕
 
-                string snapshotpath = System.AppDomain.CurrentDomain.BaseDirectory + "SnapshotFolder\\Practice";
-                Tools.CreateSnapshotFolder(snapshotpath);
+                string snapshotfolderpath = $@"{UserDataList.folderpath}\SnapshotFolder\Practice";
+                Tools.CreateSnapshotFolder(snapshotfolderpath);
                 System.Threading.Thread.Sleep(100);
 
             retryagain:
                 System.Threading.Thread.Sleep(1000);
                 string time = System.DateTime.Now.ToString("MMddhhmmssffff");
-                string fullnamepath = $@"{snapshotpath}\ImageVerifyCode_{time}.png";
+                string fullnamepath = $@"{snapshotfolderpath}\ImageVerifyCode_{time}.png";
 
                 string current_URL = driver.Url; //抓當下網頁URL
 

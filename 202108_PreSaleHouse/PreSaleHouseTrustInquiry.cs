@@ -1,13 +1,12 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Support.UI;
 using Xunit;
 using System;
 using System.IO;
 using IronXL;
 using System.Text.RegularExpressions;
-using References;
+using Utilities;
 
 namespace PreSaleHouseTrustInquiryTest
 {
@@ -28,11 +27,11 @@ namespace PreSaleHouseTrustInquiryTest
 
             using IWebDriver driver = WebDriverInfra.Create_Browser(browserType);
             {
-                string timesavepath = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm");
-                string snapshotpath = System.AppDomain.CurrentDomain.BaseDirectory + "SnapshotFolder\\PreSaleHouseTrustInquiry";
-                string excel_path = snapshotpath + "\\TestReport.xlsx";
+                string tim = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm");
+                string snapshotfolderpath = $@"{UserDataList.folderpath}\SnapshotFolder\PreSaleHouseTrustInquiry";
+                string excel_path = $@"{snapshotfolderpath}\TestReport.xlsx";
 
-                Tools.CreateSnapshotFolder(snapshotpath);
+                Tools.CreateSnapshotFolder(snapshotfolderpath);
                 System.Threading.Thread.Sleep(100);
 
 

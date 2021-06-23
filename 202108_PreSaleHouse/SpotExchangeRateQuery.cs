@@ -1,15 +1,11 @@
 using OpenQA.Selenium;
+using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Support.UI;
 using Xunit;
 using System;
-using System.IO;
-using IronXL;
-using System.Text.RegularExpressions;
-using References;
+using Utilities;
 using System.Drawing;
-using OpenQA.Selenium.Remote;
 
 namespace SpotExchangeRateQueryTest
 {
@@ -33,8 +29,9 @@ namespace SpotExchangeRateQueryTest
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000); //100秒內載完網頁內容, 否則報錯, 載完提早進下一步.
                 driver.Manage().Window.Position = new Point(400, 0); //設定網頁開啟在畫面什麼位置
                 driver.Manage().Window.Size = new Size(640,800); // 設定開啟的網頁大小
-                string browserdriver = driver.GetType().Name.ToString(); // 偵測瀏覽器type
-                string browsername = browserdriver.Remove(browserdriver.Length-6, 6); //只取browserdriver瀏覽器版本字串, 移掉字尾"Driver"字串
+
+                string browsername = ((RemoteWebDriver)driver).Capabilities.GetCapability("browserName").ToString(); // 偵測瀏覽器版本
+                //  string browsername = ((RemoteWebDriver)driver).Capabilities.GetCapability("browserVersion").ToString(); // 偵測瀏覽器版號
 
                 int[] currencylist = new int[] { 1, 4, 7, 10, 13, 16, 19, 22, 25, 27, 29, 31, 33, 35, 37 }; // 定義有"V"的幣別XPath編號
                 string[] currencynamelist = new string[] { "USD", "CNY", "HKD", "JPY", "EUR", "AUD", "CAD", "GBP", "ZAR", "NZD", "CHF", "SEK", "SGD", "MXN", "THB" }; // 幣別字串 for 截圖檔名用
@@ -54,6 +51,8 @@ namespace SpotExchangeRateQueryTest
 
                     IWebElement bottom_button = driver.FindElement(By.ClassName("fixed_block"));
 
+                    string snapshotfolderpath = $@"{UserDataList.folderpath}\SnapshotFolder\SpotExchangeRateQueryTest";
+                    Tools.CreateSnapshotFolder(snapshotfolderpath);
 
                     /// <summary>
                     /// 檢查當 "進入網頁後" 是否立即看的到置底網銀外幣交易按鈕
@@ -75,18 +74,18 @@ namespace SpotExchangeRateQueryTest
                         V_button.Click(); // 點擊 "V" >>>展開"優惠匯率"選單
                         System.Threading.Thread.Sleep(500);
 
-                        //if (browsername == "Firefox") //全螢幕截圖
-                        //{
-                        //    string timesavepath = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
-                        //    Tools.SnapshotFullScreen($@"D:\Snapshot_Folder\SpotExchangeRateQueryTest_BuyAndSellForeignButtonCheck\{currencynamelist[k]} 展開 fullsnapshot {browserType}_{timesavepath}.png");
-                        //    System.Threading.Thread.Sleep(100);
-                        //}
-                        //else // 網頁截圖
-                        //{
-                        //    string timesavepath = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
-                        //    Tools.TakeScreenShot($@"D:\Snapshot_Folder\SpotExchangeRateQueryTest_BuyAndSellForeignButtonCheck\{currencynamelist[k]} 展開 snapshot {browserType}_{timesavepath}.png", driver); 
-                        //    System.Threading.Thread.Sleep(100);
-                        //}
+                        if (browsername == "Firefox") //全螢幕截圖
+                        {
+                            string time = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
+                            Tools.SnapshotFullScreen($@"{snapshotfolderpath}\{currencynamelist[k]} 展開 fullsnapshot {browserType}_{time}.png");
+                            System.Threading.Thread.Sleep(100);
+                        }
+                        else // 網頁截圖
+                        {
+                            string time = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
+                            Tools.TakeScreenShot($@"{snapshotfolderpath}\{currencynamelist[k]} 展開 fullsnapshot {browserType}_{time}.png", driver);
+                            System.Threading.Thread.Sleep(100);
+                        }
 
                         /// <summary>
                         /// 檢查當 "點開V選單後" 是否看的到置底網銀外幣交易按鈕
@@ -102,18 +101,18 @@ namespace SpotExchangeRateQueryTest
                         V_button.Click(); // 點擊 "V" >>>收合"優惠匯率"選單
                         System.Threading.Thread.Sleep(500);
 
-                        //if (browsername == "FirefoxDriver") //全螢幕截圖
-                        //{
-                        //    string timesavepath = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
-                        //    Tools.SnapshotFullScreen($@"D:\Snapshot_Folder\SpotExchangeRateQueryTest_BuyAndSellForeignButtonCheck\{currencynamelist[k]} 收合 fullsnapshot {browserType}_{timesavepath}.png");
-                        //    System.Threading.Thread.Sleep(100); 
-                        //}
-                        //else // 網頁截圖
-                        //{
-                        //    string timesavepath = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
-                        //    Tools.TakeScreenShot($@"D:\Snapshot_Folder\SpotExchangeRateQueryTest_BuyAndSellForeignButtonCheck\{currencynamelist[k]} 收合snapshot {browserType}_{timesavepath}.png", driver);
-                        //    System.Threading.Thread.Sleep(100);
-                        //}
+                        if (browsername == "Firefox") //全螢幕截圖
+                        {
+                            string time = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
+                            Tools.SnapshotFullScreen($@"{snapshotfolderpath}\{currencynamelist[k]} 收合 fullsnapshot {browserType}_{time}.png");
+                            System.Threading.Thread.Sleep(100);
+                        }
+                        else // 網頁截圖
+                        {
+                            string time = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
+                            Tools.TakeScreenShot($@"{snapshotfolderpath}\{currencynamelist[k]} 收合snapshot {browserType}_{time}.png", driver);
+                            System.Threading.Thread.Sleep(100);
+                        }
 
                         /// <summary>
                         /// 檢查當 "收合V選單後" 是否看的到置底網銀外幣交易按鈕

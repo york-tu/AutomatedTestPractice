@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace PictureRecognize
+namespace Utilities
 {
     public class Tesseract_OCR // Tesseract 圖片辨識
     {
