@@ -105,8 +105,11 @@ namespace HouseLoanMessageBoardTest
                     IWebElement submit = driver.FindElement(By.XPath("//*[@id='submit']"));
                     submit.Click(); //點 送出
 
+                    WebDriverWait popup_window = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+                    popup_window.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.AlertIsPresent()); // 等待直到alert popup window跳出
+
                     string notification_wordings = driver.SwitchTo().Alert().Text;
-                    System.Diagnostics.Debug.WriteLine(notification_wordings);
+
 
                     string snapshotpath = System.AppDomain.CurrentDomain.BaseDirectory + "SnapshotFolder\\HouseLoanMessageBoard";
                     Tools.CreateSnapshotFolder(snapshotpath);
