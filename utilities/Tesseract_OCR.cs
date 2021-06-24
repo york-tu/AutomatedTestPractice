@@ -46,10 +46,10 @@ namespace Utilities
             return Security_Code;
         }
 
-        public string TesseractOCRIdentify(string filepath) // 執行圖片辨識方法
+        public string TesseractOCRIdentify(string filepath, double imagescale) // 執行圖片辨識方法
         {
             img = Getimage(filepath);
-            img = new Bitmap(img, img.Width * 2, img.Height * 2);
+            img = new Bitmap(img, (int)(img.Width * imagescale), (int)(img.Height * imagescale));
             bimg = new Bitmap(img);
             string words = executing();
             return words;

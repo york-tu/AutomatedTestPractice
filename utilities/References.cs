@@ -321,6 +321,14 @@ namespace Utilities
             proc.Close();
         }
 
+       public static void CleanUPFolder(string folderpath) // 清空指定資料夾
+        {
+            string[] need_to_clean_folder = Directory.GetFileSystemEntries(folderpath);
+            foreach (var file in need_to_clean_folder)
+            {
+                File.Delete(file);
+            }
+        }
     }
 
     /// <summary>

@@ -4,7 +4,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using Xunit;
 using Utilities;
-
+using System.IO;
 
 namespace Practice
 {
@@ -55,27 +55,34 @@ namespace Practice
                 IWebElement NextButton = driver.FindElement(By.XPath("//*[@id='btnSubmitFormEsunOTP']")); // 下一步按鈕
                 IWebElement RetryButton = driver.FindElement(By.XPath("//*[@id='browserIE']/div/ul/li[3]/div/div[1]/div")); // Refresh 驗證碼圖片按鈕
 
-                string snapshotfolderpath = $@"{UserDataList.folderpath}\SnapshotFolder\Practice";
-                Tools.CreateSnapshotFolder(snapshotfolderpath);
+ 
+                Tools.CreateSnapshotFolder($@"{UserDataList.folderpath}\Captcha");
                 System.Threading.Thread.Sleep(100);
+                Tools.CleanUPFolder($@"{UserDataList.folderpath}\Captcha"); //清空Captcha資料夾
 
+
+
+                int verify_count = 1; //紀錄驗證碼retry次數
             retryagain:
                 System.Threading.Thread.Sleep(1000);
-                string time = System.DateTime.Now.ToString("MMddhhmmssffff");
-                string fullnamepath = $@"{snapshotfolderpath}\ImageVerifyCode_{time}.png";
-
                 string current_URL = driver.Url; //抓當下網頁URL
 
                 if (current_URL != test_url) // 當下網頁不是初始網頁 >>> 代表驗證碼過, 已經PASS到下一頁
                 {
-                    System.Threading.Thread.Sleep(5000);
+                    System.Threading.Thread.Sleep(3000);
                     goto gotoNextStep; // 直接跳到程式結尾
                 }
 
-                Tools.ElementTakeScreenShot(CaptchaPicture, fullnamepath); // snapshot"圖片驗證碼"
+                
+                Tools.ElementTakeScreenShot(CaptchaPicture, $@"{UserDataList.folderpath}\Captcha\CaptchaImage_{verify_count}.png"); // snapshot"圖片驗證碼"
+               
+                if (verify_count >=10) //依序刪除舊的captcha截圖
+                {
+                    File.Delete($@"{UserDataList.folderpath}\Captcha\CaptchaImage_{verify_count-9}.png");
+                }
 
-                string verify_code_result = TesseractOCRIdentify(fullnamepath); //解析出驗證碼 (方法: Tesseract)
-                // string verify_code_result = Tools.IronOCR($@"{snapshotpath}\ImageVerifyCode.png"); //解析出驗證碼 (Iron)
+                string verify_code_result = TesseractOCRIdentify($@"{UserDataList.folderpath}\Captcha\CaptchaImage_{verify_count}.png", 1); //解析出驗證碼 (方法: Tesseract)
+                // string verify_code_result = Tools.IronOCR($@"{ snapshotpath}\ImageVerifyCode.png"); //解析出驗證碼 (Iron)
                 // string verify_code_result = Tools.BaiduOCR($@"{snapshotpath}\ImageVerifyCode.png"); //解析出驗證碼 (百度)
                 
                 ImageVerificationCodeColumn.Clear();
@@ -86,16 +93,18 @@ namespace Practice
                 if (NextButtonStatus == "true")
                 {
                     RetryButton.Click();
+                    verify_count++;
                     goto retryagain;
                 }
                 else
                 {
                     NextButton.Click();
+                    verify_count++;
                     goto retryagain;
                 }
 
             gotoNextStep:
-                System.Threading.Thread.Sleep(5000);
+                System.Threading.Thread.Sleep(2000);
             }
 
             driver.Quit();
