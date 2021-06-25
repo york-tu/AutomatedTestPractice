@@ -6,7 +6,7 @@ using System;
 using System.IO;
 using IronXL;
 using System.Text.RegularExpressions;
-using Utilities;
+using AutomatedTest.Utilities;
 
 namespace PreSaleHouseTrustInquiryTest
 {

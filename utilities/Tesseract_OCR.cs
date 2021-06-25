@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace Utilities
+namespace AutomatedTest.Utilities
 {
     public class Tesseract_OCR // Tesseract 圖片辨識
     {

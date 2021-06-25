@@ -1,14 +1,11 @@
-﻿using System;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
-using OpenQA.Selenium.Remote;
 
-namespace Utilities
+
+namespace AutomatedTest.Utilities
 {
-
     public enum BrowserType
     {
         Chrome,
@@ -18,20 +15,19 @@ namespace Utilities
 
     public class WebDriverInfra
     {
+        public IWebDriver driver;
+
         public static IWebDriver Create_Browser(BrowserType browserType)
         {
             switch (browserType)
             {
                 case BrowserType.IE:
-
                     return new InternetExplorerDriver();
 
                 case BrowserType.Firefox:
-
                     return new FirefoxDriver();
 
                 case BrowserType.Chrome:
-
                     return new ChromeDriver();
 
                 default:

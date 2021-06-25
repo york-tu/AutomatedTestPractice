@@ -1,0 +1,399 @@
+
+
+<!DOCTYPE html>
+<html>
+	
+	<head>
+	<meta /> 
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link href='https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@8539670db814bf19a0ddbe9a6d19058aea0cf981/v3html/css/extent.css' type='text/css' rel='stylesheet' />
+  
+	<title></title>
+
+	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
+		
+	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+</head>
+
+
+	<body class='extent default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+		
+		<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo black"><img src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png"></a>
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+            			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+		</ul>
+		<span class='report-name'></span>
+		<span class='report-headline'></span>
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'><span class='label blue darken-3 suite-start-time'>2021/6/29 下午 04:29:20</span></a>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+			<div id='test-view' class='view'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+															<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+																				<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+			<!-- category toggle -->
+			<!-- category toggle -->
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+				<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+				<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+	
+
+<div id='test-view-charts' class='subview-full'>
+    <div id='charts-row' class='row nm-v nm-h'>
+        <div class='col s12 m12 l12 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Tests</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='parent-analysis' width='90' height='80'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> test passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> failed,</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> skipped, </span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> others</span>
+                </div>
+            </div>
+        </div>
+		    </div>
+</div>
+	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='test-collection' class='test-collection'>
+				<li class='test displayed active  fail' status='fail' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>預售屋信託查詢.預售屋查詢精進_欄位檢核_browser=Chrome</span>
+						<span class='test-time'>2021/6/29 下午 04:29:20</span>
+						<span class='test-status right fail'>Fail</span>
+					</div>
+					<div class='test-content hide'>
+						<div class='test-time-info'>
+							<span class='label start-time'>2021/6/29 下午 04:29:20</span>
+							<span class='label end-time'>2021/6/29 下午 04:29:42</span>
+							<span class='label time-taken grey lighten-1 white-text'>0h:0m:21s.279ms</span>
+						</div>
+							<div class='test-steps'>
+								<table class='bordered table-results'>
+									<thead>
+										<tr>
+											<th>Status</th>
+											<th>Timestamp</th>
+											<th>Details</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class='log' status='info'>
+											<td class='status info' title='Info' alt='Info'>
+												<i class='material-icons'>info_outline</i>
+											</td>
+											<td class='timestamp'>16:29:20</td>
+											<td class='step-details'>
+預售屋信託查詢功能精進, 優化既有官網預售屋信託查詢結果, 針對繳款帳號欄位檢核測試																							</td>
+										</tr>
+										<tr class='log' status='pass'>
+											<td class='status pass' title='Pass' alt='Pass'>
+												<i class='material-icons'>check_circle</i>
+											</td>
+											<td class='timestamp'>16:29:21</td>
+											<td class='step-details'>
+輸入: , 欄位顯示: , 顯示訊息: 必須填寫																							</td>
+										</tr>
+										<tr class='log' status='pass'>
+											<td class='status pass' title='Pass' alt='Pass'>
+												<i class='material-icons'>check_circle</i>
+											</td>
+											<td class='timestamp'>16:29:21</td>
+											<td class='step-details'>
+輸入: 12345, 欄位顯示: 12345, 顯示訊息: 最少 6 個字																							</td>
+										</tr>
+										<tr class='log' status='pass'>
+											<td class='status pass' title='Pass' alt='Pass'>
+												<i class='material-icons'>check_circle</i>
+											</td>
+											<td class='timestamp'>16:29:27</td>
+											<td class='step-details'>
+輸入: １２３４５６, 欄位顯示: １２３４５６, 顯示訊息: 只可輸入數字																							</td>
+										</tr>
+										<tr class='log' status='pass'>
+											<td class='status pass' title='Pass' alt='Pass'>
+												<i class='material-icons'>check_circle</i>
+											</td>
+											<td class='timestamp'>16:29:27</td>
+											<td class='step-details'>
+輸入: 中文字, 欄位顯示: 中文字, 顯示訊息: 只可輸入數字																							</td>
+										</tr>
+										<tr class='log' status='pass'>
+											<td class='status pass' title='Pass' alt='Pass'>
+												<i class='material-icons'>check_circle</i>
+											</td>
+											<td class='timestamp'>16:29:28</td>
+											<td class='step-details'>
+輸入: ＡＢＣＤＥＦ, 欄位顯示: ＡＢＣＤＥＦ, 顯示訊息: 只可輸入數字																							</td>
+										</tr>
+										<tr class='log' status='pass'>
+											<td class='status pass' title='Pass' alt='Pass'>
+												<i class='material-icons'>check_circle</i>
+											</td>
+											<td class='timestamp'>16:29:28</td>
+											<td class='step-details'>
+輸入: ａｂｃｄｅｆ, 欄位顯示: ａｂｃｄｅｆ, 顯示訊息: 只可輸入數字																							</td>
+										</tr>
+										<tr class='log' status='pass'>
+											<td class='status pass' title='Pass' alt='Pass'>
+												<i class='material-icons'>check_circle</i>
+											</td>
+											<td class='timestamp'>16:29:28</td>
+											<td class='step-details'>
+輸入: abcdef, 欄位顯示: abcdef, 顯示訊息: 只可輸入數字																							</td>
+										</tr>
+										<tr class='log' status='pass'>
+											<td class='status pass' title='Pass' alt='Pass'>
+												<i class='material-icons'>check_circle</i>
+											</td>
+											<td class='timestamp'>16:29:28</td>
+											<td class='step-details'>
+輸入: ABCDEF, 欄位顯示: ABCDEF, 顯示訊息: 只可輸入數字																							</td>
+										</tr>
+										<tr class='log' status='pass'>
+											<td class='status pass' title='Pass' alt='Pass'>
+												<i class='material-icons'>check_circle</i>
+											</td>
+											<td class='timestamp'>16:29:29</td>
+											<td class='step-details'>
+輸入: @#$%^&*, 欄位顯示: @#$%^&*, 顯示訊息: 只可輸入數字																							</td>
+										</tr>
+										<tr class='log' status='pass'>
+											<td class='status pass' title='Pass' alt='Pass'>
+												<i class='material-icons'>check_circle</i>
+											</td>
+											<td class='timestamp'>16:29:29</td>
+											<td class='step-details'>
+輸入: ！＠＃＄％︿, 欄位顯示: ！＠＃＄％︿, 顯示訊息: 只可輸入數字																							</td>
+										</tr>
+										<tr class='log' status='pass'>
+											<td class='status pass' title='Pass' alt='Pass'>
+												<i class='material-icons'>check_circle</i>
+											</td>
+											<td class='timestamp'>16:29:29</td>
+											<td class='step-details'>
+輸入: 123abc456DEF, 欄位顯示: 123abc456DEF, 顯示訊息: 只可輸入數字																							</td>
+										</tr>
+										<tr class='log' status='fail'>
+											<td class='status fail' title='Fail' alt='Fail'>
+												<i class='material-icons'>cancel</i>
+											</td>
+											<td class='timestamp'>16:29:35</td>
+											<td class='step-details'>
+輸入: 987654321, 欄位顯示: 987654321, 顯示訊息: 企業代碼不存在																							</td>
+										</tr>
+										<tr class='log' status='pass'>
+											<td class='status pass' title='Pass' alt='Pass'>
+												<i class='material-icons'>check_circle</i>
+											</td>
+											<td class='timestamp'>16:29:41</td>
+											<td class='step-details'>
+輸入: 1234567890123456789, 欄位顯示: 1234567890123456, 顯示訊息: 繳款帳號不存在																							</td>
+										</tr>
+										<tr class='log' status='pass'>
+											<td class='status pass' title='Pass' alt='Pass'>
+												<i class='material-icons'>check_circle</i>
+											</td>
+											<td class='timestamp'>16:29:42</td>
+											<td class='step-details'>
+<img style="width: 240px;" src="data:image/png;base64, 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"/>																							</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<div id='step-filters' class="right sr-filters">
+				<a class="btn-floating waves-effect waves-light green" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></a>
+				<a class="btn-floating waves-effect waves-light red" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light red darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light pink text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></a>
+				<a class="btn-floating waves-effect waves-light orange" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></a>
+				<a class="btn-floating waves-effect waves-light teal" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></a>
+				<a class="btn-floating waves-effect waves-light grey" status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></a>
+			</div>
+			<h5 class='test-name'></h5>
+		</div>
+	</div>
+	<!-- subview right -->
+</div>
+<!-- test view -->
+
+			
+			<!-- category view -->
+			
+<!-- exception view -->
+
+			
+
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+          Tests
+          <div class='panel-lead'>1</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+          Steps
+          <div class='panel-lead'>0</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>2021/6/29 下午 04:29:20</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>2021/6/29 下午 04:29:42</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>00:00:27.6669417</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>測試案例</td>
+								<td>查詢精進_輸入欄位檢核</td>
+							</tr>
+							<tr>
+								<td>測試環境</td>
+								<td>Production</td>
+							</tr>
+							<tr>
+								<td>瀏覽器版本</td>
+								<td>91.0.4472.124</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+					</div>
+	</div>
+</div>
+<!-- dashboard view -->
+
+			<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+		<script>
+			var statusGroup = {
+                parentCount: 1,
+				passParent: 0,
+				failParent: 1,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 1,
+				childCount: 0,
+				passChild: 0,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				debugChild: 0,
+				exceptionsChild: 0,
+				grandChildCount: 0,
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				debugGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/c23457b/v3html/js/extent.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+			
+		</script>
+	</body>
+</html>

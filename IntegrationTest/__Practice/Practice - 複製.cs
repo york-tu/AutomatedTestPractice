@@ -3,12 +3,13 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using Xunit;
-using Utilities;
+using AutomatedTest.Utilities;
 using System.IO;
+using AventStack.ExtentReports;
 
 namespace Practice
 {
-    public class 練習_自動輸入圖片驗證碼_玉山e指信貸:Tesseract_OCR
+    public class 練習_輸出Rerpot
     {
         private readonly string test_url = "https://www.esunbank.com.tw/s/PersonalLoanApply/Landing/IDConfirmDiversion?DG_landing";
 
@@ -17,8 +18,8 @@ namespace Practice
 
         public void TestCase(BrowserType browserType)
         {
-            Tools.KillProcess("chromedriver.exe");
-            Tools.KillProcess("conhostexe");
+            //Tools.KillProcess("chromedriver.exe");
+            //Tools.KillProcess("conhostexe");
 
             using IWebDriver driver = WebDriverInfra.Create_Browser(browserType);
             {
@@ -81,12 +82,12 @@ namespace Practice
                     File.Delete($@"{UserDataList.folderpath}\Captcha\CaptchaImage_{verify_count-9}.png");
                 }
 
-                string verify_code_result = TesseractOCRIdentify($@"{UserDataList.folderpath}\Captcha\CaptchaImage_{verify_count}.png", 1); //解析出驗證碼 (方法: Tesseract)
+                //string verify_code_result = TesseractOCRIdentify($@"{UserDataList.folderpath}\Captcha\CaptchaImage_{verify_count}.png", 1); //解析出驗證碼 (方法: Tesseract)
                 // string verify_code_result = Tools.IronOCR($@"{ snapshotpath}\ImageVerifyCode.png"); //解析出驗證碼 (Iron)
                 // string verify_code_result = Tools.BaiduOCR($@"{snapshotpath}\ImageVerifyCode.png"); //解析出驗證碼 (百度)
                 
                 ImageVerificationCodeColumn.Clear();
-                ImageVerificationCodeColumn.SendKeys(verify_code_result); // 輸入驗證碼
+               // ImageVerificationCodeColumn.SendKeys(verify_code_result); // 輸入驗證碼
                 System.Threading.Thread.Sleep(100);
 
                 string NextButtonStatus = NextButton.GetAttribute("disabled"); // 獲取"下一步"button的狀態 "disabled" or not

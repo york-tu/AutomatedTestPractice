@@ -10,7 +10,7 @@ using System.Linq;
 using IronXL;
 using System.Drawing;
 using CsvHelper;
-using Utilities;
+using AutomatedTest.Utilities;
 
 
 namespace AirlineMilesRedemptionTest

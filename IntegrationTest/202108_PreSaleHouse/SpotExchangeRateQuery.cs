@@ -4,7 +4,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using Xunit;
 using System;
-using Utilities;
+using AutomatedTest.Utilities;
 using System.Drawing;
 
 namespace SpotExchangeRateQueryTest

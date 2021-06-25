@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using CsvHelper.Configuration;
 
-namespace Utilities
+namespace AutomatedTest.Utilities
 {
     public class UserDataList
     {

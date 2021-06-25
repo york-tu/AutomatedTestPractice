@@ -6,7 +6,7 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
 using Xunit;
-using Utilities;
+using AutomatedTest.Utilities;
 using System.IO;
 using System.Linq;
 using System.Globalization;

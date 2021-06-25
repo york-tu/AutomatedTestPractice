@@ -7,8 +7,9 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using IronOcr;
+using AventStack.ExtentReports;
 
-namespace Utilities
+namespace AutomatedTest.Utilities
 {
     /// <summary>
     ///  工具區
@@ -329,7 +330,12 @@ namespace Utilities
                 File.Delete(file);
             }
         }
+
+
+        
     }
+
+
 
     /// <summary>
     ///  定義欄位的XPath
@@ -347,9 +353,53 @@ namespace Utilities
         public static string i_have_read_button_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[8]/td[2]/div/a"; }
         public static string submit_button_XPath() { return "//*[@id='submit']"; }
         public static string image_verify_code_column_XPath() { return "//*[@id='captchaValue']"; }
-
-
     }
+   
+    class TestBase
+    {
+        protected IWebDriver driver;
+        private int _interval = 500;
+        private int _timeout = 60;
+        protected ExtentReports extentReports;
+        protected ExtentTest ExtentTObj;
+
+        public TestBase(string browserArg, ExtentTest extentTObj)
+        {
+            BrowserHelper browser = new BrowserHelper(browserArg);
+            this.driver = browser.driver;
+            this.ExtentTObj = extentTObj;
+        }
+
+        public TestBase (string browserArg, int timeout, int interval)
+        {
+            BrowserHelper browser = new BrowserHelper(browserArg);
+            this.driver = browser.driver;
+            _timeout = timeout;
+            _interval = interval;
+        }
+
+        public static string TakeScreenShotToReport(IWebDriver driver) // 截圖附到report上
+        {
+            var img_HTML = string.Empty;
+            Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
+            var screenshotByArray = ss.AsByteArray;
+            var temp_inBase64 = Convert.ToBase64String(screenshotByArray);
+            img_HTML = "<img style=\"width: 1080px;\" src=\"data:image/png;base64, " + temp_inBase64 + "\"/>";
+            return img_HTML;
+        }
+
+        public static string ElementTakeScreenShotToReport(IWebElement webElement) // 截元件圖附到report上
+        {
+            var img_HTML = string.Empty;
+            Screenshot elementScreenshot = (webElement as ITakesScreenshot).GetScreenshot();
+            var elementscreenshotByArray = elementScreenshot.AsByteArray;
+            var temp_inBase64 = Convert.ToBase64String(elementscreenshotByArray);
+            img_HTML = "<img style=\"width: 720px;\" src=\"data:image/png;base64, " + temp_inBase64 + "\"/>";
+            return img_HTML;
+
+        }
+    }
+
 }
 
 
