@@ -44,7 +44,7 @@ namespace GuestMessageBoardTest
 
                     int branch_dropdownlist_amount = driver.FindElements(By.XPath("//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[5]/td[2]/div/ul[2]/li/ul/li")).Count;  //獲取 "當下分行"下拉選單裡的分行數
 
-                    for (int branch_index = 1; branch_index <= branch_dropdownlist_amount; branch_index++)
+                    for (int branch_index = 1; branch_index <= branch_dropdownlist_amount; branch_index++) // 初始值 = 1
                     {
                         if (country_index == country_dropdownList_amount - 1 && branch_index == 14)
                         {
@@ -61,8 +61,6 @@ namespace GuestMessageBoardTest
                         SelectBranch.Click(); //點選第branch_index個縣市
 
 
-                        string time = System.DateTime.Now.ToString("yyyyMMddHHmmss");
-
                         // 所有欄位定位
                         IWebElement FullNameColumn = driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[1]/td[2]/input"));
                         IWebElement IdentityCardColumn = driver.FindElement(By.XPath("//*[@id='citizenId']"));
@@ -75,31 +73,32 @@ namespace GuestMessageBoardTest
                         IWebElement SubmitButton = driver.FindElement(By.XPath("//*[@id='submit']"));
 
 
+
+                        ///<summary>
+                        ///從Excel檔中讀出UserData
+                        ///</summary>
                         string csvpath = $@"{UserDataList.folderpath}\testdata\UserInfo.csv";
                         using (var reader = new StreamReader(csvpath))
                         using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                         {
                             var records = csv.GetRecords<UserDataList>().ToList();
-                            int user_data_index = 1;
+                            Random csv_row = new Random();
+                            int user_data_index=1;
                             foreach (var user in records)
                             {
-                                if (user_data_index == 2) // 抓 CSV 第 user_data_index 行資料
+                                if (user_data_index == csv_row.Next(1,7)) // 抓 CSV 第 random行資料
                                 {
                                     FullNameColumn.Clear();
                                     FullNameColumn.SendKeys(user.NAME); //填姓名
-                                    //System.Threading.Thread.Sleep(100);
 
                                     IdentityCardColumn.Clear();
                                     IdentityCardColumn.SendKeys(user.ID); //填身分證
-                                    //System.Threading.Thread.Sleep(100);
 
                                     TelephoneColumn.Clear();
                                     TelephoneColumn.SendKeys(user.PHONE); //填連絡電話
-                                   // System.Threading.Thread.Sleep(100);
 
                                     EMailColumn.Clear();
                                     EMailColumn.SendKeys(user.EMAIL); //填 E-MAIL
-                                    //System.Threading.Thread.Sleep(100);
 
                                     break;
                                 }
@@ -108,44 +107,32 @@ namespace GuestMessageBoardTest
 
                             string snapshotpath = $@"{UserDataList.folderpath}\SnapshotFolder\GuestMessageBoard";
                             Tools.CreateSnapshotFolder(snapshotpath);
+
+                            //Tools.ElementTakeScreenShot(driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[5]")),
+                            //    $@"{snapshotpath}\第 {country_index} 個縣市第 {branch_index} 個分行_欄位snapshot.png"); //元素截圖
                             //System.Threading.Thread.Sleep(100);
 
-                            Tools.ElementTakeScreenShot(driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[5]")),
-                                $@"{snapshotpath}\第 {country_index} 個縣市第 {branch_index} 個分行_欄位snapshot.png"); //元素截圖
-
-
-                            //System.Threading.Thread.Sleep(100);
                             BusinessItem_DropDownList.Click(); //點留言業務下拉選單
-                            //System.Threading.Thread.Sleep(300);
                             CreditCardBusiness.Click(); //選信用卡業務
-                            //System.Threading.Thread.Sleep(300);
-
-                            //MessageArea.Clear();
-                            //MessageArea.SendKeys(
-                            //    "[Automation Test on " + browserType + " in " + Version + " ]" + "\r\n"
-                            //    + "表單 on 第 " + country_index + " 個縣市第 " + branch_index + " 個分行" + "\r\n"
-                                //+ "=================================================" + "\r\n"
-                                //+ "Total 21 區, 154 分行" + "\r\n"
-                                //+ "縣市(地區index)(分行數量):" + "\r\n"
-                                //+ "基隆市(1)(1),      臺北市(2)(35),      新北市(3)(32),      桃園市(4)(11),      新竹市(5)(3),      "
-                                //+ "新竹縣(6)(3),      苗栗縣(7)(3),        臺中市(8)(14),      彰化縣(9)(2),        南投縣(10)(1)," + "\r\n"
-                                //+ "雲林縣(11)(1),    嘉義市(12)(2),      嘉義縣(13)(1),      台南市(14)(10),    高雄市(15)(14),      "
-                                //+ "屏東縣(16)(2),    宜蘭縣(17)(1),      花蓮縣(18)(1),      臺東縣(19)(1),      澎湖縣(20)(1),       海外地區(21)(15)."
-                             //   ); // 填 "留言內容"
-
-                           // Tools.SCrollToElement(driver, TelephoneColumn);
-                            //Tools.TakeScreenShot($@"d:\第 {country_index} 個縣市第 {branch_index} 個分行 snapshot_{browserType}.png", driver); // snapshot當下畫面
-                           // System.Threading.Thread.Sleep(500);
 
 
+                            MessageArea.Clear();
+                            MessageArea.SendKeys(
+                                "[Automated Testing on " + browserType + " in " + Version + " ]" + "\r\n"
+                                + "第 " + country_index + " 個縣市第 " + branch_index + " 個分行" + "\r\n"
+                                + "=================================================" + "\r\n"
+                                + "Total 21 區, 154 分行" + "\r\n"
+                                + "縣市(地區index)(分行數量):" + "\r\n"
+                                + "基隆市(1)(1),      臺北市(2)(35),      新北市(3)(32),      桃園市(4)(11),      新竹市(5)(3),      "
+                                + "新竹縣(6)(3),      苗栗縣(7)(3),        臺中市(8)(14),      彰化縣(9)(2),        南投縣(10)(1)," + "\r\n"
+                                + "雲林縣(11)(1),    嘉義市(12)(2),      嘉義縣(13)(1),      台南市(14)(10),    高雄市(15)(14),      "
+                                + "屏東縣(16)(2),    宜蘭縣(17)(1),      花蓮縣(18)(1),      臺東縣(19)(1),      澎湖縣(20)(1),       海外地區(21)(15)."
+                                ); // 填 "留言內容"
 
+                            Tools.SCrollToElement(driver, TelephoneColumn);
+                            Tools.TakeScreenShot($@"{snapshotpath}\第 {country_index} 個縣市第 {branch_index} 個分行 snapshot_{browserType}.png", driver); // snapshot當下畫面
 
-                            // IHaveReadRadioButtin.Click(); // 點 "我已閱讀" radio button
-                            // System.Threading.Thread.Sleep(100);
-                            // System.Diagnostics.Debug.WriteLine("13. 勾選'我已閱讀'");
-
-                            // SCrollToElement(driver, MessageArea);
-                            // System.Threading.Thread.Sleep(3000);
+                            IHaveReadRadioButtin.Click(); // 點 "我已閱讀" radio button
 
                             // SubmitButton.Click(); // 點 "送出" 按鈕
                             // System.Threading.Thread.Sleep(300);
@@ -162,12 +149,8 @@ namespace GuestMessageBoardTest
                             // wait_to_see_submit_button.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("//*[@id='submit']"))); // 等待直到看到"留言區"
                             // System.Threading.Thread.Sleep(100);
 
-                            //driver.FindElement(By.XPath("//*[@id='scrollUp']")).Click(); //畫面回到頂端
-                            //System.Threading.Thread.Sleep(500);
-
-
-
-
+                            driver.FindElement(By.XPath("//*[@id='scrollUp']")).Click(); //畫面回到頂端
+                            System.Threading.Thread.Sleep(500);
                         }
                     }
                 }
