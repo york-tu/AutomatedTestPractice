@@ -23,19 +23,19 @@ namespace AutomatedTest.Utilities
 
         }
 
-        public static void TakeScreenShot(string savepath, IWebDriver driver) // 截圖當下畫面 (selenium)
+        public static void PageSnapshot(string savepath, IWebDriver driver) // 截圖當下畫面 (selenium)
         {
             Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
             ss.SaveAsFile(savepath, ScreenshotImageFormat.Png);
         }
 
-        public static void ElementTakeScreenShot(IWebElement webElement, string savepath) // Only截元件圖 (selenium)
+        public static void ElementSnapshotshot(IWebElement webElement, string savepath) // Only截元件圖 (selenium)
         {
             var elementScreenshot = (webElement as ITakesScreenshot).GetScreenshot();
             elementScreenshot.SaveAsFile(savepath);
         }
 
-        public static void SnapshotFullScreen(string savepath) //全螢幕截圖 (C#)
+        public static void FullScreenshot(string savepath) //全螢幕截圖 (C#)
         {
             Bitmap myimage = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
             Graphics g = Graphics.FromImage(myimage);
@@ -378,7 +378,7 @@ namespace AutomatedTest.Utilities
             _interval = interval;
         }
 
-        public static string TakeScreenShotToReport(IWebDriver driver) // 截圖附到report上
+        public static string PageSnapshotToReport(IWebDriver driver) // Snapshot 網頁 (for attach report)
         {
             var img_HTML = string.Empty;
             Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
@@ -388,7 +388,7 @@ namespace AutomatedTest.Utilities
             return img_HTML;
         }
 
-        public static string ElementTakeScreenShotToReport(IWebElement webElement) // 截元件圖附到report上
+        public static string ElementSnapShotToReport(IWebElement webElement) // Snapshot 元件 (for attach to report)
         {
             var img_HTML = string.Empty;
             Screenshot elementScreenshot = (webElement as ITakesScreenshot).GetScreenshot();
@@ -396,8 +396,23 @@ namespace AutomatedTest.Utilities
             var temp_inBase64 = Convert.ToBase64String(elementscreenshotByArray);
             img_HTML = "<img style=\"width: 720px;\" src=\"data:image/png;base64, " + temp_inBase64 + "\"/>";
             return img_HTML;
-
         }
+
+        public static string FullScreenshot(string imagefilepath) //全螢幕截圖 (for attach to report)
+        {
+            var img_HTML = string.Empty;
+            Bitmap bmp = new Bitmap(imagefilepath);
+            MemoryStream ms = new MemoryStream();
+            bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+            byte[] arr = new byte[ms.Length];
+            ms.Position = 0;
+            ms.Read(arr, 0, (int)ms.Length);
+            ms.Close();
+            var temp_inBase64 = Convert.ToBase64String(arr);
+             img_HTML = "<img style=\"width: 720px;\" src=\"data:image/png;base64, " + temp_inBase64 + "\"/>";
+            return img_HTML;
+        }
+
     }
 
 }

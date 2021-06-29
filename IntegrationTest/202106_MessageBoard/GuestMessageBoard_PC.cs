@@ -104,7 +104,7 @@ namespace AutomatedTest.IntegrationTest.GuestMessageBoardTest
                         Tools.CreateSnapshotFolder(snapshotpath);
 
 
-                        PASS(TestBase.ElementTakeScreenShotToReport(driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[5]"))));
+                        PASS(TestBase.ElementSnapShotToReport(driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[5]"))));
 
                         //Tools.ElementTakeScreenShot(driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[5]")),
                         //    $@"{snapshotpath}\第 {country_index} 個縣市第 {branch_index} 個分行_欄位snapshot.png"); //元素截圖

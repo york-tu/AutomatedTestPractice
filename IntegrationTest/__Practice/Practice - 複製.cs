@@ -75,7 +75,7 @@ namespace Practice
                 }
 
                 
-                Tools.ElementTakeScreenShot(CaptchaPicture, $@"{UserDataList.folderpath}\Captcha\CaptchaImage_{verify_count}.png"); // snapshot"圖片驗證碼"
+                Tools.ElementSnapshotshot(CaptchaPicture, $@"{UserDataList.folderpath}\Captcha\CaptchaImage_{verify_count}.png"); // snapshot"圖片驗證碼"
                
                 if (verify_count >=10) //依序刪除舊的captcha截圖
                 {

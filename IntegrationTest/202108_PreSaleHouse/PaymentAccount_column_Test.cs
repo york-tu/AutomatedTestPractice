@@ -130,7 +130,7 @@ namespace AutomatedTest.IntegrationTest.PreSaleHouseTrustInquiryTest
                 }
             
             }
-            PASS(TestBase.ElementTakeScreenShotToReport(driver.FindElement(By.XPath("//*[@id='layout_0_rightcontent_1_PnlInput']/div[2]/table"))));
+            PASS(TestBase.ElementSnapShotToReport(driver.FindElement(By.XPath("//*[@id='layout_0_rightcontent_1_PnlInput']/div[2]/table"))));
             CloseBrowser();
         }  
      }

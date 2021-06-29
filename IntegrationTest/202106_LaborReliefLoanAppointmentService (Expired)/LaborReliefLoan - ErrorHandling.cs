@@ -255,7 +255,7 @@ namespace LaborReliefLoanAppointmentServiceTest
                                     string snapshotpath = $@"{UserDataList.folderpath}\SnapshotFolder\LaborReliefLoan";
                                     Tools.CreateSnapshotFolder(snapshotpath);
                                     System.Threading.Thread.Sleep(100);
-                                    Tools.TakeScreenShot($@"{snapshotpath}\第{i - 1}縣市第{j}分行_第{m-1}日第{n-1}時段.png", driver); //實作截圖
+                                    Tools.PageSnapshot($@"{snapshotpath}\第{i - 1}縣市第{j}分行_第{m-1}日第{n-1}時段.png", driver); //實作截圖
                                 }
                             }
                         }

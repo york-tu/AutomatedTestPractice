@@ -77,13 +77,13 @@ namespace SpotExchangeRateQueryTest
                         if (browsername == "Firefox") //全螢幕截圖
                         {
                             string time = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
-                            Tools.SnapshotFullScreen($@"{snapshotfolderpath}\{currencynamelist[k]} 展開 fullsnapshot {browserType}_{time}.png");
+                            Tools.FullScreenshot($@"{snapshotfolderpath}\{currencynamelist[k]} 展開 fullsnapshot {browserType}_{time}.png");
                             System.Threading.Thread.Sleep(100);
                         }
                         else // 網頁截圖
                         {
                             string time = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
-                            Tools.TakeScreenShot($@"{snapshotfolderpath}\{currencynamelist[k]} 展開 fullsnapshot {browserType}_{time}.png", driver);
+                            Tools.PageSnapshot($@"{snapshotfolderpath}\{currencynamelist[k]} 展開 fullsnapshot {browserType}_{time}.png", driver);
                             System.Threading.Thread.Sleep(100);
                         }
 
@@ -104,13 +104,13 @@ namespace SpotExchangeRateQueryTest
                         if (browsername == "Firefox") //全螢幕截圖
                         {
                             string time = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
-                            Tools.SnapshotFullScreen($@"{snapshotfolderpath}\{currencynamelist[k]} 收合 fullsnapshot {browserType}_{time}.png");
+                            Tools.FullScreenshot($@"{snapshotfolderpath}\{currencynamelist[k]} 收合 fullsnapshot {browserType}_{time}.png");
                             System.Threading.Thread.Sleep(100);
                         }
                         else // 網頁截圖
                         {
                             string time = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
-                            Tools.TakeScreenShot($@"{snapshotfolderpath}\{currencynamelist[k]} 收合snapshot {browserType}_{time}.png", driver);
+                            Tools.PageSnapshot($@"{snapshotfolderpath}\{currencynamelist[k]} 收合snapshot {browserType}_{time}.png", driver);
                             System.Threading.Thread.Sleep(100);
                         }
 

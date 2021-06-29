@@ -128,7 +128,7 @@ namespace LaborReliefLoanAppointmentServiceTest
                         IWebElement ImageVerificationCodeColumn = driver.FindElement(By.XPath(LaborReliefLoan_XPath.image_verify_code_column_XPath())); // 輸入驗證碼欄位
 
                         Tools.SCrollToElement(driver, FullNameColumn);
-                        Tools.ElementTakeScreenShot(CaptchaPicture, $@"{UserDataList.folderpath}\Captcha\CaptchaImage_{verify_count}.png"); //snapshot驗證碼圖片
+                        Tools.ElementSnapshotshot(CaptchaPicture, $@"{UserDataList.folderpath}\Captcha\CaptchaImage_{verify_count}.png"); //snapshot驗證碼圖片
 
                         if (verify_count >=10) // 依序刪除舊的picture
                         {
@@ -171,7 +171,7 @@ namespace LaborReliefLoanAppointmentServiceTest
                         System.Threading.Thread.Sleep(300);
 
                         Tools.CreateSnapshotFolder($@"{UserDataList.folderpath}\SnapshotFolder\LaborReliefLoan");
-                        Tools.TakeScreenShot($@"{UserDataList.folderpath}\SnapshotFolder\LaborReliefLoan\第{i - 1}縣市第{j}分行_申請_第{ran_date}日第{ran_time}時段.png", driver); //實作截圖
+                        Tools.PageSnapshot($@"{UserDataList.folderpath}\SnapshotFolder\LaborReliefLoan\第{i - 1}縣市第{j}分行_申請_第{ran_date}日第{ran_time}時段.png", driver); //實作截圖
 
 
                         driver.FindElement(By.XPath("/html/body/div[5]/div/div/a")).Click(); // 點通知視窗 "X" 按鈕

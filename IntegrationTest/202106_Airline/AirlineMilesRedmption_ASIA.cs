@@ -121,7 +121,7 @@ namespace AirlineMilesRedemptionTest
                 IWebElement submit_redeem_setting = driver.FindElement(By.XPath(""));
                 submit_redeem_setting.Click(); //ÂI°e¥X
 
-                Tools.TakeScreenShot($@"{snapshotpath}\{testcase_name}_{browserType}_{Version}_{timesavepath}.png", driver);
+                Tools.PageSnapshot($@"{snapshotpath}\{testcase_name}_{browserType}_{Version}_{timesavepath}.png", driver);
                 System.Threading.Thread.Sleep(500);
 
 
