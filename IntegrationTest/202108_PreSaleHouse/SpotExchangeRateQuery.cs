@@ -1,129 +1,120 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
 using Xunit;
 using System;
 using AutomatedTest.Utilities;
 using System.Drawing;
+using Xunit.Abstractions;
 
-namespace SpotExchangeRateQueryTest
+namespace AutomatedTest.IntegrationTest.PreSaleHouse
 {
-    public class 即期匯率網銀買賣外幣按鈕固定置底_M 
+    public class 即期匯率網銀買賣外幣按鈕固定置底_M版:IntegrationTestBase
     {
-        private readonly string test_url = "https://www.esunbank.com.tw/bank/personal/deposit/rate/forex/foreign-exchange-rates?dev=mobile"; // 登入M版即期匯率網頁
+        public 即期匯率網銀買賣外幣按鈕固定置底_M版(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
+        {
+            testurl = "https://www.esunbank.com.tw/bank/personal/deposit/rate/forex/foreign-exchange-rates?dev=mobile"; // 登入M版即期匯率網頁
+        }
 
         [Theory]
-        [InlineData(BrowserType.Chrome)]
-        [InlineData(BrowserType.Firefox)]
+        [MemberData(nameof(BrowserHelper.BrowserList), MemberType = typeof(BrowserHelper))]
 
-
-        public void TestCase(BrowserType browserType)
+        public void 送出資料(string browser)
         {
-            System.Threading.Thread.Sleep(100);
+            StartTestCaseForCustomizedSize(browser, "即期匯率網銀買賣外幣按鈕固定置底測試","York",  400, 0, 640, 800);
+            INFO("");
 
-            using IWebDriver driver = WebDriverInfra.Create_Browser(browserType);
+            string snapshotfolderpath = $@"{System.AppDomain.CurrentDomain.BaseDirectory}\SnapshotFolder\SpotExchangeRateQueryTest";
+            Tools.CreateSnapshotFolder(snapshotfolderpath);
+
+            int[] currencylist = new int[] { 1, 4, 7, 10, 13, 16, 19, 22, 25, 27, 29, 31, 33, 35, 37 }; // 定義有"V"的幣別XPath編號
+            string[] currencynamelist = new string[] { "USD", "CNY", "HKD", "JPY", "EUR", "AUD", "CAD", "GBP", "ZAR", "NZD", "CHF", "SEK", "SGD", "MXN", "THB" }; // 幣別字串 for 截圖檔名用
+
+            int k = 0; // for 截圖取 currencynamelist index用
+            foreach (var currency in currencylist)
             {
 
-                driver.Navigate().GoToUrl(test_url);
-                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000); //100秒內載完網頁內容, 否則報錯, 載完提早進下一步.
-                driver.Manage().Window.Position = new Point(400, 0); //設定網頁開啟在畫面什麼位置
-                driver.Manage().Window.Size = new Size(640,800); // 設定開啟的網頁大小
+                string V_Xpath = $"//*[@id='BoardRate']/tbody/tr[{currency}]/td[4]"; //定義"V" button編號規則
+                string V_dropdown_content_XPath = $"//*[@id='BoardRate']/tbody/tr[{currency + 1}]";
+                string HlkEBankBuy = "//*[@id='layout_m_0_content_m_3_tab_content_m_0_HlkEBankBuy']"; //定義彈出選單"網銀買外幣"位置
+                string HlkEBankSell = "//*[@id='layout_m_0_content_m_3_tab_content_m_0_HlkEBankSell']"; //定義彈出選單"網銀賣外幣"位置
 
-                string browsername = ((RemoteWebDriver)driver).Capabilities.GetCapability("browserName").ToString(); // 偵測瀏覽器版本
-                //  string browsername = ((RemoteWebDriver)driver).Capabilities.GetCapability("browserVersion").ToString(); // 偵測瀏覽器版號
+                int V_button_count = driver.FindElements(By.XPath(V_Xpath)).Count;
+                //int HlkEBankBuy_button = driver.FindElements(By.XPath(HlkEBankBuy)).Count;
+                // int HlkEBankSell_button = driver.FindElements(By.XPath(HlkEBankSell)).Count;
 
-                int[] currencylist = new int[] { 1, 4, 7, 10, 13, 16, 19, 22, 25, 27, 29, 31, 33, 35, 37 }; // 定義有"V"的幣別XPath編號
-                string[] currencynamelist = new string[] { "USD", "CNY", "HKD", "JPY", "EUR", "AUD", "CAD", "GBP", "ZAR", "NZD", "CHF", "SEK", "SGD", "MXN", "THB" }; // 幣別字串 for 截圖檔名用
-                
-                int k = 0; // for 截圖取 currencynamelist index用
-                foreach (var currency in currencylist)
+                IWebElement bottom_button = driver.FindElement(By.ClassName("fixed_block"));
+
+
+
+                /// <summary>
+                /// 檢查當 "進入網頁後" 是否立即看的到置底網銀外幣交易按鈕
+                /// </summary>
+                // Assert.Equal("bottom: -100px;", bottom_button.GetAttribute("style"));
+                // Assert.Equal(1, HlkEBankBuy_button); 
+                // Assert.Equal(1, HlkEBankSell_button);
+
+                if (V_button_count >= 1) // 檢查畫面中是否存在該元素, count >=1 (存在1個element以上), else: null (沒有該element)
                 {
-                   
-                    string V_Xpath = $"//*[@id='BoardRate']/tbody/tr[{currency}]/td[4]"; //定義"V" button編號規則
-                    string V_dropdown_content_XPath = $"//*[@id='BoardRate']/tbody/tr[{currency+1}]";
-                    string HlkEBankBuy = "//*[@id='layout_m_0_content_m_3_tab_content_m_0_HlkEBankBuy']"; //定義彈出選單"網銀買外幣"位置
-                    string HlkEBankSell = "//*[@id='layout_m_0_content_m_3_tab_content_m_0_HlkEBankSell']"; //定義彈出選單"網銀賣外幣"位置
-                    
-                    int V_button_count = driver.FindElements(By.XPath(V_Xpath)).Count;
-                    //int HlkEBankBuy_button = driver.FindElements(By.XPath(HlkEBankBuy)).Count;
-                    // int HlkEBankSell_button = driver.FindElements(By.XPath(HlkEBankSell)).Count;
+                    IWebElement V_button = driver.FindElement(By.XPath(V_Xpath));
+                    IWebElement V_dropdown_content = driver.FindElement(By.XPath(V_dropdown_content_XPath));
 
-                    IWebElement bottom_button = driver.FindElement(By.ClassName("fixed_block"));
+                    if (currency >= 7 && currency <= 25) // 避免點擊不到button, 當index介於7~25之間, 滾動畫面到target element附近
+                    {
+                        Tools.SCrollToElement(driver, driver.FindElement(By.XPath($"//*[@id='BoardRate']/tbody/tr[{currency - 6}]/td[4]")));
+                    }
 
-                    string snapshotfolderpath = $@"{UserDataList.folderpath}\SnapshotFolder\SpotExchangeRateQueryTest";
-                    Tools.CreateSnapshotFolder(snapshotfolderpath);
+                    V_button.Click(); // 點擊 "V" >>>展開"優惠匯率"選單
+                    System.Threading.Thread.Sleep(500);
+
+                    if (browser == "Firefox") //全螢幕截圖
+                    {
+                        string time = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
+                        Tools.FullScreenshot($@"{snapshotfolderpath}\{currencynamelist[k]} 展開 fullsnapshot {browser}_{time}.png");
+                        System.Threading.Thread.Sleep(100);
+                    }
+                    else // 網頁截圖
+                    {
+                        string time = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
+                        Tools.PageSnapshot($@"{snapshotfolderpath}\{currencynamelist[k]} 展開 fullsnapshot {browser}_{time}.png", driver);
+                        System.Threading.Thread.Sleep(100);
+                    }
 
                     /// <summary>
-                    /// 檢查當 "進入網頁後" 是否立即看的到置底網銀外幣交易按鈕
-                    /// </summary>
-                    // Assert.Equal("bottom: -100px;", bottom_button.GetAttribute("style"));
-                    // Assert.Equal(1, HlkEBankBuy_button); 
-                    // Assert.Equal(1, HlkEBankSell_button);
+                    /// 檢查當 "點開V選單後" 是否看的到置底網銀外幣交易按鈕
+                    /// <summary>
+                    int HlkEBankBuy_button = driver.FindElements(By.XPath(HlkEBankBuy)).Count;
+                    int HlkEBankSell_button = driver.FindElements(By.XPath(HlkEBankSell)).Count;
+                    Assert.Equal("dropdown_content none show", V_dropdown_content.GetAttribute("class"));
+                    Assert.Equal("bottom: 0px;", bottom_button.GetAttribute("style"));
+                    Assert.Equal(1, HlkEBankBuy_button);
+                    Assert.Equal(1, HlkEBankSell_button);
 
-                    if (V_button_count >= 1) // 檢查畫面中是否存在該元素, count >=1 (存在1個element以上), else: null (沒有該element)
+
+                    V_button.Click(); // 點擊 "V" >>>收合"優惠匯率"選單
+                    System.Threading.Thread.Sleep(500);
+
+                    if (browser == "Firefox") //全螢幕截圖
                     {
-                        IWebElement V_button = driver.FindElement(By.XPath(V_Xpath));
-                        IWebElement V_dropdown_content = driver.FindElement(By.XPath(V_dropdown_content_XPath));
-
-                        if (currency >= 7 && currency <= 25) // 避免點擊不到button, 當index介於7~25之間, 滾動畫面到target element附近
-                        {
-                            Tools.SCrollToElement(driver, driver.FindElement(By.XPath($"//*[@id='BoardRate']/tbody/tr[{currency - 6}]/td[4]")));
-                        }
-
-                        V_button.Click(); // 點擊 "V" >>>展開"優惠匯率"選單
-                        System.Threading.Thread.Sleep(500);
-
-                        if (browsername == "Firefox") //全螢幕截圖
-                        {
-                            string time = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
-                            Tools.FullScreenshot($@"{snapshotfolderpath}\{currencynamelist[k]} 展開 fullsnapshot {browserType}_{time}.png");
-                            System.Threading.Thread.Sleep(100);
-                        }
-                        else // 網頁截圖
-                        {
-                            string time = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
-                            Tools.PageSnapshot($@"{snapshotfolderpath}\{currencynamelist[k]} 展開 fullsnapshot {browserType}_{time}.png", driver);
-                            System.Threading.Thread.Sleep(100);
-                        }
-
-                        /// <summary>
-                        /// 檢查當 "點開V選單後" 是否看的到置底網銀外幣交易按鈕
-                        /// <summary>
-                        int HlkEBankBuy_button = driver.FindElements(By.XPath(HlkEBankBuy)).Count;
-                        int HlkEBankSell_button = driver.FindElements(By.XPath(HlkEBankSell)).Count;
-                        Assert.Equal("dropdown_content none show", V_dropdown_content.GetAttribute("class"));
-                        Assert.Equal("bottom: 0px;", bottom_button.GetAttribute("style"));
-                        Assert.Equal(1, HlkEBankBuy_button);
-                        Assert.Equal(1, HlkEBankSell_button);
-
-
-                        V_button.Click(); // 點擊 "V" >>>收合"優惠匯率"選單
-                        System.Threading.Thread.Sleep(500);
-
-                        if (browsername == "Firefox") //全螢幕截圖
-                        {
-                            string time = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
-                            Tools.FullScreenshot($@"{snapshotfolderpath}\{currencynamelist[k]} 收合 fullsnapshot {browserType}_{time}.png");
-                            System.Threading.Thread.Sleep(100);
-                        }
-                        else // 網頁截圖
-                        {
-                            string time = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
-                            Tools.PageSnapshot($@"{snapshotfolderpath}\{currencynamelist[k]} 收合snapshot {browserType}_{time}.png", driver);
-                            System.Threading.Thread.Sleep(100);
-                        }
-
-                        /// <summary>
-                        /// 檢查當 "收合V選單後" 是否看的到置底網銀外幣交易按鈕
-                        /// </summary>
-                        Assert.Equal("dropdown_content none", V_dropdown_content.GetAttribute("class"));
-                        Assert.Equal("bottom: -100px;", bottom_button.GetAttribute("style"));
-                        Assert.Equal(1, HlkEBankBuy_button);
-                        Assert.Equal(1, HlkEBankSell_button);
+                        string time = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
+                        Tools.FullScreenshot($@"{snapshotfolderpath}\{currencynamelist[k]} 收合 fullsnapshot {browser}_{time}.png");
+                        System.Threading.Thread.Sleep(100);
                     }
-                    k++;
+                    else // 網頁截圖
+                    {
+                        string time = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
+                        Tools.PageSnapshot($@"{snapshotfolderpath}\{currencynamelist[k]} 收合snapshot {browser}_{time}.png", driver);
+                        System.Threading.Thread.Sleep(100);
+                    }
+
+                    /// <summary>
+                    /// 檢查當 "收合V選單後" 是否看的到置底網銀外幣交易按鈕
+                    /// </summary>
+                    Assert.Equal("dropdown_content none", V_dropdown_content.GetAttribute("class"));
+                    Assert.Equal("bottom: -100px;", bottom_button.GetAttribute("style"));
+                    Assert.Equal(1, HlkEBankBuy_button);
+                    Assert.Equal(1, HlkEBankSell_button);
                 }
+                k++;
             }
             driver.Quit();
         }

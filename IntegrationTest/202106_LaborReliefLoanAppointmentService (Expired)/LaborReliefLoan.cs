@@ -1,34 +1,31 @@
 using System;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
 using Xunit;
 using AutomatedTest.Utilities;
 using OpenQA.Selenium.Support.UI;
 using System.IO;
+using Xunit.Abstractions;
 
-namespace LaborReliefLoanAppointmentServiceTest
+namespace AutomatedTest.IntegrationTest.LaborReliefLoanAppointmentService
 {
-    public class 勞工紓困貸款預約服務_PC: Tesseract_OCR
+    public class 勞工紓困貸款預約服務_送出資料: IntegrationTestBase
     {
-        private readonly string test_url = "https://www.esunbank.com.tw/bank/personal/loan/tools/apply/labor-loan-appointment#";
-
+        public 勞工紓困貸款預約服務_送出資料(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
+        {
+            testurl = "https://www.esunbank.com.tw/bank/personal/loan/tools/apply/labor-loan-appointment#";
+        }
 
         [Theory]
-        [InlineData(BrowserType.Chrome)]
-        // [InlineData(BrowserType.Firefox)]
-
-
-        public void TestCase(BrowserType browserType)
+        [MemberData(nameof(BrowserHelper.BrowserList), MemberType = typeof(BrowserHelper))]
+        public void 送出資料(string browser)
         {
-            using IWebDriver driver = WebDriverInfra.Create_Browser(browserType);
-            {
-                driver.Navigate().GoToUrl(test_url);
-                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000); //100秒內載完網頁內容, 否則報錯, 載完提早進下一步.
-                driver.Manage().Window.Maximize();
+            StartTestCase(browser, "勞工紓困貸款預約服務_所有分行資料送出", "York");
 
+            Tools.CreateSnapshotFolder($@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha");
+            System.Threading.Thread.Sleep(100);
+            Tools.CleanUPFolder($@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha"); //清空captcha資料夾
 
-                for (int i = 2; i <= 21; i++) // initial i =2
+            for (int i = 2; i <= 21; i++) // initial i =2
                 {
 
                     int j = 1; // initial j = 1
@@ -119,23 +116,21 @@ namespace LaborReliefLoanAppointmentServiceTest
 
                         IWebElement CaptchaPicture = driver.FindElement(By.XPath("//*[@id='ImgCaptcha']")); //圖片欄位
 
-                        Tools.CreateSnapshotFolder($@"{UserDataList.folderpath}\Captcha"); 
-                        System.Threading.Thread.Sleep(100);
-                        Tools.CleanUPFolder($@"{UserDataList.folderpath}\Captcha"); //清空captcha資料夾
+                       
 
                         int verify_count = 1; // verify_count: 紀錄retry驗證碼次數
                     retryagain:
                         IWebElement ImageVerificationCodeColumn = driver.FindElement(By.XPath(LaborReliefLoan_XPath.image_verify_code_column_XPath())); // 輸入驗證碼欄位
 
                         Tools.SCrollToElement(driver, FullNameColumn);
-                        Tools.ElementSnapshotshot(CaptchaPicture, $@"{UserDataList.folderpath}\Captcha\CaptchaImage_{verify_count}.png"); //snapshot驗證碼圖片
+                        Tools.ElementSnapshotshot(CaptchaPicture, $@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha\CaptchaImage_{verify_count}.png"); //snapshot驗證碼圖片
 
                         if (verify_count >=10) // 依序刪除舊的picture
                         {
-                            File.Delete($@"{UserDataList.folderpath}\Captcha\CaptchaImage_{verify_count-9}.png");
+                            File.Delete($@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha\CaptchaImage_{verify_count-9}.png");
                         }
 
-                        string verify_code_result = TesseractOCRIdentify($@"{UserDataList.folderpath}\Captcha\CaptchaImage_{verify_count}.png", 0.75); //解析出驗證碼
+                        string verify_code_result = TesseractOCRIdentify($@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha\CaptchaImage_{verify_count}.png", 0.75); //解析出驗證碼
 
                         // Tools.ElementTakeScreenShot(CaptchaPicture, $@"{snapshotpath}\ImageVerifyCode.png");
                         // string verify_code_result = Tools.IronOCR($@"{snapshotpath}\ImageVerifyCode.png"); //解析出驗證碼: Iron_OCR
@@ -170,23 +165,22 @@ namespace LaborReliefLoanAppointmentServiceTest
                         wait_to_see_popsup_window.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("/html/body/div[5]/div/div/a"))); // 等待直到看到通知視窗 
                         System.Threading.Thread.Sleep(300);
 
-                        Tools.CreateSnapshotFolder($@"{UserDataList.folderpath}\SnapshotFolder\LaborReliefLoan");
-                        Tools.PageSnapshot($@"{UserDataList.folderpath}\SnapshotFolder\LaborReliefLoan\第{i - 1}縣市第{j}分行_申請_第{ran_date}日第{ran_time}時段.png", driver); //實作截圖
+                        Tools.CreateSnapshotFolder($@"{System.AppDomain.CurrentDomain.BaseDirectory}\SnapshotFolder\LaborReliefLoan");
+                        Tools.PageSnapshot($@"{System.AppDomain.CurrentDomain.BaseDirectory}\SnapshotFolder\LaborReliefLoan\第{i - 1}縣市第{j}分行_申請_第{ran_date}日第{ran_time}時段.png", driver); //實作截圖
 
 
                         driver.FindElement(By.XPath("/html/body/div[5]/div/div/a")).Click(); // 點通知視窗 "X" 按鈕
                         System.Threading.Thread.Sleep(3000);
 
-                        driver.Navigate().GoToUrl(test_url);
+                        driver.Navigate().GoToUrl(testurl);
                         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(100);
 
                         j++;
                     }
                 }
-                driver.Quit();
+            CloseBrowser();
             }
         }
     }
-}
 
 

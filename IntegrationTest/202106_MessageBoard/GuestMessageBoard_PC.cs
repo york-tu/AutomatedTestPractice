@@ -8,27 +8,27 @@ using CsvHelper;
 using System.Globalization;
 using Xunit.Abstractions;
 
-namespace AutomatedTest.IntegrationTest.GuestMessageBoardTest
-{
-    public class 訪客留言版縣市資料源調整:IntegrationTestBase
-    {
-        private readonly string Version = "PC";
-        public 訪客留言版縣市資料源調整(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
-        {
-            testurl = "https://www.esunbank.com.tw/bank/about/services/customer/message-board";
 
+namespace AutomatedTest.IntegrationTest.MessageBoard
+{
+    public class 訪客留言版縣市資料源調整_PC:IntegrationTestBase
+    {
+        public 訪客留言版縣市資料源調整_PC (ITestOutputHelper output, Setup testsetup): base(output, testsetup)
+        {
+            testurl = domain + "https://www.esunbank.com.tw/bank/about/services/customer/message-board";
         }
+            
         [Theory]
         [MemberData(nameof(BrowserHelper.BrowserList), MemberType = typeof(BrowserHelper))]
 
         public void 縣市分行選單檢核(string browser)
         {
-            StartTestCase(browser, "縣市分行選單檢核");
-            INFO("訪客留言版縣市資料源調整, 縣市分行欄位顯示檢核測試");
+            StartTestCase(browser, "縣市分行選單檢核", "York");
+            INFO("縣市分行欄位Snapshot + 出Report");
 
             int country_dropdownList_amount = driver.FindElements(By.XPath("//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[5]/td[2]/div/ul[1]/li/ul/li")).Count;  //獲取 "縣市"下拉選單裡的縣市數
 
-            for (int country_index = 20; country_index <= country_dropdownList_amount - 1; country_index++) // 初始值 = 1
+            for (int country_index = 1; country_index <= country_dropdownList_amount - 1; country_index++) // 初始值 = 1
             {
                
 
@@ -72,7 +72,7 @@ namespace AutomatedTest.IntegrationTest.GuestMessageBoardTest
                     ///<summary>
                     ///從Excel檔中讀出UserData
                     ///</summary>
-                    string csvpath = $@"{UserDataList.folderpath}\testdata\UserInfo.csv";
+                    string csvpath = $@"{UserDataList.Upperfolderpath}\testdata\UserInfo.csv";
                     using (var reader = new StreamReader(csvpath))
                     using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                     {
@@ -100,11 +100,11 @@ namespace AutomatedTest.IntegrationTest.GuestMessageBoardTest
                             user_data_index++;
                         }
 
-                        string snapshotpath = $@"{UserDataList.folderpath}\SnapshotFolder\GuestMessageBoard";
+                        string snapshotpath = $@"{System.AppDomain.CurrentDomain.BaseDirectory}\SnapshotFolder\GuestMessageBoard";
                         Tools.CreateSnapshotFolder(snapshotpath);
 
 
-                        PASS(TestBase.ElementSnapShotToReport(driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[5]"))));
+                        WARNING(TestBase.ElementSnapShotToReport(driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[5]"))));
 
                         //Tools.ElementTakeScreenShot(driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[5]")),
                         //    $@"{snapshotpath}\第 {country_index} 個縣市第 {branch_index} 個分行_欄位snapshot.png"); //元素截圖

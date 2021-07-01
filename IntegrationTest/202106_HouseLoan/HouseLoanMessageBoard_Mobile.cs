@@ -1,40 +1,33 @@
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using Xunit;
 using System;
 using System.IO;
 using System.Linq;
 using AutomatedTest.Utilities;
-using IronXL;
-using System.Text.RegularExpressions;
 using CsvHelper;
 using System.Globalization;
+using Xunit.Abstractions;
 
-namespace HouseLoanMessageBoardTest
+namespace AutomatedTest.IntegrationTest.HouseLoan
 {
-    public class 房貸留言版提示視窗文字調整_PC // 房屋貸款留言測試
+    public class 房貸留言版提示視窗文字調整_PC版 : IntegrationTestBase // 房屋貸款留言測試
     {
-        private readonly string test_url = "https://www.esunbank.com.tw/bank/personal/loan/tools/apply/house-loan?dev=mobile";
+        public 房貸留言版提示視窗文字調整_PC版(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
+        {
+            testurl = "https://www.esunbank.com.tw/bank/personal/loan/tools/apply/house-loan?dev=mobile";
+        }
+
         private readonly string Version = "Mobile";
         private readonly string testcase_name = "預售屋查詢";
 
         [Theory]
-        [InlineData(BrowserType.Chrome)]
-        //[InlineData(BrowserType.Firefox)]
-
-
-        public void TestCase(BrowserType browserType)
+        [MemberData(nameof(BrowserHelper.BrowserList), MemberType = typeof(BrowserHelper))]
+      
+        public void 提示視窗文字檢核(string browser)
         {
-            using IWebDriver driver = WebDriverInfra.Create_Browser(browserType);
-            {
-                
-                driver.Navigate().GoToUrl(test_url);
-                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000); //100秒內載完網頁內容, 否則報錯, 載完提早進下一步.
-                //driver.Manage().Window.Maximize();
-
-
+            StartTestCase(browser, "房貸留言版提示視窗文字調整_PC版", "York");
+            INFO("確認視窗文字");
                 try
                 {
                     string timesavepath = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm");
@@ -51,7 +44,7 @@ namespace HouseLoanMessageBoardTest
                     buy_house.Click(); //選"購買房屋"
                     System.Threading.Thread.Sleep(300);
 
-                    string csvpath = $@"{UserDataList.folderpath}\testdata\UserInfo.csv";
+                    string csvpath = $@"{UserDataList.Upperfolderpath}\testdata\UserInfo.csv";
                     using (var reader = new StreamReader(csvpath)) //讀CSV檔
                     using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                     {
@@ -114,7 +107,7 @@ namespace HouseLoanMessageBoardTest
                     string snapshotpath = System.AppDomain.CurrentDomain.BaseDirectory + "SnapshotFolder\\HouseLoanMessageBoard";
                     Tools.CreateSnapshotFolder(snapshotpath);
                     System.Threading.Thread.Sleep(100);
-                    Tools.FullScreenshot($@"{snapshotpath}\{testcase_name}_{browserType}_{Version}_{timesavepath}.png"); // 截圖當下畫面
+                    Tools.FullScreenshot($@"{snapshotpath}\{testcase_name}_{browser}_{Version}_{timesavepath}.png"); // 截圖當下畫面
 
                     driver.SwitchTo().Alert().Accept();
                 }
@@ -123,7 +116,6 @@ namespace HouseLoanMessageBoardTest
 
                 }
                 driver.Quit();
-            }
         }    
     }
 }

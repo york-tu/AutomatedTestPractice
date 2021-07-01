@@ -1,34 +1,33 @@
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
 using Xunit;
-using System;
 using System.IO;
 using IronXL;
 using System.Text.RegularExpressions;
 using AutomatedTest.Utilities;
+using Xunit.Abstractions;
 
-namespace PreSaleHouseTrustInquiryTest
+namespace AutomatedTest.IntegrationTest.PreSaleHouse
 {
-    public class 預售屋信託查詢精進_PC
+    public class 預售屋信託查詢精進_PC版: IntegrationTestBase
     {
-        private readonly string test_url = "https://www.esunbank.com.tw/bank/personal/trust/announcement-and-inquiry/pre-construction-real-estate-trust-inquiry";
-        
+        public 預售屋信託查詢精進_PC版(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
+        {
+            testurl = "https://www.esunbank.com.tw/bank/personal/trust/announcement-and-inquiry/pre-construction-real-estate-trust-inquiry";
+        }
+
         private readonly string testcase_name = "預售屋查詢";
 
         [Theory]
-        [InlineData(BrowserType.Chrome)]
-        //[InlineData(BrowserType.Firefox)]
+        [MemberData(nameof(BrowserHelper.BrowserList), MemberType = typeof(BrowserHelper))]
 
 
-        public void TestCase(BrowserType browserType)
+        public void 欄位檢核測試(string browser)
         {
-            System.Threading.Thread.Sleep(100);
+            StartTestCase(browser, "預售屋信託查詢精進_欄位檢核測試", "York");
+            INFO("");
 
-            using IWebDriver driver = WebDriverInfra.Create_Browser(browserType);
-            {
-                string tim = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm");
-                string snapshotfolderpath = $@"{UserDataList.folderpath}\SnapshotFolder\PreSaleHouseTrustInquiry";
+                string time = System.DateTime.Now.ToString("yyyy-MM-dd_HHmm");
+                string snapshotfolderpath = $@"{System.AppDomain.CurrentDomain.BaseDirectory}\SnapshotFolder\PreSaleHouseTrustInquiry";
                 string excel_path = $@"{snapshotfolderpath}\TestReport.xlsx";
 
                 Tools.CreateSnapshotFolder(snapshotfolderpath);
@@ -53,11 +52,6 @@ namespace PreSaleHouseTrustInquiryTest
                     xlsWorkbook = WorkBook.Create(ExcelFileFormat.XLSX); //定義 excel格式為 XLSX
                     xlsSheet = xlsWorkbook.CreateWorkSheet(testcase_name);
                 }
-
-                
-                driver.Navigate().GoToUrl(test_url);
-                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000); //100秒內載完網頁內容, 否則報錯, 載完提早進下一步.
-                //driver.Manage().Window.Maximize();
 
                 IWebElement ProjectNameDropDownList = driver.FindElement(By.XPath("//*[@id='layout_0_rightcontent_1_PnlInput']/div[2]/table/tbody/tr[1]/td[2]/ul"));
                 ProjectNameDropDownList.Click(); // 點建案下拉選單
@@ -180,7 +174,6 @@ namespace PreSaleHouseTrustInquiryTest
                 {
                     xlsWorkbook.Save();
                 }
-            }
             driver.Quit();
         }
     }

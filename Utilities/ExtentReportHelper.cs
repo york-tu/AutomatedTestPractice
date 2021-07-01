@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using AventStack.ExtentReports;
 using AventStack.ExtentReports.Reporter;
+using AventStack.ExtentReports.Reporter.Configuration;
 
 namespace AutomatedTest.Utilities
 {
@@ -11,6 +12,7 @@ namespace AutomatedTest.Utilities
     {
         private ExtentReports _extentReportsObject;
         private string _testName;
+        private string _tester;
         private string _environment;
         private string _driverVersion;
 
@@ -18,8 +20,9 @@ namespace AutomatedTest.Utilities
 
         List<TestResult> testReport = new List<TestResult>();
 
-        public ExtentReportHelper(string testName)
+        public ExtentReportHelper(string testName, string tester)
         {
+            _tester = tester;
             _testName = testName;
         }
 
@@ -34,7 +37,9 @@ namespace AutomatedTest.Utilities
 
             _extentReportsObject.AttachReporter(_htmlReporter);
             _extentReportsObject.AddSystemInfo("測試案例", _testName);
-
+            _extentReportsObject.AddSystemInfo("測試人員", _tester);
+            _htmlReporter.Config.Theme = Theme.Dark; // theme - standard, dark
+            _htmlReporter.Config.Encoding = "UTF-8"; // encoding, default = UTF-8
         }
 
         public void CreateTestCase(string caseName, string typeName = "")
