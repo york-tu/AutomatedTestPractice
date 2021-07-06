@@ -33,7 +33,7 @@ namespace AutomatedTest.Utilities
            // var dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location + "\\");
             var filename = String.Format("{0}_{1}.html", _testName, DateTime.Now.ToString("yyyyMMddHHmm"));
             //var _htmlReporter = new ExtentV3HtmlReporter(dir + filename);
-            var _htmlReporter = new ExtentV3HtmlReporter($@"{UserDataList.folderpath}\{filename}");
+            var _htmlReporter = new ExtentV3HtmlReporter($@"{UserDataList.Upperfolderpath}\{filename}");
 
             _extentReportsObject.AttachReporter(_htmlReporter);
             _extentReportsObject.AddSystemInfo("測試案例", _testName);
