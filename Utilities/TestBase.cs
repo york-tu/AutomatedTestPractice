@@ -8,13 +8,14 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using IronOcr;
 using AventStack.ExtentReports;
+using S22.Imap;
 
 namespace AutomatedTest.Utilities
 {
     /// <summary>
     ///  工具區
     /// </summary>
-    public class Tools 
+    public class Tools
     {
         public static void Find_Element(IWebDriver driver, IWebElement element) // 畫面定位 (selenium)
         {
@@ -232,7 +233,7 @@ namespace AutomatedTest.Utilities
             }
 
 
-        } 
+        }
 
         public static string CreateRandomString(int length) // 產生指定長度 " 頭(1位大or小寫英文) + 大or小寫英文&數字 " 隨機組合字串
         {
@@ -241,7 +242,7 @@ namespace AutomatedTest.Utilities
             string code = "";
             switch (r.Next(0, 2))
             {
-                case 0: code += (char)r.Next(65, 91); break; 
+                case 0: code += (char)r.Next(65, 91); break;
                 case 1: code += (char)r.Next(97, 123); break; //char代碼表:  https://www.cnblogs.com/tian_z/archive/2010/08/06/1793736.html
             }
 
@@ -263,14 +264,14 @@ namespace AutomatedTest.Utilities
             string number = "";
 
             for (int i = 0; i < length; ++i)
-                {
-                    number += r.Next(0, 10); 
-                }
+            {
+                number += r.Next(0, 10);
+            }
 
             return number;
         }
 
-        public static string BaiduOCR (string imagepath) //  百度_圖片辨識
+        public static string BaiduOCR(string imagepath) //  百度_圖片辨識
         {
             var API_KEY = "cohIahxAt7HveHLYSHYK6G5N"; // "FGPi0QpCbZxZxBaN6dvqt87X";
             var SECRET_KEY = "e8SAsDIWSK9NPUKviYiPQNlfaVDXQSY5"; // "HunNq6XsLjF3a7aCAuirVaVQO7CKBuwW";
@@ -299,12 +300,12 @@ namespace AutomatedTest.Utilities
             return CutResult;
         }
 
-        public static string IronOCR (string imagepath) // Iron_圖片辨識
+        public static string IronOCR(string imagepath) // Iron_圖片辨識
         {
             var Ocr = new IronTesseract();
             using (var Input = new OcrInput(imagepath))
             {
-                 Input.Deskew();  // use if image not straight
+                Input.Deskew();  // use if image not straight
                 Input.DeNoise(); // use if image contains digital noise
                 var Result = Ocr.Read(Input);
                 return Result.Text;
@@ -322,7 +323,7 @@ namespace AutomatedTest.Utilities
             proc.Close();
         }
 
-       public static void CleanUPFolder(string folderpath) // 清空指定資料夾
+        public static void CleanUPFolder(string folderpath) // 清空指定資料夾
         {
             string[] need_to_clean_folder = Directory.GetFileSystemEntries(folderpath);
             foreach (var file in need_to_clean_folder)
@@ -331,90 +332,109 @@ namespace AutomatedTest.Utilities
             }
         }
 
+        public static string ReadGmailRecentMail (string UserAccount, string Password) // 讀取Gmail最新信件內容
+        {
+            string hostname = "imap.gmail.com";
+            string username = UserAccount;
+            string password = Password;
+            using (ImapClient client = new ImapClient(hostname, 993, username, password, AuthMethod.Login, true))
+            {
+                var uids = client.Search(SearchCondition.All()); // 指定信件匣 "所有" 信件
+                var last_message = client.GetMessages(uids).Last(); // 擷取信件匣內"最新"mail
 
-        
+                string from = last_message.From.Address.ToString().Trim();
+                string from_displayname = last_message.From.DisplayName.ToString().Trim();
+                string to = last_message.To.ToString().Trim();
+                string date = last_message.Date().ToString().Trim();
+                string subject = last_message.Subject.ToString().Trim();
+                string body = last_message.Body.ToString().Trim();
+                string bodyHTNL = last_message.IsBodyHtml.ToString().Trim();
+                string attachment = last_message.Attachments.ToString().Trim();
+
+                return $" 寄件人: {from_displayname} <{from}> \n 收件人: {to} \n 收件時間: {date} \n 主旨: {subject} \n 內文: \n\n {body}"; // report出信件內容
+            }
+
+        }
+
+
+
+        /// <summary>
+        ///  定義欄位的XPath
+        /// </summary>
+        public class LaborReliefLoan_XPath
+        {
+            public static string name_column_Xpath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[1]/td[2]/input"; }
+            public static string ID_column_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[2]/td[2]/input"; }
+            public static string cellphone_column_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[3]/td[2]/input"; }
+            public static string birthday_column_XPath() { return "//*[@id='birth']"; }
+            public static string country_dropdownlist_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[5]/td[2]/div/ul[1]/li/span"; }
+            public static string branch_dropdownlist_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[5]/td[2]/div/ul[2]/li/span"; }
+            public static string date_dropdownlist_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[1]/li"; }
+            public static string time_dropdownlist_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[2]/li"; }
+            public static string i_have_read_button_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[8]/td[2]/div/a"; }
+            public static string submit_button_XPath() { return "//*[@id='submit']"; }
+            public static string image_verify_code_column_XPath() { return "//*[@id='captchaValue']"; }
+        }
+
+        class TestBase
+        {
+            protected IWebDriver driver;
+            private int _interval = 500;
+            private int _timeout = 60;
+            protected ExtentReports extentReports;
+            protected ExtentTest ExtentTObj;
+
+            public TestBase(string browserArg, ExtentTest extentTObj)
+            {
+                BrowserHelper browser = new BrowserHelper(browserArg);
+                this.driver = browser.driver;
+                this.ExtentTObj = extentTObj;
+            }
+
+            public TestBase(string browserArg, int timeout, int interval)
+            {
+                BrowserHelper browser = new BrowserHelper(browserArg);
+                this.driver = browser.driver;
+                _timeout = timeout;
+                _interval = interval;
+            }
+
+            public static string PageSnapshotToReport(IWebDriver driver) // Snapshot 網頁 (for attach report)
+            {
+                var img_HTML = string.Empty;
+                Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
+                var screenshotByArray = ss.AsByteArray;
+                var temp_inBase64 = Convert.ToBase64String(screenshotByArray);
+                img_HTML = "<img style=\"width: 1080px;\" src=\"data:image/png;base64, " + temp_inBase64 + "\"/>";
+                return img_HTML;
+            }
+
+            public static string ElementSnapShotToReport(IWebElement webElement) // Snapshot 元件 (for attach to report)
+            {
+                var img_HTML = string.Empty;
+                Screenshot elementScreenshot = (webElement as ITakesScreenshot).GetScreenshot();
+                var elementscreenshotByArray = elementScreenshot.AsByteArray;
+                var temp_inBase64 = Convert.ToBase64String(elementscreenshotByArray);
+                img_HTML = "<img style=\"width: 720px;\" src=\"data:image/png;base64, " + temp_inBase64 + "\"/>";
+                return img_HTML;
+            }
+
+            public static string FullScreenshot(string imagefilepath) //全螢幕截圖 (for attach to report)
+            {
+                var img_HTML = string.Empty;
+                Bitmap bmp = new Bitmap(imagefilepath);
+                MemoryStream ms = new MemoryStream();
+                bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                byte[] arr = new byte[ms.Length];
+                ms.Position = 0;
+                ms.Read(arr, 0, (int)ms.Length);
+                ms.Close();
+                var temp_inBase64 = Convert.ToBase64String(arr);
+                img_HTML = "<img style=\"width: 720px;\" src=\"data:image/png;base64, " + temp_inBase64 + "\"/>";
+                return img_HTML;
+            }
+        }
     }
-
-
-
-    /// <summary>
-    ///  定義欄位的XPath
-    /// </summary>
-    public class LaborReliefLoan_XPath
-    {
-        public static string name_column_Xpath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[1]/td[2]/input"; }
-        public static string ID_column_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[2]/td[2]/input"; }
-        public static string cellphone_column_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[3]/td[2]/input"; }
-        public static string birthday_column_XPath() { return "//*[@id='birth']"; }
-        public static string country_dropdownlist_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[5]/td[2]/div/ul[1]/li/span"; }
-        public static string branch_dropdownlist_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[5]/td[2]/div/ul[2]/li/span"; }
-        public static string date_dropdownlist_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[1]/li"; }
-        public static string time_dropdownlist_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[2]/li"; }
-        public static string i_have_read_button_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[8]/td[2]/div/a"; }
-        public static string submit_button_XPath() { return "//*[@id='submit']"; }
-        public static string image_verify_code_column_XPath() { return "//*[@id='captchaValue']"; }
-    }
-   
-    class TestBase
-    {
-        protected IWebDriver driver;
-        private int _interval = 500;
-        private int _timeout = 60;
-        protected ExtentReports extentReports;
-        protected ExtentTest ExtentTObj;
-
-        public TestBase(string browserArg, ExtentTest extentTObj)
-        {
-            BrowserHelper browser = new BrowserHelper(browserArg);
-            this.driver = browser.driver;
-            this.ExtentTObj = extentTObj;
-        }
-
-        public TestBase (string browserArg, int timeout, int interval)
-        {
-            BrowserHelper browser = new BrowserHelper(browserArg);
-            this.driver = browser.driver;
-            _timeout = timeout;
-            _interval = interval;
-        }
-
-        public static string PageSnapshotToReport(IWebDriver driver) // Snapshot 網頁 (for attach report)
-        {
-            var img_HTML = string.Empty;
-            Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
-            var screenshotByArray = ss.AsByteArray;
-            var temp_inBase64 = Convert.ToBase64String(screenshotByArray);
-            img_HTML = "<img style=\"width: 1080px;\" src=\"data:image/png;base64, " + temp_inBase64 + "\"/>";
-            return img_HTML;
-        }
-
-        public static string ElementSnapShotToReport(IWebElement webElement) // Snapshot 元件 (for attach to report)
-        {
-            var img_HTML = string.Empty;
-            Screenshot elementScreenshot = (webElement as ITakesScreenshot).GetScreenshot();
-            var elementscreenshotByArray = elementScreenshot.AsByteArray;
-            var temp_inBase64 = Convert.ToBase64String(elementscreenshotByArray);
-            img_HTML = "<img style=\"width: 720px;\" src=\"data:image/png;base64, " + temp_inBase64 + "\"/>";
-            return img_HTML;
-        }
-
-        public static string FullScreenshot(string imagefilepath) //全螢幕截圖 (for attach to report)
-        {
-            var img_HTML = string.Empty;
-            Bitmap bmp = new Bitmap(imagefilepath);
-            MemoryStream ms = new MemoryStream();
-            bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-            byte[] arr = new byte[ms.Length];
-            ms.Position = 0;
-            ms.Read(arr, 0, (int)ms.Length);
-            ms.Close();
-            var temp_inBase64 = Convert.ToBase64String(arr);
-             img_HTML = "<img style=\"width: 720px;\" src=\"data:image/png;base64, " + temp_inBase64 + "\"/>";
-            return img_HTML;
-        }
-
-    }
-
 }
 
 
