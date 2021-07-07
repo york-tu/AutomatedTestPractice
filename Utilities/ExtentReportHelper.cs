@@ -31,7 +31,7 @@ namespace AutomatedTest.Utilities
             _extentReportsObject = new ExtentReports();
 
            // var dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location + "\\");
-            var filename = String.Format("{0}_{1}.html", _testName, DateTime.Now.ToString("yyyyMMddHHmm"));
+            var filename = String.Format("{0}_{1}_{2}.html", _testName, _tester, DateTime.Now.ToString("yyyy-MM-dd_HHmm"));
             //var _htmlReporter = new ExtentV3HtmlReporter(dir + filename);
             var _htmlReporter = new ExtentV3HtmlReporter($@"{UserDataList.Upperfolderpath}\{filename}");
 
@@ -62,7 +62,7 @@ namespace AutomatedTest.Utilities
         public void TestCaseDriverVersion(string driverVersion)
         {
             _driverVersion = driverVersion;
-            _extentReportsObject.AddSystemInfo("瀏覽器版本", _driverVersion);
+            _extentReportsObject.AddSystemInfo("瀏覽器", _driverVersion);
         }
 
         public void ExportReport()

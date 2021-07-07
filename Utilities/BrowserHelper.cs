@@ -14,6 +14,7 @@ namespace AutomatedTest.Utilities
         public IDictionary<string, object> vars { get; private set; }
         private IJavaScriptExecutor js;
         string browserVersion;
+        string browserName;
         ICapabilities capabilities;
 
 
@@ -42,16 +43,19 @@ namespace AutomatedTest.Utilities
                     driver = new ChromeDriver();
                     capabilities = ((RemoteWebDriver)driver).Capabilities;
                     browserVersion = capabilities.GetCapability("browserVersion").ToString();
+                    browserName = "Chrome";
                     break;
 
                 case "Firefox":
                     driver = new FirefoxDriver();
                     capabilities = ((RemoteWebDriver)driver).Capabilities;
                     browserVersion = capabilities.GetCapability("browserVersion").ToString();
+                    browserName = "Firefox";
                     break;
 
                 case "IE":
                     driver = new InternetExplorerDriver();
+                    browserName = "IE";
                     break;
             }
         }
@@ -73,7 +77,10 @@ namespace AutomatedTest.Utilities
         {
             return browserVersion;
         }
-
+        public string GetBrowserName()
+        {
+            return browserName;
+        }
 
     }
 }

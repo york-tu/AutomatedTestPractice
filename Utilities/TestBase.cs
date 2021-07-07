@@ -17,25 +17,39 @@ namespace AutomatedTest.Utilities
     /// </summary>
     public class Tools
     {
+        /// <summary>
+        /// For Selenium
+        /// </summary>
         public static void Find_Element(IWebDriver driver, IWebElement element) // 畫面定位 (selenium)
         {
             Actions action = new Actions(driver);
             action.MoveToElement(element).Perform();
 
         }
+        public static void SCrollToElement(IWebDriver driver, IWebElement element) // 畫面滾到target位置
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("arguments[0].scrollIntoView(true);", element); // Viewport對頂部對齊
+            Actions act = new Actions(driver);
+            act.MoveToElement(element).Perform();
 
+        }
+
+
+
+        /// <summary>
+        /// 截圖相關
+        /// </summary>
         public static void PageSnapshot(string savepath, IWebDriver driver) // 截圖當下畫面 (selenium)
         {
             Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
             ss.SaveAsFile(savepath, ScreenshotImageFormat.Png);
         }
-
         public static void ElementSnapshotshot(IWebElement webElement, string savepath) // Only截元件圖 (selenium)
         {
             var elementScreenshot = (webElement as ITakesScreenshot).GetScreenshot();
             elementScreenshot.SaveAsFile(savepath);
         }
-
         public static void FullScreenshot(string savepath) //全螢幕截圖 (C#)
         {
             Bitmap myimage = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
@@ -43,7 +57,6 @@ namespace AutomatedTest.Utilities
             g.CopyFromScreen(new Point(0, 0), new Point(0, 0), new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height));
             myimage.Save(savepath);
         }
-
         public static void CreateSnapshotFolder(string snapshotpath) // 產生snapshot folder
         {
             try
@@ -63,16 +76,20 @@ namespace AutomatedTest.Utilities
                 throw;
             }
         }
-
-        public static void SCrollToElement(IWebDriver driver, IWebElement element) // 畫面滾到target位置
+        public static void CleanUPFolder(string folderpath) // 清空指定資料夾
         {
-            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
-            js.ExecuteScript("arguments[0].scrollIntoView(true);", element); // Viewport對頂部對齊
-            Actions act = new Actions(driver);
-            act.MoveToElement(element).Perform();
-
+            string[] need_to_clean_folder = Directory.GetFileSystemEntries(folderpath);
+            foreach (var file in need_to_clean_folder)
+            {
+                File.Delete(file);
+            }
         }
 
+
+
+        /// <summary>
+        /// 產生測試用資料
+        /// </summary>
         public static string CreateIDNumber(bool sex, int city)
         {
             //身分證開頭英文 (參考網址: https://ithelp.ithome.com.tw/articles/10202484)
@@ -112,14 +129,78 @@ namespace AutomatedTest.Utilities
             return id;
 
         } // 亂數產生新式身分證字號
-
         public static string CreateCellPhoneNumber() // 亂數產生行動電話號碼
         {
             Random phone = new Random();
             string cellphonenumber = $"09{(phone.Next(100000000) + 100000000).ToString().Substring(1)}";
             return cellphonenumber;
         }
+        public static string CreateRandomString(int length) // 產生指定長度 " 頭(1位大or小寫英文) + 大or小寫英文&數字 " 隨機組合字串
+        {
+            Random r = new Random();
 
+            string code = "";
+            switch (r.Next(0, 2))
+            {
+                case 0: code += (char)r.Next(65, 91); break;
+                case 1: code += (char)r.Next(97, 123); break; //char代碼表:  https://www.cnblogs.com/tian_z/archive/2010/08/06/1793736.html
+            }
+
+            for (int i = 0; i < length; ++i)
+                switch (r.Next(0, 3))
+                {
+                    case 0: code += r.Next(0, 10); break;
+                    case 1: code += (char)r.Next(65, 91); break;
+                    case 2: code += (char)r.Next(97, 123); break;
+                }
+
+            return code;
+        }
+        public static string CreateRandomNumber(int length) // 產生指定長度隨機數字組合
+        {
+            Random r = new Random();
+
+            string number = "";
+
+            for (int i = 0; i < length; ++i)
+            {
+                number += r.Next(0, 10);
+            }
+
+            return number;
+        }
+        public static string CreateUniformNumber() // 亂數產生統一編號
+        {
+            int[] vat = new int[8];   // 用來存統一編號的 8 個數字
+            int[] WeightedCount = new int[] { 1, 2, 1, 2, 1, 2, 4, 1 };   // 用來存統一編號 8 個數字依序要乘的權數
+            string uniformNumber = "";
+
+            Random ran = new Random();
+            for (int i = 0; i < 7; i++)
+            {
+                vat[i] = ran.Next(0, 10);
+                uniformNumber = uniformNumber + vat[i].ToString();
+            }
+            vat[7] = FindLastNumberInVATnumber();
+            uniformNumber = uniformNumber + vat[7].ToString();
+            return uniformNumber;
+
+            int FindLastNumberInVATnumber()
+            {
+                int Amount = 0;
+                for (int i = 0; i < 7; i++)
+                {
+                    Amount += (vat[i] * WeightedCount[i]) / 10 + (vat[i] * WeightedCount[i]) % 10;
+                }
+                return (10 - (Amount % 10)) % 10;
+            }
+        }
+
+
+
+        /// <summary>
+        /// 檢核工具
+        /// </summary>
         public static bool CheckResidentID(string id) // 檢核是否為現行本國人身分證字號
         {
             //除了檢查碼外每個數字的存放空間 
@@ -156,7 +237,6 @@ namespace AutomatedTest.Utilities
             }
             return true;
         }
-
         public static bool CheckForeignerID(string id) // 檢核是否為中華民國外僑及大陸人士在台居留證證號(舊式+新式)
         {
             id = id.ToUpper();
@@ -234,44 +314,44 @@ namespace AutomatedTest.Utilities
 
 
         }
-
-        public static string CreateRandomString(int length) // 產生指定長度 " 頭(1位大or小寫英文) + 大or小寫英文&數字 " 隨機組合字串
+        public static bool CheckUniformNumber(string inputUniformNumber)  // 檢核是否為符合規則的統一編號
         {
-            Random r = new Random();
-
-            string code = "";
-            switch (r.Next(0, 2))
+            if (inputUniformNumber == null)
             {
-                case 0: code += (char)r.Next(65, 91); break;
-                case 1: code += (char)r.Next(97, 123); break; //char代碼表:  https://www.cnblogs.com/tian_z/archive/2010/08/06/1793736.html
+                return false;
             }
+            Regex regex = new Regex(@"^\d{8}$");
+            Match match = regex.Match(inputUniformNumber);
+            if (!match.Success)
+            {
+                return false;
+            }
+            int[] idNoArray = inputUniformNumber.ToCharArray().Select(c => Convert.ToInt32(c.ToString())).ToArray();
+            int[] weight = new int[] { 1, 2, 1, 2, 1, 2, 4, 1 };
 
-            for (int i = 0; i < length; ++i)
-                switch (r.Next(0, 3))
-                {
-                    case 0: code += r.Next(0, 10); break;
-                    case 1: code += (char)r.Next(65, 91); break;
-                    case 2: code += (char)r.Next(97, 123); break;
-                }
-
-            return code;
+            int subSum;     //小和
+            int sum = 0;    //總和
+            int sumFor7 = 1;
+            for (int i = 0; i < idNoArray.Length; i++)
+            {
+                subSum = idNoArray[i] * weight[i];
+                sum += (subSum / 10)   //商數
+                     + (subSum % 10);  //餘數                
+            }
+            if (idNoArray[6] == 7)
+            {
+                //若第7碼=7，則會出現兩種數值都算對，因此要特別處理。
+                sumFor7 = sum + 1;
+            }
+            return (sum % 10 == 0) || (sumFor7 % 10 == 0);
         }
 
-        public static string CreateRandomNumber(int length) // 產生指定長度隨機數字組合
-        {
-            Random r = new Random();
 
-            string number = "";
 
-            for (int i = 0; i < length; ++i)
-            {
-                number += r.Next(0, 10);
-            }
-
-            return number;
-        }
-
-        public static string BaiduOCR(string imagepath) //  百度_圖片辨識
+        /// <summary>
+        /// 圖片辨識
+        /// </summary>
+        public static string BaiduOCR(string imagepath) // 百度_圖片辨識
         {
             var API_KEY = "cohIahxAt7HveHLYSHYK6G5N"; // "FGPi0QpCbZxZxBaN6dvqt87X";
             var SECRET_KEY = "e8SAsDIWSK9NPUKviYiPQNlfaVDXQSY5"; // "HunNq6XsLjF3a7aCAuirVaVQO7CKBuwW";
@@ -299,7 +379,6 @@ namespace AutomatedTest.Utilities
             string CutResult = Regex.Replace(cut, "[^0-9A-Za-z]", ""); //去除掉符號空白...只留下字母&数字
             return CutResult;
         }
-
         public static string IronOCR(string imagepath) // Iron_圖片辨識
         {
             var Ocr = new IronTesseract();
@@ -312,6 +391,11 @@ namespace AutomatedTest.Utilities
             }
         }
 
+
+
+        /// <summary>
+        /// 其他小工具
+        /// </summary>
         public static void KillProcess(string processname) // Kill Process (e.g., chromedriver.exe. geckodriver.exe)
         {
             System.Diagnostics.ProcessStartInfo p;
@@ -322,16 +406,6 @@ namespace AutomatedTest.Utilities
             proc.WaitForExit();
             proc.Close();
         }
-
-        public static void CleanUPFolder(string folderpath) // 清空指定資料夾
-        {
-            string[] need_to_clean_folder = Directory.GetFileSystemEntries(folderpath);
-            foreach (var file in need_to_clean_folder)
-            {
-                File.Delete(file);
-            }
-        }
-
         public static string ReadGmailRecentMail (string UserAccount, string Password) // 讀取Gmail最新信件內容
         {
             string hostname = "imap.gmail.com";
@@ -356,84 +430,80 @@ namespace AutomatedTest.Utilities
 
         }
 
+    }
+    
+    public class TestBase
+    {
+        protected IWebDriver driver;
+        private int _interval = 500;
+        private int _timeout = 60;
+        protected ExtentReports extentReports;
+        protected ExtentTest ExtentTObj;
 
-
-        /// <summary>
-        ///  定義欄位的XPath
-        /// </summary>
-        public class LaborReliefLoan_XPath
+        public TestBase(string browserArg, ExtentTest extentTObj)
         {
-            public static string name_column_Xpath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[1]/td[2]/input"; }
-            public static string ID_column_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[2]/td[2]/input"; }
-            public static string cellphone_column_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[3]/td[2]/input"; }
-            public static string birthday_column_XPath() { return "//*[@id='birth']"; }
-            public static string country_dropdownlist_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[5]/td[2]/div/ul[1]/li/span"; }
-            public static string branch_dropdownlist_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[5]/td[2]/div/ul[2]/li/span"; }
-            public static string date_dropdownlist_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[1]/li"; }
-            public static string time_dropdownlist_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[2]/li"; }
-            public static string i_have_read_button_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[8]/td[2]/div/a"; }
-            public static string submit_button_XPath() { return "//*[@id='submit']"; }
-            public static string image_verify_code_column_XPath() { return "//*[@id='captchaValue']"; }
+            BrowserHelper browser = new BrowserHelper(browserArg);
+            this.driver = browser.driver;
+            this.ExtentTObj = extentTObj;
+        }
+        public TestBase(string browserArg, int timeout, int interval)
+        {
+            BrowserHelper browser = new BrowserHelper(browserArg);
+            this.driver = browser.driver;
+            _timeout = timeout;
+            _interval = interval;
         }
 
-        class TestBase
+        public static string PageSnapshotToReport(IWebDriver driver) // Snapshot 網頁 (for attach report)
         {
-            protected IWebDriver driver;
-            private int _interval = 500;
-            private int _timeout = 60;
-            protected ExtentReports extentReports;
-            protected ExtentTest ExtentTObj;
-
-            public TestBase(string browserArg, ExtentTest extentTObj)
-            {
-                BrowserHelper browser = new BrowserHelper(browserArg);
-                this.driver = browser.driver;
-                this.ExtentTObj = extentTObj;
-            }
-
-            public TestBase(string browserArg, int timeout, int interval)
-            {
-                BrowserHelper browser = new BrowserHelper(browserArg);
-                this.driver = browser.driver;
-                _timeout = timeout;
-                _interval = interval;
-            }
-
-            public static string PageSnapshotToReport(IWebDriver driver) // Snapshot 網頁 (for attach report)
-            {
-                var img_HTML = string.Empty;
-                Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
-                var screenshotByArray = ss.AsByteArray;
-                var temp_inBase64 = Convert.ToBase64String(screenshotByArray);
-                img_HTML = "<img style=\"width: 1080px;\" src=\"data:image/png;base64, " + temp_inBase64 + "\"/>";
-                return img_HTML;
-            }
-
-            public static string ElementSnapShotToReport(IWebElement webElement) // Snapshot 元件 (for attach to report)
-            {
-                var img_HTML = string.Empty;
-                Screenshot elementScreenshot = (webElement as ITakesScreenshot).GetScreenshot();
-                var elementscreenshotByArray = elementScreenshot.AsByteArray;
-                var temp_inBase64 = Convert.ToBase64String(elementscreenshotByArray);
-                img_HTML = "<img style=\"width: 720px;\" src=\"data:image/png;base64, " + temp_inBase64 + "\"/>";
-                return img_HTML;
-            }
-
-            public static string FullScreenshot(string imagefilepath) //全螢幕截圖 (for attach to report)
-            {
-                var img_HTML = string.Empty;
-                Bitmap bmp = new Bitmap(imagefilepath);
-                MemoryStream ms = new MemoryStream();
-                bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-                byte[] arr = new byte[ms.Length];
-                ms.Position = 0;
-                ms.Read(arr, 0, (int)ms.Length);
-                ms.Close();
-                var temp_inBase64 = Convert.ToBase64String(arr);
-                img_HTML = "<img style=\"width: 720px;\" src=\"data:image/png;base64, " + temp_inBase64 + "\"/>";
-                return img_HTML;
-            }
+            var img_HTML = string.Empty;
+            Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
+            var screenshotByArray = ss.AsByteArray;
+            var temp_inBase64 = Convert.ToBase64String(screenshotByArray);
+            img_HTML = "<img style=\"width: 1080px;\" src=\"data:image/png;base64, " + temp_inBase64 + "\"/>";
+            return img_HTML;
         }
+        public static string ElementSnapShotToReport(IWebElement webElement) // Snapshot 元件 (for attach to report)
+        {
+            var img_HTML = string.Empty;
+            Screenshot elementScreenshot = (webElement as ITakesScreenshot).GetScreenshot();
+            var elementscreenshotByArray = elementScreenshot.AsByteArray;
+            var temp_inBase64 = Convert.ToBase64String(elementscreenshotByArray);
+            img_HTML = "<img style=\"width: 720px;\" src=\"data:image/png;base64, " + temp_inBase64 + "\"/>";
+            return img_HTML;
+        }
+        public static string FullScreenshot(string imagefilepath) //全螢幕截圖 (for attach to report)
+        {
+            var img_HTML = string.Empty;
+            Bitmap bmp = new Bitmap(imagefilepath);
+            MemoryStream ms = new MemoryStream();
+            bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+            byte[] arr = new byte[ms.Length];
+            ms.Position = 0;
+            ms.Read(arr, 0, (int)ms.Length);
+            ms.Close();
+            var temp_inBase64 = Convert.ToBase64String(arr);
+            img_HTML = "<img style=\"width: 720px;\" src=\"data:image/png;base64, " + temp_inBase64 + "\"/>";
+            return img_HTML;
+        }
+    }
+
+    /// <summary>
+    ///  定義欄位的XPath
+    /// </summary>
+    public class LaborReliefLoan_XPath
+    {
+        public static string name_column_Xpath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[1]/td[2]/input"; }
+        public static string ID_column_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[2]/td[2]/input"; }
+        public static string cellphone_column_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[3]/td[2]/input"; }
+        public static string birthday_column_XPath() { return "//*[@id='birth']"; }
+        public static string country_dropdownlist_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[5]/td[2]/div/ul[1]/li/span"; }
+        public static string branch_dropdownlist_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[5]/td[2]/div/ul[2]/li/span"; }
+        public static string date_dropdownlist_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[1]/li"; }
+        public static string time_dropdownlist_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[2]/li"; }
+        public static string i_have_read_button_XPath() { return "//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[8]/td[2]/div/a"; }
+        public static string submit_button_XPath() { return "//*[@id='submit']"; }
+        public static string image_verify_code_column_XPath() { return "//*[@id='captchaValue']"; }
     }
 }
 

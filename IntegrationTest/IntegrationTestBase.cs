@@ -77,7 +77,7 @@ namespace AutomatedTest.IntegrationTest
             _extentReport.Init();
             _extentReport.CreateTestCase(testFullName, "");
             _extentReport.GetTestEnvironment(runtimeEnvironment);
-            _extentReport.TestCaseDriverVersion(browserName + browser.GetBrowserVersion());
+            _extentReport.TestCaseDriverVersion(browser.GetBrowserName() + " v" + browser.GetBrowserVersion());
             _extentTObj = _extentReport.ExtentTestObjects;
         }
         public void CloseBrowser()

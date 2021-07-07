@@ -1,9 +1,6 @@
 using OpenQA.Selenium;
-using OpenQA.Selenium.Remote;
 using Xunit;
-using System;
 using AutomatedTest.Utilities;
-using System.Drawing;
 using Xunit.Abstractions;
 
 namespace AutomatedTest.IntegrationTest.PreSaleHouse
