@@ -3,7 +3,7 @@ using Xunit;
 using AutomatedTest.Utilities;
 using Xunit.Abstractions;
 
-namespace AutomatedTest.IntegrationTest.PreSaleHouse
+namespace AutomatedTest.IntegrationTest.SpotExchange
 {
     public class 即期匯率網銀買賣外幣按鈕固定置底_M版:IntegrationTestBase
     {
@@ -20,7 +20,7 @@ namespace AutomatedTest.IntegrationTest.PreSaleHouse
             StartTestCaseForCustomizedSize(browser, "即期匯率網銀買賣外幣按鈕固定置底測試","York",  400, 0, 640, 800);
             INFO("");
 
-            string snapshotfolderpath = $@"{System.AppDomain.CurrentDomain.BaseDirectory}\SnapshotFolder\SpotExchangeRateQueryTest";
+            string snapshotfolderpath = $@"{System.AppDomain.CurrentDomain.BaseDirectory}SnapshotFolder\SpotExchangeRateQueryTest";
             Tools.CreateSnapshotFolder(snapshotfolderpath);
 
             int[] currencylist = new int[] { 1, 4, 7, 10, 13, 16, 19, 22, 25, 27, 29, 31, 33, 35, 37 }; // 定義有"V"的幣別XPath編號

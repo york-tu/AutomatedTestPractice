@@ -9,7 +9,7 @@ using CsvHelper;
 using System.Globalization;
 using Xunit.Abstractions;
 
-namespace AutomatedTest.IntegrationTest.HouseLoan
+namespace AutomatedTest.IntegrationTest.HomeLoanMessageBoard
 {
     public class 房貸留言版提示視窗文字調整_PC版 : IntegrationTestBase // 房屋貸款留言測試
     {
