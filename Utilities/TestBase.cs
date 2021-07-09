@@ -345,7 +345,15 @@ namespace AutomatedTest.Utilities
             }
             return (sum % 10 == 0) || (sumFor7 % 10 == 0);
         }
-
+        public static bool CheckStringContainNumber(string inputString) // 檢查字串是否含有數字
+        {
+            if (Regex.Replace(inputString, @"[^0-9]+", "") != "")
+            {
+                return true;
+            }
+            else
+                return false;
+        }
 
 
         /// <summary>
