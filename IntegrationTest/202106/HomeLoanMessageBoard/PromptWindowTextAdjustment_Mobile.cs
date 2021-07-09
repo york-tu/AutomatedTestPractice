@@ -15,7 +15,7 @@ namespace AutomatedTest.IntegrationTest.HomeLoanMessageBoard
     {
         public 房貸留言版提示視窗文字調整_PC版(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
         {
-            testurl = "https://www.esunbank.com.tw/bank/personal/loan/tools/apply/house-loan?dev=mobile";
+            testurl = "https://www.esunbank.com.tw/bank/personal/loan/tools/apply/house-loan";
         }
 
         private readonly string Version = "Mobile";
@@ -28,7 +28,8 @@ namespace AutomatedTest.IntegrationTest.HomeLoanMessageBoard
         {
             StartTestCase(browser, "房貸留言版提示視窗文字調整_PC版", "York");
             INFO("確認視窗文字");
-                try
+
+            try
                 {
                     string timesavepath = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm");
 
