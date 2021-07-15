@@ -244,8 +244,13 @@ public class Tools
         js.ExecuteScript("arguments[0].scrollIntoView(true);", element); // Viewport對頂部對齊
         Actions act = new Actions(driver);
         act.MoveToElement(element).Perform();
-
     }
+    public static void ScrollPageUpOrDown (IWebDriver driver, int scroll_pixels) // 畫面向上/向下滾動 n pixel
+    {
+        var js = (IJavaScriptExecutor)driver;
+        js.ExecuteScript($"window.scrollTo(0,{scroll_pixels})");
+    }
+
 
 
     /// <summary>

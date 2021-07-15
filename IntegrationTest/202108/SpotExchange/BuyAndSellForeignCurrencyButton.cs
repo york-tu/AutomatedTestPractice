@@ -110,6 +110,15 @@ namespace AutomatedTest.IntegrationTest.SpotExchange
                     Assert.Equal("bottom: -100px;", bottom_button.GetAttribute("style"));
                     Assert.Equal(1, HlkEBankBuy_button);
                     Assert.Equal(1, HlkEBankSell_button);
+
+
+                    /// <summary>
+                    /// 檢查置底網銀外幣交易按鈕hyperlink
+                    /// </summary>
+                    string HlkEBankBuy_hyperlink = driver.FindElement(By.XPath(HlkEBankBuy)).GetAttribute("href");
+                    string HlkEBankSell_hyperlink = driver.FindElement(By.XPath(HlkEBankSell)).GetAttribute("href");
+                    Assert.Equal("https://j3x8a.app.goo.gl/Buy-Foreign-Currency-web", HlkEBankBuy_hyperlink);
+                    Assert.Equal("https://j3x8a.app.goo.gl/Sell-Foreign-Currency-web", HlkEBankSell_hyperlink);
                 }
                 k++;
             }
