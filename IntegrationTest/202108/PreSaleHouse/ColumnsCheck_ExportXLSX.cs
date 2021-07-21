@@ -5,6 +5,7 @@ using IronXL;
 using System.Text.RegularExpressions;
 using AutomatedTest.Utilities;
 using Xunit.Abstractions;
+using System;
 
 namespace AutomatedTest.IntegrationTest.PreSaleHouse
 {
@@ -96,22 +97,22 @@ namespace AutomatedTest.IntegrationTest.PreSaleHouse
                 
                     string payment_account_error = driver.FindElement(By.Id("layout_0_rightcontent_1_TxtVacno-error")).Text; // 欄位錯誤訊息
 
-                    if (  expect_check_result == true) // 判斷當輸入字元符合預期(全數字, 6~16位數), 送出data後延遲等待5秒, 等網頁load完
+                    if (regexCheckResult == true) // 判斷當輸入字元符合預期(全數字, 6~16位數), 送出data後延遲等待5秒, 等網頁load完
                     {
-                        submit_button.Click(); // 點 送出
+                    SubmitButton.Click(); // 點 送出
                         System.Threading.Thread.Sleep(5000);
                     }
                     else
                     {
-                        submit_button.Click(); // 點 送出
+                    SubmitButton.Click(); // 點 送出
                         System.Threading.Thread.Sleep(100);
                     }
 
 
-                    if (string.IsNullOrWhiteSpace(actualPaymentAccount) == true)// 判斷當輸入欄位為"空值" >>> 預期顯示 "必須填寫" warning
+                    if (string.IsNullOrWhiteSpace(keyin) == true)// 判斷當輸入欄位為"空值" >>> 預期顯示 "必須填寫" warning
                     {
                         xlsSheet[check_position].Value = keyin;
-                        xlsSheet[actual_value].Value = actualPaymentAccount;
+                        xlsSheet[actual_value].Value = actualPaymentAccountColumn;
                         xlsSheet[show_msg].Value = payment_account_error;
                         xlsSheet[expect_result].Value = "顯示 '必須填寫'";
                         xlsSheet[test_result].Value = "Case_1";
@@ -132,7 +133,7 @@ namespace AutomatedTest.IntegrationTest.PreSaleHouse
                     else if (string.IsNullOrWhiteSpace(actualPaymentAccountColumn) != true && numericResult != true) //  判斷當輸入非數字  >>> 預期顯示 "只可輸入數字" warning
                     {
                         xlsSheet[check_position].Value = keyin;
-                        xlsSheet[actual_value].Value = actualPaymentAccount;
+                        xlsSheet[actual_value].Value = actualPaymentAccountColumn;
                         xlsSheet[show_msg].Value = payment_account_error;
                         xlsSheet[expect_result].Value = "顯示 '只可輸入數字'";
                         xlsSheet[test_result].Value = "Case_3";
@@ -148,12 +149,10 @@ namespace AutomatedTest.IntegrationTest.PreSaleHouse
                            Assert.True(false);
                        }
                     }
-
-
-                    else if (string.IsNullOrWhiteSpace(actualPaymentAccountColumn) ! = true && regexCheckResult != true) // 判斷當"輸入欄位數字小於六位數" >>> 預期顯示 "最少 6 個字" warning
+                    else if (string.IsNullOrWhiteSpace(actualPaymentAccountColumn) != true && regexCheckResult != true) // 判斷當"輸入欄位數字小於六位數" >>> 預期顯示 "最少 6 個字" warning
                     {
                         xlsSheet[check_position].Value = keyin;
-                        xlsSheet[actual_value].Value = actualPaymentAccount;
+                        xlsSheet[actual_value].Value = actualPaymentAccountColumn;
                         xlsSheet[show_msg].Value = payment_account_error;
                         xlsSheet[expect_result].Value = "顯示 '最少 6 個字'";
                         xlsSheet[test_result].Value = "Case_2";
@@ -170,9 +169,7 @@ namespace AutomatedTest.IntegrationTest.PreSaleHouse
                            Assert.True(false);
                          }
                     }
-
-
-                    else if (string.IsNullOrWhiteSpace(actualPaymentAccountColumn) ! = true && regexCheckResult == true) // 輸入 "全部都數字" 且 "字數介於 6~16 位數間
+                    else if (string.IsNullOrWhiteSpace(actualPaymentAccountColumn) != true && regexCheckResult == true) // 輸入 "全部都數字" 且 "字數介於 6~16 位數間
                     {
                     retry:
                         SubmitButton.Click();
@@ -185,9 +182,9 @@ namespace AutomatedTest.IntegrationTest.PreSaleHouse
                         SubmitButton.Click();
 
                         System.Threading.Thread.Sleep(15000);
-                        string verifycode_error = driver.FindElement(By.XPath("")); // 驗證碼錯誤訊息
+                        string verifycode_error = driver.FindElement(By.Id("captchaWrong")).Text; // 驗證碼錯誤訊息
                         string actualVerifyCodeColumnValue = verifycode.GetAttribute("value"); // 驗證碼欄位實際讀到的值
-                          if (string.IsNullOrWhiteSpace(actualVerifyCodeColumnValue) = = true) // 輸入空驗證碼
+                          if (string.IsNullOrWhiteSpace(actualVerifyCodeColumnValue) == true) // 輸入空驗證碼
                           {
                              try
                              {
@@ -228,9 +225,9 @@ namespace AutomatedTest.IntegrationTest.PreSaleHouse
                                 if (string.IsNullOrWhiteSpace(searchresult) != true)
                                 {
                                 xlsSheet[check_position].Value = keyin;
-                                xlsSheet[actual_value].Value = actualPaymentAccount;
+                                xlsSheet[actual_value].Value = actualPaymentAccountColumn;
                                 xlsSheet[show_msg].Value = searchresult;
-                                xlsSheet[expect_result].Value = "顯示 '企業代碼不存在 / 繳款帳號不存在"'";
+                                xlsSheet[expect_result].Value = "顯示 '企業代碼不存在 / 繳款帳號不存在'";
                                 xlsSheet[test_result].Value = "Case_4";
 
                                 WARNING($"[NeedCheck][正確驗證碼], 輸入帳號: {keyin}, 輸入長度{keyin.Length}, 欄位實際讀到: {actualPaymentAccountColumn}, 讀到長度: {actualPaymentAccountColumn.Length}, 實際錯誤訊息: {payment_account_error}, 預期錯誤訊息: 企業代碼不存在 / 繳款帳號不存在");
@@ -269,7 +266,7 @@ namespace AutomatedTest.IntegrationTest.PreSaleHouse
                 {
                     xlsWorkbook.Save();
                 }
-            CloseBrowser;
+            CloseBrowser();
         }
     }
 }
