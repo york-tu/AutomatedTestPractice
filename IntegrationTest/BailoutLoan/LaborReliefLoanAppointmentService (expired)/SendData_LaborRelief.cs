@@ -6,7 +6,7 @@ using OpenQA.Selenium.Support.UI;
 using System.IO;
 using Xunit.Abstractions;
 
-namespace AutomatedTest.IntegrationTest.BailoutLoan.LaborReliefLoanAppointmentService
+namespace AutomatedTest.IntegrationTest.BailoutLoan
 {
     public class 勞工紓困貸款預約服務_送出資料: IntegrationTestBase
     {
