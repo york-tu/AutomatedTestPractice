@@ -11,13 +11,13 @@ namespace AutomatedTest.IntegrationTest.BailoutLoan
     {
         public 企業紓困貸款預約服務_欄位檢核(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
         {
-            testurl = "https://www.esunbank.com.tw/bank/small-business/tools/apply/sbloan-appointment";
+            testurl = "https://www.esunbank.com.tw/bank/personal/loan/tools/apply/labor-loan-appointment#";
         }
 
         [Theory]
         [MemberData(nameof(BrowserHelper.BrowserList), MemberType = typeof(BrowserHelper))]
 
-        public void 欄位檢核(string browser)
+        public void 送出資料(string browser)
         {
             StartTestCase(browser, "企業紓困貸款預約服務_欄位檢核", "York");
             INFO("確認欄位檢核正確");
@@ -103,7 +103,7 @@ namespace AutomatedTest.IntegrationTest.BailoutLoan
                 CompanyNameColumn.SendKeys(companyName); // 填公司名稱
                 string companyNameErrorWordings = driver.FindElement(By.Id("companyName-error")).Text; // 欄位檢核錯誤訊息
                 string actualColumnCompanyName = CompanyNameColumn.GetAttribute("value"); // 實際欄位讀到的值
-                // //*[@id='mainform']/div[7]/div[3]/div[2]/div[1]/div[2]/table/tbody/tr[1]
+
                 if (string.IsNullOrWhiteSpace(companyName) == true)
                 {
                     if(companyNameErrorWordings == "必須填寫")

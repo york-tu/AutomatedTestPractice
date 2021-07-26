@@ -36,13 +36,16 @@ namespace AutomatedTest.Utilities
         {
             js = (IJavaScriptExecutor)driver;
             vars = new Dictionary<string, object>();
-
             switch (browser)
             {
                 case "Chrome":
                     driver = new ChromeDriver();
                     capabilities = ((RemoteWebDriver)driver).Capabilities;
                     browserVersion = capabilities.GetCapability("browserVersion").ToString();
+
+
+                    
+
                     browserName = "Chrome";
                     break;
 
