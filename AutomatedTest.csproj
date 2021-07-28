@@ -34,6 +34,7 @@
     <PackageReference Include="DotNetSeleniumExtras.PageObjects.Core" Version="4.0.0-alpha01" />
     <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
     <PackageReference Include="ExtentReports" Version="4.1.0" />
+    <PackageReference Include="InputSimulator" Version="1.0.4" />
     <PackageReference Include="IronOcr" Version="2021.2.1" />
     <PackageReference Include="IronXL.Excel" Version="2020.12.2" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.10.0-preview-20210219-03" />
