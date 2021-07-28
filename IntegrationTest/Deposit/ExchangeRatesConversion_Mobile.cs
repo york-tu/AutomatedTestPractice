@@ -1,13 +1,8 @@
-using System;
 using OpenQA.Selenium;
 using Xunit;
 using AutomatedTest.Utilities;
-using OpenQA.Selenium.Support.UI;
-using System.IO;
 using Xunit.Abstractions;
 using System.Threading;
-using OpenQA.Selenium.Interactions;
-using System.Windows.Forms;
 
 namespace AutomatedTest.IntegrationTest.Deposit
 {
