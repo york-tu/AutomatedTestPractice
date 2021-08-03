@@ -5,16 +5,14 @@ using Xunit.Abstractions;
 using System.Threading;
 using OpenQA.Selenium.Interactions;
 using System.Windows.Forms;
-using System.Diagnostics;
-using System;
 using WindowsInput;
 using System.Drawing;
 
 namespace AutomatedTest.IntegrationTest.Deposit
 {
-    public class 常駐快捷選單__試算工具:IntegrationTestBase
+    public class 首頁右側常駐快捷選單__試算工具_PC版:IntegrationTestBase
     {
-        public 常駐快捷選單__試算工具(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
+        public 首頁右側常駐快捷選單__試算工具_PC版(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
         {
             testurl = "https://www.esunbank.com.tw/bank/personal#";
         }
@@ -86,7 +84,7 @@ namespace AutomatedTest.IntegrationTest.Deposit
 
                     driver.FindElement(By.XPath("//*[@id='calculate']")).Click(); // 點 "開始試算"
 
-                    Tools.PageSnapshot($@"{snapshotpath}\{BaseCurrencyName}_兌換_{targetCurrencyName}.png", driver); // 截圖
+                    Tools.PageSnapshot($@"{snapshotpath}\{BaseCurrencyName}_兌換_{targetCurrencyName}_PC.png", driver); // 截圖
                     Thread.Sleep(100);
                 }
             }

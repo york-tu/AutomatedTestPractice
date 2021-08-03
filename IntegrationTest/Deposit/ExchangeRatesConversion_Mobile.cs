@@ -6,9 +6,9 @@ using System.Threading;
 
 namespace AutomatedTest.IntegrationTest.Deposit
 {
-    public class 即期匯率_匯率換算:IntegrationTestBase
+    public class 即期匯率_匯率換算_M版:IntegrationTestBase
     {
-        public 即期匯率_匯率換算(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
+        public 即期匯率_匯率換算_M版(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
         {
             testurl = "https://www.esunbank.com.tw/bank/personal/deposit/rate/forex/currency-converter?dev=mobile";
         }
@@ -53,7 +53,7 @@ namespace AutomatedTest.IntegrationTest.Deposit
                         string targetCurrencyName = TargetCurrencyDropDownList.Text; // 目標幣別選項名稱
                         Tools.ScrollPageUpOrDown(driver, 300);
                         Thread.Sleep(100);
-                        Tools.PageSnapshot($@"{snapshotpath}\{BaseCurrencyName}_兌換_{targetCurrencyName}.png", driver);
+                        Tools.PageSnapshot($@"{snapshotpath}\{BaseCurrencyName}_兌換_{targetCurrencyName}_M.png", driver);
                         Thread.Sleep(100);
                     }
                     else //起始幣別與目標幣別相同時, skip, 跳過
