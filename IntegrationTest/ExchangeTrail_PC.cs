@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using WindowsInput;
 using System.Drawing;
 
-namespace AutomatedTest.IntegrationTest.Deposit
+namespace AutomatedTest.IntegrationTest.Personal
 {
     public class ©xºô­º­¶_´«¶×¸Õºâ_PCª©:IntegrationTestBase
     {

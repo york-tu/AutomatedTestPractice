@@ -3,7 +3,7 @@ using Xunit;
 using AutomatedTest.Utilities;
 using Xunit.Abstractions;
 
-namespace AutomatedTest.IntegrationTest.SpotExchange
+namespace AutomatedTest.IntegrationTest.Personal.Deposit.Forex
 {
     public class 即期匯率網銀買賣外幣按鈕固定置底_M版:IntegrationTestBase
     {

@@ -60,6 +60,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="IntegrationTest\1_Personal\1_Deposit\GoldPriceInquiry\" />
+    <Folder Include="IntegrationTest\3_CreditCard\Discount\" />
+    <Folder Include="IntegrationTest\3_CreditCard\Reward\Products\" />
     <Folder Include="Testdata\" />
   </ItemGroup>
 

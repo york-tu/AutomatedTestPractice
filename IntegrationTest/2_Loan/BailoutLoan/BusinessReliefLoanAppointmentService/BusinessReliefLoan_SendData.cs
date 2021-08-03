@@ -6,7 +6,7 @@ using OpenQA.Selenium.Support.UI;
 using System.IO;
 using Xunit.Abstractions;
 
-namespace AutomatedTest.IntegrationTest.BailoutLoan
+namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
 {
     public class 企業紓困貸款預約服務_送出資料:IntegrationTestBase
     {

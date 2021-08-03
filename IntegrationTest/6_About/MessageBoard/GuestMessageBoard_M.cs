@@ -9,7 +9,7 @@ using System.Globalization;
 using Xunit.Abstractions;
 
 
-namespace AutomatedTest.IntegrationTest.GuestMessageBoard
+namespace AutomatedTest.IntegrationTest.About.MessageBoard
 {
     public class 訪客留言版縣市資料源調整_PC:IntegrationTestBase
     {

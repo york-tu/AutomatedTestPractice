@@ -9,11 +9,11 @@ using CsvHelper;
 using System.Globalization;
 using Xunit.Abstractions;
 
-namespace AutomatedTest.IntegrationTest.HomeLoanMessageBoard
+namespace AutomatedTest.IntegrationTest.Personal.Loan.HouseLoan
 {
-    public class 房貸留言版提示視窗文字調整_PC版 : IntegrationTestBase // 房屋貸款留言測試
+    public class 房貸留言版_提示視窗文字調整_PC版 : IntegrationTestBase // 房屋貸款留言測試
     {
-        public 房貸留言版提示視窗文字調整_PC版(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
+        public 房貸留言版_提示視窗文字調整_PC版(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
         {
             testurl = "https://www.esunbank.com.tw/bank/personal/loan/tools/apply/house-loan";
         }

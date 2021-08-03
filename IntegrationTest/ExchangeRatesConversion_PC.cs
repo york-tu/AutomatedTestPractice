@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using WindowsInput;
 using System.Drawing;
 
-namespace AutomatedTest.IntegrationTest.Deposit
+namespace AutomatedTest.IntegrationTest.Personal
 {
     public class 首頁右側常駐快捷選單__試算工具_PC版:IntegrationTestBase
     {

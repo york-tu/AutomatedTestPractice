@@ -4,7 +4,7 @@ using AutomatedTest.Utilities;
 using Xunit.Abstractions;
 using System.Threading;
 
-namespace AutomatedTest.IntegrationTest.Deposit
+namespace AutomatedTest.IntegrationTest.Personal.Deposit.CurrencyConverter
 {
     public class 即期匯率_匯率換算_M版:IntegrationTestBase
     {

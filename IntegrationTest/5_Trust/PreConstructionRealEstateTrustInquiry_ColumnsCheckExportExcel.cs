@@ -7,7 +7,7 @@ using AutomatedTest.Utilities;
 using Xunit.Abstractions;
 using System;
 
-namespace AutomatedTest.IntegrationTest.PreSaleHouse
+namespace AutomatedTest.IntegrationTest.Personal.Trust
 {
     public class 預售屋信託查詢精進_PC版: IntegrationTestBase
     {

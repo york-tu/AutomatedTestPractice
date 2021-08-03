@@ -10,7 +10,7 @@ using CsvHelper;
 using AutomatedTest.Utilities;
 using Xunit.Abstractions;
 
-namespace AutomatedTest.IntegrationTest.AirlineMilesRedemption
+namespace AutomatedTest.IntegrationTest.Personal.CreditCard.Reward.Transit
 {
     public class 航空里程兌換精進_亞洲萬里通_M版:IntegrationTestBase
     {

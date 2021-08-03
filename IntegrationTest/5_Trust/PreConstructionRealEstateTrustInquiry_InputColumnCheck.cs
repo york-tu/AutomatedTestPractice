@@ -4,7 +4,7 @@ using AutomatedTest.Utilities;
 using System.Text.RegularExpressions;
 using Xunit.Abstractions;
 
-namespace AutomatedTest.IntegrationTest.PreSaleHouse
+namespace AutomatedTest.IntegrationTest.Personal.Trust
 {
     public class ¹w°â«Î«H°U¬d¸ß:IntegrationTestBase
     {

@@ -5,7 +5,7 @@ using AutomatedTest.Utilities;
 using System.Text.RegularExpressions;
 using Xunit.Abstractions;
 
-namespace AutomatedTest.IntegrationTest.BailoutLoan
+namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
 {
     public class 企業紓困貸款預約服務_欄位檢核:IntegrationTestBase
     {
