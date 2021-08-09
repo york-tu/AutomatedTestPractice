@@ -158,6 +158,13 @@ namespace AutomatedTest.IntegrationTest
 
             }
         }
+        public void INFOfromCodeFormat (string content)
+        {
+            if (getreport)
+            {
+                _extentTObj.Info(MarkupHelper.CreateCodeBlock(content));
+            }
+        }
     }
 }
 
