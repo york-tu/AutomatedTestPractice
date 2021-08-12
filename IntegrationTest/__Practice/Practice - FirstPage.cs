@@ -1,13 +1,10 @@
 using OpenQA.Selenium;
 using Xunit;
 using AutomatedTest.Utilities;
-using System.IO;
 using Xunit.Abstractions;
 using System.Threading;
-using System.Collections.Generic;
 using System.Linq;
 using OpenQA.Selenium.Interactions;
-using System.Web;
 
 namespace AutomatedTest.IntegrationTest.__Practice
 {

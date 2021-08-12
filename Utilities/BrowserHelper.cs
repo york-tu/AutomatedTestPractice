@@ -39,13 +39,15 @@ namespace AutomatedTest.Utilities
             switch (browser)
             {
                 case "Chrome":
+                    ChromeOptions chromeoptions = new ChromeOptions();
+                    //chromeoptions.setExperimentalOption();
+                    chromeoptions.AddAdditionalCapability("useAutomationExtension", false);
+                    chromeoptions.AddExcludedArgument("enable-automation");
+                   // chromeoptions.AddExcludedArgument("--disable-infobars");
+                   // chromeoptions.AddAdditionalCapability("useAutomationExtension", false);
                     driver = new ChromeDriver();
                     capabilities = ((RemoteWebDriver)driver).Capabilities;
                     browserVersion = capabilities.GetCapability("browserVersion").ToString();
-
-
-                    
-
                     browserName = "Chrome";
                     break;
 

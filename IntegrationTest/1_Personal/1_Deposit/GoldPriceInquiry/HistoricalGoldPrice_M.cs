@@ -28,6 +28,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
 
             #region [自訂][起始] 從一年前的今天開始 "點擊小日曆日期" 查詢到今日
             driver.FindElement(By.XPath("//*[@id='panelMain']/div/div[2]/div/div[2]/section/div/div[1]/div[1]/label[1]")).Click(); // 點 "新台幣"
+            string currencyName = driver.FindElement(By.XPath("//*[@id='panelMain']/div/div[2]/div/div[2]/section/div/div[1]/div[1]/label[1]")).Text;
             driver.FindElement(By.XPath("//*[@id='panelMain']/div/div[2]/div/div[2]/section/div/div[1]/div[2]/label[5]")).Click(); // 點 "自訂"
             driver.FindElement(By.XPath("//*[@id='panelMain']/div/div[2]/div/div[2]/section/div/div[1]/div[4]/label[1]")).Click(); // 點 "走勢圖"
 
@@ -43,7 +44,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
                     driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).Clear(); // 清空起始日期欄位
                     driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).SendKeys(times); // 欄位輸入當下當天日期
                 }
-                for (int weekindex = 2; weekindex <= 7; weekindex++) //  第月第 weekindex - 1 周
+                for (int weekindex = 2; weekindex <= 7; weekindex++) //  當月第 weekindex - 1 周
                 {
                     for (int dayindex = 1; dayindex <= 7; dayindex++) // 當周第 dayindex 天
                     {
@@ -63,9 +64,9 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
                         }
                         else
                         {
-                            date.Click();
+                            date.Click(); // 點小日曆上的日期
                             driver.FindElement(By.XPath("//*[@id='panelMain']/div/div[2]/div/div[2]/section/div/div[1]/div[5]/label")).Click(); // 點 "開始查詢" 鍵
-                            Tools.PageSnapshot($@"{snapshotpath}\起始日_{driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).GetAttribute("value")}.png", driver);
+                            Tools.PageSnapshot($@"{snapshotpath}\{currencyName}_起始日_{driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).GetAttribute("value")}.png", driver);
                         }
                     }
                 }
@@ -78,6 +79,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
             Tools.ScrollPageUpOrDown(driver, 0);
             driver.Navigate().Refresh();
             driver.FindElement(By.XPath("//*[@id='panelMain']/div/div[2]/div/div[2]/section/div/div[1]/div[1]/label[1]")).Click(); // 點 "新台幣"
+            
             driver.FindElement(By.XPath("//*[@id='panelMain']/div/div[2]/div/div[2]/section/div/div[1]/div[2]/label[5]")).Click(); // 點 "自訂"
             driver.FindElement(By.XPath("//*[@id='panelMain']/div/div[2]/div/div[2]/section/div/div[1]/div[4]/label[1]")).Click(); // 點 "走勢圖"
 
@@ -86,7 +88,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
 
             for (int monthindex = 1; monthindex <= 13;) // 第 monthindex 個月份
             {
-                for (int weekindex = 7; weekindex >= 1; weekindex--) //  第月第 weekindex - 1 周
+                for (int weekindex = 7; weekindex >= 1; weekindex--) //  當月第 weekindex - 1 周
                 {
                     for (int dayindex = 7; dayindex >= 1; dayindex--) // 當周第 dayindex 天
                     {
@@ -109,7 +111,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
                             if (weekindex == 2 && dayindex == 1) // 判斷當點到當月 "第一周第一天"時 (when 當月有這一天)
                             {
                                 date.Click();
-                                Tools.PageSnapshot($@"{snapshotpath}\結束日_{driver.FindElement(By.XPath("//*[@id='datepicker-to-compare']")).GetAttribute("value")}.png", driver);
+                                Tools.PageSnapshot($@"{snapshotpath}\{currencyName}_結束日_{driver.FindElement(By.XPath("//*[@id='datepicker-to-compare']")).GetAttribute("value")}.png", driver);
 
                                 driver.FindElement(By.XPath("//*[@id='panelMain']/div/div[2]/div/div[2]/section/div/div[1]/div[3]/div/div[2]/span/button")).Click(); // 點 "結束小日曆" icon
                                 driver.FindElement(By.XPath("/html/body/div[4]/table[1]/tbody/tr/td[1]")).Click(); // 點 "上個月" 鍵
@@ -119,7 +121,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
 
                             date.Click();
                             driver.FindElement(By.XPath("//*[@id='panelMain']/div/div[2]/div/div[2]/section/div/div[1]/div[5]/label")).Click(); // 點 "開始查詢" 鍵
-                            Tools.PageSnapshot($@"{snapshotpath}\結束日_{driver.FindElement(By.XPath("//*[@id='datepicker-to-compare']")).GetAttribute("value")}.png", driver);
+                            Tools.PageSnapshot($@"{snapshotpath}\{currencyName}_結束日_{driver.FindElement(By.XPath("//*[@id='datepicker-to-compare']")).GetAttribute("value")}.png", driver);
                         }
                     }
                 }
@@ -155,7 +157,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
                                     driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).Clear();
                                     driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).SendKeys($"{year}-{mon}-{day}");
                                     driver.FindElement(By.XPath("//*[@id='panelMain']/div/div[2]/div/div[2]/section/div/div[1]/div[5]/label")).Click();
-                                    Tools.PageSnapshot($@"{snapshotpath}\起始日_{driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).GetAttribute("value")}.png", driver);
+                                    Tools.PageSnapshot($@"{snapshotpath}\{currencyName}_起始日_{driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).GetAttribute("value")}.png", driver);
 
                                     if (mon == 12 && day ==31)
                                     {
@@ -171,7 +173,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
                                     driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).Clear();
                                     driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).SendKeys($"{year}-{mon}-{day}");
                                     driver.FindElement(By.XPath("//*[@id='panelMain']/div/div[2]/div/div[2]/section/div/div[1]/div[5]/label")).Click();
-                                    Tools.PageSnapshot($@"{snapshotpath}\起始日_{driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).GetAttribute("value")}.png", driver);
+                                    Tools.PageSnapshot($@"{snapshotpath}\{currencyName}_起始日_{driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).GetAttribute("value")}.png", driver);
                                 }
                             }
                             else if (mon == 2)
@@ -191,7 +193,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
                                     driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).Clear();
                                     driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).SendKeys($"{year}-{mon}-{day}");
                                     driver.FindElement(By.XPath("//*[@id='panelMain']/div/div[2]/div/div[2]/section/div/div[1]/div[5]/label")).Click();
-                                    Tools.PageSnapshot($@"{snapshotpath}\起始日_{driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).GetAttribute("value")}.png", driver);
+                                    Tools.PageSnapshot($@"{snapshotpath}\{currencyName}_起始日_{driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).GetAttribute("value")}.png", driver);
                                 }
                             }
                         }
@@ -204,7 +206,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
                                     driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).Clear();
                                     driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).SendKeys($"{year}-{mon}-{day}");
                                     driver.FindElement(By.XPath("//*[@id='panelMain']/div/div[2]/div/div[2]/section/div/div[1]/div[5]/label")).Click();
-                                    Tools.PageSnapshot($@"{snapshotpath}\起始日_{driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).GetAttribute("value")}.png", driver);
+                                    Tools.PageSnapshot($@"{snapshotpath}\{currencyName}_起始日_{driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).GetAttribute("value")}.png", driver);
 
                                     if (mon == 12 && day == 31)
                                     {
@@ -220,7 +222,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
                                     driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).Clear();
                                     driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).SendKeys($"{year}-{mon}-{day}");
                                     driver.FindElement(By.XPath("//*[@id='panelMain']/div/div[2]/div/div[2]/section/div/div[1]/div[5]/label")).Click();
-                                    Tools.PageSnapshot($@"{snapshotpath}\起始日_{driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).GetAttribute("value")}.png", driver);
+                                    Tools.PageSnapshot($@"{snapshotpath}\{currencyName}_起始日_{driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).GetAttribute("value")}.png", driver);
                                 }
                             }
                             else if (mon == 2)
@@ -239,7 +241,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
                                     driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).Clear();
                                     driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).SendKeys($"{year}-{mon}-{day}");
                                     driver.FindElement(By.XPath("//*[@id='panelMain']/div/div[2]/div/div[2]/section/div/div[1]/div[5]/label")).Click();
-                                    Tools.PageSnapshot($@"{snapshotpath}\起始日_{driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).GetAttribute("value")}.png", driver);
+                                    Tools.PageSnapshot($@"{snapshotpath}\{currencyName}_起始日_{driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).GetAttribute("value")}.png", driver);
                                 }
                             }
                         }
@@ -256,7 +258,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
                                 driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).Clear();
                                 driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).SendKeys($"{year}-{_mon}-{day}");
                                 driver.FindElement(By.XPath("//*[@id='panelMain']/div/div[2]/div/div[2]/section/div/div[1]/div[5]/label")).Click();
-                                Tools.PageSnapshot($@"{snapshotpath}\起始日_{driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).GetAttribute("value")}.png", driver);
+                                Tools.PageSnapshot($@"{snapshotpath}\{currencyName}_起始日_{driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).GetAttribute("value")}.png", driver);
 
                                 if (day == currentDate)
                                 {
@@ -273,7 +275,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
                                     driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).Clear();
                                     driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).SendKeys($"{year}-{_mon}-{day}");
                                     driver.FindElement(By.XPath("//*[@id='panelMain']/div/div[2]/div/div[2]/section/div/div[1]/div[5]/label")).Click();
-                                    Tools.PageSnapshot($@"{snapshotpath}\起始日_{driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).GetAttribute("value")}.png", driver);
+                                    Tools.PageSnapshot($@"{snapshotpath}\{currencyName}_起始日_{driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).GetAttribute("value")}.png", driver);
                                 }
                             }
                             else if (_mon == 4 || _mon == 6 || _mon == 9 || _mon == 11)
@@ -283,7 +285,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
                                     driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).Clear();
                                     driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).SendKeys($"{year}-{_mon}-{day}");
                                     driver.FindElement(By.XPath("//*[@id='panelMain']/div/div[2]/div/div[2]/section/div/div[1]/div[5]/label")).Click();
-                                    Tools.PageSnapshot($@"{snapshotpath}\起始日_{driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).GetAttribute("value")}.png", driver);
+                                    Tools.PageSnapshot($@"{snapshotpath}\{currencyName}_起始日_{driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).GetAttribute("value")}.png", driver);
                                 }
                             }
                             else if (_mon == 2)
@@ -301,7 +303,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
                                     driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).Clear();
                                     driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).SendKeys($"{year}-{_mon}-{day}");
                                     driver.FindElement(By.XPath("//*[@id='panelMain']/div/div[2]/div/div[2]/section/div/div[1]/div[5]/label")).Click();
-                                    Tools.PageSnapshot($@"{snapshotpath}\起始日_{driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).GetAttribute("value")}.png", driver);
+                                    Tools.PageSnapshot($@"{snapshotpath}\{currencyName}_起始日_{driver.FindElement(By.XPath("//*[@id='datepicker-from-compare']")).GetAttribute("value")}.png", driver);
                                 }
                             }
                         }
