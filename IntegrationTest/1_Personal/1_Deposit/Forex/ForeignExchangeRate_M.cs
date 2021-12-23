@@ -21,7 +21,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.Forex
             INFO("");
 
             string snapshotfolderpath = $@"{System.AppDomain.CurrentDomain.BaseDirectory}SnapshotFolder\SpotExchangeRateQueryTest";
-            Tools.CreateSnapshotFolder(snapshotfolderpath);
+            TestBase.CreateFolder(snapshotfolderpath);
 
             int[] currencylist = new int[] { 1, 4, 7, 10, 13, 16, 19, 22, 25, 27, 29, 31, 33, 35, 37 }; // 定義有"V"的幣別XPath編號
             string[] currencynamelist = new string[] { "USD", "CNY", "HKD", "JPY", "EUR", "AUD", "CAD", "GBP", "ZAR", "NZD", "CHF", "SEK", "SGD", "MXN", "THB" }; // 幣別字串 for 截圖檔名用
@@ -57,7 +57,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.Forex
 
                     if (currency >= 7 && currency <= 25) // 避免點擊不到button, 當index介於7~25之間, 滾動畫面到target element附近
                     {
-                        Tools.SCrollToElement(driver, driver.FindElement(By.XPath($"//*[@id='BoardRate']/tbody/tr[{currency - 6}]/td[4]")));
+                        TestBase.SCrollToElement(driver, driver.FindElement(By.XPath($"//*[@id='BoardRate']/tbody/tr[{currency - 6}]/td[4]")));
                     }
 
                     V_button.Click(); // 點擊 "V" >>>展開"優惠匯率"選單
@@ -66,13 +66,13 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.Forex
                     if (browser == "Firefox") //全螢幕截圖
                     {
                         string time = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
-                        Tools.FullScreenshot($@"{snapshotfolderpath}\{currencynamelist[k]} 展開 fullsnapshot {browser}_{time}.png");
+                        TestBase.FullScreenshot($@"{snapshotfolderpath}\{currencynamelist[k]} 展開 fullsnapshot {browser}_{time}.png");
                         System.Threading.Thread.Sleep(100);
                     }
                     else // 網頁截圖
                     {
                         string time = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
-                        Tools.PageSnapshot($@"{snapshotfolderpath}\{currencynamelist[k]} 展開 fullsnapshot {browser}_{time}.png", driver);
+                        TestBase.PageSnapshot(driver,$@"{snapshotfolderpath}\{currencynamelist[k]} 展開 fullsnapshot {browser}_{time}.png");
                         System.Threading.Thread.Sleep(100);
                     }
 
@@ -93,13 +93,13 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.Forex
                     if (browser == "Firefox") //全螢幕截圖
                     {
                         string time = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
-                        Tools.FullScreenshot($@"{snapshotfolderpath}\{currencynamelist[k]} 收合 fullsnapshot {browser}_{time}.png");
+                        TestBase.FullScreenshot($@"{snapshotfolderpath}\{currencynamelist[k]} 收合 fullsnapshot {browser}_{time}.png");
                         System.Threading.Thread.Sleep(100);
                     }
                     else // 網頁截圖
                     {
                         string time = System.DateTime.Now.ToString("yyyyMMdd'-'HHmm"); // 偵測當下時間
-                        Tools.PageSnapshot($@"{snapshotfolderpath}\{currencynamelist[k]} 收合snapshot {browser}_{time}.png", driver);
+                        TestBase.PageSnapshot(driver,$@"{snapshotfolderpath}\{currencynamelist[k]} 收合snapshot {browser}_{time}.png");
                         System.Threading.Thread.Sleep(100);
                     }
 

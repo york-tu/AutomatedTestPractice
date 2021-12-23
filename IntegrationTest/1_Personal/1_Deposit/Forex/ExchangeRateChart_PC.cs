@@ -22,13 +22,13 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.Forex
             INFO("");
 
             string snapshotpath = $@"{System.AppDomain.CurrentDomain.BaseDirectory}SnapshotFolder\Forex";
-            Tools.CreateSnapshotFolder(snapshotpath);
-            Tools.CleanUPFolder(snapshotpath);
+            TestBase.CreateFolder(snapshotpath);
+            TestBase.CleanUPFolder(snapshotpath);
 
             int dropDownListCount = driver.FindElements(By.XPath("//*[@id='tab-01']/div[1]/div[1]/ul/li/ul/li")).Count; // 下拉選單選項數量
             for (int index = 2; index <= dropDownListCount; index++) // inxde = 2 = 第一筆可選幣別
             {
-                Tools.ScrollPageUpOrDown(driver, 450);
+                TestBase.ScrollPageUpOrDown(driver, 450);
                 Thread.Sleep(300);
                 driver.FindElement(By.XPath("//*[@id='tab-01']/div[1]/div[1]/ul/li")).Click(); // 點開幣別下拉選單
                 string currencyXPath = $"//*[@id='tab-01']/div[1]/div[1]/ul/li/ul/li[{index}]";
@@ -42,7 +42,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.Forex
                 
                 for (int i = 1; i <= 2 ; i++) // i=1=現金radiobutton, i=2=即期radiobutton
                 {
-                    Tools.ScrollPageUpOrDown(driver, 450);
+                    TestBase.ScrollPageUpOrDown(driver, 450);
                     Thread.Sleep(300);
 
                     string CurrencyName = driver.FindElement(By.XPath("//*[@id='tab-01']/div[1]/div[1]/ul/li")).Text;
@@ -65,14 +65,14 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.Forex
                     int pagelist = driver.FindElements(By.XPath("//*[@id='pagelist']/ul/li")).Count; // 獲取分頁數量
                     for (int list = 1; list <= pagelist; list++)
                     {
-                        Tools.ScrollPageUpOrDown(driver, 900);
+                        TestBase.ScrollPageUpOrDown(driver, 900);
                         Thread.Sleep(300);
                         driver.FindElement(By.XPath($"//*[@id='pagelist']/ul/li[{list}]/a")).Click(); // 點分頁
                         Thread.Sleep(100);
 
                         IWebElement CurrencyDropDownList = driver.FindElement(By.XPath("//*[@id='tab-01']/div[1]/div[1]/ul/li")); // 幣別下拉選單
                         IWebElement CashSort = driver.FindElement(By.XPath($"//*[@id='tab-01']/div[1]/div[1]/div/label[{i}]")); // 現金/即期
-                        Tools.PageSnapshot($@"{snapshotpath}\{CurrencyDropDownList.Text}_{CashSort.Text}_page{list}.png", driver);
+                        TestBase.PageSnapshot(driver,$@"{snapshotpath}\{CurrencyDropDownList.Text}_{CashSort.Text}_page{list}.png");
                         
                         Thread.Sleep(100);
                     }

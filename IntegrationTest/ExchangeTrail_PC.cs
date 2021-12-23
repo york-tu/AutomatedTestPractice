@@ -23,9 +23,9 @@ namespace AutomatedTest.IntegrationTest.Personal
             StartTestCase(browser, " 換匯試算_所有幣值匯率換算_欄位檢查", "York");
 
             string snapshotpath = $@"{System.AppDomain.CurrentDomain.BaseDirectory}SnapshotFolder\ExchangeRate\ExchangeTrail";
-            Tools.CreateSnapshotFolder(snapshotpath);
+            TestBase.CreateFolder(snapshotpath);
             Thread.Sleep(100);
-            Tools.ScrollPageUpOrDown(driver, 100);
+            TestBase.ScrollPageUpOrDown(driver, 100);
 
             driver.Navigate().Refresh();
             driver.FindElement(By.XPath("//*[@id='btnAntiFraud']")).Click(); // 關掉"提醒您"彈跳視窗
@@ -35,7 +35,7 @@ namespace AutomatedTest.IntegrationTest.Personal
                 driver.FindElement(By.XPath("//*[@id='mainform']/div[5]/div/a")).Click();
             }
 
-            Tools.ScrollPageUpOrDown(driver, 1000);
+            TestBase.ScrollPageUpOrDown(driver, 1000);
 
             driver.FindElement(By.XPath("//*[@id='amount']")).SendKeys("10000"); // 輸入起始幣值
 
@@ -84,7 +84,7 @@ namespace AutomatedTest.IntegrationTest.Personal
                     driver.FindElement(By.XPath("//*[@id='calculate']")).Click(); // 點 "開始試算"
 
                     //Tools.PageSnapshot($@"{snapshotpath}\{BaseCurrencyName}_兌換_{targetCurrencyName}_換匯試算.png", driver); // 截圖
-                    Tools.ElementSnapshotshot(driver.FindElement(By.XPath("//*[@id='mainform']/div[13]/div[2]/div[2]/div")), $@"{snapshotpath}\{BaseCurrencyName}_兌換_{targetCurrencyName}_換匯試算.png");
+                    TestBase.ElementSnapshotshot(driver.FindElement(By.XPath("//*[@id='mainform']/div[13]/div[2]/div[2]/div")), $@"{snapshotpath}\{BaseCurrencyName}_兌換_{targetCurrencyName}_換匯試算.png");
                     Thread.Sleep(100);
                 }
             }

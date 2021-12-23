@@ -34,7 +34,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
                     string Cuntry_Xpath = $"//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[5]/td[2]/div/ul[1]/li/ul/li[{i}]/span";
                     string Branch_Xpath = $"//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[5]/td[2]/div/ul[2]/li/ul/li[{j + 1}]/span";
 
-                    IWebElement SubmitButton = driver.FindElement(By.XPath(LaborReliefLoan_XPath.submit_button_XPath()));
+                    IWebElement SubmitButton = driver.FindElement(By.XPath("//*[@id='submit']"));
                     SubmitButton.Click(); // 點"確認"button
 
 
@@ -57,7 +57,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
                     ///<summary>
                     /// 姓名欄位 (目前無檢核)
                     ///</summary>
-                    IWebElement FullNameColumn = driver.FindElement(By.XPath(LaborReliefLoan_XPath.name_column_Xpath()));
+                    IWebElement FullNameColumn = driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[1]/td[2]/input"));
                     FullNameColumn.Clear();
                     FullNameColumn.SendKeys($"機器人{i - 1}_{j}"); // 填姓名
 
@@ -67,7 +67,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
                     ///<summary>
                     /// 身分證字號欄位檢核
                     ///</summary>
-                    IWebElement IdentityCardColumn = driver.FindElement(By.XPath(LaborReliefLoan_XPath.ID_column_XPath()));
+                    IWebElement IdentityCardColumn = driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[2]/td[2]/input"));
 
                     Random random = new Random();
                     int random_number = random.Next(1, 21); //產生隨機1-21間數字
@@ -78,7 +78,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
                     string[] IDNumbers = new string[] { "", "!@#%^", "許功蓋", "ABCDEF", "0897654321", "A987654321",
                             "ａ１２３４５６７８９", "ａ123456789", "a12345678９", "A800000014", "AD12544441", "a123456788", "A123456788",
                             "a800000014", "aD12544441", "a123456788", "Ad30341957", "a941062183", "A970000026", "AD30341957", "A941062183",
-                            $"{Tools.CreateRandomString(10)}", $"{Tools.CreateIDNumber(sex, random_number)}" };
+                            $"{TestBase.CreateRandomString(10)}", $"{TestBase.CreateIDNumber(sex, random_number)}" };
                     // 倒數第二組為隨機長度10大小寫英文+數字組合
                     // 最後一組透過身分證字號產生器產生符合規格字號
 
@@ -98,15 +98,15 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
                         {
                             Assert.Equal("請輸入有效的身分證字號", id_error);
                         }
-                        else if (ResidentIDNumberCheck == true && Tools.CheckResidentID(input.ToUpper()) != true)
+                        else if (ResidentIDNumberCheck == true && TestBase.CheckResidentID(input.ToUpper()) != true)
                         {
                             Assert.Equal("請輸入有效的身分證字號", id_error);
                         }
-                        else if (ForeignerIDNumberCheck == true && Tools.CheckForeignerID(input.ToUpper()) != true)
+                        else if (ForeignerIDNumberCheck == true && TestBase.CheckForeignerID(input.ToUpper()) != true)
                         {
                             Assert.Equal("請輸入有效的身分證字號", id_error);
                         }
-                        else if (ForeignerIDNumberCheck == true && Tools.CheckForeignerID(input.ToUpper()) == true)
+                        else if (ForeignerIDNumberCheck == true && TestBase.CheckForeignerID(input.ToUpper()) == true)
                         {
                             Assert.Equal("本服務目前僅限本國人申請", id_error);
                         }
@@ -120,8 +120,8 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
                     ///<summary>
                     /// 電話號碼欄位檢核
                     ///</summary>
-                    IWebElement CellPhoneColumn = driver.FindElement(By.XPath(LaborReliefLoan_XPath.cellphone_column_XPath()));
-                    string[] phones = new string[] { "ABCDEF", "0897654321", "", $"{Tools.CreateRandomNumber(10)}", $"{Tools.CreateCellPhoneNumber()}" };
+                    IWebElement CellPhoneColumn = driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[3]/td[2]/input"));
+                    string[] phones = new string[] { "ABCDEF", "0897654321", "", $"{TestBase.CreateRandomNumber(10)}", $"{TestBase.CreateCellPhoneNumber()}" };
                     // 倒數第二組: 隨機產生長度10數字
                     // 最後一組: 透過行動電話號碼產生器產生符合規格號碼
                     foreach (var input in phones)
@@ -156,7 +156,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
                     ///<summary>
                     /// 檢查"我已閱讀並同意" 錯誤訊息
                     ///</summary>
-                    IWebElement IHaveReadRadioButton = driver.FindElement(By.XPath(LaborReliefLoan_XPath.i_have_read_button_XPath()));
+                    IWebElement IHaveReadRadioButton = driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[8]/td[2]/div/a"));
 
                 rerun_ihaveread:
                     string i_have_read_status = IHaveReadRadioButton.GetAttribute("class");
@@ -209,16 +209,16 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
                     ///<summary>
                     /// 縣市&分行欄位
                     ///</summary>
-                    IWebElement Country_DropDownList = driver.FindElement(By.XPath(LaborReliefLoan_XPath.country_dropdownlist_XPath()));
+                    IWebElement Country_DropDownList = driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[5]/td[2]/div/ul[1]/li/span"));
                     Country_DropDownList.Click(); //展開"請選擇縣市"下拉選單
                     IWebElement SelectCountry = driver.FindElement(By.XPath(Cuntry_Xpath));
                     SelectCountry.Click(); // 點選一個"縣市"
-                    IWebElement Branch_DropDownList = driver.FindElement(By.XPath(LaborReliefLoan_XPath.branch_dropdownlist_XPath()));
+                    IWebElement Branch_DropDownList = driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[5]/td[2]/div/ul[2]/li/span"));
                     Branch_DropDownList.Click(); // 展開"分行"下拉選單
                     IWebElement SelectBranch = driver.FindElement(By.XPath(Branch_Xpath));
                     SelectBranch.Click(); //點選一個"分行"
 
-                    IWebElement Date_DropDownList = driver.FindElement(By.XPath(LaborReliefLoan_XPath.date_dropdownlist_XPath()));
+                    IWebElement Date_DropDownList = driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[1]/li"));
                     int date_amount = driver.FindElements(By.XPath("//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[1]/li/ul/li")).Count; // 獲取蒞行日期下拉選單選項數量
                     int time_amount = driver.FindElements(By.XPath("//*[@id='mainform'']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[2]/li/ul/li")).Count; // 獲取蒞行時間下拉選單選項數量
 
@@ -230,7 +230,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
                             Date_DropDownList.Click(); //展開"蒞行日期"下拉選單
                             IWebElement SelectDate = driver.FindElement(By.XPath($"//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[1]/li/ul/li[{m}]/span"));
                             SelectDate.Click(); // 點選一個"日期"
-                            IWebElement Time_DropDownList = driver.FindElement(By.XPath(LaborReliefLoan_XPath.time_dropdownlist_XPath()));
+                            IWebElement Time_DropDownList = driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[2]/li"));
                             Time_DropDownList.Click(); // 展開"時段"下拉選單
                             IWebElement SelectTime = driver.FindElement(By.XPath($"//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[2]/li/ul/li[{n}]/span"));
                             SelectTime.Click(); // 點選一個"時段"
@@ -240,9 +240,9 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
                             {
 
                                 string snapshotpath = $@"{System.AppDomain.CurrentDomain.BaseDirectory}\SnapshotFolder\LaborReliefLoan";
-                                Tools.CreateSnapshotFolder(snapshotpath);
+                                TestBase.CreateFolder(snapshotpath);
                                 System.Threading.Thread.Sleep(100);
-                                Tools.PageSnapshot($@"{snapshotpath}\第{i - 1}縣市第{j}分行_第{m - 1}日第{n - 1}時段.png", driver); //實作截圖
+                                TestBase.PageSnapshot(driver,$@"{snapshotpath}\第{i - 1}縣市第{j}分行_第{m - 1}日第{n - 1}時段.png"); //實作截圖
                             }
                         }
                     }
@@ -264,7 +264,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
                 /// 檢查 "圖型驗證碼" 錯誤訊息
                 ///</summary>
                 rerun_imageverification:
-                    IWebElement ImageVerificationCodeColumn = driver.FindElement(By.XPath(LaborReliefLoan_XPath.image_verify_code_column_XPath()));
+                    IWebElement ImageVerificationCodeColumn = driver.FindElement(By.XPath("//*[@id='captchaValue']"));
                     string image_verification_column_value = driver.FindElement(By.Id("captchaValue")).GetAttribute("value");
 
                     if (image_verification_column_value == "")

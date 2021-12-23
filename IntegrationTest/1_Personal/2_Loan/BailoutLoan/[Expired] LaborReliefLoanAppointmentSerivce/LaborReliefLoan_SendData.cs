@@ -21,9 +21,9 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
         {
             StartTestCase(browser, "勞工紓困貸款預約服務_所有分行資料送出", "York");
 
-            Tools.CreateSnapshotFolder($@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha");
+            TestBase.CreateFolder($@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha");
             System.Threading.Thread.Sleep(100);
-            Tools.CleanUPFolder($@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha"); //清空captcha資料夾
+            TestBase.CleanUPFolder($@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha"); //清空captcha資料夾
 
             for (int i = 2; i <= 21; i++) // initial i =2
                 {
@@ -39,22 +39,22 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
                         string Branch_Xpath = $"//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[5]/td[2]/div/ul[2]/li/ul/li[{j + 1}]/span";
 
 
-                        IWebElement FullNameColumn = driver.FindElement(By.XPath(LaborReliefLoan_XPath.name_column_Xpath()));
+                        IWebElement FullNameColumn = driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[1]/td[2]/input"));
                         FullNameColumn.Clear();
                         FullNameColumn.SendKeys($"機器人{i - 1}_{j}"); // 填姓名
 
 
-                        IWebElement IdentityCardColumn = driver.FindElement(By.XPath(LaborReliefLoan_XPath.ID_column_XPath()));
+                        IWebElement IdentityCardColumn = driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[2]/td[2]/input"));
                         IdentityCardColumn.Clear();
                         bool sex = false;
                         if (j % 2 == 0)
                             sex = true;
-                        IdentityCardColumn.SendKeys(Tools.CreateIDNumber(sex, j % 21)); // 引用tools內身分證字號產生器 & 填身分證欄位
+                        IdentityCardColumn.SendKeys(TestBase.CreateIDNumber(sex, j % 21)); // 引用tools內身分證字號產生器 & 填身分證欄位
 
 
-                        IWebElement CellPhoneColumn = driver.FindElement(By.XPath(LaborReliefLoan_XPath.cellphone_column_XPath()));
+                        IWebElement CellPhoneColumn = driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[3]/td[2]/input"));
                         CellPhoneColumn.Clear();
-                        CellPhoneColumn.SendKeys(Tools.CreateCellPhoneNumber()); // 引用tools內電話號碼產生器 & 填電話號碼欄位
+                        CellPhoneColumn.SendKeys(TestBase.CreateCellPhoneNumber()); // 引用tools內電話號碼產生器 & 填電話號碼欄位
 
 
                         IWebElement BirthdayCalendarIcon = driver.FindElement(By.Id("datepicker1-button"));
@@ -82,20 +82,20 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
                             date.Click();
                         }
 
-                        IWebElement Country_DropDownList = driver.FindElement(By.XPath(LaborReliefLoan_XPath.country_dropdownlist_XPath()));
+                        IWebElement Country_DropDownList = driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[5]/td[2]/div/ul[1]/li/span"));
                         Country_DropDownList.Click(); //展開"請選擇縣市"下拉選單
 
                         IWebElement SelectCountry = driver.FindElement(By.XPath(Cuntry_Xpath));
                         SelectCountry.Click(); // 點選一個"縣市"
 
-                        IWebElement Branch_DropDownList = driver.FindElement(By.XPath(LaborReliefLoan_XPath.branch_dropdownlist_XPath()));
+                        IWebElement Branch_DropDownList = driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[5]/td[2]/div/ul[2]/li/span"));
                         Branch_DropDownList.Click(); // 展開"分行"下拉選單
 
                         IWebElement SelectBranch = driver.FindElement(By.XPath(Branch_Xpath));
                         SelectBranch.Click(); //點選一個"分行"
 
 
-                        IWebElement Date_DropDownList = driver.FindElement(By.XPath(LaborReliefLoan_XPath.date_dropdownlist_XPath()));
+                        IWebElement Date_DropDownList = driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[1]/li"));
                         int date_amount = driver.FindElements(By.XPath("//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[1]/li/ul/li")).Count;
                         int time_amount = driver.FindElements(By.XPath("//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[2]/li/ul/li")).Count;
                         Random ran_date = new Random();
@@ -104,15 +104,15 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
                         Date_DropDownList.Click(); //展開"蒞行日期"下拉選單
                         IWebElement SelectDate = driver.FindElement(By.XPath($"//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[1]/li/ul/li[{ran_date.Next(2, date_amount)}]/span"));
                         SelectDate.Click(); // 循環點選一個"日期"
-                        IWebElement Time_DropDownList = driver.FindElement(By.XPath(LaborReliefLoan_XPath.time_dropdownlist_XPath()));
+                        IWebElement Time_DropDownList = driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[2]/li"));
                         Time_DropDownList.Click(); // 展開"時段"下拉選單
                         IWebElement SelectTime = driver.FindElement(By.XPath($"//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[6]/td[2]/div/ul[2]/li/ul/li[{ran_time.Next(2, time_amount)}]/span"));
                         SelectTime.Click(); // 循環點選一個"時段"
 
-                        IWebElement IHaveReadRadioButtin = driver.FindElement(By.XPath(LaborReliefLoan_XPath.i_have_read_button_XPath()));
+                        IWebElement IHaveReadRadioButtin = driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[3]/div[2]/div/div[3]/table/tbody/tr[8]/td[2]/div/a"));
                         IHaveReadRadioButtin.Click(); // 點"我已閱讀" radio button
 
-                        IWebElement SubmitButton = driver.FindElement(By.XPath(LaborReliefLoan_XPath.submit_button_XPath()));
+                        IWebElement SubmitButton = driver.FindElement(By.XPath("//*[@id='submit']"));
 
                         IWebElement CaptchaPicture = driver.FindElement(By.XPath("//*[@id='ImgCaptcha']")); //圖片欄位
 
@@ -120,10 +120,10 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
 
                         int verify_count = 1; // verify_count: 紀錄retry驗證碼次數
                     retryagain:
-                        IWebElement ImageVerificationCodeColumn = driver.FindElement(By.XPath(LaborReliefLoan_XPath.image_verify_code_column_XPath())); // 輸入驗證碼欄位
+                        IWebElement ImageVerificationCodeColumn = driver.FindElement(By.XPath("//*[@id='captchaValue']")); // 輸入驗證碼欄位
 
-                        Tools.SCrollToElement(driver, FullNameColumn);
-                        Tools.ElementSnapshotshot(CaptchaPicture, $@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha\CaptchaImage_{verify_count}.png"); //snapshot驗證碼圖片
+                    TestBase.SCrollToElement(driver, FullNameColumn);
+                    TestBase.ElementSnapshotshot(CaptchaPicture, $@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha\CaptchaImage_{verify_count}.png"); //snapshot驗證碼圖片
 
                         if (verify_count >=10) // 依序刪除舊的picture
                         {
@@ -165,8 +165,8 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
                         wait_to_see_popsup_window.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("/html/body/div[5]/div/div/a"))); // 等待直到看到通知視窗 
                         System.Threading.Thread.Sleep(300);
 
-                        Tools.CreateSnapshotFolder($@"{System.AppDomain.CurrentDomain.BaseDirectory}\SnapshotFolder\LaborReliefLoan");
-                        Tools.PageSnapshot($@"{System.AppDomain.CurrentDomain.BaseDirectory}\SnapshotFolder\LaborReliefLoan\第{i - 1}縣市第{j}分行_申請_第{ran_date}日第{ran_time}時段.png", driver); //實作截圖
+                    TestBase.CreateFolder($@"{System.AppDomain.CurrentDomain.BaseDirectory}\SnapshotFolder\LaborReliefLoan");
+                    TestBase.PageSnapshot(driver,$@"{System.AppDomain.CurrentDomain.BaseDirectory}\SnapshotFolder\LaborReliefLoan\第{i - 1}縣市第{j}分行_申請_第{ran_date}日第{ran_time}時段.png"); //實作截圖
 
 
                         driver.FindElement(By.XPath("/html/body/div[5]/div/div/a")).Click(); // 點通知視窗 "X" 按鈕

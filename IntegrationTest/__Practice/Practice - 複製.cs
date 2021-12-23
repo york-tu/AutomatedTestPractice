@@ -51,9 +51,9 @@ namespace AutomatedTest.IntegrationTest.__Practice
             IWebElement RetryButton = driver.FindElement(By.XPath("//*[@id='browserIE']/div/ul/li[3]/div/div[1]/div")); // Refresh 驗證碼圖片按鈕
 
 
-            Tools.CreateSnapshotFolder($@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha");
+            TestBase.CreateFolder($@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha");
             System.Threading.Thread.Sleep(100);
-            Tools.CleanUPFolder($@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha"); //清空Captcha資料夾
+            TestBase.CleanUPFolder($@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha"); //清空Captcha資料夾
 
 
 
@@ -69,7 +69,7 @@ namespace AutomatedTest.IntegrationTest.__Practice
             }
 
 
-            Tools.ElementSnapshotshot(CaptchaPicture, $@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha\CaptchaImage_{verify_count}.png"); // snapshot"圖片驗證碼"
+            TestBase.ElementSnapshotshot(CaptchaPicture, $@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha\CaptchaImage_{verify_count}.png"); // snapshot"圖片驗證碼"
 
             if (verify_count >= 10) //依序刪除舊的captcha截圖
             {

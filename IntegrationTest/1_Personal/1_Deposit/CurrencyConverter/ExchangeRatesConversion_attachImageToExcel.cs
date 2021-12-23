@@ -23,10 +23,16 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.CurrencyConverter
             StartTestCase(browser, "即期匯率_所有幣值匯率換算_欄位檢查", "York");
 
             string snapshotpath = $@"{System.AppDomain.CurrentDomain.BaseDirectory}SnapshotFolder\ExchangeRate";
-            Tools.CreateSnapshotFolder(snapshotpath);
-            Tools.CleanUPFolder(snapshotpath);
+            TestBase.CreateFolder(snapshotpath);
+            TestBase.CleanUPFolder(snapshotpath);
             Thread.Sleep(100);
-            Tools.ScrollPageUpOrDown(driver, 100);
+
+<<<<<<< HEAD
+            TestBase.ScrollPageUpOrDown(driver, 100); // 滾動頁面往下拉
+=======
+            Tools.ScrollPageUpOrDown(driver, 100); // 滾動頁面往下拉
+>>>>>>> e22569029034b7a86196bf77eaed2fbc1d25eed1
+
             string time = System.DateTime.Now.ToString("yyyy-MM-dd_HHmm");
 
             Excel.Application xlApp;
@@ -46,7 +52,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.CurrencyConverter
 
             for (int baseCurrencyIndex = 10; baseCurrencyIndex <= currencyAmount; baseCurrencyIndex++) // currencyindex =2 >>> 第一個幣別, (default baseCurrencyIndex = 2)
             {
-                Tools.ScrollPageUpOrDown(driver, 100);
+                TestBase.ScrollPageUpOrDown(driver, 100);
                 Thread.Sleep(100);
 
                 IWebElement BaseCurrencyDropDownList = driver.FindElement(By.XPath("//*[@id='mainContent']/div/div[4]/div/div/div[1]/section[1]/div/ul/li"));
@@ -57,7 +63,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.CurrencyConverter
 
                 for (int targetCurrencyIndex = 10; targetCurrencyIndex <= currencyAmount; targetCurrencyIndex++) //default targetCurrencyIndex = 2
                 {
-                    Tools.ScrollPageUpOrDown(driver, 200); 
+                    TestBase.ScrollPageUpOrDown(driver, 200); 
                     Thread.Sleep(100);
 
                     if (baseCurrencyIndex != targetCurrencyIndex) 
@@ -67,9 +73,9 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.CurrencyConverter
                         string targetCurrencyXPath = $"//*[@id='mainContent']/div/div[4]/div/div/div[1]/section[2]/div/ul/li/ul/li[{targetCurrencyIndex}]"; // 目標幣別XPath
                         driver.FindElement(By.XPath(targetCurrencyXPath)).Click(); // 選擇一個目標幣別
                         string targetCurrencyName = TargetCurrencyDropDownList.Text; // 目標幣別選項名稱
-                        Tools.ScrollPageUpOrDown(driver, 300);
+                        TestBase.ScrollPageUpOrDown(driver, 300);
                         Thread.Sleep(100);
-                        Tools.PageSnapshot($@"{snapshotpath}\{BaseCurrencyName}_兌換_{targetCurrencyName}_M.png", driver);
+                        TestBase.PageSnapshot(driver,$@"{snapshotpath}\{BaseCurrencyName}_兌換_{targetCurrencyName}_M.png");
                         Thread.Sleep(100);
 
 

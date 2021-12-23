@@ -27,8 +27,8 @@ namespace AutomatedTest.IntegrationTest.Personal.Trust
             string time = System.DateTime.Now.ToString("yyyy-MM-dd_HHmm");
             string snapshotfolderpath = $@"{System.AppDomain.CurrentDomain.BaseDirectory}\SnapshotFolder\PreSaleHouseTrustInquiry";
             string excel_path = $@"{snapshotfolderpath}\TestReport.xlsx";
-            
-            Tools.CreateSnapshotFolder(snapshotfolderpath);
+
+            TestBase.CreateFolder(snapshotfolderpath);
             System.Threading.Thread.Sleep(100);
             
             WorkBook xlsWorkbook;

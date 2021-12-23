@@ -170,7 +170,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
                         FAIL($"FAIL, 輸入: {companyUniformNumber} {TestBase.ElementSnapShotToReport(driver.FindElement(By.XPath("//*[@id='mainform']/div[7]/div[3]/div[2]/div[1]/div[2]/table/tbody/tr[2]")))}, 預期錯誤訊息: 必須填寫");
                     }
                 }
-                else if (Tools.CheckUniformNumber(actualColumnCompanyUniformNumbers) != true)
+                else if (TestBase.CheckUniformNumber(actualColumnCompanyUniformNumbers) != true)
                 {
                     if(companyUniformNumbersErrorWordings == "統一編號錯誤")
                     {
@@ -181,7 +181,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
                         FAIL($"FAIL, 輸入: {companyUniformNumber} {TestBase.ElementSnapShotToReport(driver.FindElement(By.XPath("//*[@id='mainform']/div[7]/div[3]/div[2]/div[1]/div[2]/table/tbody/tr[2]")))}, 預期錯誤訊息: 統一編號錯誤, 預期長度: 8 字元");
                     }
                 }
-                else if (Tools.CheckUniformNumber(actualColumnCompanyUniformNumbers) == true)
+                else if (TestBase.CheckUniformNumber(actualColumnCompanyUniformNumbers) == true)
                 {
                        PASS($"PASS, 輸入: {companyUniformNumber} {TestBase.ElementSnapShotToReport(driver.FindElement(By.XPath("//*[@id='mainform']/div[7]/div[3]/div[2]/div[1]/div[2]/table/tbody/tr[2]")))}");
                 }
@@ -526,7 +526,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
             ///</summary>
             INFO("");
             INFO("檢查:蒞行日期&時間下拉選單選項");
-            Tools.ScrollPageUpOrDown(driver, 700);
+            TestBase.ScrollPageUpOrDown(driver, 700);
              int date_amount = driver.FindElements(By.XPath("//*[@id='mainform']/div[7]/div[3]/div[2]/div[1]/div[2]/table/tbody/tr[9]/td[2]/div/ul[1]/li/ul/li")).Count; // 獲取蒞行日期下拉選單選項數量
              int time_amount = driver.FindElements(By.XPath("//*[@id='mainform']/div[7]/div[3]/div[2]/div[1]/div[2]/table/tbody/tr[9]/td[2]/div/ul[2]/li/ul/li")).Count; // 獲取蒞行時間下拉選單選項數量
 
@@ -607,7 +607,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
             /// </summary>
             INFO("");
             INFO("檢查: 圖型驗證碼錯誤訊息");
-            Tools.ScrollPageUpOrDown(driver, 800);
+            TestBase.ScrollPageUpOrDown(driver, 800);
             IWebElement ImageVerificationCodeColumn = driver.FindElement(By.XPath("//*[@id='captchaValue']")); // 驗證碼輸入欄位
         rerun_CaptchaSteps:
             string image_verification_column_value = driver.FindElement(By.Id("captchaValue")).GetAttribute("value"); // 驗證碼欄位實際讀到的值

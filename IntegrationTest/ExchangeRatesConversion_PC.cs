@@ -24,9 +24,9 @@ namespace AutomatedTest.IntegrationTest.Personal
             StartTestCase(browser, " 常駐快捷選單_所有幣值匯率換算_欄位檢查", "York");
 
             string snapshotpath = $@"{System.AppDomain.CurrentDomain.BaseDirectory}SnapshotFolder\ExchangeRate";
-            Tools.CreateSnapshotFolder(snapshotpath);
+            TestBase.CreateFolder(snapshotpath);
             Thread.Sleep(100);
-            Tools.ScrollPageUpOrDown(driver, 100);
+            TestBase.ScrollPageUpOrDown(driver, 100);
 
             driver.Navigate().Refresh(); // refresh網頁 >>> 讓首頁右側快捷選單顯示
             driver.FindElement(By.XPath("//*[@id='btnAntiFraud']")).Click(); // 關掉"提醒您"彈跳視窗
@@ -84,7 +84,7 @@ namespace AutomatedTest.IntegrationTest.Personal
 
                     driver.FindElement(By.XPath("//*[@id='calculate']")).Click(); // 點 "開始試算"
 
-                    Tools.PageSnapshot($@"{snapshotpath}\{BaseCurrencyName}_兌換_{targetCurrencyName}_PC.png", driver); // 截圖
+                    TestBase.PageSnapshot(driver,$@"{snapshotpath}\{BaseCurrencyName}_兌換_{targetCurrencyName}_PC.png"); // 截圖
                     Thread.Sleep(100);
                 }
             }

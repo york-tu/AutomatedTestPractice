@@ -21,9 +21,9 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
         {
             StartTestCase(browser, "企業紓困貸款預約服務_所有分行資料送出", "York");
 
-            Tools.CreateSnapshotFolder($@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha");
+            TestBase.CreateFolder($@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha");
             System.Threading.Thread.Sleep(100);
-            Tools.CleanUPFolder($@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha"); //清空captcha資料夾
+            TestBase.CleanUPFolder($@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha"); //清空captcha資料夾
 
             int country_amount = driver.FindElements(By.XPath("//*[@id='mainform']/div[7]/div[3]/div[2]/div[1]/div[2]/table/tbody/tr[8]/td[2]/div/ul[1]/li/ul/li")).Count; // 取縣市選單total縣市數
             for (int country_index = 1; country_index <= country_amount - 1; country_index++)
@@ -65,7 +65,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
                     ///  </summary>
                     IWebElement CompanyUniformNumbersColumn = driver.FindElement(By.XPath("//*[@id='mainform']/div[7]/div[3]/div[2]/div[1]/div[2]/table/tbody/tr[2]/td[2]/input"));
                     CompanyNameColumn.Clear();
-                    CompanyNameColumn.SendKeys(Tools.CreateUniformNumber()); // 填公司統編
+                    CompanyNameColumn.SendKeys(TestBase.CreateUniformNumber()); // 填公司統編
 
 
 
@@ -101,7 +101,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
                     ///  </summary>
                     IWebElement CellPhoneColumn = driver.FindElement(By.XPath("//*[@id='mainform']/div[7]/div[3]/div[2]/div[1]/div[2]/table/tbody/tr[5]/td[2]/input[1]"));
                     CellPhoneColumn.Clear();
-                    CellPhoneColumn.SendKeys(Tools.CreateCellPhoneNumber());
+                    CellPhoneColumn.SendKeys(TestBase.CreateCellPhoneNumber());
 
 
 
@@ -124,7 +124,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
                     ///</summary>
                     IWebElement DateDropDownList = driver.FindElement(By.XPath("//*[@id='mainform']/div[7]/div[3]/div[2]/div[1]/div[2]/table/tbody/tr[9]/td[2]/div/ul[1]/li"));
                     IWebElement TimeDropDownList = driver.FindElement(By.XPath("//*[@id='mainform']/div[7]/div[3]/div[2]/div[1]/div[2]/table/tbody/tr[9]/td[2]/div/ul[2]/li"));
-                    Tools.ScrollPageUpOrDown(driver, 700);
+                    TestBase.ScrollPageUpOrDown(driver, 700);
                     int date_amount = driver.FindElements(By.XPath("//*[@id='mainform']/div[7]/div[3]/div[2]/div[1]/div[2]/table/tbody/tr[9]/td[2]/div/ul[1]/li/ul/li")).Count; // 獲取蒞行日期下拉選單選項數量
                     int time_amount = driver.FindElements(By.XPath("//*[@id='mainform']/div[7]/div[3]/div[2]/div[1]/div[2]/table/tbody/tr[9]/td[2]/div/ul[2]/li/ul/li")).Count; // 獲取蒞行時間下拉選單選項數量
 
@@ -166,7 +166,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
                     IWebElement CaptchaPicture = driver.FindElement(By.XPath("//*[@id='ImgCaptcha']")); // Captcha圖片位置
                     IWebElement ImageVerificationCodeColumn = driver.FindElement(By.XPath("//*[@id='captchaValue']")); // 輸入驗證碼欄位
 
-                    Tools.ElementSnapshotshot(CaptchaPicture, $@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha\CaptchaImage_{verify_count}.png"); //snapshot驗證碼圖片
+                    TestBase.ElementSnapshotshot(CaptchaPicture, $@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha\CaptchaImage_{verify_count}.png"); //snapshot驗證碼圖片
                     string verify_code_result = TestBase.TesseractOCRIdentify($@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha\CaptchaImage_{verify_count}.png", 0.75); //解析出驗證碼
 
                     if (verify_count >= 10) // 依序刪除舊的picture
@@ -202,10 +202,10 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.BailoutLoan
                     WebDriverWait wait_to_see_popsup_window = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
                     wait_to_see_popsup_window.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("/html/body/div[5]/div/div/a"))); // 等待直到看到通知視窗 
                     System.Threading.Thread.Sleep(1000);
-                    Tools.ScrollPageUpOrDown(driver, 700);
+                    TestBase.ScrollPageUpOrDown(driver, 700);
                     string snapshotpath = $@"{System.AppDomain.CurrentDomain.BaseDirectory}\SnapshotFolder\BailoutLoan";
-                    Tools.CreateSnapshotFolder(snapshotpath);
-                    Tools.FullScreenshot($@"{snapshotpath}\第{country_index}縣市第{branch_index}分行_紓困專案{projectSelected - 1}_預約第{ran_date_index - 1}日第{ran_time_index - 1}時段.png"); //實作截圖
+                    TestBase.CreateFolder(snapshotpath);
+                    TestBase.FullScreenshot($@"{snapshotpath}\第{country_index}縣市第{branch_index}分行_紓困專案{projectSelected - 1}_預約第{ran_date_index - 1}日第{ran_time_index - 1}時段.png"); //實作截圖
 
                     driver.FindElement(By.XPath("/html/body/div[5]/div/div/a")).Click(); // 點通知視窗 "X" 按鈕
                     System.Threading.Thread.Sleep(1000);

@@ -22,7 +22,7 @@ namespace AutomatedTest.IntegrationTest.__Practice
             StartTestCase(browser, "官網首頁_最新消息與公告_條列資料", "York");
             driver.FindElement(By.XPath("//*[@id='btnAntiFraud']")).Click(); // 關掉彈跳視窗
 
-            Tools.ScrollPageUpOrDown(driver, 300);
+            TestBase.ScrollPageUpOrDown(driver, 300);
 
             INFO("官網首頁最新消息與公告");
             int newCounts = driver.FindElements(By.XPath("//*[@id='layout_0_maincontent_1_announce_0_divNotice']/ul/li")).Count; // 最新消息/公告數量

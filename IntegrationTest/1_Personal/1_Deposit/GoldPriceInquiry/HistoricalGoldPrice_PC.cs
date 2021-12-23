@@ -23,8 +23,8 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
             INFO("");
 
             string snapshotpath = $@"{System.AppDomain.CurrentDomain.BaseDirectory}SnapshotFolder\GoldPriceInquiry";
-            Tools.CreateSnapshotFolder(snapshotpath);
-            Tools.CleanUPFolder(snapshotpath);
+            TestBase.CreateFolder(snapshotpath);
+            TestBase.CleanUPFolder(snapshotpath);
 
             int currentYear = Convert.ToInt32(System.DateTime.Now.ToString("yyyy"));
             int currentMonth = Convert.ToInt32(System.DateTime.Now.ToString("MM"));
@@ -36,7 +36,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
             IWebElement StartSearch = driver.FindElement(By.XPath("//*[@id='tab-01']/div[1]/div[4]/a"));
             IWebElement Chart = driver.FindElement(By.XPath("//*[@id='tab-01']/div[1]/div[3]/div/label[1]"));
 
-            Tools.ScrollPageUpOrDown(driver, 300);
+            TestBase.ScrollPageUpOrDown(driver, 300);
             int maxFebruaryDays;
 
             for (int year = currentYear; year <= currentYear;) // 2020 - 2021 year
@@ -57,7 +57,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
                                     Chart.Click();
                                     StartSearch.Click();
                                     string startColumnName = driver.FindElement(By.XPath("//*[@id='datepicker1']")).GetAttribute("value");
-                                    Tools.PageSnapshot($@"{snapshotpath}\起始日_{startColumnName}_PC.png", driver);
+                                    TestBase.PageSnapshot(driver,$@"{snapshotpath}\起始日_{startColumnName}_PC.png");
                                     Thread.Sleep(300);
                                     if (mon == 12 && day == 31)
                                     {
@@ -75,7 +75,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
                                     Chart.Click();
                                     StartSearch.Click();
                                     string startColumnName = driver.FindElement(By.XPath("//*[@id='datepicker1']")).GetAttribute("value");
-                                    Tools.PageSnapshot($@"{snapshotpath}\起始日_{startColumnName}_PC.png", driver);
+                                    TestBase.PageSnapshot(driver,$@"{snapshotpath}\起始日_{startColumnName}_PC.png");
                                     Thread.Sleep(300);
                                 }
                             }
@@ -98,7 +98,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
                                     Chart.Click();
                                     StartSearch.Click();
                                     string startColumnName = driver.FindElement(By.XPath("//*[@id='datepicker1']")).GetAttribute("value");
-                                    Tools.PageSnapshot($@"{snapshotpath}\起始日_{startColumnName}_PC.png", driver);
+                                    TestBase.PageSnapshot(driver,$@"{snapshotpath}\起始日_{startColumnName}_PC.png");
                                     Thread.Sleep(300);
                                 }
                             }
@@ -114,7 +114,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
                                     Chart.Click();
                                     StartSearch.Click();
                                     string startColumnName = driver.FindElement(By.XPath("//*[@id='datepicker1']")).GetAttribute("value");
-                                    Tools.PageSnapshot($@"{snapshotpath}\起始日_{startColumnName}_PC.png", driver);
+                                    TestBase.PageSnapshot(driver,$@"{snapshotpath}\起始日_{startColumnName}_PC.png");
                                     Thread.Sleep(300);
                                     if (mon == 12 && day == 31)
                                     {
@@ -132,7 +132,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
                                     Chart.Click();
                                     StartSearch.Click();
                                     string startColumnName = driver.FindElement(By.XPath("//*[@id='datepicker1']")).GetAttribute("value");
-                                    Tools.PageSnapshot($@"{snapshotpath}\起始日_{startColumnName}_PC.png", driver);
+                                    TestBase.PageSnapshot(driver,$@"{snapshotpath}\起始日_{startColumnName}_PC.png");
                                     Thread.Sleep(300);
                                 }
                             }
@@ -154,7 +154,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
                                     Chart.Click();
                                     StartSearch.Click();
                                     string startColumnName = driver.FindElement(By.XPath("//*[@id='datepicker1']")).GetAttribute("value");
-                                    Tools.PageSnapshot($@"{snapshotpath}\起始日_{startColumnName}_PC.png", driver);
+                                    TestBase.PageSnapshot(driver,$@"{snapshotpath}\起始日_{startColumnName}_PC.png");
                                     Thread.Sleep(300);
                                 }
                             }
@@ -174,7 +174,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
                                 Chart.Click();
                                 StartSearch.Click();
                                 string startColumnName = driver.FindElement(By.XPath("//*[@id='datepicker1']")).GetAttribute("value");
-                                Tools.PageSnapshot($@"{snapshotpath}\起始日_{startColumnName}_PC.png", driver);
+                                TestBase.PageSnapshot(driver,$@"{snapshotpath}\起始日_{startColumnName}_PC.png");
                                 Thread.Sleep(300);
                             }
                         }
@@ -189,7 +189,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
                                     Chart.Click();
                                     StartSearch.Click();
                                     string startColumnName = driver.FindElement(By.XPath("//*[@id='datepicker1']")).GetAttribute("value");
-                                    Tools.PageSnapshot($@"{snapshotpath}\起始日_{startColumnName}_PC.png", driver);
+                                    TestBase.PageSnapshot(driver,$@"{snapshotpath}\起始日_{startColumnName}_PC.png");
                                     Thread.Sleep(300);
                                 }
                             }
@@ -202,7 +202,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
                                     Chart.Click();
                                     StartSearch.Click();
                                     string startColumnName = driver.FindElement(By.XPath("//*[@id='datepicker1']")).GetAttribute("value");
-                                    Tools.PageSnapshot($@"{snapshotpath}\起始日_{startColumnName}_PC.png", driver);
+                                    TestBase.PageSnapshot(driver,$@"{snapshotpath}\起始日_{startColumnName}_PC.png");
                                     Thread.Sleep(300);
                                 }
                             }
@@ -223,7 +223,7 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.GoldPriceInquiry
                                     Chart.Click();
                                     StartSearch.Click();
                                     string startColumnName = driver.FindElement(By.XPath("//*[@id='datepicker1']")).GetAttribute("value");
-                                    Tools.PageSnapshot($@"{snapshotpath}\起始日_{startColumnName}_PC.png", driver);
+                                    TestBase.PageSnapshot(driver,$@"{snapshotpath}\起始日_{startColumnName}_PC.png");
                                     Thread.Sleep(300);
                                 }
                             }

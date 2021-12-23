@@ -10,11 +10,11 @@ namespace AutomatedTest.Utilities
 
     public class BrowserHelper
     {
-        public IWebDriver driver;
+        private IWebDriver driver;
         public IDictionary<string, object> vars { get; private set; }
         private IJavaScriptExecutor js;
-        string browserVersion;
-        string browserName;
+        private string browserVersion;
+        private string browserName;
         ICapabilities capabilities;
 
 

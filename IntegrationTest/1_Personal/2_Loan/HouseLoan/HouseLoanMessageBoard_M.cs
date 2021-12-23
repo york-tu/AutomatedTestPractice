@@ -106,9 +106,9 @@ namespace AutomatedTest.IntegrationTest.Personal.Loan.HouseLoan
 
 
                     string snapshotpath = System.AppDomain.CurrentDomain.BaseDirectory + "SnapshotFolder\\HouseLoanMessageBoard";
-                    Tools.CreateSnapshotFolder(snapshotpath);
+                    TestBase.CreateFolder(snapshotpath);
                     System.Threading.Thread.Sleep(100);
-                    Tools.FullScreenshot($@"{snapshotpath}\{testcase_name}_{browser}_{Version}_{timesavepath}.png"); // 截圖當下畫面
+                TestBase.FullScreenshot($@"{snapshotpath}\{testcase_name}_{browser}_{Version}_{timesavepath}.png"); // 截圖當下畫面
 
                     driver.SwitchTo().Alert().Accept();
                 }

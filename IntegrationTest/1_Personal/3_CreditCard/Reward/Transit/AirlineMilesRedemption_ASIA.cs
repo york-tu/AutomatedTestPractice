@@ -114,7 +114,7 @@ namespace AutomatedTest.IntegrationTest.Personal.CreditCard.Reward.Transit
             IWebElement submit_redeem_setting = driver.FindElement(By.XPath(""));
             submit_redeem_setting.Click(); //ÂI°e¥X
 
-            Tools.PageSnapshot($@"{snapshotpath}\{testcase_name}_{browser}_{Version}_{timesavepath}.png", driver);
+            TestBase.PageSnapshot(driver,$@"{snapshotpath}\{testcase_name}_{browser}_{Version}_{timesavepath}.png");
             System.Threading.Thread.Sleep(500);
 
 

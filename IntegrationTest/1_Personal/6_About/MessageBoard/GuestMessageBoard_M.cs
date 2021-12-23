@@ -101,9 +101,7 @@ namespace AutomatedTest.IntegrationTest.About.MessageBoard
                         }
 
                         string snapshotpath = $@"{System.AppDomain.CurrentDomain.BaseDirectory}\SnapshotFolder\GuestMessageBoard";
-                        Tools.CreateSnapshotFolder(snapshotpath);
-
-
+                        TestBase.CreateFolder(snapshotpath);
                         WARNING(TestBase.ElementSnapShotToReport(driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[5]"))));
 
                         //Tools.ElementTakeScreenShot(driver.FindElement(By.XPath("//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[5]")),
