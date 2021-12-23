@@ -26,7 +26,9 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.CurrencyConverter
             Tools.CreateSnapshotFolder(snapshotpath);
             Tools.CleanUPFolder(snapshotpath);
             Thread.Sleep(100);
-            Tools.ScrollPageUpOrDown(driver, 100);
+
+            Tools.ScrollPageUpOrDown(driver, 100); // 滾動頁面往下拉
+
             string time = System.DateTime.Now.ToString("yyyy-MM-dd_HHmm");
 
             Excel.Application xlApp;

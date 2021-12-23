@@ -54,7 +54,7 @@ namespace AutomatedTest.IntegrationTest.__Practice
             System.Threading.Thread.Sleep(100);
             Tools.CleanUPFolder($@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha"); //清空Captcha資料夾
 
-
+            var aaa = System.AppDomain.CurrentDomain.BaseDirectory;
 
             int verify_count = 1; //紀錄驗證碼retry次數
         retryagain:

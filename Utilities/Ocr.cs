@@ -37,9 +37,11 @@ namespace AutomatedTest.Utilities
 
         public void DoOCRMultiThred(Bitmap image, string lang)
         {
+            
             tessnet2.Tesseract ocr = new tessnet2.Tesseract();
             ocr.SetVariable("tessedit_char_whitelist", "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
-            var path = string.Concat(Application.StartupPath, @"\tessdata");
+            
+            var path = string.Concat($@"{UserDataList.Upperfolderpath}tessdata");
             ocr.Init(path, lang, false);
             // If the OcrDone delegate is not null then this'll be the multithreaded version
             ocr.OcrDone = new tessnet2.Tesseract.OcrDoneHandler(Finished);
