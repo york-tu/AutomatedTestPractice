@@ -77,12 +77,22 @@ namespace AutomatedTest.IntegrationTest
             _extentReport.Init();
             _extentReport.CreateTestCase(testFullName, "");
             _extentReport.GetTestEnvironment(runtimeEnvironment);
-            _extentReport.TestCaseDriverVersion(browser.GetBrowserName() + " v" + browser.GetBrowserVersion());
+            if (browser !=null)
+            {
+                _extentReport.TestCaseDriverVersion(browser.GetBrowserName() + " v" + browser.GetBrowserVersion());
+            }
+            else
+            {
+                _extentReport.TestCaseDriverVersion("N/A");
+            }
             _extentTObj = _extentReport.ExtentTestObjects;
         }
         public void CloseBrowser()
         {
-            this.driver.Quit();
+            if (this.driver != null)
+            {
+                this.driver.Quit();
+            }
             if (getreport)
             {
                 _extentReport.ExportReport();
@@ -146,6 +156,7 @@ namespace AutomatedTest.IntegrationTest
         {
             if (getreport)
             {
+                //_extentTObj.Info(MarkupHelper.CreateLabel(content, ExtentColor.Yellow));
                 _extentTObj.Info(content);
 
             }
