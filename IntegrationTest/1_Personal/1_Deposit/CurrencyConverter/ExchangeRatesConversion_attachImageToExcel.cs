@@ -27,11 +27,11 @@ namespace AutomatedTest.IntegrationTest.Personal.Deposit.CurrencyConverter
             TestBase.CleanUPFolder(snapshotpath);
             Thread.Sleep(100);
 
-<<<<<<< HEAD
+
             TestBase.ScrollPageUpOrDown(driver, 100); // 滾動頁面往下拉
-=======
-            Tools.ScrollPageUpOrDown(driver, 100); // 滾動頁面往下拉
->>>>>>> e22569029034b7a86196bf77eaed2fbc1d25eed1
+
+            TestBase.ScrollPageUpOrDown(driver, 100); // 滾動頁面往下拉
+
 
             string time = System.DateTime.Now.ToString("yyyy-MM-dd_HHmm");
 

@@ -22,7 +22,7 @@ namespace AutomatedTest.Utilities
         public string CARDID_FULL { get; set; }
 
         public static string Upperfolderpath = Path.GetFullPath(Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\"));
-        
+        public static string sitemapsExcelPath = $@"{UserDataList.Upperfolderpath}xmlURLList";
     }
     public class UserDataMap : ClassMap<UserDataList> //当字段名为中文时，那么可以定义一个映射匹配类，CSVHelper是自动根据你的类来自动映射匹配的
     {

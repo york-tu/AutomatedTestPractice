@@ -52,11 +52,11 @@ namespace AutomatedTest.IntegrationTest.__Practice
 
             TestBase.CreateFolder($@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha");
             System.Threading.Thread.Sleep(100);
-<<<<<<< HEAD
+
             TestBase.CleanUPFolder($@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha"); //清空Captcha資料夾
-=======
-            Tools.CleanUPFolder($@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha"); //清空Captcha資料夾
->>>>>>> e22569029034b7a86196bf77eaed2fbc1d25eed1
+
+            TestBase.CleanUPFolder($@"{System.AppDomain.CurrentDomain.BaseDirectory}\Captcha"); //清空Captcha資料夾
+
 
             var aaa = System.AppDomain.CurrentDomain.BaseDirectory;
 

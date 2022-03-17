@@ -25,7 +25,7 @@ namespace AutomatedTest.IntegrationTest.Regression
 
             StreamReader reader = new StreamReader(response1.GetResponseStream());
             string sitemaps = reader.ReadToEnd(); //呼﹍絏string "sitemaps"
-            List<string>totalURLList = sitemaps.Split('\n').ToList();
+            List<string> totalURLList = sitemaps.Split('\n').ToList();
             #endregion
 
             List<string> urlList = new List<string>();
@@ -43,20 +43,20 @@ namespace AutomatedTest.IntegrationTest.Regression
             }
             Excel.Application excel_App1 = new Excel.Application(); //  new excel莱ノ祘
             Excel.Workbook excel_WB1 = excel_App1.Workbooks.Add(); // 穝糤excel郎
-            Excel.Worksheet excel_WS1= new Excel.Worksheet(); //  穝糤
+            Excel.Worksheet excel_WS1 = new Excel.Worksheet(); //  穝糤
 
-            string[] structureList = new string[] { "/bank/personal", "/bank/personal/deposit", "/bank/personal/loan", "/bank/personal/credit-card", "/bank/personal/wealth", 
+            string[] structureList = new string[] { "/bank/personal", "/bank/personal/deposit", "/bank/personal/loan", "/bank/personal/credit-card", "/bank/personal/wealth",
                 "/bank/personal/trust", "/bank/personal/insurance", "/bank/personal/lifefin", "/bank/personal/apply", "/bank/personal/event",
                 "/bank/small-business", "/bank/corporate", "/bank/digital", "/bank/about", "/bank/marketing",
                 "/bank/iframe/widget", "/bank/error", "/bank/bank-en", "/bank/preview" };
 
-            excel_WB1.Worksheets.Add(Missing.Value,Missing.Value,structureList.Length-1,Missing.Value); // 穝糤计秖 (total计秖 = structureList计 -1 + 箇砞1)
+            excel_WB1.Worksheets.Add(Missing.Value, Missing.Value, structureList.Length - 1, Missing.Value); // 穝糤计秖 (total计秖 = structureList计 -1 + 箇砞1)
 
             int sheetNum = 1; //  材sheetNum
             foreach (var item in structureList)
             {
                 excel_WS1 = (Excel.Worksheet)excel_WB1.Worksheets[sheetNum]; // 材sheetNum
-                excel_WS1.Name = item.Replace('/','_').Substring(6); //㏑
+                excel_WS1.Name = item.Replace('/', '_').Substring(6); //㏑
                 excel_WS1.Activate(); // setup礘翴
 
                 int index = 0; // excel 秨﹍︽计
