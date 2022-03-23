@@ -10,10 +10,10 @@ using System.Collections.Generic;
 
 namespace AutomatedTest.IntegrationTest.Regression
 {
-    public class A_官網sitemapsURL分類
+    public class I_官網sitemapsURL做分類
     {
         [Fact]
-        public void 分類URL並匯出excel()
+        public void 分類URL並匯出到excel()
         {
             string excelExportPath = $@"{UserDataList.Upperfolderpath}xmlURLList";
 

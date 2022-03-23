@@ -10,7 +10,7 @@ namespace AutomatedTest.Utilities
 
     public class BrowserHelper
     {
-        private IWebDriver driver;
+        public IWebDriver driver;
         public IDictionary<string, object> vars { get; private set; }
         private IJavaScriptExecutor js;
         private string browserVersion;
@@ -73,7 +73,7 @@ namespace AutomatedTest.Utilities
             new List<object[]>
             {
                 new object[]{"Chrome"},
-               // new object[]{"Firefox"},
+                //new object[]{"Firefox"},
                // new object[]{"IE"}
             };
 

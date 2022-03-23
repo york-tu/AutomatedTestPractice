@@ -12,9 +12,9 @@ using System.Globalization;
 
 namespace AutomatedTest.IntegrationTest.Regression
 {
-    public class B_URL網頁內容檢查:IntegrationTestBase
+    public class II_I_檢查網頁內容:IntegrationTestBase
     {
-        public B_URL網頁內容檢查(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
+        public II_I_檢查網頁內容(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
         {
         }
 
@@ -42,7 +42,7 @@ namespace AutomatedTest.IntegrationTest.Regression
         工作表 19:     "/bank/preview";
         */
         #endregion
-        [InlineData(new int[] { 10 })]
+        [InlineData(new int[] { 2 })]
         public void 檢查網頁內容是否符合預期(int[] sheet)
         {
             CreateReport("網頁內容檢查", "York");
@@ -130,6 +130,13 @@ namespace AutomatedTest.IntegrationTest.Regression
                         {
                             WARNING($"[Page Redirect], {driver.Url.ToString()}  (Expect: {strURL})");
                             WARNING(TestBase.PageSnapshotToReport(driver));
+                            continue;
+                        }
+                        else if (strURL == "https://easyfee.esunbank.com.tw/index.action")
+                        {
+                            WARNING($"{strURL}, Keyword: {expectString}");
+                            WARNING(TestBase.PageSnapshotToReport(driver));
+                            continue;
                         }
                         else if (driver.Url.ToString() == "https://www.esunbank.com.tw/bank/personal/event/calendar/events") // Workaround 1 : 活動日曆URL >>> 需抓當天日期
                         {

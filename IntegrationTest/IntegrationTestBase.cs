@@ -60,7 +60,7 @@ namespace AutomatedTest.IntegrationTest
         public void StartTestCase(string browserArg, string reportName, string tester)
         {
             browser = new BrowserHelper(browserArg);
-           // this.driver = browser.driver;
+           this.driver = browser.driver;
             driver.Navigate().GoToUrl(testurl);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000); //100秒內載完網頁內容, 否則報錯, 載完提早進下一步.
             driver.Manage().Window.Maximize();

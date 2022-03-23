@@ -6,9 +6,9 @@ using Xunit.Abstractions;
 
 namespace AutomatedTest.IntegrationTest.Regression
 {
-    public class B_檢查URL是否有效:IntegrationTestBase
+    public class II_II_檢查URL是否有效:IntegrationTestBase
     {
-        public B_檢查URL是否有效(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
+        public II_II_檢查URL是否有效(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
         {
         }
 
