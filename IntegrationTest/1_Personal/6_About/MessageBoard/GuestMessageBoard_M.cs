@@ -15,7 +15,7 @@ namespace AutomatedTest.IntegrationTest.About.MessageBoard
     {
         public 訪客留言版縣市資料源調整_PC (ITestOutputHelper output, Setup testsetup): base(output, testsetup)
         {
-            testurl = domain + "https://easyfee.esunbank.com.tw/index.action";
+            testurl = domain + "https://www.esunbank.com.tw/bank/about/services/customer/message-board";
         }
             
         [Theory]
@@ -25,9 +25,6 @@ namespace AutomatedTest.IntegrationTest.About.MessageBoard
         {
             StartTestCase(browser, "縣市分行選單檢核", "York");
             INFO("縣市分行欄位Snapshot + 出Report");
-
-            var aaa = driver.FindElement(By.CssSelector(".page_frame3")).Text;
-
 
 
             int country_dropdownList_amount = driver.FindElements(By.XPath("//*[@id='mainform']/div[9]/div[4]/div[2]/table/tbody/tr[5]/td[2]/div/ul[1]/li/ul/li")).Count;  //獲取 "縣市"下拉選單裡的縣市數

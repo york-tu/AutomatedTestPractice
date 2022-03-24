@@ -42,7 +42,7 @@ namespace AutomatedTest.IntegrationTest.Regression
         工作表 19:     "/bank/preview";
         */
         #endregion
-        [InlineData(new int[] { 2 })]
+        [InlineData(new int[] { 1 })]
         public void 檢查網頁內容是否符合預期(int[] sheet)
         {
             CreateReport("網頁內容檢查", "York");
@@ -125,7 +125,7 @@ namespace AutomatedTest.IntegrationTest.Regression
                             driver.FindElementByClassName("changeTarget").Click();
                         }
                         #endregion
-                        driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(600); //600秒內載完網頁內容, 否則報錯, 載完提早進下一步.
+                        driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(600); //600秒內載完網頁內容, 否則報錯, 載完提早進下一步.
                         if (driver.Url.ToString() != strURL) // 檢查網頁開啟當下網址是否為輸入網址 (判斷網頁是否有redirect)
                         {
                             WARNING($"[Page Redirect], {driver.Url.ToString()}  (Expect: {strURL})");
