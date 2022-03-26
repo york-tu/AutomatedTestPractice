@@ -107,7 +107,7 @@ namespace AutomatedTest.IntegrationTest.Regression
                         int meetExpectResultIndex = Array.IndexOf(expectResultOptionsNameArray, actualOptionName); // 目前網頁MegaMenu選項對應到expect result 陣列中的位置
                         if (meetExpectResultIndex == -1)
                         {
-                            FAIL($"[Mega Menu][存匯] 選項{actualOptionName}不存在於預期選項清單內");
+                            FAIL($"[Mega Menu][存匯] 選項\"{actualOptionName}\''不在預期選項內");
                             continue;
                         }
                         else
@@ -116,12 +116,12 @@ namespace AutomatedTest.IntegrationTest.Regression
 
                             if (actURL == expectURL)
                             {
-                                PASS($"[Mega Menu][存匯] 選項 {actualOptionName} 超連結網址 {actURL} 符合預期");
+                                PASS($"[Mega Menu][存匯] 選項 \" {actualOptionName}\" 超連結網址  \"{actURL}\" 符合預期");
                             }
                             else if (actURL != expectURL)
                             {
-                                FAIL($"[Mega Menu][存匯] 選項{actualOptionName} 超連結網址{actURL} (預期網址{expectURL})");
-                                FAIL(TestBase.PageSnapshotToReport(driver));
+                                FAIL($"[Mega Menu][存匯] 選項 \"{actualOptionName}\" 超連結網址 \"{actURL}\" (預期網址 \"{expectURL}\")");
+                                // FAIL(TestBase.PageSnapshotToReport(driver));
                             }
                         }
                      }
