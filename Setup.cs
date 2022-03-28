@@ -25,5 +25,6 @@ namespace AutomatedTest
             ServiceProvider = serviceCollection.BuildServiceProvider();
             
         }
+       
     }
 }

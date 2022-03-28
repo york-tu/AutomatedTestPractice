@@ -1,0 +1,3826 @@
+[
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal",
+    "PageKeywordCssSelector": ".newsList > div:nth-child(1) > div:nth-child(1)",
+    "ExpectString": "最新消息"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "存匯"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/twd-service",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "臺幣服務",
+    "MegaMenuOptions": "臺幣服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/twd-service/demand-deposit",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "臺幣存款",
+    "MegaMenuOptions": "臺幣存款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/twd-service/omnibus-trading-account",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "證券交易帳戶",
+    "MegaMenuOptions": "證券交易帳戶"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/twd-service/salary-account",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "薪資轉帳帳戶",
+    "MegaMenuOptions": "薪資轉帳帳戶"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/twd-service/time-deposit",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "臺幣定期性存款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/twd-service/checking-account",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "臺幣支票存款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/twd-service/depositstep_m",
+    "ExpectString": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/twd-service/debit-card/card-list",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "金融卡介紹",
+    "MegaMenuOptions": "金融卡介紹"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/twd-service/debit-card/labor-card",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "勞動保障卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/foreign-service",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "外幣服務",
+    "MegaMenuOptions": "外幣服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/foreign-service/current-account",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "外幣存款",
+    "MegaMenuOptions": "外幣存款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/foreign-service/currency",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "外幣現鈔",
+    "MegaMenuOptions": "外幣現鈔"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/foreign-service/outward-remittance",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "外幣匯款",
+    "MegaMenuOptions": "外幣匯款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/foreign-service/travel-and-check",
+    "PageKeywordCssSelector": "#layout_0_rightcontent_2_hlkTabB",
+    "ExpectString": "外幣票據",
+    "MegaMenuOptions": "外幣票據"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/foreign-service/investment",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "外幣投資密技",
+    "MegaMenuOptions": "外幣投資密技"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/foreign-service/exchange",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "旅遊換匯密技",
+    "MegaMenuOptions": "旅遊換匯密技"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/foreign-service/tips",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "實用功能密技",
+    "MegaMenuOptions": "實用功能密技"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/foreign-service/transfer",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "匯款好幫手",
+    "MegaMenuOptions": "匯款好幫手"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/foreign-service/collateralize",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "玉山銀行IXML憑證"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/foreign-service/dci",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "雙元貨幣組合式產品(DCI)"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/deopsit-event",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "外幣優惠",
+    "MegaMenuOptions": "外幣優惠"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/deopsit-event/interest-rate",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "利率優惠",
+    "MegaMenuOptions": "利率優惠"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/deopsit-event/exchange-rate",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "匯率優惠",
+    "MegaMenuOptions": "匯率優惠"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/deopsit-event/cash",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "領現鈔優惠",
+    "MegaMenuOptions": "領現鈔優惠"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/deopsit-event/transfer",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "匯款優惠",
+    "MegaMenuOptions": "匯款優惠"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/rate",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "利率 / 匯率查詢",
+    "MegaMenuOptions": "利率 / 匯率查詢"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/rate/forex/foreign-exchange-rates",
+    "PageKeywordCssSelector": "#layout_0_rightcontent_2_HlkRateSpotExchange",
+    "ExpectString": "即期匯率",
+    "MegaMenuOptions": "外匯匯率"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/rate/forex/exchange-rate-chart",
+    "PageKeywordCssSelector": "#layout_0_rightcontent_2_HlkForeignRateExchangeChart",
+    "ExpectString": "歷史匯率走勢"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/rate/forex/currency-converter",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "外匯匯率",
+    "MegaMenuOptions": "匯率換算"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/rate/twd/deposit-rate",
+    "PageKeywordCssSelector": "#layout_0_rightcontent_0_HlkRateSpotExchange",
+    "ExpectString": "存款利率",
+    "MegaMenuOptions": "臺幣存放款利率"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/rate/twd/loan-rate",
+    "PageKeywordCssSelector": "#layout_0_rightcontent_0_HlkRateForwardExchange",
+    "ExpectString": "放款利率"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/rate/twd/ncd-rate",
+    "PageKeywordCssSelector": "#layout_0_rightcontent_0_HlkForeignRateExchangeChart",
+    "ExpectString": "可轉讓定期存單參考利率"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/rate/twd/deposit-calculation",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "臺幣存放款利率"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/rate/foreign/deposit-rate",
+    "PageKeywordCssSelector": "#layout_0_rightcontent_1_HlkTab1",
+    "ExpectString": "存款利率",
+    "MegaMenuOptions": "外幣存款利率"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/rate/foreign/deposit-trial-calculation",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "外幣存款利率"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/rate/foreign/ncd-rate",
+    "PageKeywordCssSelector": "#layout_0_rightcontent_1_HlkTab2",
+    "ExpectString": "外幣可轉讓定期存單參考利率"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/rate/foreign/loan-rate",
+    "PageKeywordCssSelector": "#layout_0_rightcontent_0_HlkTab3",
+    "ExpectString": "放款利率"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/rate/foreign/exchange-market-rate",
+    "PageKeywordCssSelector": "#layout_0_rightcontent_0_HlkTab4",
+    "ExpectString": "最新外幣資金市場參考利率"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/rate/foreign/deposit-calculation",
+    "PageKeywordCssSelector": ".blueLetter",
+    "ExpectString": "存款試算"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/rate/bonds/bonds-rate",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "票債券參考利率表",
+    "MegaMenuOptions": "票債券參考利率表"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/atm-service",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "ATM服務",
+    "MegaMenuOptions": "ATM服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/atm-service/atm-event",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "ATM優惠",
+    "MegaMenuOptions": "ATM優惠"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/atm-service/nocard-service",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "無卡服務",
+    "MegaMenuOptions": "無卡服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/atm-service/atmcard-service",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "金融卡服務",
+    "MegaMenuOptions": "金融卡服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/gold/price/current-price",
+    "PageKeywordCssSelector": "#layout_0_rightcontent_1_HlkGoldPassbook",
+    "ExpectString": "當日黃金存摺牌價",
+    "MegaMenuOptions": "黃金存摺牌價查詢"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/gold/price/historical-price",
+    "PageKeywordCssSelector": "#layout_0_rightcontent_0_HlkGoldPassbookHistory",
+    "ExpectString": "歷史黃金存摺牌價"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/safe-deposit-box/safe-deposit-box",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "保管箱業務",
+    "MegaMenuOptions": "保管箱業務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/forex-daily",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "外匯市場資訊"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/check-deposits",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "線上票信查詢",
+    "MegaMenuOptions": "線上票信查詢"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "貸款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/recommand",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "熱門推薦"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/dreamplan",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "貸你築夢計劃",
+    "MegaMenuOptions": "貸你築夢計劃"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/dreamplan/case",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "實際案例"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/dreamplan/case/item1",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "彈指之間，貸款已辦妥"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/dreamplan/case/item2",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "情定終身在此刻，甜蜜成家不是夢"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/dreamplan/case/item3",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "機會，是留給有辦法抓住它的人"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/dreamplan/case/item4",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "讓你的每一天，因夢想而閃耀"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/dreamplan/case/item5",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "老屋換新裝，創造天倫樂"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/dreamplan/case/item6",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "再忙，你也能隨時申辦貸款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/dreamplan/case/item7",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "整合債務小幫手，助你繳款更輕鬆"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/dreamplan/case/item8",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "房子不只遮雨避雨，還有意想不到的價值"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/onlineloan",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "線上貸款專區",
+    "MegaMenuOptions": "線上貸款專區"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/onlineloan/online-scoring",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "貸款額度利率評估",
+    "MegaMenuOptions": "貸款額度利率評估"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/personal",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "個人信用貸款",
+    "MegaMenuOptions": "個人信用貸款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/personal/employee",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "上班族顧客",
+    "MegaMenuOptions": "上班族顧客"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/personal/esun-client",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "玉山往來顧客",
+    "MegaMenuOptions": "玉山往來顧客"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/personal/public",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "公教/優質客群",
+    "MegaMenuOptions": "公教/優質客群"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/personal/elite",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "菁英客群",
+    "MegaMenuOptions": "菁英客群"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/personal/business-client",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "負責人客群",
+    "MegaMenuOptions": "負責人客群"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/house",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "房屋貸款",
+    "MegaMenuOptions": "房屋貸款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/house/secondary",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "二順位貸款",
+    "MegaMenuOptions": "二順位貸款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/house/adjustable-rate-mortgages",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "指數型房貸",
+    "MegaMenuOptions": "指數型房貸"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/house/financial-mortgage",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "理財型房貸",
+    "MegaMenuOptions": "理財型房貸"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/house/esun-care",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "E.SUN Care房貸",
+    "MegaMenuOptions": "E.SUN Care房貸"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/house/monthly",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "月繳月省房貸",
+    "MegaMenuOptions": "月繳月省房貸"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/house/coupon",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "誠信COUPON房貸",
+    "MegaMenuOptions": "誠信COUPON房貸"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/house/buying_a_house",
+    "ExpectString": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/house/transferring_mortgage",
+    "ExpectString": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/house/increasing_mortgage",
+    "ExpectString": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/other",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "專案貸款商品",
+    "MegaMenuOptions": "專案貸款商品"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/other/abroad",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "留學貸款",
+    "MegaMenuOptions": "留學貸款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/other/youth-load",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "青年創業啟動金貸款",
+    "MegaMenuOptions": "青年創業啟動金貸款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/other/allowance",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "住宅補貼貸款",
+    "MegaMenuOptions": "住宅補貼貸款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/other/urban-renewal",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "危險及老舊建築物重建貸款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/other/reversemortgages",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "以房養老貸款",
+    "MegaMenuOptions": "以房養老貸款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/other/bailout-payment",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "個人紓困緩繳方案",
+    "MegaMenuOptions": "個人紓困緩繳方案"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/other/debtmanagement-area",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "理債關懷專區",
+    "MegaMenuOptions": "理債關懷專區"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/other/youth-housing-loan",
+    "ExpectString": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/tools",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_HlkBreadCrumbItem_3",
+    "ExpectString": "工具區"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/tools/apply/labor-loan-appointment",
+    "ExpectString": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/tools/apply/personal-credit-loan",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "個人信用貸款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/tools/apply/house-loan",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "房屋貸款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/tools/apply/credit-card-loan",
+    "ExpectString": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/tools/info",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "服務說明"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/tools/info/housetip",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "房貸萬事通"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/tools/info/loanedoctor",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "輕鬆辦信貸省利息"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/tools/info/loanehow",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "如何挑選合適的信貸"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/tools/info/loanrate",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "利率訂價公式"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/tools/info/houseloan_calculate",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "房貸月付金"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/tools/info/loan-calculation",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "信貸月付金"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/tools/info/loan-steps",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "信貸流程說明"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/tools/info/houseafford_calculate",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "可負擔房價"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "信用卡 / 支付"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro",
+    "PageKeywordCssSelector": "#\\31  > section:nth-child(1) > div:nth-child(1)",
+    "ExpectString": "熱門卡片",
+    "MegaMenuOptions": "熱門卡片"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/world-card/world",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山世界卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/world-card/doctor-infinite-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "醫師尊榮無限卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/world-card/dentist-infinite-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "牙醫師無限卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/world-card/chinese-physician-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "中醫師無限卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/world-card/accountant-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "會計師無限卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/world-card/architect-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "建築師無限卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/bank-card/u-bear",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山ＵBear信用卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/bank-card/only-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山Only卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/bank-card/business-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山商務御璽卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/bank-card/dualcurrency-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山雙幣信用卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/bank-card/business-platinum-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山公司卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/bank-card/plus-titanium-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山幸運PLUS鈦金卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/bank-card/titanium-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山幸運鈦金卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/bank-card/signature-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山御璽卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/bank-card/jcb-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山JCB晶緻悠遊卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/bank-card/easy-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山悠遊聯名卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/bank-card/icash-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山icash聯名卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/bank-card/etc-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山 eTag 悠遊聯名卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/bank-card/teacher-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山教師 (鈦金/御璽) 卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/pi-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山 Pi 拍錢包信用卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/honhui-plaza",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山宏匯廣場聯名卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/hs-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山漢神巨蛋聯名卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/luna-plaza",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山蘭城新月聯名卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/breeze-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "臺北南山廣場聯名卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/c4-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "家樂福悠遊聯名卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/c4-icash-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "家樂福icash聯名卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/ns-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "南山人壽悠遊聯名卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/metrowalk",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "大江聯名卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/style-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "統一時代聯名卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/bear-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山台灣黑熊認同卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/chungyo-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "中友百貨悠遊聯名卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/poya-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "寶雅悠遊聯名卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/tonlin-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "統領廣場聯名卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/lih-pao",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "麗寶聯名卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/nissan-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "NISSAN悠遊聯名卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/luxgen-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "LUXGEN悠遊御璽卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/tda",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "雙北市牙醫師公會會員卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/doctor-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "醫師尊榮御璽卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/herbalife-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "賀寶芙悠遊聯名卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/elifemall-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "全國電子聯名卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/nice-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "耐斯廣場NP聯名卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/shanloong-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "山隆優油鈦金卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/ntuh-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "清華認同卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/tunghai",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "東海大學悠遊認同卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/woodpeckers-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "啄木鳥悠遊聯名卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/hsin_tung_yang-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "新東陽悠遊聯名卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/co-branded-card/blood-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山愛心卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/travel-card/traveler-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "公務人員國民旅遊卡",
+    "MegaMenuOptions": "國民旅遊卡專區"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/travel-card/traveler-popular-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "民間版國民旅遊卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/travel-card/government",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "政府網路採購卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/debit-card/c4-debit-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山家樂福悠遊簽帳金融卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/debit-card/debit-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山悠遊簽帳金融卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/debit-card/ipdebit-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山鬼滅之刃簽帳金融卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/debit-card/pi-debit-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山 Pi 拍兔簽帳金融卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro/debit-card/visa-debit-card",
+    "PageKeywordCssSelector": ".cardKV__wrap--content",
+    "ExpectString": "玉山簽帳金融卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/tools",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "卡友數位服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/tools/do",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "e指辦卡",
+    "MegaMenuOptions": "我要辦卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/tools/open",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "開卡 / 掛失",
+    "MegaMenuOptions": "我要開卡 / 掛失"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/tools/mark_up",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "辦卡進度查詢 / 補件",
+    "MegaMenuOptions": "補件 / 辦卡進度查詢"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/tools/adjustment",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "信用卡額度調整",
+    "MegaMenuOptions": "信用卡額度調整"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/tools/apply/auco",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "自動扣繳信用卡費",
+    "MegaMenuOptions": "玉山帳戶自動\r\n扣繳信用卡費"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/tools/apply/electronicbill",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "帳單ｅ化守護地球",
+    "MegaMenuOptions": "申請帳單e化"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/tools/apply/public",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "業務收費標準"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/tools/apply/business-fee",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "業務收費標準"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/tools/installment-calculator",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "刷卡分期"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/tools/billing/pay-bills",
+    "PageKeywordCssSelector": "ul.left",
+    "ExpectString": "信用卡繳費"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/tools/billing/pay-bills-finish",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/benefit",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "卡友權益 / 服務",
+    "MegaMenuOptions": "卡友權益"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/benefit/dispute",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "信用卡消費爭議",
+    "MegaMenuOptions": "信用卡消費爭議"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/benefit/travel-insurance",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "旅遊平安險",
+    "MegaMenuOptions": "旅遊平安險"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/benefit/airport-parking",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "機場外圍停車優惠",
+    "MegaMenuOptions": "機場外圍停車優惠"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/benefit/vip-room",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "機場貴賓室 / 機場餐廳",
+    "MegaMenuOptions": "機場貴賓室 / 餐廳"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/benefit/airport-pickup",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "機場接送服務",
+    "MegaMenuOptions": "機場接送服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/benefit/parking-discount",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "市區停車優惠",
+    "MegaMenuOptions": "市區停車優惠"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/benefit/road-aid",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "道路救援",
+    "MegaMenuOptions": "道路救援"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/benefit/card_explain",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "卡片使用權益",
+    "MegaMenuOptions": "卡片使用權益"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/benefit/easy-card",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "悠遊地圖"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/loan",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "貸款 / 預借 / 分期",
+    "MegaMenuOptions": "貸款 / 預借 / 分期"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/loan/card-loan_smart",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "玉山e指信貸 (卡友貸)",
+    "MegaMenuOptions": "玉山e指信貸 (卡友貸)"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/loan/cash-advance-atm",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "預借現金 (ATM / 網路)",
+    "MegaMenuOptions": "預借現金(ATM/網路)"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/loan/cash-advance",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "預借現金分期",
+    "MegaMenuOptions": "預借現金分期"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/loan/insurance",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "保費優惠 / 12期0利率",
+    "MegaMenuOptions": "保費優惠 / 12期0利率"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/loan/layaway-plan",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "刷卡分期",
+    "MegaMenuOptions": "刷卡分期"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/payment",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "支付/繳費",
+    "MegaMenuOptions": "支付 / 繳費"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/payment/phone-card",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "行動支付",
+    "MegaMenuOptions": "行動支付"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/payment/phone-card/hami-pay",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "Hami Pay"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/payment/e_pay",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "玉山電子支付",
+    "MegaMenuOptions": "玉山電子支付"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/payment/rebates",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "扣繳申請 / 繳費平台",
+    "MegaMenuOptions": "扣繳申請 / 繳費平台"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/payment/tax",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "繳納各項稅費",
+    "MegaMenuOptions": "繳納各項稅費"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/payment/pay_bills",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "繳信用卡費",
+    "MegaMenuOptions": "繳納信用卡費"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/travel",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "旅遊專區",
+    "MegaMenuOptions": "旅遊專區"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/edc-business",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "商店收款服務申請"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/ecofooter",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "玉山卡減碳愛地球"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/friendly",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "Foreigner area"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/friendly_chinese",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "外籍人士友善專區"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/payinfo",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "各項費用與服務說明"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/reward",
+    "PageKeywordCssSelector": "ul.left",
+    "ExpectString": "紅利點數",
+    "MegaMenuOptions": "紅利點數"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/reward/products/covid-19",
+    "PageKeywordCssSelector": ".promoLeft",
+    "ExpectString": "防疫樂活"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/reward/products/worldcard",
+    "PageKeywordCssSelector": ".promoLeft",
+    "ExpectString": "尊榮世界卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/reward/products/accessories",
+    "PageKeywordCssSelector": ".promoLeft",
+    "ExpectString": "男女配件"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/reward/products/travel",
+    "PageKeywordCssSelector": ".promoLeft",
+    "ExpectString": "休閒旅遊"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/reward/products/home",
+    "PageKeywordCssSelector": ".promoLeft",
+    "ExpectString": "居家/寢飾"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/reward/products/kitchen",
+    "PageKeywordCssSelector": ".promoLeft",
+    "ExpectString": "廚房/衛浴"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/reward/products/3c",
+    "PageKeywordCssSelector": ".promoLeft",
+    "ExpectString": "3C/家電"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/reward/products/food",
+    "PageKeywordCssSelector": ".promoLeft",
+    "ExpectString": "生機/飲食"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/reward/products/children",
+    "PageKeywordCssSelector": ".promoLeft",
+    "ExpectString": "童心童趣"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/reward/ticket/foodticket",
+    "PageKeywordCssSelector": ".promoLeft",
+    "ExpectString": "來點吃的"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/reward/ticket/leisure",
+    "PageKeywordCssSelector": ".promoLeft",
+    "ExpectString": "休閒娛樂"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/reward/transit",
+    "PageKeywordCssSelector": ".promoLeft",
+    "ExpectString": "航空里程/高鐵"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/reward/pointexchange",
+    "PageKeywordCssSelector": ".promoLeft",
+    "ExpectString": "點數交換"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/reward/form/rewarddetailform",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/reward/form/rewardredeemform",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/reward/form/rewardtraceform",
+    "PageKeywordCssSelector": ".iconTitle",
+    "ExpectString": "追蹤清單"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/reward/form/rewardexchangeresult",
+    "PageKeywordCssSelector": ".breadCrumb",
+    "ExpectString": "兌換結果"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/reward/result",
+    "PageKeywordCssSelector": ".promoLeft",
+    "ExpectString": "搜尋結果"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/reward/product",
+    "PageKeywordCssSelector": ".breadCrumb",
+    "ExpectString": "商品詳情"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/reward/productforfancy",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/reward/faq",
+    "PageKeywordCssSelector": ".promoLeft",
+    "ExpectString": "兌換Q&A"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/reward/statement",
+    "PageKeywordCssSelector": ".promoLeft",
+    "ExpectString": "紅利積點兌換說明"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply1",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply2",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply3",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply36",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply37",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply39",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply4",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply40",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply41",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply42",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply43",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply44",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply5",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply6",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply7",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply8",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply9",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/copy-of-apply1",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply10",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply11",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply12",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply13",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply14",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply15",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply16",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply17",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply18",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply19",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply20",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply21",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply22",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply23",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply24",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply25",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply26",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply27",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply28",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply29",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply30",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply31",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply32",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply33",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply34",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply38",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply45",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/agreements/apply46",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/online-card-apply/newcard",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/tools",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "卡友數位服務",
+    "MegaMenuOptions": "卡友數位服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "財富管理"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/vvip",
+    "PageKeywordCssSelector": ".mainContent",
+    "ExpectString": "貴賓理財",
+    "MegaMenuOptions": "貴賓理財"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/vvip/dengfeng",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "登峰會員",
+    "MegaMenuOptions": "登峰會員"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/vvip/elite",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "菁英會員",
+    "MegaMenuOptions": "菁英會員"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/vvip/financial",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "新富會員",
+    "MegaMenuOptions": "新富會員"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/vvip/acct_child",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "玉約幸福親子帳戶",
+    "MegaMenuOptions": "玉約幸福親子帳戶"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/vvip/fortune_glory",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "財富榮耀",
+    "MegaMenuOptions": "財富榮耀"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/vvip/customer",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "顧客肯定"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/vvip/seed",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "黃金種子計畫",
+    "MegaMenuOptions": "黃金種子計畫"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/vvip/financial-perspective/item1",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "認知正確的退休規劃　X世代的新聰明退休觀念"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/vvip/financial-perspective/item2",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "不斷電的熱情人生，要靠及早啟動的退休計畫"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/vvip/financial-perspective/item3",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "囤積老本超夢幻？小心走味的下半場人生"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/vvip/financial-perspective/item4",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "愛自己多一點，傳承財富更要守護人生尊嚴"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/vvip/financial-perspective/item5",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "享受第二人生，玉山銀行建議「三大黃金守則」"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/vvip/financial-perspective/item6",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "邁向頂級人生　隱形冠軍面臨的危機與挑戰"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/vvip/financial-perspective/item7",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "永續經營的挑戰　企業迎戰變局從洞悉全球法規與稅務開始"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/vvip/financial-perspective/item8",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "贏向永續未來　從價值與服務出發，守護財富"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/vvip/financial-perspective/item9",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "以金控整合企金、財管、境內外資源　全方位滿足企業傳承與財富管理新未來"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/fund",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "共同基金",
+    "MegaMenuOptions": "共同基金"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/fund/search",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "基金查詢",
+    "MegaMenuOptions": "基金查詢"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/fund/searchresult",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/fund/ranking",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "績效排行",
+    "MegaMenuOptions": "績效排行"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/fund/selection",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "焦點基金",
+    "MegaMenuOptions": "焦點基金"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/fund/popular",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "人氣基金",
+    "MegaMenuOptions": "人氣基金"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/fund/domestic-advanced-search",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "國內進階搜尋"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/fund/foreign-advanced-search",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "國外進階搜尋"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/fund/compare",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/fund/versatility",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "多元機制",
+    "MegaMenuOptions": "多元機制"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/fund/trade",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "交易說明",
+    "MegaMenuOptions": "交易說明"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/fund/intro",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "認識基金",
+    "MegaMenuOptions": "認識基金"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/fund/watchlist",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "我的觀察清單"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/fund/fund-info",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/etf",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "海外ETF",
+    "MegaMenuOptions": "海外ETF"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/etf/ranking",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "ETF排行"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/etf/search",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "ETF查詢",
+    "MegaMenuOptions": "ETF查詢"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/etf/advanced-search",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "進階搜尋",
+    "MegaMenuOptions": "進階搜尋"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/etf/intro",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "認識ETF",
+    "MegaMenuOptions": "認識ETF"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/etf/watchlist",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "我的觀察清單"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/etf/za",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "ETF (ZA系列)報價",
+    "MegaMenuOptions": "ETF (ZA) 系列報價"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/stock/us-list",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "美股列表",
+    "MegaMenuOptions": "美股列表"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/stock/us-stock",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "美股財務報表"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/stock/cn-list",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "陸股列表",
+    "MegaMenuOptions": "陸股列表"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/stock/cn-stock",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "陸股財務報表"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/stock/list",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "港股列表",
+    "MegaMenuOptions": "港股列表"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/stock/report",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "港股財務報表"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/stock/stock",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "個股比較"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/stock/agenda",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "港股備忘錄"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/stock/preferred-list",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "海外特別股列表",
+    "MegaMenuOptions": "海外特別股列表"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/stock/know",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "認識海外特別股"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/stock/announcement",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "海外特別股公告"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/stock/announcement/expiration",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "到期通知"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/stock/announcement/latest",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "最新消息"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/stock/watchlist",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "我的觀察清單"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/stock/query",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "港股查詢"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/offshore-bond/intro",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "認識海外債券",
+    "MegaMenuOptions": "認識海外債券"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/offshore-bond/announcement",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "海外債券公告",
+    "MegaMenuOptions": "海外債券公告"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/offshore-bond/announcement/expiration",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "到期通知"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/offshore-bond/announcement/latest",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "海外債券最新消息"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/offshore-bond/price",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "海外債券報價",
+    "MegaMenuOptions": "海外債券報價"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/structure/intro",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "認識境外結構型商品",
+    "MegaMenuOptions": "結構型商品"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/structure/combination-products",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "認識境內組合式商品"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/structure/announcement",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "境外結構型商品公告"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/structure/announcement/expiration",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "到期通知"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/structure/announcement/latest",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "結構型商品最新消息"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/structure/announcement/notification",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "產品表現及配息通知"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/structure/price",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "結構型商品報價"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/structure/price2",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "境內結構型商品報價"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/gold",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "黃金存摺",
+    "MegaMenuOptions": "黃金存摺"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/gold/intro",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "認識黃金存摺"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/gold/price/current-price",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_HlkBreadCrumbItem_5",
+    "ExpectString": "當日黃金存摺牌價"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/gold/price/historical-price",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_HlkBreadCrumbItem_5",
+    "ExpectString": "歷史黃金存摺牌價"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/gold/trade",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "交易說明"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/gold/market",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "國際金市分析"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/market",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "市場資訊"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/market/global-index",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "全球市場指標"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/market/news",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "財經新聞"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/market/reports",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "研究報告"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "信託"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/introduction/intro",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "認識信託",
+    "MegaMenuOptions": "認識信託"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/introduction/introyard",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "信託觀點",
+    "MegaMenuOptions": "信託觀點"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/introduction/introyard/item3",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "樂活信託新選擇"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/introduction/introyard/item1",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "享樂退休二部曲"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/introduction/introyard/item2",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "給下一代完整保障"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/personal",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "個人信託",
+    "MegaMenuOptions": "個人信託"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/personal/retirement",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "樂活久久信託",
+    "MegaMenuOptions": "樂活久久信託"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/personal/education",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "子女教育信託",
+    "MegaMenuOptions": "子女教育信託"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/corporate",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "法人信託",
+    "MegaMenuOptions": "法人信託"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/corporate/employee-stock-ownership-trust",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "員工持股信託",
+    "MegaMenuOptions": "員工持股信託"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/corporate/stock",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "限制型股票信託",
+    "MegaMenuOptions": "限制型股票信託"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/corporate/advance-receipts",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "預收款(禮券)信託",
+    "MegaMenuOptions": "預收款 (禮券) 信託"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/securities",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "有價證券信託",
+    "MegaMenuOptions": "有價證券信託"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/securities/securities-loaned",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "有價證券信託(出借)"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/securities/securities-manage",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "有價證券信託(管理)"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/real-estate",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "不動產信託",
+    "MegaMenuOptions": "不動產信託"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/real-estate/trading",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "不動產買賣價金信託"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/real-estate/development",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "不動產開發信託"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/real-estate/pre-construction",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "預售屋價金信託"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/welfare-and-charity",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "公益/慈善信託",
+    "MegaMenuOptions": "公益 / 慈善信託"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/welfare-and-charity/charitable",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "公益信託"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/welfare-and-charity/charity",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "慈善信託"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/custodian-and-certification/securities-investment",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "證券投資信託基金保管"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/custodian-and-certification/discretionary-investment",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "全權委託保管"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/custodian-and-certification/foreign-capital",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "外資保管"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/custodian-and-certification/unit-linked-insurance",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "投資型專設帳簿保管"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/custodian-and-certification/business-guarantee-bond",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "營業保證金保管"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/custodian-and-certification/securities-certification",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "證券簽證"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/announcement-and-inquiry",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "信託查詢 / 公告",
+    "MegaMenuOptions": "信託查詢 / 公告"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/announcement-and-inquiry/intro",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "認識信託"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/announcement-and-inquiry/welfare-trust-inquiry",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "公益信託公告",
+    "MegaMenuOptions": "公益信託公告"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/announcement-and-inquiry/advance-trust-inquiry",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "預收款信託公告",
+    "MegaMenuOptions": "預收款信託公告"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/announcement-and-inquiry/gift-certificate-trust-inquiry",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "禮券信託查詢",
+    "MegaMenuOptions": "禮券信託查詢"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/announcement-and-inquiry/pre-construction-real-estate-trust-inquiry",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "預售屋信託查詢",
+    "MegaMenuOptions": "預售屋信託查詢"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/announcement-and-inquiry/real-estate-trading-trust-inquiry",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "不動產買賣價金查詢",
+    "MegaMenuOptions": "不動產買賣價金查詢"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/tools",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_HlkBreadCrumbItem_3",
+    "ExpectString": "工具區"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/tools/apply/applytrust",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "信託線上申請"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "保險"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/intro",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "認識保險",
+    "MegaMenuOptions": "認識保險"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/intro/baby",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "兒童寶貝族"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/intro/teen",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "青春少年族"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/intro/freshman",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "社會新人族"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/intro/single",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "自由單身族"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/intro/couple",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "新婚甜蜜族"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/intro/parents",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "美滿壯年族"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/intro/retire",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "退休銀髮族"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/product",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "產品櫥窗",
+    "MegaMenuOptions": "產品櫥窗"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/product/lifeinsurance",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "人壽保險",
+    "MegaMenuOptions": "人壽保險"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/product/foreign",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "外幣型保險",
+    "MegaMenuOptions": "外幣型保險"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/product/phonemarketing",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "電話行銷專區",
+    "MegaMenuOptions": "電話行銷專區"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/product/investment",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "投資型保險",
+    "MegaMenuOptions": "投資型保險"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/product/security",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "保障型保險",
+    "MegaMenuOptions": "保障型保險"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/product/minsurance",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "行動投保專區",
+    "MegaMenuOptions": "行動投保相關表單"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/encyclopaedia",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "保險百科",
+    "MegaMenuOptions": "如何選擇保險"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/encyclopaedia/know",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "保險智庫",
+    "MegaMenuOptions": "認識保險"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/encyclopaedia/dictionary",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "保險小辭典",
+    "MegaMenuOptions": "保險小辭典"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/encyclopaedia/insyard",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "保險園地",
+    "MegaMenuOptions": "保險熱門專題"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/encyclopaedia/insyard/item1",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "保險規劃多元穩健，保障更多"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/encyclopaedia/insyard/item3",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "幫子女規劃教育基金"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/encyclopaedia/insyard/item4",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "長期照顧保險，許一個終身保障"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/online",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "網路投保專區",
+    "MegaMenuOptions": "網路投保專區"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/online/event",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "最新活動",
+    "MegaMenuOptions": "最新活動"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/online/annuity",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "年金保險",
+    "MegaMenuOptions": "利變型年金保險"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/online/travel",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "旅行平安保險",
+    "MegaMenuOptions": "旅行平安保險"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/online/car",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "強制汽車責任保險",
+    "MegaMenuOptions": "強制汽車責任險"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/online/moto",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "強制機車責任保險",
+    "MegaMenuOptions": "強制機車責任險"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/cooperation",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "合作保險公司",
+    "MegaMenuOptions": "合作保險公司"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/link",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "相關連結"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/lifefin",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "生活金融"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/lifefin/young",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "青年世代",
+    "MegaMenuOptions": "青年世代"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/lifefin/startup",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "創業築夢",
+    "MegaMenuOptions": "創業築夢"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/lifefin/marriage",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "結婚育兒",
+    "MegaMenuOptions": "結婚育兒"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/lifefin/retirement",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "樂活養生",
+    "MegaMenuOptions": "樂活養生"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/lifefin/lifestyle",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "質感生活",
+    "MegaMenuOptions": "質感生活"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/lifefin/house",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "享受居家",
+    "MegaMenuOptions": "享受居家"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/apply/entrance",
+    "PageKeywordCssSelector": ".l-kvbanner__wrap--content",
+    "ExpectString": "線上申請專區"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/event/recommendation",
+    "PageKeywordCssSelector": "#layout_0_maincontent_1_eventcontent_1_RptContentLevel01_DivTwoColorTitle_5",
+    "ExpectString": "玉山推薦"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/event/calendar",
+    "PageKeywordCssSelector": ".bigTab > li:nth-child(2) > a:nth-child(1)",
+    "ExpectString": "活動行事曆"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/event/calendar/events",
+    "PageKeywordCssSelector": ".Today"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/event/promotion",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_HlkBreadCrumbItem_3",
+    "ExpectString": "最新活動優惠"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/small-business",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_1",
+    "ExpectString": "小型企業"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/small-business/business-gallery/business_gallery",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "經營百寶箱"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/small-business/business-gallery/business_gallery/knowledge",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "商業融資知識家"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/small-business/business-gallery/business_gallery/operating-funds",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "圖解營運資金"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/small-business/business-gallery/business_gallery/case",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "成功案例"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/small-business/business-gallery/business_gallery/step",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "經營秘訣"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/small-business/business-gallery/business_gallery/store",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "小型企業行銷資源"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/small-business/business-financing/business-financing",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "商業融資"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/small-business/business-financing/business-financing/credit-guarantee-fund",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "中小企業信保基金"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/small-business/business-financing/business-financing/creative-industry",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "創意產業貸款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/small-business/business-financing/business-financing/long-term-working-capital",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "中長期擔保放款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/small-business/business-financing/business-financing/short-term-working-capital",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "短期擔保貸款/透支"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/small-business/business-financing/business-financing/secondary",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "次順位貸款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/small-business/cash-management/cash-management",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "現金管理"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/small-business/cash-management/cash-management/bill",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "收款服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/small-business/cash-management/cash-management/foreign-exchange",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "外匯服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/small-business/cash-management/cash-management/check",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "支票業務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/small-business/location",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "服務據點"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/small-business/tools",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_HlkBreadCrumbItem_2",
+    "ExpectString": "工具區"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/small-business/tools/apply",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "服務申請"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/small-business/tools/apply/contact-me",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "專人與我聯絡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/small-business/tools/apply/sbloan-appointment",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "企業紓困貸款 預約諮詢服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_1",
+    "ExpectString": "法人服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/finance/finance",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "企業融資"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/finance/finance/working-capital",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "短中長期週轉融資"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/finance/finance/credit-guarantee-fund",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "信保基金保證"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/finance/finance/syndicated-loan",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "聯合授信 (聯貸)"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/finance/finance/project-loan",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "專案貸款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/finance/finance/equipment-leasing",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "廠辦設備融資貸款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/finance/finance/base-rate",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "基準利率說明"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/trade/trade",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "貿易服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/trade/trade/import",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "進口貿易服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/trade/trade/export",
+    "PageKeywordCssSelector": ".tableborder > tbody:nth-child(1)",
+    "ExpectString": "很抱歉，您所連結的這個網頁不存在或不再提供服務。"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/trade/trade/factoring",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "應收帳款承購 (融資)"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/trade/trade/bill-loan",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "簡易應收票據融資"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/trade/trade/hedge",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "避險服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/cash-management/cash-management",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "現金管理"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/cash-management/cash-management/bank-account",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "銀行帳戶"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/cash-management/cash-management/payment",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "付款服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/cash-management/cash-management/collection",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "收款服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/cash-management/cash-management/foreign-exchange",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "外匯服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/cash-management/cash-management/cash-flow",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "金流產品"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/obu/obu",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "OBU"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/obu/obu/intro",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "OBU國際金融業務分行"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/institution/institution",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "金融同業FI"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/institution/institution/about",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "About Financial Institutions"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/institution/institution/relationship-management",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Relationship Management"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/institution/institution/cash-services",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Cash Services"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/institution/institution/trade-settlement",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Trade Services"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/institution/institution/kyc-and-aml-and-ctf",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "KYC/AML/CTF"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/institution/institution/fatca-statement",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "FATCA Statement"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/institution/institution/contact-us",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Contact Us"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/overseas-branch/overseas-branch",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "海外服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/overseas-branch/overseas-branch/ucb",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "柬埔寨子行聯合商業銀行"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/overseas-branch/overseas-branch/la",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "洛杉磯分行"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/overseas-branch/overseas-branch/singapore",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "新加坡分行"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/overseas-branch/overseas-branch/tokyo",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "東京分行"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/overseas-branch/overseas-branch/sydney",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "雪梨分行"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/overseas-branch/overseas-branch/brisbane",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "布里斯本分行"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/overseas-branch/overseas-branch/vietnam",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "越南同奈分行"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/corporate/overseas-branch/overseas-branch/myanmar",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "緬甸仰光分行"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/digital",
+    "PageKeywordCssSelector": ".js-defalt",
+    "ExpectString": "數位金融"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/digital/life/banking/ebank",
+    "PageKeywordCssSelector": "#layout_0_maincontent_0_biggest_maintitle_0_div_bmainTitle",
+    "ExpectString": "玉山網路銀行"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/digital/life/banking/mobile-bank",
+    "PageKeywordCssSelector": "#layout_0_maincontent_0_biggest_maintitle_0_div_bmainTitle",
+    "ExpectString": "行動銀行"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/digital/life/banking/webatm",
+    "PageKeywordCssSelector": "#layout_0_maincontent_0_biggest_maintitle_0_div_bmainTitle",
+    "ExpectString": "WebATM"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/digital/life/banking/goodpoint",
+    "PageKeywordCssSelector": "#layout_0_maincontent_1_biggest_maintitle_0_div_bmainTitle",
+    "ExpectString": "網路交易招財點"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/digital/life/shopping/mobile-payment",
+    "PageKeywordCssSelector": "#layout_0_maincontent_0_biggest_maintitle_0_div_bmainTitle",
+    "ExpectString": "掃碼支付"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/digital/life/shopping/ticket",
+    "PageKeywordCssSelector": "#layout_0_maincontent_0_biggest_maintitle_0_div_bmainTitle",
+    "ExpectString": "票券預售通"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/digital/life/shopping/schoolic",
+    "PageKeywordCssSelector": "#layout_0_maincontent_0_biggest_maintitle_0_div_bmainTitle",
+    "ExpectString": "校園IC卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/digital/life/shopping/crazymike",
+    "PageKeywordCssSelector": "#layout_0_maincontent_0_digital_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "瘋狂賣客"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/digital/life/shopping/crazymike124",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "crazymike"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/digital/ecommerce/billing/b2b-ebank",
+    "PageKeywordCssSelector": "#layout_0_maincontent_0_biggest_maintitle_0_div_bmainTitle",
+    "ExpectString": "新版全球智匯網"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/digital/ecommerce/billing/b2b-mobile-bank",
+    "PageKeywordCssSelector": "#layout_0_maincontent_0_digital_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "行動CEO+"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/digital/ecommerce/epayment/debitcard",
+    "PageKeywordCssSelector": "#layout_0_maincontent_0_digital_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "網路金融卡收款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/digital/ecommerce/cross-border/paypal",
+    "PageKeywordCssSelector": "#layout_0_maincontent_0_digital_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "玉山全球通"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/digital/ecommerce/cross-border/paypal-english",
+    "PageKeywordCssSelector": "#layout_0_maincontent_0_digital_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "E.SUN Global Pass"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/digital/ecommerce/cross-border/esuntrade",
+    "PageKeywordCssSelector": "#layout_0_maincontent_0_digital_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "兩岸支付通"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/digital/ecommerce/cross-border/phonetrade",
+    "PageKeywordCssSelector": "#layout_0_maincontent_0_digital_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "跨境手機掃碼支付"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/digital/online-service/payment",
+    "PageKeywordCssSelector": "#layout_0_maincontent_0_biggest_maintitle_0_div_bmainTitle",
+    "ExpectString": "繳費中心"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/digital/alliance",
+    "PageKeywordCssSelector": "#layout_0_maincontent_0_biggest_maintitle_0_div_bmainTitle",
+    "ExpectString": "合作洽談"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_1",
+    "ExpectString": "關於玉山"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/introduction",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_2",
+    "ExpectString": "本行簡介"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/news-center",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_2",
+    "ExpectString": "新聞中心"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/news-center/news",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_3",
+    "ExpectString": "新聞中心"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/news-center/news/all",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "全部"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/news-center/news/personal",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "個人服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/news-center/news/small-business",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "小型企業"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/news-center/news/corporate",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "法人服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/news-center/news/digital",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "數位金融"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/news-center/news/about",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "關於玉山"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/news-center/news/glory",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "喜悅與榮光"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/services/customer",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "玉山e客服"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/services/customer/message-board",
+    "PageKeywordCssSelector": ".mainContent",
+    "ExpectString": "訪客留言板"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/services/customer/applications",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "表單下載"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/services/customer/msgboard-finish",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/personal/deposit",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "存款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/personal/forex",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "外匯"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/personal/loan",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "貸款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/personal/credit-card",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "信用卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/personal/wealth",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "財富管理"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/personal/insurance",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "保險"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/personal/trust",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "信託"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/personal/facial",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "刷臉提款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/small-business",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "小型企業"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/corporate",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "法人服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/digital/netbank",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "網路銀行"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/digital/crossboarding",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "玉山電子支付"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/digital/mobile",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "行動服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/digital/telephone",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "電話客服"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/digital/debitcard",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "網路金融卡收款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/digital/esuntrade",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "兩岸支付通"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/digital/phonetrade",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "跨境手機掃碼支付"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/digital/linebc",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "LINE個人化通知服務"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/digital/webatm",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "WebATM"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/digital/mobile-cardless",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "行動無卡提款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/digital/online-account",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "數位帳戶"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/digital/webpush",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "網頁推播"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/digital/paypal",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "玉山全球通"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/other",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "其他"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/other/bsm",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "綜合對帳單"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/other/item",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "2020/08/02 起存放款服務項目調整"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/mobileannouncement",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "新行動公告"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/legal-disclaimers/report",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "法定公開揭露事項"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/public/all",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "所有事項一覽"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/public/event",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "最新活動"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/public/deposit",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "存匯"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/public/loan",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "貸款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/public/credit-card",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "信用卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/public/wealth",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "財富管理",
+    "MegaMenuOptions": "基金快報"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/public/trust",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "信託"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/public/digital",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "數位金融"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/public/all-bank",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "全行政策"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/public/others",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "金融相關連結"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/public/insurance",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "保險"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/public/stop",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_4",
+    "ExpectString": "系統維護公告"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/announcement",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/agreement/ebank-agreement",
+    "PageKeywordCssSelector": ".mainContent",
+    "ExpectString": "玉山個人網路銀行暨行動銀行服務約定條款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/agreement/app-agreement",
+    "PageKeywordCssSelector": ".mainContent",
+    "ExpectString": "玉山個人網路銀行暨行動銀行服務約定條款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/agreement/ebank-qrcodetwpay-agreement",
+    "PageKeywordCssSelector": ".mainContent",
+    "ExpectString": "第13-2條 (QRCode消費扣款)"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/anti-fruad",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "防範詐騙專區"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/aml",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "洗錢防制專區(AML)"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/fair_treatment",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "公平待客專區"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/confidential/confidentiality-statement",
+    "PageKeywordCssSelector": ".mainContent",
+    "ExpectString": "顧客資料保密措施聲明"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/online-service/loan",
+    "PageKeywordCssSelector": ".mainContent",
+    "ExpectString": "玉山銀行線上申辦金融服務約定條款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/privacy/privacy-statement",
+    "PageKeywordCssSelector": ".mainContent",
+    "ExpectString": "玉山銀行蒐集、處理及利用個人資料法定告知事項"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/trust/trust-important-statement",
+    "PageKeywordCssSelector": ".mainContent",
+    "ExpectString": "重要告知事項"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/wallet/esunwallet-statement",
+    "PageKeywordCssSelector": ".mainContent",
+    "ExpectString": "玉山Wallet使用者同意條款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/epayment/epayment-statement",
+    "PageKeywordCssSelector": ".mainContent",
+    "ExpectString": "玉山銀行兼營電子支付機構業務約定條款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/mobile_safe/mobile_safe-statement",
+    "PageKeywordCssSelector": ".mainContent",
+    "ExpectString": "玉山行動銀行-個人保護措施"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/mobile_terms/mobile_terms-statement",
+    "PageKeywordCssSelector": ".mainContent",
+    "ExpectString": "使用條款及說明"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/wealth/fundplan",
+    "PageKeywordCssSelector": "#WidgetFrame",
+    "ExpectString": "申購信託"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/wealth/fundwealth",
+    "PageKeywordCssSelector": "#WidgetFrame",
+    "ExpectString": "後收型基金"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/fb",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "社群個人資料使用說明"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/customer",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "顧客重要權益通知"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/efingo/efingo-statement",
+    "PageKeywordCssSelector": ".mainContent",
+    "ExpectString": "e.Fingo會員權益約定條款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/locations/branch",
+    "PageKeywordCssSelector": ".mainContent",
+    "ExpectString": "服務據點"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/locations/atm",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_3",
+    "ExpectString": "ATM服務據點",
+    "MegaMenuOptions": "ATM據點查詢"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/locations/foreign-currency-atm",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_3",
+    "ExpectString": "外幣ATM服務據點"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/locations/overseas-branch",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_3",
+    "ExpectString": "海外服務據點"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/locations/branch-list",
+    "PageKeywordCssSelector": ".mainContent",
+    "ExpectString": "服務據點一覽表"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/locations/bilingual-branch",
+    "PageKeywordCssSelector": ".mainContent",
+    "ExpectString": "Bilingual Branch"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/media-center-2",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "影音中心"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/media-center",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "影音中心"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing",
+    "ExpectString": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/deposit",
+    "ExpectString": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/deposit/marketing-menu-level-2",
+    "PageKeywordCssSelector": "#layout_0_main_0_DivBlock > div:nth-child(2) > div:nth-child(1)",
+    "ExpectString": "更多優惠"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/loan",
+    "ExpectString": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/loan/rescueplan-index",
+    "PageKeywordCssSelector": ".module__wrap",
+    "ExpectString": "玉山銀行紓困振興專區"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/loan/rescueplan-all",
+    "PageKeywordCssSelector": "#layout_0_main_12_DivBlock > div:nth-child(2)",
+    "ExpectString": "企業紓困振興方案"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/loan/marketing-menu-level-2",
+    "PageKeywordCssSelector": ".nav",
+    "ExpectString": "menu"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/credit-card",
+    "ExpectString": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/credit-card/re_5",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "振興五倍券"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/credit-card/world_card",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "玉山黃金種子計畫"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/credit-card/world_card_w",
+    "PageKeywordCssSelector": ".kv__main",
+    "ExpectString": "玉山無限卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/credit-card/doctor_card_w",
+    "PageKeywordCssSelector": ".kv__main",
+    "ExpectString": "醫師無限卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/credit-card/ecard",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "Marketing Menu Level 2"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/wealth",
+    "ExpectString": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/wealth/funday",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "優惠內容"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/wealth/marketing-menu-level-2",
+    "PageKeywordCssSelector": "body",
+    "ExpectString": "活動首頁"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/digital",
+    "ExpectString": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/digital/mydata",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "MyData介紹"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/digital/ai_competition",
+    "PageKeywordCssSelector": ".kv__main",
+    "ExpectString": "挑戰賽"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/digital/cc2digiacct2112",
+    "PageKeywordCssSelector": ".kv__main",
+    "ExpectString": "玉山銀行 暖心好禮專屬於您"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/digital/efingo",
+    "PageKeywordCssSelector": "#layout_0_main_1_DivBlock > div:nth-child(2)",
+    "ExpectString": "活動得獎公告"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/digital/efingo_loan",
+    "PageKeywordCssSelector": ".module__wrap",
+    "ExpectString": "信貸折價券"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork",
+    "ExpectString": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0002",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《玉山之鹿》楊英風, 1962"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0050",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《夏之女神 L’ETE, THE SUMMER》Mathurin Moreau"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0054",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《玉山遠眺》洪瑞麟, 1964"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0067",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《玉山日出》吳棟材, 1992"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0073",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《玉山日出》顏水龍, 1988"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0082",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《捧花的女人》吉諾, 1922"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0110",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《玉山曙光》黑木國昭, 2005"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0165",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《玉山瑞雪》楊三郎, 1992"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0182",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《玉山日出》陳澄波, 1935"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0184",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《玉山日出》陳永森, 1975"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0185",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《玉山朝瞰群峰》陳永森, 1970"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0198",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《鹿群》朱銘, 1978"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0220",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《玉山林相》劉啟祥, 1958"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0243",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《玉山日出》廖繼春, 1973"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0388",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《Peacock’s Tail》Arman, 1981"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0497",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《Introspection ll》Val瓦兒, 2015"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0527",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《雪山》李石樵, 1986"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0532",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《Nobility of Time》Salvador Dali, 1977"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0534",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《晚秋》廖德政, 1981"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0540",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《Femme à la Rose, Andree》RENOIR, Pierre Auguste, 1919"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0541",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《CLAUDE RENOIR POTIER》RENOIR, Pierre Auguste, 1916"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0545",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《濱城寺廟》謝玉謙, 1958"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0556",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《眼中的月光》阮長靈, 2017"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0597",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《Range》Jonathan Prince, 2019"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0601",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《Love Me》Richard Hudson, 2019"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/a0622",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《祈禱者》新山拓"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/b0001",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《GREAT SHWEDAGON PAGODA》U NGWE GAING"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/b0002",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《玉山日出》楊三郎"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/b0003",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《Maternité 》RENOIR, Pierre Auguste"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/b0004",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《心嚮玉山》謝棟樑, 2019"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/b0005",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《和平鴿》"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/b0011",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《馬特洪峰》許敏雄, 2019"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/artwork/b0012",
+    "PageKeywordCssSelector": ".main",
+    "ExpectString": "《富士春櫻》林俊慧, 2019"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/example",
+    "PageKeywordCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_LiHyperLink_2",
+    "ExpectString": "credit"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/marketing/example/activity",
+    "PageKeywordCssSelector": ".tableborder > tbody:nth-child(1)",
+    "ExpectString": "很抱歉，您所連結的這個網頁不存在或不再提供服務。",
+    "MegaMenuOptions": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/iframe/widget/rate/foreign-exchange-rate",
+    "PageKeywordCssSelector": "#layout_0_maincontent_0_ph_tabcontent_0_HlkLinkUpdate",
+    "ExpectString": "取得最新報價"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/iframe/widget/rate/twd-deposit-rate",
+    "PageKeywordCssSelector": ".more",
+    "ExpectString": "預約開戶"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/iframe/widget/rate/foreign-deposit-rate",
+    "PageKeywordCssSelector": ".more",
+    "ExpectString": "外幣存款利率"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/iframe/widget/rate/gold-current-price",
+    "PageKeywordCssSelector": ".more",
+    "ExpectString": "黃金存摺產品"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/iframe/widget/tool/deposit-calculation",
+    "PageKeywordCssSelector": ".info",
+    "ExpectString": "外幣存款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/iframe/widget/tool/currency-converter",
+    "PageKeywordCssSelector": ".info",
+    "ExpectString": "匯率試算"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/iframe/widget/tool/loan-calculation",
+    "PageKeywordCssSelector": ".info",
+    "ExpectString": "試算每期還款金額"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/iframe/widget/tool/saving-calculation",
+    "PageKeywordCssSelector": ".info",
+    "ExpectString": "試算臺幣存款利息"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/iframe/widget/bookmark/favorite",
+    "PageKeywordCssSelector": "#layout_0_maincontent_0_HlkBookmarkFavor",
+    "ExpectString": "我的收藏"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/iframe/widget/bookmark/history",
+    "PageKeywordCssSelector": "#layout_0_maincontent_0_HlkBookmarkHistory",
+    "ExpectString": "瀏覽紀錄"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/iframe/widget/customer-service",
+    "PageKeywordCssSelector": ".toggleiframe",
+    "ExpectString": "歡迎你選擇合適的方式與玉山聯絡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/iframe/widget/netbank",
+    "PageKeywordCssSelector": "#WidgetFrame > div:nth-child(9)",
+    "ExpectString": "網路銀行"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/iframe/widget/online-apply",
+    "PageKeywordCssSelector": ".toggleiframe",
+    "ExpectString": "線上即可申請"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/error",
+    "PageKeywordCssSelector": ".mainContent",
+    "ExpectString": "找不到您所查詢的頁面"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/error_1",
+    "PageKeywordCssSelector": ".Page404",
+    "ExpectString": "找不到您所查詢的頁面"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/error_2",
+    "PageKeywordCssSelector": ".Page404",
+    "ExpectString": "找不到您所查詢的頁面"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en",
+    "PageKeywordCssSelector": "div.section-background:nth-child(2)",
+    "ExpectString": "Strategic Deployment in Asia"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/deposit",
+    "PageKeywordCssSelector": "#content",
+    "ExpectString": "Deposit"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/personal-loan",
+    "PageKeywordCssSelector": "#content",
+    "ExpectString": "Personal Loan"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/personal-loan/pages",
+    "PageKeywordCssSelector": "#content"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/personal-loan/pages/foreigner-area/application-qualifications",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Application qualifications"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/personal-loan/pages/foreigner-area/application-process",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Application process"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/personal-loan/pages/foreigner-area/faqs",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "FAQs"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/personal-loan/pages/foreigner-area/call-center",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Call Center"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/wealth-management",
+    "PageKeywordCssSelector": "#content",
+    "ExpectString": "Wealth Management"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/corporate",
+    "PageKeywordCssSelector": "#content",
+    "ExpectString": "Corporate Banking"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/corporate/pages",
+    "PageKeywordCssSelector": "#content"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/corporate/pages/financial-institutions/about-financial-institutions",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "About Financial Institutions"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/corporate/pages/financial-institutions/relationship-management",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Relationship Management"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/corporate/pages/financial-institutions/cash-services",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Cash Services"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/corporate/pages/financial-institutions/trade-services",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Trade Services"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/corporate/pages/financial-institutions/kyc_aml_ctf",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "KYC/AML/CTF"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/corporate/pages/financial-institutions/fatca-statement",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "FATCA Statement"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/corporate/pages/financial-institutions/contact-us",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Contact Us"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/locations",
+    "PageKeywordCssSelector": "#content",
+    "ExpectString": "Locations"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/locations/pages",
+    "PageKeywordCssSelector": "#content"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/locations/pages/overseas/los-angeles-branch",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Los Angeles Branch"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/locations/pages/overseas/hong-kong-branch",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Hong Kong Branch"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/locations/pages/overseas/singapore-branch",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Singapore Branch"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/locations/pages/overseas/tokyo-branch",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Tokyo Branch"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/locations/pages/overseas/sydney-branch",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Sydney Branch"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/locations/pages/overseas/brisbane-branch",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Brisbane Branch"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/locations/pages/overseas/dongnai-branch",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Dong Nai Branch"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/locations/pages/overseas/yangon-branch",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Yangon Branch"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/statements/pages",
+    "PageKeywordCssSelector": "#content"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/statements/pages/statements/browser-recommendation",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Browser Recommendation"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/statements/pages/statements/privacy-policy-and-disclaimer",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Privacy Policy and Disclaimer"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/statements/pages/statements/website-linking-policies",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Website Linking Policies"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/statements/pages/statements/privacy-statement",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Mandatory Disclosure Regarding Use of Personal Data"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/statements/pages/statements/social-media-police",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Use of personal information on social media"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/statements/pages/statements/reporting-method",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Reporting Method"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/statements/pages/statements/deposit-rate",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Adjustable Rates for Consumer Loans"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/statements/pages/statements/house-rate-standard",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Mortgage service charges"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/statements/pages/statements/anti-fraud",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Agency/Fraud Prevention"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/statements/pages/public-disclosure/corporate-governance",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Corporate Governance"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/bank-en/statements/pages/public-disclosure/whistleblowing-channels-and-procedures",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "Whistleblowing Channels and Procedures"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/previewwebpushpage",
+    "ExpectString": "redirect"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro#2",
+    "PageKeywordCssSelector": "#\\32  > section:nth-child(1) > div:nth-child(1)",
+    "ExpectString": "世界卡/無限卡",
+    "MegaMenuOptions": "玉山世界卡 / 無限卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro#3",
+    "PageKeywordCssSelector": "#\\32  > section:nth-child(1) > div:nth-child(1)",
+    "ExpectString": "銀行卡",
+    "MegaMenuOptions": "銀行卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro#4",
+    "PageKeywordCssSelector": "#\\32  > section:nth-child(1) > div:nth-child(1)",
+    "ExpectString": "聯名卡",
+    "MegaMenuOptions": "聯名卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro#5",
+    "PageKeywordCssSelector": "#\\32  > section:nth-child(1) > div:nth-child(1)",
+    "ExpectString": "國民旅遊卡 / 政府採購卡",
+    "MegaMenuOptions": "國旅卡 / 政府採購卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro#6",
+    "PageKeywordCssSelector": "#\\32  > section:nth-child(1) > div:nth-child(1)",
+    "ExpectString": "簽帳金融卡",
+    "MegaMenuOptions": "簽帳金融卡"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/event/credit/1081130vbo/index.html?menu",
+    "PageKeywordCssSelector": ".video-text",
+    "ExpectString": "VBO玉約饗樂",
+    "MegaMenuOptions": "VBO玉約饗樂"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/event/credit/1070425wallet/index.html",
+    "PageKeywordCssSelector": "#firstContentContainer",
+    "ExpectString": "玉山Wallet",
+    "MegaMenuOptions": "玉山Wallet"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/discount/shops#2",
+    "PageKeywordCssSelector": "#layout_0_ctl02_LsvDiscountLevelOne_HlkLiElement_0",
+    "ExpectString": "刷卡優惠"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/discount#2",
+    "MegaMenuOptions": "刷卡優惠"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/event/member/nocard_web/page.html",
+    "MegaMenuOptions": "無卡提款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/event/b2c/foreign/index.html",
+    "MegaMenuOptions": "玉山特匯日"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/event/OpenAccount/marketing/index.html?ven=web#apply",
+    "MegaMenuOptions": "線上開戶"
+  },
+  {
+    "TargetURL": "https://easyfee.esunbank.com.tw/index.action",
+    "MegaMenuOptions": "全方位代收網"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/s/OnlineService",
+    "MegaMenuOptions": "基本資料更新"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/credit-card/intro",
+    "MegaMenuOptions": "信用卡介紹"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/event/credit/1100322new/index.html",
+    "MegaMenuOptions": "新手上路篇"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/event/credit/1100322personal/index.html",
+    "MegaMenuOptions": "個人週轉篇"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/event/credit/1100322turnover/index.html",
+    "MegaMenuOptions": "企業週轉篇"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/event/credit/1100322startup/index.html",
+    "MegaMenuOptions": "創業篇"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/event/credit/1100322wedding/index.html",
+    "MegaMenuOptions": "結婚篇"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/event/credit/1100322debt/index.html",
+    "MegaMenuOptions": "債務整合篇"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/event/loan/DC/decoration",
+    "MegaMenuOptions": "裝潢篇"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/event/credit/1100322car/index.html",
+    "MegaMenuOptions": "買車篇"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/event/credit/1100322dream/index.html",
+    "MegaMenuOptions": "親子篇"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/s/HouseLoanApply?olhap=1",
+    "MegaMenuOptions": "房貸-線上申請"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/s/PersonalLoanApply/Landing/IDConfirmDiversion?DG_landing",
+    "MegaMenuOptions": "信貸-線上申請"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/s/HouseLoanApply?olhap=2",
+    "MegaMenuOptions": "二順位-線上申請"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/s/InquireAndUpload/Auth/OTPAuth",
+    "MegaMenuOptions": "信貸-進度查詢/補件平台"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/loan/onlineloan/loan_calculation",
+    "MegaMenuOptions": "貸款試算"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/s/personalloanverification/",
+    "MegaMenuOptions": "信貸-線上對保"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/event/loan/DG/index.html?newweb",
+    "MegaMenuOptions": "最新優惠活動"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/event/loan/house/loan/index.html?newweb",
+    "MegaMenuOptions": "最新優惠活動"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/event/loan/urban_renewal/index.html?ven=menu",
+    "MegaMenuOptions": "危險及老舊建築物重建貸款"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/event/wealth/ultimate/index.html",
+    "MegaMenuOptions": "極致會員"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/event/wealth/financial_perspective/index.html",
+    "MegaMenuOptions": "玉山理財觀點"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/stock",
+    "MegaMenuOptions": "海外股票"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/offshore-bond",
+    "MegaMenuOptions": "海外債券"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/event/wealth/epaper/index.html",
+    "MegaMenuOptions": "玉山理財電子週報"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/watchlist",
+    "MegaMenuOptions": "我的觀察清單"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/event/wealth/fund_portal/index.html?ven=wealth&type=fund-sidebar",
+    "MegaMenuOptions": "e指理財"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/introduction",
+    "MegaMenuOptions": "信託介紹"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/trust/custodian-and-certification",
+    "MegaMenuOptions": "保管 / 簽證業務"
+  },
+  {
+    "TargetURL": "https://ebank.esunbank.com.tw/index.jsp#toTaskId=FIM01007",
+    "MegaMenuOptions": "查詢保險明細"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/intro",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "認識保險",
+    "MegaMenuOptions": "不同族群怎麼保"
+  }
+]
