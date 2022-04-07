@@ -1,25 +1,22 @@
 using Xunit;
 using Excel = Microsoft.Office.Interop.Excel;
 using AutomatedTest.Utilities;
-
 using System;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium;
 using System.Linq;
-using System.Globalization;
 using OpenQA.Selenium.Interactions;
 using System.IO;
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 using Xunit.Abstractions;
 
 namespace AutomatedTest.IntegrationTest.Regression
 {
-    public class II_III_MegaMenu檢查_讀json:IntegrationTestBase
+    public class B_a_CheckMegaMenu_Total:IntegrationTestBase
     {
-        public II_III_MegaMenu檢查_讀json(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
+        public B_a_CheckMegaMenu_Total(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
         {
         }
 
@@ -40,7 +37,7 @@ namespace AutomatedTest.IntegrationTest.Regression
         [InlineData(5)]
         [InlineData(6)]
         [InlineData(7)]
-        public void 檢查MegaMenu(int megaMenuIndex)
+        public void 檢查TotalMegaMenu_excel(int megaMenuIndex)
         {
             #region step 1. switch測項
             string testCaseName = "";
@@ -114,7 +111,7 @@ namespace AutomatedTest.IntegrationTest.Regression
             driver.Navigate().GoToUrl("https://www.esunbank.com.tw/bank/personal");
 
             #region step 3: 讀json資料
-            string path = $"{UserDataList.Upperfolderpath}Settings\\ExcelToJson.json";
+            string path = $"{UserDataList.Upperfolderpath}Settings\\URL_Css_MegaMenu_ExpectString.json";
             var jsonContent = File.ReadAllText(path);
             JArray jsonArray = JArray.Parse(jsonContent);
             #endregion

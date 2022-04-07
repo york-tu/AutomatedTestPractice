@@ -15,9 +15,9 @@ using Newtonsoft.Json;
 
 namespace AutomatedTest.IntegrationTest.Regression
 {
-    public class II_I_檢查網頁內容_json:IntegrationTestBase
+    public class C_b_CheckPageContent_Total_json:IntegrationTestBase
     {
-        public II_I_檢查網頁內容_json(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
+        public C_b_CheckPageContent_Total_json(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
         {
         }
         [Theory]
@@ -35,7 +35,7 @@ namespace AutomatedTest.IntegrationTest.Regression
             #endregion
 
             #region step 1: 讀json資料
-            string path = $"{UserDataList.Upperfolderpath}Settings\\ExcelToJson.json";
+            string path = $"{UserDataList.Upperfolderpath}Settings\\URL_Css_MegaMenu_ExpectString.json";
             var jsonContent = File.ReadAllText(path);
             JArray jsonArray = JsonConvert.DeserializeObject<JArray>(jsonContent);
             #endregion
@@ -46,6 +46,7 @@ namespace AutomatedTest.IntegrationTest.Regression
 
             #region step 2:  browser 不開啟網頁設定 
             //Chrome headless 參數設定
+            var chromeService = ChromeDriverService.CreateDefaultService();
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArguments("--headless");
             chromeOptions.AddArguments("--disable-gpu");
@@ -62,7 +63,7 @@ namespace AutomatedTest.IntegrationTest.Regression
             chromeOptions.AddArguments("--disable-blink-features=AutomationControlled");
             chromeOptions.AddArguments("--disable-infobars");
             //建置 Chrome Driver
-            var driver = new ChromeDriver(chromeOptions);
+            var driver = new ChromeDriver(chromeService,chromeOptions,TimeSpan.FromSeconds(120));
 
             //var firefoxOptions = new FirefoxOptions();
             ////firefoxOptions.AddArguments("--headless");

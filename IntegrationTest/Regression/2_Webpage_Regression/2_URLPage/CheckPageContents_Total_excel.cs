@@ -12,9 +12,9 @@ using System.Globalization;
 
 namespace AutomatedTest.IntegrationTest.Regression
 {
-    public class II_I_檢查網頁內容:IntegrationTestBase
+    public class C_a_CheckPageContent_Total_excel:IntegrationTestBase
     {
-        public II_I_檢查網頁內容(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
+        public C_a_CheckPageContent_Total_excel(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
         {
         }
 
@@ -70,6 +70,7 @@ namespace AutomatedTest.IntegrationTest.Regression
 
             #region  browser 不開啟網頁設定 
             //Chrome headless 參數設定
+            var chromeService = ChromeDriverService.CreateDefaultService();
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArguments("--headless");
             chromeOptions.AddArguments("--disable-gpu");
@@ -86,7 +87,7 @@ namespace AutomatedTest.IntegrationTest.Regression
             chromeOptions.AddArguments("--disable-blink-features=AutomationControlled");
             chromeOptions.AddArguments("--disable-infobars");
             //建置 Chrome Driver
-            var driver = new ChromeDriver(chromeOptions);
+            var driver = new ChromeDriver(chromeService,chromeOptions,TimeSpan.FromSeconds(120));
 
             //var firefoxOptions = new FirefoxOptions();
             ////firefoxOptions.AddArguments("--headless");

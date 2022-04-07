@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace AutomatedTest.IntegrationTest.Regression
 {
-    public class I_官網sitemapsURL做分類
+    public class A_QueryURL
     {
         [Fact]
         public void 分類URL並匯出到excel()

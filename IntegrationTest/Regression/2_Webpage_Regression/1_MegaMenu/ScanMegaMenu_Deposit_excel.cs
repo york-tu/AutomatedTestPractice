@@ -13,9 +13,9 @@ using OpenQA.Selenium.Interactions;
 
 namespace AutomatedTest.IntegrationTest.Regression
 {
-    public class II_III_存匯內文_MegaMenu檢查:IntegrationTestBase
+    public class B_b_CheckMegaMenu_Deposit:IntegrationTestBase
     {
-        public II_III_存匯內文_MegaMenu檢查(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
+        public B_b_CheckMegaMenu_Deposit(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
         {
         }
 
@@ -43,7 +43,7 @@ namespace AutomatedTest.IntegrationTest.Regression
         工作表 19:     "/bank/preview";
         */
         #endregion
-        public void 檢查存匯MegaMenu()
+        public void 檢查存匯MegaMenu_excel()
         {
             CreateReport("存匯MegaMenu內容檢查", "York");
             //TestBase.KillProcess("chromedriver.exe");
@@ -68,6 +68,7 @@ namespace AutomatedTest.IntegrationTest.Regression
 
             #region  step 2: setup browser 不開啟網頁
             //Chrome headless 參數設定
+            var chromeService = ChromeDriverService.CreateDefaultService();
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArguments("--headless");
             chromeOptions.AddArguments("--disable-gpu");
@@ -84,7 +85,7 @@ namespace AutomatedTest.IntegrationTest.Regression
             chromeOptions.AddArguments("--disable-blink-features=AutomationControlled");
             chromeOptions.AddArguments("--disable-infobars");
             //建置 Chrome Driver
-            var driver = new ChromeDriver(chromeOptions);
+            var driver = new ChromeDriver(chromeService,chromeOptions,TimeSpan.FromSeconds(120));
 
             //var firefoxOptions = new FirefoxOptions();
             ////firefoxOptions.AddArguments("--headless");

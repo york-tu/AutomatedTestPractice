@@ -4039,5 +4039,116 @@
     "PageKeywordCssSelector": "a.title",
     "ExpectString": "線上申請 / 啟用網路銀行",
     "MegaMenuOptions": "查詢保險明細"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/insurance/intro",
+    "PageKeywordCssSelector": ".rightContent",
+    "ExpectString": "認識保險",
+    "MegaMenuOptions": "不同族群怎麼保"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/rate/forex/exchange-rate-chart?Currency=USD/TWD",
+    "PageKeywordCssSelector": "#chartInfo",
+    "ExpectString": "美元匯率"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/rate/forex/exchange-rate-chart?Currency=CNY/TWD",
+    "PageKeywordCssSelector": "#chartInfo",
+    "ExpectString": "人民幣匯率"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/rate/forex/exchange-rate-chart?Currency=HKD/TWD",
+    "PageKeywordCssSelector": "#chartInfo",
+    "ExpectString": "港幣匯率"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/rate/forex/exchange-rate-chart?Currency=JPY/TWD",
+    "PageKeywordCssSelector": "#chartInfo",
+    "ExpectString": "日圓匯率"
+  },
+  {
+    "TargetURL": "https://efingo.bank/",
+    "PageKeywordCssSelector": "div.main_des_a:nth-child(10) > h1:nth-child(1)",
+    "ExpectString": "數位金融"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/event/loan/DG/index.html?ven=credit-card&type=loan-b890",
+    "PageKeywordCssSelector": ".landing > div:nth-child(1)",
+    "ExpectString": "玉山e指信貸"
+  },
+  {
+    "TargetURL": "https://www.esunfhc.com/zh-tw/foundation",
+    "PageKeywordCssSelector": "#layout_0_header_0_ltlEsunFHC",
+    "ExpectString": "玉山文教"
+  },
+  {
+    "TargetURL": "https://hr.esunfhc.com/StaffAcquisition/hireexam/Index/",
+    "PageKeywordCssSelector": ".mainTitle",
+    "ExpectString": "玉山金控菁英甄選"
+  },
+  {
+    "TargetURL": "https://www.esunfhc.com/zh-tw/",
+    "PageKeywordCssSelector": "div.section-background:nth-child(2) > div:nth-child(1) > h2:nth-child(1)",
+    "ExpectString": "深耕台灣"
+  },
+  {
+    "TargetURL": "https://www.esunfhc.com/zh-tw/about-esun/intro/subsidiaries?tabid=tab03#tab-C",
+    "PageKeywordCssSelector": "#layout_0_rightcontent_1_h1Container",
+    "ExpectString": "子公司簡介"
+  },
+  {
+    "TargetURL": "https://www.esunconsulting.com.tw/",
+    "PageKeywordCssSelector": ".login_title",
+    "ExpectString": "玉山投顧"
+  },
+  {
+    "TargetURL": "https://www.esunsec.com.tw/",
+    "PageKeywordCssSelector": ".logo",
+    "ExpectString": "玉山證券"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/event/LINEBC/?utm_source=homepage&utm_medium=referral&utm_term=200807&utm_campaign=so_homepage_200807",
+    "PageKeywordCssSelector": ".title > h1:nth-child(1) > span:nth-child(1)",
+    "ExpectString": "LINE"
+  },
+  {
+    "TargetURL": "https://www.facebook.com/esuncat/?newweb",
+    "PageKeywordCssSelector": "h1.gmql0nx0",
+    "ExpectString": "玉山招財納福喵喵"
+  },
+  {
+    "TargetURL": "https://www.facebook.com/esunbank?newweb",
+    "PageKeywordCssSelector": "h1.gmql0nx0",
+    "ExpectString": "玉山銀行 數位生活好康"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/-/media/new-esunbank/home/megafooter/cdic.png?h=89&w=89&hash=3EE5BE36DE2FFFA32EFCB6C1A6838A0B54A61B52",
+    "PageKeywordCssSelector": "div.modal-content:nth-child(2) > h2:nth-child(1)",
+    "ExpectString": "本金融機構已參加存款保險"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/announcement?i=eYxNfOekAkKLtZwoUwDqaw&p=9WLFRe74B0ikiWlxA46w8Q&d=HA4k102TJkG2QuRj6K5Wtg",
+    "PageKeywordCssSelector": "h2.mlr20",
+    "ExpectString": "瀏覽器建議"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/personal/credit-card",
+    "PageKeywordCssSelector": ".iconStyle > div:nth-child(2) > h2:nth-child(1)",
+    "ExpectString": "信用卡常見問題"
+  },
+  {
+    "TargetURL": "https://accessible.esunbank.com.tw/Accessibility/Index",
+    "PageKeywordCssSelector": "#header > img:nth-child(2)",
+    "ExpectString": "利匯率服務網"
+  },
+  {
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/legal-disclaimers/report",
+    "PageKeywordCssSelector": "#layout_0_rightcontent_0_h1Container",
+    "ExpectString": "法定公開揭露事項"
+  },
+  {
+    "TargetURL": "https://www.esunfhc.com/zh-tw/esg/overview/letter",
+    "PageKeywordCssSelector": "#layout_0_rightcontent_0_h1Container > span:nth-child(1)",
+    "ExpectString": "董事長/總經理的話"
   }
 ]
