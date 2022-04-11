@@ -21,10 +21,10 @@ namespace AutomatedTest.IntegrationTest.Regression
         {
         }
         [Theory]
-        [InlineData(0, 200)]
-        [InlineData(200, 400)]
-        [InlineData(400, 600)]
-        [InlineData(600, 750)]
+        //[InlineData(0, 200)]
+        //[InlineData(200, 400)]
+        //[InlineData(400, 600)]
+        [InlineData(760, 770)]
         public void 檢查網頁內容是否符合預期(int startIndex, int endIndex)
         {
             #region step 0: kill cache driver
@@ -79,16 +79,22 @@ namespace AutomatedTest.IntegrationTest.Regression
 
                 ((IJavaScriptExecutor)driver).ExecuteScript("window.open();"); // 另開新頁
                 driver.SwitchTo().Window(driver.WindowHandles.Last()); // focus on 新頁上 
-                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(600); //600秒內載完網頁內容, 否則報錯, 載完提早進下一步.
+                //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(600); //600秒內載完網頁內容, 否則報錯, 載完提早進下一步.
                 driver.Url = uRL;
-                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(600); //600秒內載完網頁內容, 否則報錯, 載完提早進下一步.
+                //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(600); //600秒內載完網頁內容, 否則報錯, 載完提早進下一步.
 
                 #region 當網頁自動切到M版時, click "切換電腦版" 強制切回PC版
                 if (driver.Url.ToString().Contains("?dev=mobile")) // workaround: 當網頁自動切到M版時, 強制切回PC版
                 {
-                    TestBase.ScrollPageUpOrDown(driver, 1500);
-                    driver.FindElementByClassName("changeTarget").Click();
-                    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(600); //600秒內載完網頁內容, 否則報錯, 載完提早進下一步.
+                    TestBase.ScrollPageUpOrDown(driver, 5000);
+                    if (driver.Url.ToString().Contains("www.esunfhc.com"))
+                    {
+                        driver.FindElementById("fhc_layout_m_0_fhc_maincontent_m_2_HlkToWeb").Click();
+                    }
+                    else
+                    {
+                        driver.FindElementByClassName("changeTarget").Click();
+                    }
                 }
                 #endregion
 

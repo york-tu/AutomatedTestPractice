@@ -59,24 +59,12 @@ namespace AutomatedTest.IntegrationTest.Regression
             //var driver = new FirefoxDriver(firefoxOptions);
             #endregion
 
-            driver.Navigate().GoToUrl("https://www.esunbank.com.tw/bank/personal/deposit");
-            TestBase.ScrollPageUpOrDown(driver, 300);
-            TestBase.ScrollPageUpOrDown(driver, 800);
-            TestBase.ScrollPageUpOrDown(driver, 1000);
-            TestBase.ScrollPageUpOrDown(driver, 1200);
-            TestBase.ScrollPageUpOrDown(driver, 1500);
-            TestBase.ScrollPageUpOrDown(driver, 1800);
-            TestBase.ScrollPageUpOrDown(driver, 2100);
-            TestBase.ScrollPageUpOrDown(driver, 2300);
-            TestBase.ScrollPageUpOrDown(driver, 2500);
-            TestBase.ScrollPageUpOrDown(driver, 2800);
-            TestBase.ScrollPageUpOrDown(driver, 3000);
-            TestBase.ScrollPageUpOrDown(driver, 3200);
-            TestBase.ScrollPageUpOrDown(driver, 3500);
-            TestBase.ScrollPageUpOrDown(driver, 3800);
-            TestBase.ScrollPageUpOrDown(driver, 4000);
-            TestBase.ScrollPageUpOrDown(driver, 4200);
-
+            driver.Navigate().GoToUrl("https://www.esunbank.com.tw/event/credit/1040408web/index.htm");
+            driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(600);
+            //driver.SwitchTo().Frame("iframe1");
+            var aaa= driver.FindElement(By.CssSelector(".line > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > img:nth-child(2)")).Text;
+            var bbb= driver.FindElement(By.CssSelector(".line > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > img:nth-child(2)")).GetAttribute("title");
+            var ccc = driver.FindElement(By.CssSelector(".line > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > img:nth-child(2)")).GetAttribute("alt");
 
             CloseBrowser();
             driver.Close();
