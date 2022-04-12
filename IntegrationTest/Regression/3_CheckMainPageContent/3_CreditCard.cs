@@ -22,13 +22,14 @@ namespace AutomatedTest.IntegrationTest.Regression
         [Fact]
         public void 檢查信用卡支付_首頁內容()
         {
-            CreateReport($"信用卡支付_首頁_內容檢查", "York");
-            //TestBase.KillProcess("chromedriver.exe");
-            //TestBase.KillProcess("chrome.exe");
-            //TestBase.KillProcess("EXCEL.EXE");
-            //TestBase.KillProcess("conhost.exe");
+            string path = $"{UserDataList.Upperfolderpath}Settings\\CreditCardMainPage.json"; // json檔路徑
+            #region 讀 json 資料語法
+            var jsonContent = File.ReadAllText(path);
+            JArray jsonArray = JsonConvert.DeserializeObject<JArray>(jsonContent);
+            #endregion
+            var totalURLCounts = jsonArray.Count(); // json裡資料數
 
-            #region  Browser 不開啟網頁設定
+            #region  Chrome瀏覽器不開啟網頁設定(headless)
             //Chrome headless 參數設定
             var chromeService = ChromeDriverService.CreateDefaultService();
             var chromeOptions = new ChromeOptions();
@@ -50,18 +51,12 @@ namespace AutomatedTest.IntegrationTest.Regression
             //建置 Chrome Driver
             var driver = new ChromeDriver(chromeService, chromeOptions, TimeSpan.FromSeconds(120));
             #endregion
-
             driver.Navigate().GoToUrl("https://www.esunbank.com.tw/bank/personal/credit-card");
 
-            #region 讀取 json
-            string path = $"{UserDataList.Upperfolderpath}Settings\\CreditCardMainPage.json";
-            var jsonContent = File.ReadAllText(path);
-            JArray jsonArray = JsonConvert.DeserializeObject<JArray>(jsonContent);
-            #endregion
-
+            CreateReport($"信用卡支付_首頁_內容檢查", "York");
             INFO("檢查 [信用卡/支付] 首頁內容 選項名稱 與 連結");
             INFO("");
-            var totalURLCounts = jsonArray.Count(); // json裡data數量
+            
             for (int i = 0; i < totalURLCounts; i++)
             {
                 JObject obj = (JObject)jsonArray[i];
@@ -108,37 +103,34 @@ namespace AutomatedTest.IntegrationTest.Regression
                         INFO("檢查 ''熱門推薦' 項目'");
                         break;
                     case 38:
-                        // 7.檢查 '個人服務' 項目
+                        // 7. 檢查 '個人服務' 項目
                         TestBase.ScrollPageUpOrDown(driver, 2500);
                         INFO("檢查 '個人服務' 項目'");
                         break;
                     case 45:
-                        // 8.檢查 '相關連結' 項目
+                        // 8. 檢查 '相關連結' 項目
                         TestBase.ScrollPageUpOrDown(driver, 2800);
                         INFO("檢查 '相關連結' 項目'");
                         INFO("友善專區");
                         break;
                     case 48:
-                        // 8.檢查 '公告與相關說明' 項目
                         INFO("公告與相關說明");
                         break;
                     case 52:
-                        // 8.檢查 '店家服務' 項目
                         INFO("店家服務");
                         break;
                     case 53:
                         // 9. 檢查 '常見問題及聯繫客服' 項目
                         TestBase.ScrollPageUpOrDown(driver, 3200);
-                        INFO("檢查 '常見問題' 項目'");
+                        INFO("常見問題");
                         break;
                     case 58:
-                        // 9. 檢查 '常見問題' 與 '聯繫客服' 項目
-                        INFO("檢查 '聯繫客服' 項目'");
+                        INFO("聯繫客服");
                         break;
                     case 62:
                         // 10. 檢查 '置底項目'
                         TestBase.ScrollPageUpOrDown(driver, 4000);
-                        INFO("檢查 '網頁置底' 項目'");
+                        INFO("檢查 '網頁置底' 項目");
                         break;
                     default:
                         break;
@@ -187,7 +179,7 @@ namespace AutomatedTest.IntegrationTest.Regression
             chromeOptions.AddArguments("--headless");
             chromeOptions.AddArguments("--disable-gpu");
             chromeOptions.AddArguments("--incognito");
-            chromeOptions.AddArguments("--window-size=1920x1080");
+            chromeOptions.AddArguments("--window-size=1440x900");
             chromeOptions.AddArguments("--ignore-certificate-errors");
             chromeOptions.AddArguments("--allow-running-insecure-content");
             chromeOptions.AddArguments("--disable-extensions");

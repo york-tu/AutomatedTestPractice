@@ -38,7 +38,7 @@
     "PageKeywordCssSelector": ".l-headMenu__left > a:nth-child(5)",
     "ExpectString": "菁英招募",
     "DirectPageElementCssSelector": ".mainTitle",
-    "DirectPageKeyword": "存匯玉山金控菁英甄選"
+    "DirectPageKeyword": "玉山金控菁英甄選"
   },
   {
     "index": "5",

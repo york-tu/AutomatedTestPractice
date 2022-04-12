@@ -53,7 +53,7 @@ namespace AutomatedTest.Utilities
             Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
             var screenshotByArray = ss.AsByteArray;
             var temp_inBase64 = Convert.ToBase64String(screenshotByArray);
-            img_HTML = "<img style=\"width: 1080px;\" src=\"data:image/png;base64, " + temp_inBase64 + "\"/>";
+            img_HTML = "<img style=\"width: 900px;\" src=\"data:image/jpg;base64, " + temp_inBase64 + "\"/>";
             return img_HTML;
         }
         /// <summary>
