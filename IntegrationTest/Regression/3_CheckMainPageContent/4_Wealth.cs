@@ -2,6 +2,7 @@ using Xunit;
 using AutomatedTest.Utilities;
 using System;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium;
 using System.Linq;
 using System.IO;
@@ -11,14 +12,14 @@ using Xunit.Abstractions;
 
 namespace AutomatedTest.IntegrationTest.Regression
 {
-    public class D_a_CheckMainPage_PERSONAL:IntegrationTestBase
+    public class D_b_CheckMainPage_Wealth:IntegrationTestBase
     {
-        public D_a_CheckMainPage_PERSONAL(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
+        public D_b_CheckMainPage_Wealth(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
         {
         }
-        string testCaseName = "個人服務";
-        string mainPageURL = "https://www.esunbank.com.tw/bank/personal";
-        string jsonPath = $@"{UserDataList.Upperfolderpath}Settings\personalMainPage.json"; // json檔路徑
+        string testCaseName = "財富管理";
+        string mainPageURL = "https://www.esunbank.com.tw/bank/personal/wealth";
+        string jsonPath = $@"{UserDataList.Upperfolderpath}Settings\wealthMainPage.json"; // json檔路徑
 
         [Fact]
         public void 檢查首頁()
@@ -27,10 +28,10 @@ namespace AutomatedTest.IntegrationTest.Regression
             var jsonContent = File.ReadAllText(jsonPath);
             JArray jsonArray = JsonConvert.DeserializeObject<JArray>(jsonContent);
             #endregion
-            var totalURLCounts = jsonArray.Count(); // json裡data數量
+            var totalURLCounts = jsonArray.Count(); // json裡資料數
 
             #region  Chrome瀏覽器不開啟網頁設定(headless)
-
+            //Chrome headless 參數設定
             var chromeService = ChromeDriverService.CreateDefaultService();
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArguments("--headless");
@@ -48,12 +49,13 @@ namespace AutomatedTest.IntegrationTest.Regression
             chromeOptions.AddArguments("--disable-blink-features=AutomationControlled");
             chromeOptions.AddArguments("--disable-infobars");
 
-            var driver = new ChromeDriver(chromeService,chromeOptions, TimeSpan.FromSeconds(120));
+            //建置 Chrome Driver
+            var driver = new ChromeDriver(chromeService, chromeOptions, TimeSpan.FromSeconds(120));
             #endregion
             driver.Navigate().GoToUrl(mainPageURL);
 
             CreateReport($"{testCaseName}_檢查首頁內容與連結", "York");
-            
+
             for (int i = 0; i < totalURLCounts; i++)
             {
                 JObject obj = (JObject)jsonArray[i];
@@ -74,6 +76,7 @@ namespace AutomatedTest.IntegrationTest.Regression
                         break;
                     case 9:
                         // 2. 檢查 '標題 & MegaMenu' 項目
+                        INFO("");
                         INFO("檢查 '標題 & MegaMenu' 項目");
                         break;
                     case 17:
@@ -81,41 +84,51 @@ namespace AutomatedTest.IntegrationTest.Regression
                         System.Threading.Thread.Sleep(1000);
                         break;
                     case 21:
-                        // 3. 檢查 '產品與服務' 項目
+                        // 3. 檢查 '常用服務' 項目
                         TestBase.ScrollPageUpOrDown(driver, 500);
-                        INFO("檢查 '產品與服務' 項目");
+                        INFO("");
+                        INFO("檢查 '常用服務' 項目");
                         break;
                     case 29:
-                        // 4. 檢查 '外幣匯率' 項目
-                        TestBase.ScrollPageUpOrDown(driver, 1200);
-                        INFO("檢查 '外幣匯率' 項目'");
+                        // 4. 檢查 '基金e指選' 項目
+                        TestBase.ScrollPageUpOrDown(driver, 800);
+                        INFO("");
+                        INFO("檢查 '基金e指選' 項目'");
                         break;
-                    case 33:
-                        driver.FindElement(By.CssSelector(".color-primary-underline")).Click();
+                    case 30:
+                        // 5. 檢查 '即時查詢' 項目
+                        TestBase.ScrollPageUpOrDown(driver, 1500);
+                        INFO("");
+                        INFO("檢查 '即時查詢' 項目'");
                         break;
                     case 35:
-                        // 5. 檢查 '你的生活金融' 項目
-                        TestBase.ScrollPageUpOrDown(driver, 1900);
-                        INFO("檢查 '你的生活金融' 項目'");
+                        // 6. 檢查 '熱門推薦' 項目
+                        TestBase.ScrollPageUpOrDown(driver, 2000);
+                        INFO("");
+                        INFO("檢查 ''熱門推薦' 項目'");
+                        break;
+                    case 38:
+                        // 7.檢查 '理財電子週報' 項目
+                        TestBase.ScrollPageUpOrDown(driver, 2800);
+                        INFO("");
+                        INFO("檢查 '理財電子週報' 項目'");
                         break;
                     case 39:
-                        // 6. 檢查 '探索數位服務' 項目
-                        TestBase.ScrollPageUpOrDown(driver, 2500);
-                        INFO("檢查 '探索數位服務' 項目'");
+                        // 8. 檢查 '市場資訊' 項目
+                        TestBase.ScrollPageUpOrDown(driver, 3500);
+                        INFO("");
+                        INFO("檢查 '市場資訊' 項目'");
                         break;
                     case 43:
-                        // 7. 檢查 '最新消息' 項目
-                        TestBase.ScrollPageUpOrDown(driver, 3000);
-                        INFO("檢查 '最新消息' 項目'");
+                        // 9. 檢查 '常見問題' 與 '聯繫客服' 項目
+                        INFO("");
+                        INFO("檢查 '常見問題 & 聯繫客服' 項目'");
                         break;
-                    case 45:
-                        // 8. 檢查 '更多連結' 項目
+                    case 52:
+                        // 10. 檢查 '置底項目'
                         TestBase.ScrollPageUpOrDown(driver, 4000);
-                        INFO("檢查 '更多連結' 項目");
-                        break;
-                    case 49:
-                        // 9. 檢查 '網頁置底' 項目
-                        INFO("檢查 '網頁置底' 項目");
+                        INFO("");
+                        INFO("檢查 '網頁置底' 項目'");
                         break;
                     default:
                         break;
@@ -173,7 +186,7 @@ namespace AutomatedTest.IntegrationTest.Regression
 
             CreateReport($"{testCaseName}_檢查內文連結導引頁", "York");
 
-            for (int i = 0; i < totalURLCounts; i++)
+            for (int i = 28; i < totalURLCounts; i++)
             {
                 JObject obj = (JObject)jsonArray[i];
                 string uRL = obj["TargetURL"].ToString();
@@ -182,12 +195,13 @@ namespace AutomatedTest.IntegrationTest.Regression
 
                 ((IJavaScriptExecutor)driver).ExecuteScript("window.open();"); // 瀏覽器另開新頁
                 driver.SwitchTo().Window(driver.WindowHandles.Last()); // focus on 新頁上 
-
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(600);
                 driver.Navigate().GoToUrl(uRL);
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(600);
 
+                var bb = driver.Url.ToString();
                 #region 當網頁自動切到M版時, click "切換電腦版" 強制切回PC版
-                if (driver.Url.ToString().Contains("?dev=mobile")) 
+                if (driver.Url.ToString().Contains("?dev=mobile"))
                 {
                     TestBase.ScrollPageUpOrDown(driver, 5000);
                     if (driver.Url.ToString().Contains("www.esunfhc.com"))
@@ -216,7 +230,7 @@ namespace AutomatedTest.IntegrationTest.Regression
                 }
 
                 string actualText = "";
-                if (uRL == "https://www.esunbank.com.tw/event/credit/1040408web/index.htm" || uRL == "https://www.esunbank.com.tw/event/credit/1100412home_al/index.html" || uRL == "https://accessible.esunbank.com.tw/Accessibility/Index")
+                if (uRL == "https://accessible.esunbank.com.tw/Accessibility/Index")
                 {
                     actualText = driver.FindElement(By.CssSelector(cssSelector)).GetAttribute("alt");
                 }
@@ -232,6 +246,7 @@ namespace AutomatedTest.IntegrationTest.Regression
 
                 try
                 {
+                    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(600);
                     Assert.Contains(expectString, actualText); // 判斷element 字串是否符合預期
                     PASS($"{uRL}, Keyword: {expectString}");
                     PASS(TestBase.PageSnapshotToReport(driver));
@@ -249,5 +264,6 @@ namespace AutomatedTest.IntegrationTest.Regression
             driver.Close();
             driver.Quit();
         }
+
     }
 }

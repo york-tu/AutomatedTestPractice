@@ -17,13 +17,15 @@ namespace AutomatedTest.IntegrationTest.Regression
         public D_b_CheckMainPage_Deposit(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
         {
         }
+        string testCaseName = "存匯";
+        string mainPageURL = "https://www.esunbank.com.tw/bank/personal/deposit";
+        string jsonPath = $@"{UserDataList.Upperfolderpath}Settings\depositMainPage.json"; // json檔路徑
 
         [Fact]
-        public void 檢查存匯_首頁()
+        public void 檢查首頁()
         {
-            string path = $"{UserDataList.Upperfolderpath}Settings\\DepositMainPage.json"; // json檔路徑
             #region 讀 json 資料語法
-            var jsonContent = File.ReadAllText(path);
+            var jsonContent = File.ReadAllText(jsonPath);
             JArray jsonArray = JsonConvert.DeserializeObject<JArray>(jsonContent);
             #endregion
             var totalURLCounts = jsonArray.Count(); // json裡資料數
@@ -50,12 +52,10 @@ namespace AutomatedTest.IntegrationTest.Regression
             //建置 Chrome Driver
             var driver = new ChromeDriver(chromeService, chromeOptions, TimeSpan.FromSeconds(120));
             #endregion
-            driver.Navigate().GoToUrl("https://www.esunbank.com.tw/bank/personal/deposit");
+            driver.Navigate().GoToUrl(mainPageURL);
 
-            CreateReport($"存匯_首頁_內容檢查", "York");
-            INFO("檢查 [存匯] 首頁內容 選項名稱 與 連結");
+            CreateReport($"{testCaseName}_檢查首頁內容與連結", "York");
 
-            
             for (int i = 0; i < totalURLCounts; i++)
             {
                 JObject obj = (JObject)jsonArray[i];
@@ -159,11 +159,10 @@ namespace AutomatedTest.IntegrationTest.Regression
         }
 
         [Fact]
-        public void 檢查存匯_內文連結導引頁()
+        public void 檢查內文連結導引頁()
         {
-            string path = $"{UserDataList.Upperfolderpath}Settings\\PersonalMainPage.json"; // json檔路徑
             #region 讀json資料語法
-            var jsonContent = File.ReadAllText(path);
+            var jsonContent = File.ReadAllText(jsonPath);
             JArray jsonArray = JsonConvert.DeserializeObject<JArray>(jsonContent);
             #endregion
             int totalURLCounts = jsonArray.Count(); // json裡資料數
@@ -190,8 +189,8 @@ namespace AutomatedTest.IntegrationTest.Regression
             var driver = new ChromeDriver(chromeService, chromeOptions, TimeSpan.FromSeconds(300));
             #endregion
 
-            CreateReport($"存匯_內文連結導引頁", "York");
-
+            CreateReport($"{testCaseName}_內文連結導引頁", "York");
+           
             for (int i = 0; i < totalURLCounts; i++)
             {
                 JObject obj = (JObject)jsonArray[i];
@@ -201,7 +200,6 @@ namespace AutomatedTest.IntegrationTest.Regression
 
                 ((IJavaScriptExecutor)driver).ExecuteScript("window.open();"); // 瀏覽器另開新頁
                 driver.SwitchTo().Window(driver.WindowHandles.Last()); // focus on 新頁上 
-
                 driver.Navigate().GoToUrl(uRL);
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(600);
 
@@ -263,7 +261,6 @@ namespace AutomatedTest.IntegrationTest.Regression
                 driver.SwitchTo().Window(driver.WindowHandles.Last()).Close(); // 關掉新頁
                 driver.SwitchTo().Window(driver.WindowHandles.First()); // 切回原頁
             }
-
             CloseBrowser();
             driver.Close();
             driver.Quit();

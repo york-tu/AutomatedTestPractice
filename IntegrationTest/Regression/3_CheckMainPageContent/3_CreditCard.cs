@@ -2,14 +2,12 @@ using Xunit;
 using AutomatedTest.Utilities;
 using System;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium;
 using System.Linq;
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Xunit.Abstractions;
-using System.Threading;
 
 namespace AutomatedTest.IntegrationTest.Regression
 {
@@ -18,13 +16,15 @@ namespace AutomatedTest.IntegrationTest.Regression
         public D_c_CheckMainPage_CreditCard(ITestOutputHelper output, Setup testSetup) : base(output, testSetup)
         {
         }
+        string testCaseName = "信用卡支付";
+        string mainPageURL = "https://www.esunbank.com.tw/bank/personal/credit-card";
+        string jsonPath = $@"{UserDataList.Upperfolderpath}Settings\creditcardMainPage.json"; // json檔路徑
 
         [Fact]
-        public void 檢查信用卡支付_首頁內容()
+        public void 檢查首頁()
         {
-            string path = $"{UserDataList.Upperfolderpath}Settings\\CreditCardMainPage.json"; // json檔路徑
             #region 讀 json 資料語法
-            var jsonContent = File.ReadAllText(path);
+            var jsonContent = File.ReadAllText(jsonPath);
             JArray jsonArray = JsonConvert.DeserializeObject<JArray>(jsonContent);
             #endregion
             var totalURLCounts = jsonArray.Count(); // json裡資料數
@@ -51,12 +51,10 @@ namespace AutomatedTest.IntegrationTest.Regression
             //建置 Chrome Driver
             var driver = new ChromeDriver(chromeService, chromeOptions, TimeSpan.FromSeconds(120));
             #endregion
-            driver.Navigate().GoToUrl("https://www.esunbank.com.tw/bank/personal/credit-card");
+            driver.Navigate().GoToUrl(mainPageURL);
 
-            CreateReport($"信用卡支付_首頁_內容檢查", "York");
-            INFO("檢查 [信用卡/支付] 首頁內容 選項名稱 與 連結");
-            INFO("");
-            
+            CreateReport($"{testCaseName}_檢查首頁內容與連結", "York");
+
             for (int i = 0; i < totalURLCounts; i++)
             {
                 JObject obj = (JObject)jsonArray[i];
@@ -156,23 +154,15 @@ namespace AutomatedTest.IntegrationTest.Regression
         }
        
         [Fact]
-        public void 檢查信用卡支付_內文連結導引頁()
+        public void 檢查內文連結導引頁()
         {
-            #region KillProcess
-            //TestBase.KillProcess("chromedriver.exe");
-            //TestBase.KillProcess("chrome.exe");
-            //TestBase.KillProcess("EXCEL.EXE");
-            //TestBase.KillProcess("conhost.exe");
-            #endregion
-            #region step 1: 讀json資料
-            string path = $"{UserDataList.Upperfolderpath}Settings\\CreditCardMainPage.json";
-            var jsonContent = File.ReadAllText(path);
+            #region 讀 json 資料語法
+            var jsonContent = File.ReadAllText(jsonPath);
             JArray jsonArray = JsonConvert.DeserializeObject<JArray>(jsonContent);
             #endregion
             var totalURLCounts = jsonArray.Count(); // json裡data數量
-            CreateReport($"信用卡支付_內文連結導引頁", "York");
 
-            #region step 2:  browser 不開啟網頁設定 
+            #region Chrome瀏覽器不開啟網頁設定(headless) 
             //Chrome headless 參數設定
             var chromeService = ChromeDriverService.CreateDefaultService();
             var chromeOptions = new ChromeOptions();
@@ -198,6 +188,7 @@ namespace AutomatedTest.IntegrationTest.Regression
             //var driver = new FirefoxDriver(firefoxOptions);
             #endregion
 
+            CreateReport($"{testCaseName}_內文連結導引頁", "York");
             for (int i = 0; i < totalURLCounts; i++) 
             {
                 JObject obj = (JObject)jsonArray[i];

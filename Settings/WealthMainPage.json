@@ -170,278 +170,222 @@
   },
   {
     "index": "21",
-    "TargetURL": "https://www.esunbank.com.tw/event/OpenAccount/marketing/index.html",
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/vvip",
     "PageKeywordCssSelector": "li.col-lg-3:nth-child(1) > a:nth-child(1)",
-    "ExpectString": "數位帳戶",
-    "DirectPageElementCssSelector": "span.color-primary:nth-child(2)",
-    "DirectPageKeyword": "外幣數位帳戶"
+    "ExpectString": "貴賓理財服務",
+    "DirectPageElementCssSelector": ".mainContent",
+    "DirectPageKeyword": "貴賓理財"
   },
   {
     "index": "22",
-    "TargetURL": "https://www.esunbank.com.tw/event/member/nocard_web/page.html",
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/fund",
     "PageKeywordCssSelector": "li.col-lg-3:nth-child(2) > a:nth-child(1)",
-    "ExpectString": "無卡提款",
-    "DirectPageElementCssSelector": ".sec1 > h1:nth-child(1)",
-    "DirectPageKeyword": "只要金融不要卡"
+    "ExpectString": "共同基金",
+    "DirectPageElementCssSelector": ".rightContent",
+    "DirectPageKeyword": "共同基金"
   },
   {
     "index": "23",
-    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/atm-service",
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/etf",
     "PageKeywordCssSelector": "li.col-lg-3:nth-child(3) > a:nth-child(1)",
-    "ExpectString": "ATM服務",
+    "ExpectString": "海外ETF",
     "DirectPageElementCssSelector": ".rightContent",
-    "DirectPageKeyword": "ATM服務"
+    "DirectPageKeyword": "海外ETF"
   },
   {
     "index": "24",
-    "TargetURL": "https://www.esunbank.com.tw/s/iExchange/?newweb",
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/stock/us-list",
     "PageKeywordCssSelector": "li.col-lg-3:nth-child(4) > a:nth-child(1)",
-    "ExpectString": "外匯預處理",
-    "DirectPageElementCssSelector": "div.s0_text:nth-child(4) > p:nth-child(1) > strong:nth-child(1)",
-    "DirectPageKeyword": "個人資料法定告知事項（外匯業務）："
+    "ExpectString": "海外股票",
+    "DirectPageElementCssSelector": ".rightContent",
+    "DirectPageKeyword": "美股列表"
   },
   {
     "index": "25",
-    "TargetURL": "https://ebank.esunbank.com.tw/ppc/ppc01001/PPC01001_Home.faces",
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/offshore-bond/intro",
     "PageKeywordCssSelector": "li.col-lg-3:nth-child(5) > a:nth-child(1)",
-    "ExpectString": "預約服務",
-    "DirectPageElementCssSelector": ".text-div-7",
-    "DirectPageKeyword": "歡迎您使用玉山銀行預約服務，讓您在來行辦理交易前可線上預先填寫資料，即可輕鬆完成交易！"
+    "ExpectString": "海外債券",
+    "DirectPageElementCssSelector": "#layout_0_rightcontent_0_h1Container",
+    "DirectPageKeyword": "認識海外債券"
   },
   {
     "index": "26",
-    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/rate/twd/deposit-rate",
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/structure/intro",
     "PageKeywordCssSelector": "li.col-lg-3:nth-child(6) > a:nth-child(1)",
-    "ExpectString": "臺幣利率",
-    "DirectPageElementCssSelector": "#layout_0_rightcontent_0_HlkRateSpotExchange",
-    "DirectPageKeyword": "存款利率"
+    "ExpectString": "結構型商品",
+    "DirectPageElementCssSelector": ".rightContent",
+    "DirectPageKeyword": "認識境外結構型商品"
   },
   {
     "index": "27",
-    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/rate/foreign/deposit-rate",
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/gold",
     "PageKeywordCssSelector": "li.col-lg-3:nth-child(7) > a:nth-child(1)",
-    "ExpectString": "外幣利率",
-    "DirectPageElementCssSelector": "#layout_0_rightcontent_1_HlkTab1",
-    "DirectPageKeyword": "存款利率"
+    "ExpectString": "黃金存摺",
+    "DirectPageElementCssSelector": ".rightContent",
+    "DirectPageKeyword": "黃金存摺"
   },
   {
     "index": "28",
-    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/rate/forex/foreign-exchange-rates",
+    "TargetURL": "https://www.esunbank.com.tw/event/wealth/fund_portal/index.html?ven=wealth&type=fund-sidebar",
     "PageKeywordCssSelector": "li.col-lg-3:nth-child(8) > a:nth-child(1)",
-    "ExpectString": "外幣匯率",
-    "DirectPageElementCssSelector": "#layout_0_rightcontent_2_HlkRateSpotExchange",
-    "DirectPageKeyword": "即期匯率"
+    "ExpectString": "e指理財",
+    "DirectPageElementCssSelector": "#section1",
+    "DirectPageKeyword": "e 指理財\r\n你想要的理想生活，我們一起打造"
   },
   {
     "index": "29",
-    "TargetURL": "https://www.esunbank.com.tw/event/OpenAccount/marketing/index.html?ven=deposit_web",
+    "TargetURL": "https://www.esunbank.com.tw/event/wealth/ai_select/index.html?ven=landing_fundportal",
     "PageKeywordCssSelector": ".px-0 > a:nth-child(1)",
-    "ExpectString": "我要開戶",
-    "DirectPageElementCssSelector": "span.color-primary:nth-child(2)",
-    "DirectPageKeyword": "外幣數位帳戶"
+    "ExpectString": "立即了解",
+    "DirectPageElementCssSelector": ".kv_content > h1:nth-child(1)",
+    "DirectPageKeyword": "基金 e 指選"
   },
   {
     "index": "30",
-    "TargetURL": "https://www.esunbank.com.tw/event/b2c/eb/acc/",
-    "PageKeywordCssSelector": ".col-md-12",
-    "ExpectString": "擁有外幣帳戶三大理由",
-    "DirectPageElementCssSelector": ".kv > div:nth-child(1) > h1:nth-child(1)",
-    "DirectPageKeyword": "外幣帳戶妙用大公開"
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/fund/search",
+    "PageKeywordCssSelector": "a.col-md-12",
+    "ExpectString": "基金查詢",
+    "DirectPageElementCssSelector": ".rightContent",
+    "DirectPageKeyword": "基金查詢"
   },
   {
     "index": "31",
-    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/deopsit-event/interest-rate",
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/gold/price/current-price",
     "PageKeywordCssSelector": "div.pl-0:nth-child(1) > div:nth-child(1) > a:nth-child(1)",
-    "ExpectString": "利率優惠",
-    "DirectPageElementCssSelector": ".rightContent",
-    "DirectPageKeyword": "利率優惠"
+    "ExpectString": "黃金牌價",
+    "DirectPageElementCssSelector": "#layout_0_breadcrumb_0_LsvBreadCrumbu_HlkBreadCrumbItem_5",
+    "DirectPageKeyword": "當日黃金存摺牌價"
   },
   {
     "index": "32",
-    "TargetURL": "https://www.esunbank.com.tw/event/forex/marketing/stock/event.html",
-    "PageKeywordCssSelector": ".mt-15 > div:nth-child(1) > a:nth-child(1)",
-    "ExpectString": "外匯理財術",
-    "DirectPageElementCssSelector": "#landing > div:nth-child(1) > h1:nth-child(2)",
-    "DirectPageKeyword": "外匯投資理財術"
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/etf/search",
+    "PageKeywordCssSelector": "div.pl-0:nth-child(1) > div:nth-child(1) > a:nth-child(2)",
+    "ExpectString": "ETF查詢",
+    "DirectPageElementCssSelector": ".rightContent",
+    "DirectPageKeyword": "ETF查詢"
   },
   {
     "index": "33",
-    "TargetURL": "https://www.esunbank.com.tw/event/forex/marketing/promotion/index.html",
-    "PageKeywordCssSelector": "div.pl-0:nth-child(1) > div:nth-child(1) > a:nth-child(2)",
-    "ExpectString": "線上外幣優惠",
-    "DirectPageElementCssSelector": ".anchor > li:nth-child(2) > a:nth-child(1)",
-    "DirectPageKeyword": "外幣匯款 優惠專案"
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/stock/us-stock",
+    "PageKeywordCssSelector": ".mt-15 > div:nth-child(1) > a:nth-child(1)",
+    "ExpectString": "美股財務報表",
+    "DirectPageElementCssSelector": ".rightContent",
+    "DirectPageKeyword": "美股財務報表"
   },
   {
     "index": "34",
-    "TargetURL": "https://www.esunbank.com.tw/event/forex/marketing/fxatm/index.html",
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/offshore-bond/price",
     "PageKeywordCssSelector": ".mt-15 > div:nth-child(1) > a:nth-child(2)",
-    "ExpectString": "外幣ATM優惠",
-    "DirectPageElementCssSelector": ".anchor > li:nth-child(1) > a:nth-child(1)",
-    "DirectPageKeyword": "開立玉山帳戶"
+    "ExpectString": "海外債券",
+    "DirectPageElementCssSelector": ".rightContent",
+    "DirectPageKeyword": "海外債券報價"
   },
   {
     "index": "35",
-    "TargetURL": "https://www.esunbank.com.tw/event/b2c/foreign/index.html",
+    "TargetURL": "https://efingo.bank/campaign/team",
     "PageKeywordCssSelector": "div.swiper-slide:nth-child(1) > a:nth-child(1)",
-    "ExpectString": "玉山特匯日\r\n超過四萬人搶購！每月限時、限量舉辦活動，超優惠方案錯過可惜！\r\n了解更多",
-    "DirectPageElementCssSelector": ".title > h1:nth-child(1)",
-    "DirectPageKeyword": "玉山特匯日"
+    "ExpectString": "e.Fingo熊揪運動會\r\n10萬點數大FUN送！馬上揪朋友組隊完成任務吧！\r\n活動詳情",
+    "DirectPageElementCssSelector": ".inside_top > h1:nth-child(2)",
+    "DirectPageKeyword": "熊揪運動會"
   },
   {
     "index": "36",
-    "TargetURL": "https://www.esunbank.com.tw/event/b2c/atmxfamilymart/index.html",
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/fund/popular",
     "PageKeywordCssSelector": "div.swiper-slide:nth-child(2) > a:nth-child(1)",
-    "ExpectString": "玉山跨提樂全家追女神\r\n全家玉山ATM跨行提款2次\r\n即可獲得全家追女神指定麵包兌換券\r\n立即參加",
-    "DirectPageElementCssSelector": "#section1 > div:nth-child(1) > div:nth-child(1) > h2:nth-child(1)",
-    "DirectPageKeyword": "尋找全家玉山ATM"
+    "ExpectString": "人氣基金排行榜\r\n想知道最夯的基金嗎？點擊看更多熱門查詢基金！\r\n了解更多",
+    "DirectPageElementCssSelector": ".rightContent",
+    "DirectPageKeyword": "人氣基金"
   },
   {
     "index": "37",
-    "TargetURL": "https://www.esunbank.com.tw/event/b2c/atmxcarrefour/index.html",
+    "TargetURL": "https://www.esunbank.com.tw/event/wealth/wealthmanagementexpress/index.html?ven=wealth",
     "PageKeywordCssSelector": "div.swiper-slide:nth-child(3) > a:nth-child(1)",
-    "ExpectString": "玉山跨提 家樂福購物趣\r\n家樂福玉山ATM跨行提款3次 即可獲得家樂福錢包儲值金30元\r\n立即參加",
-    "DirectPageElementCssSelector": "#event > div:nth-child(1) > div:nth-child(1) > h2:nth-child(1)",
-    "DirectPageKeyword": "尋找家樂福玉山ATM"
+    "ExpectString": "理財快易通\r\ne指完成專屬資產配置，給您全新的數位交易體驗！\r\n了解更多",
+    "DirectPageElementCssSelector": ".title > h1:nth-child(1)",
+    "DirectPageKeyword": "理財快易通"
   },
   {
     "index": "38",
-    "TargetURL": "https://www.esunbank.com.tw/bank/about/services/customer/applications",
-    "PageKeywordCssSelector": "li.l-digitalService__box:nth-child(1) > a:nth-child(1)",
-    "ExpectString": "申請書 / 表單下載\r\n提供您各式玉山銀行表單下載，如信用卡申請書、貸款申請書等，歡迎下載使用",
-    "DirectPageElementCssSelector": ".rightContent",
-    "DirectPageKeyword": "表單下載"
+    "TargetURL": "https://www.esunbank.com.tw/event/wealth/epaper/index.html",
+    "PageKeywordCssSelector": ".btn",
+    "ExpectString": "了解更多",
+    "DirectPageElementCssSelector": ".note2 > a:nth-child(1) > span:nth-child(1) > font:nth-child(1)",
+    "DirectPageKeyword": "共同基金投資警語"
   },
   {
     "index": "39",
-    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/check-deposits",
-    "PageKeywordCssSelector": "li.l-digitalService__box:nth-child(3) > a:nth-child(1)",
-    "ExpectString": "線上票信查詢\r\n提供您線上票信查詢服務，快速又方便，歡迎多加使用",
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/gold/market",
+    "PageKeywordCssSelector": "li.col-md-3:nth-child(1) > a:nth-child(1)",
+    "ExpectString": "國際金市分析",
     "DirectPageElementCssSelector": ".rightContent",
-    "DirectPageKeyword": "線上票信查詢"
+    "DirectPageKeyword": "國際金市分析"
   },
   {
     "index": "40",
-    "TargetURL": "https://www.esunbank.com.tw/bank/digital/life/banking/ebank",
-    "PageKeywordCssSelector": "li.l-digitalService__box:nth-child(2) > a:nth-child(1)",
-    "ExpectString": "線上申請網銀\r\n您是不是也覺得常跑銀行、ATM是件麻煩事呢？ 有了網銀申辦術，提供您使用銀行服務的捷徑！",
-    "DirectPageElementCssSelector": "#layout_0_maincontent_0_biggest_maintitle_0_div_bmainTitle",
-    "DirectPageKeyword": "玉山網路銀行"
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/market/global-index",
+    "PageKeywordCssSelector": "li.col-md-3:nth-child(2) > a:nth-child(1)",
+    "ExpectString": "全球市場指標",
+    "DirectPageElementCssSelector": ".rightContent",
+    "DirectPageKeyword": "全球市場指標"
   },
   {
     "index": "41",
-    "TargetURL": "https://www.esunbank.com.tw/s/OnlineService",
-    "PageKeywordCssSelector": "li.l-digitalService__box:nth-child(4) > a:nth-child(1)",
-    "ExpectString": "基本資料更新\r\n資料更新真方便，簡單快速免等待",
-    "DirectPageElementCssSelector": ".name > a:nth-child(1)",
-    "DirectPageKeyword": "個人基本資料更新"
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/market/news",
+    "PageKeywordCssSelector": "li.col-md-3:nth-child(3) > a:nth-child(1)",
+    "ExpectString": "財經新聞",
+    "DirectPageElementCssSelector": ".rightContent",
+    "DirectPageKeyword": "財經新聞"
   },
   {
     "index": "42",
-    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/announcement?i=Ap8_5PcFfkWJYmpn7xXYdQ&p=eiED0NQ60kev5_zStlp90A&d=HA4k102TJkG2QuRj6K5Wtg",
-    "PageKeywordCssSelector": "li.col-md-3:nth-child(1) > a:nth-child(1)",
-    "ExpectString": "存匯業務費用",
-    "DirectPageElementCssSelector": "h2.mlr20",
-    "DirectPageKeyword": "存匯業務各項服務收費標準"
+    "TargetURL": "https://www.esunbank.com.tw/bank/personal/wealth/market/reports",
+    "PageKeywordCssSelector": "li.col-md-3:nth-child(4) > a:nth-child(1)",
+    "ExpectString": "研究報告",
+    "DirectPageElementCssSelector": ".rightContent",
+    "DirectPageKeyword": "研究報告"
   },
   {
     "index": "43",
-    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/announcement?i=4Y_VIOBqXUKN9YKrEvU2eQ&p=eiED0NQ60kev5_zStlp90A&d=HA4k102TJkG2QuRj6K5Wtg",
-    "PageKeywordCssSelector": "li.col-md-3:nth-child(2) > a:nth-child(1)",
-    "ExpectString": "外匯業務費用",
-    "DirectPageElementCssSelector": "h2.mlr20",
-    "DirectPageKeyword": "外匯業務收費標準"
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/personal/wealth?list=1",
+    "PageKeywordCssSelector": "li.l-bottomInfoList__box:nth-child(1) > a:nth-child(1)",
+    "ExpectString": "我是玉山的存款戶，要如何申請網路基金交易功能？",
+    "DirectPageElementCssSelector": "#layout_0_rightcontent_1_LsvCollapse_liLV01_0 > span:nth-child(1)",
+    "DirectPageKeyword": "我是玉山的存款戶，要如何申請網路基金交易功能？"
   },
   {
     "index": "44",
-    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/announcement?i=hK74pCD4002FxrR-dkqmiA&p=fY8tSwscLkqI3d1smTbuuw&d=HA4k102TJkG2QuRj6K5Wtg&s=E150k9663U6fx3JW3MDcFQ&a=1",
-    "PageKeywordCssSelector": "li.col-md-3:nth-child(3) > a:nth-child(1)",
-    "ExpectString": "外幣票據",
-    "DirectPageElementCssSelector": "h2.mlr20",
-    "DirectPageKeyword": "外幣票據收費標準"
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/personal/wealth?list=2",
+    "PageKeywordCssSelector": "li.l-bottomInfoList__box:nth-child(2) > a:nth-child(1)",
+    "ExpectString": "我要申購基金應填寫哪些資料？並應注意哪些事項？",
+    "DirectPageElementCssSelector": "#layout_0_rightcontent_1_LsvCollapse_liLV01_1 > span:nth-child(1)",
+    "DirectPageKeyword": "我要申購基金應填寫哪些資料？並應注意哪些事項？"
   },
   {
     "index": "45",
-    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/announcement?i=uNOeBDAyLECZbkNwwmmSiQ&p=fY8tSwscLkqI3d1smTbuuw&d=hxK-VOJqWkGADb4tgPQH4Q",
-    "PageKeywordCssSelector": "li.col-md-3:nth-child(4) > a:nth-child(1)",
-    "ExpectString": "票券清算交割",
-    "DirectPageElementCssSelector": "h2.mlr20",
-    "DirectPageKeyword": "票券清算交割收費標準"
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/personal/wealth?list=4",
+    "PageKeywordCssSelector": "li.l-bottomInfoList__box:nth-child(3) > a:nth-child(1)",
+    "ExpectString": "基金的交易有何時間限制？",
+    "DirectPageElementCssSelector": "#layout_0_rightcontent_1_LsvCollapse_liLV01_3 > span:nth-child(1)",
+    "DirectPageKeyword": "基金的交易有何時間限制？"
   },
   {
     "index": "46",
-    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/announcement?i=wnS2SoM98Ei_gHbOR30uDA&p=fY8tSwscLkqI3d1smTbuuw&d=HA4k102TJkG2QuRj6K5Wtg&s=E15",
-    "PageKeywordCssSelector": "li.col-md-3:nth-child(5) > a:nth-child(1)",
-    "ExpectString": "活期存款起息",
-    "DirectPageElementCssSelector": "h2.mlr20",
-    "DirectPageKeyword": "活期性存款起息點公告事項"
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/personal/wealth?list=3",
+    "PageKeywordCssSelector": "li.l-bottomInfoList__box:nth-child(4) > a:nth-child(1)",
+    "ExpectString": "基金贖回款何時入帳？",
+    "DirectPageElementCssSelector": "#layout_0_rightcontent_1_LsvCollapse_liLV01_2 > span:nth-child(1)",
+    "DirectPageKeyword": "基金贖回款何時入帳？"
   },
   {
     "index": "47",
-    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/announcement?i=8WH-r5rbZkOCWI70LwiklA&p=eiED0NQ60kev5_zStlp90A&d=HA4k102TJkG2QuRj6K5Wtg",
-    "PageKeywordCssSelector": "li.col-md-3:nth-child(6) > a:nth-child(1)",
-    "ExpectString": "外幣開戶額度",
-    "DirectPageElementCssSelector": "h2.mlr20",
-    "DirectPageKeyword": "外幣存款起存額公告"
+    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/personal/wealth",
+    "PageKeywordCssSelector": "li.l-bottomInfoList__box:nth-child(5) > a:nth-child(1)",
+    "ExpectString": "more...",
+    "DirectPageElementCssSelector": ".BiggestTitle",
+    "DirectPageKeyword": "財富管理"
   },
   {
     "index": "48",
-    "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/announcement?i=goZn__6sqEenbk6cSdR5lg&p=fY8tSwscLkqI3d1smTbuuw&d=HA4k102TJkG2QuRj6K5Wtg&s=E150k9",
-    "PageKeywordCssSelector": "li.col-md-3:nth-child(7) > a:nth-child(1)",
-    "ExpectString": "開戶最低額度",
-    "DirectPageElementCssSelector": "h2.mlr20",
-    "DirectPageKeyword": "個人戶開戶最低金額公告"
-  },
-  {
-    "index": "49",
-    "TargetURL": "https://www.esunbank.com.tw/bank/personal/deposit/gold/price/current-price",
-    "PageKeywordCssSelector": "li.col-md-3:nth-child(8) > a:nth-child(1)",
-    "ExpectString": "黃金牌告",
-    "DirectPageElementCssSelector": ".BiggestTitle",
-    "DirectPageKeyword": "黃金存摺牌價查詢"
-  },
-  {
-    "index": "50",
-    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/personal/deposit?list=1",
-    "PageKeywordCssSelector": "li.l-bottomInfoList__box:nth-child(1) > a:nth-child(1)",
-    "ExpectString": "外來人口換發「新式統一證號」資料變更提醒事項",
-    "DirectPageElementCssSelector": "#layout_0_rightcontent_1_LsvCollapse_liLV01_0 > span:nth-child(1)",
-    "DirectPageKeyword": "外來人口換發「新式統一證號」資料變更提醒事項"
-  },
-  {
-    "index": "51",
-    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/personal/deposit?list=2",
-    "PageKeywordCssSelector": "li.l-bottomInfoList__box:nth-child(2) > a:nth-child(1)",
-    "ExpectString": "如何辦理臺幣一般存款帳戶開戶？",
-    "DirectPageElementCssSelector": "#layout_0_rightcontent_1_LsvCollapse_liLV01_1 > span:nth-child(1)",
-    "DirectPageKeyword": "如何辦理臺幣一般存款帳戶開戶？"
-  },
-  {
-    "index": "52",
-    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/personal/deposit?list=3",
-    "PageKeywordCssSelector": "li.l-bottomInfoList__box:nth-child(3) > a:nth-child(1)",
-    "ExpectString": "沒時間到分行開戶，是否可委託他人辦理？",
-    "DirectPageElementCssSelector": "#layout_0_rightcontent_1_LsvCollapse_liLV01_2 > span:nth-child(1)",
-    "DirectPageKeyword": "沒時間到分行開戶，是否可委託他人辦理？"
-  },
-  {
-    "index": "53",
-    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/personal/deposit?list=4",
-    "PageKeywordCssSelector": "li.l-bottomInfoList__box:nth-child(4) > a:nth-child(1)",
-    "ExpectString": "如果金融卡不慎遺失時，該怎麼辦呢？",
-    "DirectPageElementCssSelector": "#layout_0_rightcontent_1_LsvCollapse_liLV01_3 > span:nth-child(1)",
-    "DirectPageKeyword": "如果金融卡不慎遺失時，該怎麼辦呢？"
-  },
-  {
-    "index": "54",
-    "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/personal/deposit",
-    "PageKeywordCssSelector": "li.l-bottomInfoList__box:nth-child(5) > a:nth-child(1)",
-    "ExpectString": "more...",
-    "DirectPageElementCssSelector": ".rightContent",
-    "DirectPageKeyword": "存款"
-  },
-  {
-    "index": "55",
     "TargetURL": "https://www.esunbank.com.tw/bank/digital/life/banking/ebank",
     "PageKeywordCssSelector": "p.py-1:nth-child(2) > a:nth-child(1)",
     "ExpectString": "網路銀行",
@@ -449,7 +393,7 @@
     "DirectPageKeyword": "玉山網路銀行"
   },
   {
-    "index": "56",
+    "index": "49",
     "TargetURL": "https://www.esunbank.com.tw/bank/digital/life/mobile/mobile-bank",
     "PageKeywordCssSelector": "p.py-1:nth-child(2) > a:nth-child(2)",
     "ExpectString": "行動銀行App",
@@ -457,7 +401,7 @@
     "DirectPageKeyword": "行動銀行"
   },
   {
-    "index": "57",
+    "index": "50",
     "TargetURL": "https://robot.esunbank.com.tw/?eservice=ehome&qaCategory=general",
     "PageKeywordCssSelector": "p.py-1:nth-child(3) > a:nth-child(1)",
     "ExpectString": "智能客服",
@@ -465,7 +409,7 @@
     "DirectPageKeyword": "玉山銀行客服中心"
   },
   {
-    "index": "58",
+    "index": "51",
     "TargetURL": "https://www.esunbank.com.tw/bank/about/services/customer",
     "PageKeywordCssSelector": "div.justify-content-center:nth-child(4) > a:nth-child(1)",
     "ExpectString": "與我們聯繫",
@@ -473,7 +417,7 @@
     "DirectPageKeyword": "玉山e客服"
   },
   {
-    "index": "59",
+    "index": "52",
     "TargetURL": "https://www.esunbank.com.tw/bank/about",
     "PageKeywordCssSelector": "ul.l-recommandLink__box:nth-child(1) > li:nth-child(2) > a:nth-child(1)",
     "ExpectString": "關於玉山",
@@ -481,7 +425,7 @@
     "DirectPageKeyword": "關於玉山"
   },
   {
-    "index": "60",
+    "index": "53",
     "TargetURL": "https://www.esunfhc.com/zh-tw/foundation",
     "PageKeywordCssSelector": "ul.l-recommandLink__box:nth-child(1) > li:nth-child(4) > a:nth-child(1)",
     "ExpectString": "玉山文教",
@@ -489,7 +433,7 @@
     "DirectPageKeyword": "玉山文教"
   },
   {
-    "index": "61",
+    "index": "54",
     "TargetURL": "https://hr.esunfhc.com/StaffAcquisition/hireexam/Index/",
     "PageKeywordCssSelector": "ul.l-recommandLink__box:nth-child(1) > li:nth-child(3) > a:nth-child(1)",
     "ExpectString": "菁英招募",
@@ -497,7 +441,7 @@
     "DirectPageKeyword": "玉山金控菁英甄選"
   },
   {
-    "index": "62",
+    "index": "55",
     "TargetURL": "https://www.esunfhc.com/zh-tw/foundation",
     "PageKeywordCssSelector": "ul.l-recommandLink__box:nth-child(1) > li:nth-child(5) > a:nth-child(1)",
     "ExpectString": "玉山志工",
@@ -505,7 +449,7 @@
     "DirectPageKeyword": "玉山文教"
   },
   {
-    "index": "63",
+    "index": "56",
     "TargetURL": "https://www.esunfhc.com/zh-tw/",
     "PageKeywordCssSelector": "ul.l-recommandLink__box:nth-child(2) > li:nth-child(2) > a:nth-child(1)",
     "ExpectString": "玉山金控",
@@ -513,7 +457,7 @@
     "DirectPageKeyword": "深耕台灣"
   },
   {
-    "index": "64",
+    "index": "57",
     "TargetURL": "https://www.esunfhc.com/zh-tw/about-esun/intro/subsidiaries?tabid=tab03#tab-C",
     "PageKeywordCssSelector": "ul.l-recommandLink__box:nth-child(2) > li:nth-child(4) > a:nth-child(1)",
     "ExpectString": "玉山創投",
@@ -521,7 +465,7 @@
     "DirectPageKeyword": "子公司簡介"
   },
   {
-    "index": "65",
+    "index": "58",
     "TargetURL": "https://www.esunconsulting.com.tw/",
     "PageKeywordCssSelector": "ul.l-recommandLink__box:nth-child(2) > li:nth-child(3) > a:nth-child(1)",
     "ExpectString": "玉山投顧",
@@ -529,7 +473,7 @@
     "DirectPageKeyword": "玉山投顧"
   },
   {
-    "index": "66",
+    "index": "59",
     "TargetURL": "https://www.esunsec.com.tw/",
     "PageKeywordCssSelector": "ul.l-recommandLink__box:nth-child(2) > li:nth-child(5) > a:nth-child(1)",
     "ExpectString": "玉山證券",
@@ -537,7 +481,7 @@
     "DirectPageKeyword": "玉山證券"
   },
   {
-    "index": "67",
+    "index": "60",
     "TargetURL": "https://www.esunbank.com.tw/event/LINEBC/?utm_source=homepage&utm_medium=referral&utm_term=200807&utm_campaign=so_homepage_200807",
     "PageKeywordCssSelector": "ul.l-recommandLink__box:nth-child(3) > li:nth-child(2) > a:nth-child(1)",
     "ExpectString": "玉山 LINE官方帳號",
@@ -545,7 +489,7 @@
     "DirectPageKeyword": "LINE"
   },
   {
-    "index": "68",
+    "index": "61",
     "TargetURL": "https://www.facebook.com/esuncat/?newweb",
     "PageKeywordCssSelector": "ul.l-recommandLink__box:nth-child(3) > li:nth-child(3) > a:nth-child(1)",
     "ExpectString": "玉山 招財納福喵喵",
@@ -553,7 +497,7 @@
     "DirectPageKeyword": "玉山招財納福喵喵"
   },
   {
-    "index": "69",
+    "index": "62",
     "TargetURL": "https://www.facebook.com/esunbank?newweb",
     "PageKeywordCssSelector": "li.col-12:nth-child(4) > a:nth-child(1)",
     "ExpectString": "玉山 數位生活好康",
@@ -561,7 +505,7 @@
     "DirectPageKeyword": "玉山銀行 數位生活好康"
   },
   {
-    "index": "70",
+    "index": "63",
     "TargetURL": "https://www.cdic.gov.tw/main_ch/chinese.html",
     "PageKeywordCssSelector": "ul.l-recommandLink__box:nth-child(4) > li:nth-child(2) > a:nth-child(1)",
     "ExpectString": "",
@@ -569,7 +513,7 @@
     "DirectPageKeyword": "本金融機構已參加存款保險"
   },
   {
-    "index": "71",
+    "index": "64",
     "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/announcement?i=eYxNfOekAkKLtZwoUwDqaw&p=9WLFRe74B0ikiWlxA46w8Q&d=HA4k102TJkG2QuRj6K5Wtg",
     "PageKeywordCssSelector": "li.l-footerLink__content:nth-child(1) > a:nth-child(1)",
     "ExpectString": "瀏覽器建議",
@@ -577,7 +521,7 @@
     "DirectPageKeyword": "瀏覽器建議"
   },
   {
-    "index": "72",
+    "index": "65",
     "TargetURL": "https://www.esunbank.com.tw/bank/about/faq/personal/credit-card",
     "PageKeywordCssSelector": "li.l-footerLink__content:nth-child(2) > a:nth-child(1)",
     "ExpectString": "常見問題",
@@ -585,7 +529,7 @@
     "DirectPageKeyword": "信用卡常見問題"
   },
   {
-    "index": "73",
+    "index": "66",
     "TargetURL": "https://accessible.esunbank.com.tw/Accessibility/Index",
     "PageKeywordCssSelector": "li.l-footerLink__content:nth-child(3) > a:nth-child(1)",
     "ExpectString": "友善利匯率服務網",
@@ -593,7 +537,7 @@
     "DirectPageKeyword": "利匯率服務網"
   },
   {
-    "index": "74",
+    "index": "67",
     "TargetURL": "https://www.esunbank.com.tw/bank/about/announcement/legal-disclaimers/report",
     "PageKeywordCssSelector": "li.l-footerLink__content:nth-child(4) > a:nth-child(1)",
     "ExpectString": "法定公開揭露事項",
@@ -601,7 +545,7 @@
     "DirectPageKeyword": "法定公開揭露事項"
   },
   {
-    "index": "75",
+    "index": "68",
     "TargetURL": "https://www.esunfhc.com/zh-tw/esg/overview/letter",
     "PageKeywordCssSelector": "li.l-footerLink__content:nth-child(5) > a:nth-child(1)",
     "ExpectString": "ESG專區",

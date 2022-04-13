@@ -59,10 +59,24 @@ namespace AutomatedTest.IntegrationTest.Regression
             //var driver = new FirefoxDriver(firefoxOptions);
             #endregion
 
-            driver.Navigate().GoToUrl("https://www.esunbank.com.tw/event/credit/1040408web/index.htm");
-            driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(600);
+            driver.Navigate().GoToUrl("https://www.esunbank.com.tw/bank/personal/wealth/offshore-bond/intro");
+            //driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(600);
+            TestBase.ScrollPageUpOrDown(driver, 500); // 常用服務
+            //TestBase.ScrollPageUpOrDown(driver, 800); // 基金e指選
+
+            //TestBase.ScrollPageUpOrDown(driver, 1500); // 即時查詢
+
+            //TestBase.ScrollPageUpOrDown(driver, 2000); // 熱門推薦
+
+            //TestBase.ScrollPageUpOrDown(driver, 2800); // 理財電子週報
+
+            //TestBase.ScrollPageUpOrDown(driver, 3500); // 市場資訊 常見問題 聯繫客服
+
+            //TestBase.ScrollPageUpOrDown(driver, 4000); // 置底
+
+
             //driver.SwitchTo().Frame("iframe1");
-            var aaa= driver.FindElement(By.CssSelector(".line > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > img:nth-child(2)")).Text;
+            var aaa= driver.FindElement(By.CssSelector("#layout_0_rightcontent_0_h1Container")).Text;
             var bbb= driver.FindElement(By.CssSelector(".line > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > img:nth-child(2)")).GetAttribute("title");
             var ccc = driver.FindElement(By.CssSelector(".line > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > img:nth-child(2)")).GetAttribute("alt");
 
